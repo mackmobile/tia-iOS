@@ -62,11 +62,13 @@ class AbsenceViewController: UITableViewController, AbsenceViewControllerInput {
     
     private func startReloadAnimation() {
         reloadButtonItem.enabled = false
+        self.navigationItem.title = "Carregando Faltas"
     }
     
     private func stopReloadAnimation() {
         reloadButtonItem.enabled = true
         refreshControl?.endRefreshing()
+        self.navigationItem.title = "Faltas"
     }
     
     // MARK: Event handling

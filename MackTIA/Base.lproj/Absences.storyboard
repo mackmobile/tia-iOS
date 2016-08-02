@@ -61,7 +61,7 @@
                         <color key="tintColor" red="0.85882352939999995" green="0.086274509799999996" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="faltaCell" rowHeight="150" id="ACx-ZZ-OLh" customClass="AbsenceTableViewCell" customModule="TIA" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="113.5" width="600" height="150"/>
+                                <rect key="frame" x="0.0" y="114" width="600" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ACx-ZZ-OLh" id="gKN-22-9NB">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
@@ -403,7 +403,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72A-Qx-OT6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1819" y="-388"/>
+            <point key="canvasLocation" x="1814" y="-388"/>
         </scene>
     </scenes>
     <resources>
