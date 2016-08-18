@@ -12,11 +12,12 @@
 import UIKit
 
 class ListGradeWorker {
+    
     // MARK: Business Logic
     
     func fetchGrades(completionHandler: (grades: [Grade], error: ErrorCode?)->Void) {
-        TIAServer.sharedInstance.sendRequet(ServiceURL.Grades) { (jsonData, error) in
-            let grades = self.parseJSON(jsonData)
+        TIAServer.sharedInstance.sendRequet(ServiceURL.Grades) { [weak copySelf = self] (jsonData, error) in
+            let grades = copySelf?.parseJSON(jsonData)
             
             if error != nil {
                 completionHandler(grades: [], error: error)

@@ -16,6 +16,9 @@
 		212EBE391D629D7000365842 /* SchedulesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212EBE321D629D7000365842 /* SchedulesWorker.swift */; };
 		212EBE3E1D629F5100365842 /* RS3DSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 212EBE3D1D629F5100365842 /* RS3DSegmentedControl.m */; };
 		218CE26F1D640F7D00257AAF /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 218CE26E1D640F7D00257AAF /* iCarousel.m */; };
+		21EBB8241D65595F00940FB1 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBB8231D65595F00940FB1 /* Schedule.swift */; };
+		21EBB8261D656B6200940FB1 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBB8251D656B6200940FB1 /* ScheduleTableViewCell.swift */; };
+		21EBB8291D656C9C00940FB1 /* ScheduleHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21EBB8271D656C9C00940FB1 /* ScheduleHeader.xib */; };
 		86038C651CC5828300A130A2 /* AbsenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86038C641CC5828300A130A2 /* AbsenceTableViewCell.swift */; };
 		921D4EFD1CC0B23600FA06D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 929C92B51B9F720500844564 /* Localizable.strings */; };
 		921D4EFE1CC0B23C00FA06D3 /* ConfigHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C1F711BAA7C02006616B5 /* ConfigHelper.swift */; };
@@ -122,6 +125,9 @@
 		212EBE3D1D629F5100365842 /* RS3DSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RS3DSegmentedControl.m; sourceTree = "<group>"; };
 		218CE26D1D640F7D00257AAF /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		218CE26E1D640F7D00257AAF /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		21EBB8231D65595F00940FB1 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Schedule.swift; path = Entities/Schedule.swift; sourceTree = "<group>"; };
+		21EBB8251D656B6200940FB1 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleTableViewCell.swift; path = Scene/Schedules/ScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		21EBB8281D656C9C00940FB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ScheduleHeader.xib; sourceTree = "<group>"; };
 		86038C641CC5828300A130A2 /* AbsenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbsenceTableViewCell.swift; path = Scene/Absences/AbsenceTableViewCell.swift; sourceTree = "<group>"; };
 		922E01641CC80DF900B843A8 /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutTableViewController.swift; path = Scene/About/AboutTableViewController.swift; sourceTree = "<group>"; };
 		922E01671CC80FF800B843A8 /* LoginConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginConfigurator.swift; path = Scene/Login/LoginConfigurator.swift; sourceTree = "<group>"; };
@@ -225,6 +231,7 @@
 				212EBE301D629D7000365842 /* SchedulesRouter.swift */,
 				212EBE311D629D7000365842 /* SchedulesViewController.swift */,
 				212EBE321D629D7000365842 /* SchedulesWorker.swift */,
+				21EBB8251D656B6200940FB1 /* ScheduleTableViewCell.swift */,
 			);
 			name = Schedules;
 			sourceTree = "<group>";
@@ -312,6 +319,7 @@
 				923099CD1CC031A10090FD0A /* Main.storyboard */,
 				923099D91CC034090090FD0A /* About.storyboard */,
 				923099D61CC033BB0090FD0A /* Schedules.storyboard */,
+				21EBB8271D656C9C00940FB1 /* ScheduleHeader.xib */,
 				923099D31CC033990090FD0A /* Grades.storyboard */,
 				923099D01CC032950090FD0A /* Absences.storyboard */,
 				9289B88E1B87ADB3004284E3 /* LaunchScreen.xib */,
@@ -347,6 +355,7 @@
 				928786A21CC70F9900AC72BD /* Absence.swift */,
 				925E2CA71CC1780600DEAF52 /* Grade.swift */,
 				928786B21CC710CF00AC72BD /* User.swift */,
+				21EBB8231D65595F00940FB1 /* Schedule.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -526,6 +535,7 @@
 				A15BB2F61BA0762600143EBE /* Bariol_Regular.otf in Resources */,
 				929C92B31B9F720500844564 /* Localizable.strings in Resources */,
 				923099CF1CC031A10090FD0A /* Main.storyboard in Resources */,
+				21EBB8291D656C9C00940FB1 /* ScheduleHeader.xib in Resources */,
 				A15BB2D51B9ACBD900143EBE /* Images.xcassets in Resources */,
 				923099D21CC032950090FD0A /* Absences.storyboard in Resources */,
 				9289B8901B87ADB3004284E3 /* LaunchScreen.xib in Resources */,
@@ -587,6 +597,7 @@
 				925E2CA81CC1780600DEAF52 /* Grade.swift in Sources */,
 				92309A091CC067B50090FD0A /* ListGradeConfigurator.swift in Sources */,
 				925E2C8F1CC1585D00DEAF52 /* ErrorCode.swift in Sources */,
+				21EBB8241D65595F00940FB1 /* Schedule.swift in Sources */,
 				212EBE371D629D7000365842 /* SchedulesRouter.swift in Sources */,
 				212EBE381D629D7000365842 /* SchedulesViewController.swift in Sources */,
 				923C1F721BAA7C02006616B5 /* ConfigHelper.swift in Sources */,
@@ -595,6 +606,7 @@
 				928786AD1CC70FAF00AC72BD /* AbsenceModels.swift in Sources */,
 				922E01711CC80FF800B843A8 /* LoginPresenter.swift in Sources */,
 				925E2C9A1CC158ED00DEAF52 /* extension.swift in Sources */,
+				21EBB8261D656B6200940FB1 /* ScheduleTableViewCell.swift in Sources */,
 				218CE26F1D640F7D00257AAF /* iCarousel.m in Sources */,
 				925E2C941CC1587E00DEAF52 /* AKPickerView.swift in Sources */,
 				922E01701CC80FF800B843A8 /* LoginModels.swift in Sources */,
@@ -663,6 +675,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		21EBB8271D656C9C00940FB1 /* ScheduleHeader.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21EBB8281D656C9C00940FB1 /* Base */,
+			);
+			name = ScheduleHeader.xib;
+			sourceTree = "<group>";
+		};
 		923099CD1CC031A10090FD0A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -11,14 +11,20 @@
 
 import UIKit
 
-struct SchedulesRequest
-{
+struct SchedulesRequest { }
+
+struct SchedulesResponse {
+    var schedules:[Schedule]
+    var error:ErrorCode?
 }
 
-struct SchedulesResponse
-{
-}
-
-struct SchedulesViewModel
-{
+struct SchedulesViewModel {
+    struct Success {
+        var displayedSchedules: [Int : [Schedule]]
+    }
+    
+    struct Error {
+        var errorMessage:String
+        var errorTitle:String
+    }
 }

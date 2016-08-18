@@ -8,11 +8,13 @@
 
 import UIKit
 
-struct Grade{
+struct Grade {
+    
     var classCode:String
     var className:String
     var schoolName:String
     var schoolCode:String
     var formula:String
     var grades:[String:String]
+    
 }

@@ -11,27 +11,41 @@
 
 import UIKit
 
-protocol SchedulesPresenterInput
-{
-  func presentSomething(response: SchedulesResponse)
+protocol SchedulesPresenterInput {
+    func presentFetchedSchedules(response: SchedulesResponse)
 }
 
-protocol SchedulesPresenterOutput: class
-{
-  func displaySomething(viewModel: SchedulesViewModel)
+protocol SchedulesPresenterOutput: class {
+    func displayFetchedSchedules(viewModel: SchedulesViewModel.Success)
+    func displayFetchedSchedulesError(viewModel: SchedulesViewModel.Error)
 }
 
-class SchedulesPresenter: SchedulesPresenterInput
-{
-  weak var output: SchedulesPresenterOutput!
+class SchedulesPresenter: SchedulesPresenterInput {
   
-  // MARK: Presentation logic
-  
-  func presentSomething(response: SchedulesResponse)
-  {
-    // NOTE: Format the response from the Interactor and pass the result back to the View Controller
+    weak var output: SchedulesPresenterOutput!
+
+    // MARK: Presentation logic
     
-    let viewModel = SchedulesViewModel()
-    output.displaySomething(viewModel)
-  }
+    func presentFetchedSchedules(response: SchedulesResponse) {
+        
+        var filteredSchedules : [Int : [Schedule]] = [:]
+        let allSchedules = response.schedules
+        
+        for schedule in allSchedules {
+            var scds = filteredSchedules[Int(schedule.day!)!]
+            scds = scds ?? [Schedule]()
+            scds?.append(schedule)
+            filteredSchedules[Int(schedule.day!)!] = scds
+        }
+
+        
+        if response.error != nil {
+            let error:(title:String,message:String) = ErrorParser.parse(response.error!)
+            let viewModel = SchedulesViewModel.Error(errorMessage: error.message, errorTitle: error.title)
+            output.displayFetchedSchedulesError(viewModel)
+        } else {
+            let viewModel = SchedulesViewModel.Success(displayedSchedules: filteredSchedules)
+            output.displayFetchedSchedules(viewModel)
+        }
+    }
 }

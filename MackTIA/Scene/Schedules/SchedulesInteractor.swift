@@ -11,33 +11,24 @@
 
 import UIKit
 
-protocol SchedulesInteractorInput
-{
-  func doSomething(request: SchedulesRequest)
+protocol SchedulesInteractorInput {
+    func fetchSchedules(request: SchedulesRequest)
 }
 
-protocol SchedulesInteractorOutput
-{
-  func presentSomething(response: SchedulesResponse)
+protocol SchedulesInteractorOutput {
+    func presentFetchedSchedules(response: SchedulesResponse)
 }
 
-class SchedulesInteractor: SchedulesInteractorInput
-{
-  var output: SchedulesInteractorOutput!
-  var worker: SchedulesWorker!
+class SchedulesInteractor: SchedulesInteractorInput {
+    var output: SchedulesInteractorOutput!
+    var worker: SchedulesWorker!
   
-  // MARK: Business logic
-  
-  func doSomething(request: SchedulesRequest)
-  {
-    // NOTE: Create some Worker to do the work
-    
-    worker = SchedulesWorker()
-    worker.doSomeWork()
-    
-    // NOTE: Pass the result to the Presenter
-    
-    let response = SchedulesResponse()
-    output.presentSomething(response)
-  }
+    // MARK: Business logic
+    func fetchSchedules(request: SchedulesRequest) -> Void {
+        worker = SchedulesWorker()
+        worker.fetchSchedules { [weak copySelf = self] (schedules, error) in
+            let response = SchedulesResponse(schedules: schedules, error: error)
+            copySelf?.output.presentFetchedSchedules(response)
+        }
+    }
 }

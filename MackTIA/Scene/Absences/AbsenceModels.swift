@@ -11,18 +11,14 @@
 
 import UIKit
 
-struct AbsenceRequest
-{
-}
+struct AbsenceRequest { }
 
-struct AbsenceResponse
-{
+struct AbsenceResponse {
     var absences:[Absence]
     var error:ErrorCode?
 }
 
-struct AbsenceViewModel
-{
+struct AbsenceViewModel {
     struct Success {
         var displayedAbsences:[Absence]
     }

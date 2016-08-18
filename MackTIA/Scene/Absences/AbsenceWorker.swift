@@ -12,6 +12,7 @@
 import UIKit
 
 class AbsenceWorker {
+    
     // MARK: Business Logic
     
     func fetchAbsences(completionHandler:(absences:[Absence], error: ErrorCode?) -> Void) {

@@ -11,53 +11,161 @@
 
 import UIKit
 
-protocol SchedulesViewControllerInput
-{
-  func displaySomething(viewModel: SchedulesViewModel)
+protocol SchedulesViewControllerInput {
+    func displayFetchedSchedules(viewModel: SchedulesViewModel.Success)
+    func displayFetchedSchedulesError(viewModel: SchedulesViewModel.Error)
 }
 
-protocol SchedulesViewControllerOutput
-{
-  func doSomething(request: SchedulesRequest)
+protocol SchedulesViewControllerOutput {
+    func fetchSchedules(request: SchedulesRequest)
 }
 
-class SchedulesViewController: UITableViewController, SchedulesViewControllerInput
-{
-  var output: SchedulesViewControllerOutput!
-  var router: SchedulesRouter!
-  
-  // MARK: Object lifecycle
-  
-  override func awakeFromNib()
-  {
-    super.awakeFromNib()
-    SchedulesConfigurator.sharedInstance.configure(self)
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    doSomethingOnLoad()
-  }
-  
-  // MARK: Event handling
-  
-  func doSomethingOnLoad()
-  {
-    // NOTE: Ask the Interactor to do some work
+class SchedulesViewController: UITableViewController, SchedulesViewControllerInput {
     
-    let request = SchedulesRequest()
-    output.doSomething(request)
-  }
-  
-  // MARK: Display logic
-  
-  func displaySomething(viewModel: SchedulesViewModel)
-  {
-    // NOTE: Display the result from the Presenter
+    @IBOutlet weak var viewForSegmented: UIView!
+    @IBOutlet weak var reloadButtonItem: UIBarButtonItem!
+    var segmentedControl: RS3DSegmentedControl!
+    var displayedSchedules:[Schedule] = []
+    var filteredSchedules = [Int:[Schedule]]()
+    var keysW: [Int] = []
+    let weekDays = [1 : "DOMINGO", 2 : "SEGUNDA", 3 : "TERÇA", 4 : "QUARTA", 5 : "QUINTA", 6 : "SEXTA" , 7 : "SÁBADO"]
     
-    // nameTextField.text = viewModel.name
-  }
+    // MARK: VIPER properties
+    var output: SchedulesViewControllerOutput!
+    var router: SchedulesRouter!
+    
+    // MARK: Object lifecycle
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        SchedulesConfigurator.sharedInstance.configure(self)
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.configInterfaceAnimations()
+        self.fetchSchedules()
+        self.setupSegmentedControl()
+    }
+    
+    // MARK: Interface Animations
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.1
+    }
+    
+    func configInterfaceAnimations() {
+        self.refreshControl?.addTarget(self, action: #selector(SchedulesViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    private func startReloadAnimation() {
+        self.reloadButtonItem.enabled = false
+        self.navigationItem.title = "Carregando Horários"
+    }
+    
+    private func stopReloadAnimation() {
+        reloadButtonItem.enabled = true
+        refreshControl?.endRefreshing()
+        self.navigationItem.title = "Horários"
+    }
+    
+    // MARK: Event handling
+    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        self.startReloadAnimation()
+        let delayInSeconds = 1.0;
+        let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+        dispatch_after(popTime, dispatch_get_main_queue()) { [weak self] () -> Void in
+            self?.fetchSchedules()
+        }
+    }
+    
+    func fetchSchedules() -> Void {
+        self.startReloadAnimation()
+        let request = SchedulesRequest()
+        output.fetchSchedules(request)
+    }
+    
+    @IBAction func refreshAction(sender: AnyObject) {
+        self.fetchSchedules()
+    }
+    
+    // MARK: Display logic
+    
+    func displayFetchedSchedules(viewModel: SchedulesViewModel.Success) {
+        self.stopReloadAnimation()
+        filteredSchedules = viewModel.displayedSchedules
+        self.segmentedControl.carousel.reloadData()
+        tableView.reloadData()
+    }
+    
+    func displayFetchedSchedulesError(viewModel: SchedulesViewModel.Error) {
+        self.stopReloadAnimation()
+        
+        let alert = UIAlertController(title: viewModel.errorTitle, message: viewModel.errorMessage, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func getDay(date: NSDate) -> Int {
+        let formatter = NSDateFormatter()
+        formatter.timeZone = NSTimeZone(abbreviation: "BRST")
+        formatter.locale = NSLocale(localeIdentifier: "pt_BR")
+        formatter.dateFormat = "dd"
+        let string: String = formatter.stringFromDate(date)
+        
+        return Int(string)!
+    }
+    
+}
+
+// MARK: TableView Delegate Methods
+
+extension SchedulesViewController {
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.displayedSchedules.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("scheduleCell", forIndexPath: indexPath) as! ScheduleTableViewCell
+        return cell
+    }
+    
+}
+
+ // MARK: Segmented Control
+
+extension SchedulesViewController: RS3DSegmentedControlDelegate {
+    
+    func setupSegmentedControl() {
+        self.segmentedControl = RS3DSegmentedControl(frame: CGRectMake(0, 0, self.view.frame.size.width, self.viewForSegmented.frame.size.height))
+        self.segmentedControl?.delegate = self
+        self.viewForSegmented.addSubview(segmentedControl!)
+        self.segmentedControl.selectedSegmentIndex = 0
+        self.segmentedControl?.textFont = UIFont(name: "HelveticaNeue-Bold", size: 18)
+        self.segmentedControl?.textColor = UIColor.redColor()
+    }
+    
+    func numberOfSegmentsIn3DSegmentedControl(segmentedControl: RS3DSegmentedControl!) -> UInt {
+        self.keysW = Array(filteredSchedules.keys)
+        return UInt(filteredSchedules.count)
+    }
+    
+    func titleForSegmentAtIndex(segmentIndex: UInt, segmentedControl: RS3DSegmentedControl!) -> String! {
+        let day = weekDays[self.keysW[Int(segmentIndex)]]
+        return day
+    }
+    
+    func didSelectSegmentAtIndex(segmentIndex: UInt, segmentedControl: RS3DSegmentedControl!) {
+        self.displayedSchedules = filteredSchedules[self.keysW[Int(segmentIndex)]]!
+        self.tableView.reloadData()
+    }
 }

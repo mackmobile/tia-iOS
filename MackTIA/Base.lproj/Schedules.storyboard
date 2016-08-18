@@ -9,12 +9,6 @@
             <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -22,46 +16,21 @@
         <scene sceneID="MUA-pJ-p8p">
             <objects>
                 <tableViewController id="Kbm-tT-b0q" customClass="SchedulesViewController" customModule="TIA" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="wQO-AT-NwN">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="wQO-AT-NwN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="2dq-3o-7qa">
+                            <rect key="frame" x="0.0" y="64" width="320" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="gnR-vU-oT3">
-                                <rect key="frame" x="0.0" y="92" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gnR-vU-oT3" id="VNt-uu-VPT">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Kbm-tT-b0q" id="usc-U8-Jj8"/>
-                            <outlet property="delegate" destination="Kbm-tT-b0q" id="NU2-Oi-yNm"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Horários" id="YCV-fb-dqo"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A7L-cz-3G4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2253" y="1006"/>
-        </scene>
-        <!--Horario Dia Da Semana Table View Controller-->
-        <scene sceneID="2aq-yx-d15">
-            <objects>
-                <tableViewController storyboardIdentifier="HorarioDiaDaSemanaTableViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WJW-GV-ZON" customClass="HorarioDiaDaSemanaTableViewController" customModule="TIA" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="vfX-lL-jcG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="horarioCell" rowHeight="200" id="0jQ-fo-GCb" customClass="HorarioTableViewCell" customModule="TIA" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="49.5" width="320" height="200"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="scheduleCell" rowHeight="100" id="0jQ-fo-GCb" customClass="ScheduleTableViewCell" customModule="TIA" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="142" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0jQ-fo-GCb" id="gRS-jx-P6T">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="199.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome da disciplina" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAV-1A-SnX">
@@ -76,16 +45,7 @@
                                             <color key="textColor" red="0.70980392160000005" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0A-ko-GbN">
-                                            <rect key="frame" x="280" y="160" width="40" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="T8n-su-Pl7"/>
-                                                <constraint firstAttribute="width" constant="40" id="tOd-5i-wvJ"/>
-                                            </constraints>
-                                            <color key="tintColor" red="0.86666666670000003" green="0.086274509799999996" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <state key="normal" image="brush"/>
-                                        </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYc-O9-4zB">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYc-O9-4zB">
                                             <rect key="frame" x="18" y="61" width="257" height="28"/>
                                             <string key="text">Prédio RW - Sala 102
 Escola: CCBS - Turma 02G11</string>
@@ -93,164 +53,41 @@ Escola: CCBS - Turma 02G11</string>
                                             <color key="textColor" red="0.70980392160000005" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dOH-HM-yZd">
-                                            <rect key="frame" x="26" y="111" width="249" height="81"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="3iD-pk-1cQ"/>
-                                                <constraint firstAttribute="height" constant="97" id="q3i-EA-ULT"/>
-                                            </constraints>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                            <color key="textColor" red="0.70980392160000005" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="q3i-EA-ULT"/>
-                                                </mask>
-                                            </variation>
-                                        </textView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anotações" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIO-JH-SRH">
-                                            <rect key="frame" x="18" y="97" width="59" height="14"/>
-                                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="14"/>
-                                            <color key="textColor" red="0.70980392160000005" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="n0A-ko-GbN" firstAttribute="leading" secondItem="vYc-O9-4zB" secondAttribute="trailing" constant="5" id="6S3-NF-E7R"/>
                                         <constraint firstItem="gSk-Ii-UfS" firstAttribute="top" secondItem="mAV-1A-SnX" secondAttribute="bottom" constant="8" id="K8h-fU-okC"/>
-                                        <constraint firstItem="n0A-ko-GbN" firstAttribute="trailing" secondItem="gRS-jx-P6T" secondAttribute="trailingMargin" id="Kfu-lM-nUY"/>
                                         <constraint firstItem="mAV-1A-SnX" firstAttribute="leading" secondItem="vYc-O9-4zB" secondAttribute="leading" id="PZ7-9Z-efe"/>
                                         <constraint firstItem="mAV-1A-SnX" firstAttribute="leading" secondItem="gRS-jx-P6T" secondAttribute="leadingMargin" constant="10" id="RHq-b0-2Rh"/>
                                         <constraint firstItem="vYc-O9-4zB" firstAttribute="top" secondItem="gSk-Ii-UfS" secondAttribute="bottom" constant="2" id="UBV-Jb-1o8"/>
-                                        <constraint firstItem="tIO-JH-SRH" firstAttribute="leading" secondItem="gRS-jx-P6T" secondAttribute="leadingMargin" constant="10" id="Wcv-0U-hJT"/>
-                                        <constraint firstItem="n0A-ko-GbN" firstAttribute="leading" secondItem="dOH-HM-yZd" secondAttribute="trailing" constant="5" id="XHc-MJ-jvw"/>
-                                        <constraint firstAttribute="bottom" secondItem="n0A-ko-GbN" secondAttribute="bottom" id="XiP-Tn-KX1"/>
-                                        <constraint firstItem="dOH-HM-yZd" firstAttribute="top" secondItem="vYc-O9-4zB" secondAttribute="bottom" constant="8" id="c2Y-xl-au5"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="n0A-ko-GbN" secondAttribute="bottom" id="g7K-AH-MME"/>
-                                        <constraint firstItem="tIO-JH-SRH" firstAttribute="top" secondItem="vYc-O9-4zB" secondAttribute="bottom" constant="8" id="l2b-wB-h1t"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="dOH-HM-yZd" secondAttribute="bottom" priority="250" id="ltM-YU-Y5H"/>
-                                        <constraint firstAttribute="trailing" secondItem="n0A-ko-GbN" secondAttribute="trailing" id="qap-iU-4SG"/>
                                         <constraint firstItem="mAV-1A-SnX" firstAttribute="top" secondItem="gRS-jx-P6T" secondAttribute="topMargin" constant="12" id="rIE-dD-ZcR"/>
-                                        <constraint firstItem="dOH-HM-yZd" firstAttribute="top" secondItem="tIO-JH-SRH" secondAttribute="bottom" id="rfc-Us-AM2"/>
                                         <constraint firstItem="mAV-1A-SnX" firstAttribute="leading" secondItem="gSk-Ii-UfS" secondAttribute="leading" id="wkI-kg-rEl"/>
-                                        <constraint firstItem="dOH-HM-yZd" firstAttribute="leading" secondItem="vYc-O9-4zB" secondAttribute="leading" constant="8" id="xPV-j7-GpP"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="c2Y-xl-au5"/>
-                                            <exclude reference="Kfu-lM-nUY"/>
-                                            <exclude reference="g7K-AH-MME"/>
-                                        </mask>
-                                    </variation>
                                 </tableViewCellContentView>
-                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="semAula" textLabel="vCf-CD-Wu7" rowHeight="50" style="IBUITableViewCellStyleDefault" id="3ZU-vo-4Wk">
-                                <rect key="frame" x="0.0" y="249.5" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3ZU-vo-4Wk" id="7bp-pC-qGh">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Não existe aula programada para este dia ;)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="vCf-CD-Wu7">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="49.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="WJW-GV-ZON" id="k5h-6c-Zzu"/>
-                            <outlet property="delegate" destination="WJW-GV-ZON" id="364-9b-VEW"/>
+                            <outlet property="dataSource" destination="Kbm-tT-b0q" id="usc-U8-Jj8"/>
+                            <outlet property="delegate" destination="Kbm-tT-b0q" id="NU2-Oi-yNm"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Horários" id="YCV-fb-dqo">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Vol-WA-txg">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="refreshAction:" destination="Kbm-tT-b0q" id="JFH-aa-wAg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="reloadButtonItem" destination="Vol-WA-txg" id="zd0-Ln-D7e"/>
+                        <outlet property="viewForSegmented" destination="2dq-3o-7qa" id="IOO-Gx-cRY"/>
+                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GIe-FL-i1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A7L-cz-3G4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2675" y="1006"/>
-        </scene>
-        <!--Horario Anotacao View Controller-->
-        <scene sceneID="0RH-Ba-on2">
-            <objects>
-                <viewController storyboardIdentifier="horarioAnotacaoViewController" id="I5D-PL-Q5b" customClass="HorarioAnotacaoViewController" customModule="TIA" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8gH-kG-aYS"/>
-                        <viewControllerLayoutGuide type="bottom" id="9vy-IS-nd3"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dUm-7d-N5b">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRO-91-dXk">
-                                <rect key="frame" x="16" y="20" width="288" height="528"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anotações" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTv-05-48G">
-                                        <rect key="frame" x="8" y="8" width="71" height="17"/>
-                                        <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Oke-KL-aKc">
-                                        <rect key="frame" x="8" y="25" width="272" height="468"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXi-V5-gvc">
-                                        <rect key="frame" x="220" y="501" width="60" height="27"/>
-                                        <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="15"/>
-                                        <state key="normal" title="Confirmar"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jw8-SA-zuM">
-                                        <rect key="frame" x="8" y="501" width="53" height="27"/>
-                                        <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="15"/>
-                                        <state key="normal" title="Cancelar"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="fTv-05-48G" firstAttribute="top" secondItem="dRO-91-dXk" secondAttribute="topMargin" id="3KS-Mv-obu"/>
-                                    <constraint firstAttribute="trailing" secondItem="Oke-KL-aKc" secondAttribute="trailing" constant="8" id="4cy-kp-GdM"/>
-                                    <constraint firstItem="Oke-KL-aKc" firstAttribute="top" secondItem="fTv-05-48G" secondAttribute="bottom" id="Cnj-T6-cBh"/>
-                                    <constraint firstAttribute="bottom" secondItem="Jw8-SA-zuM" secondAttribute="bottom" id="JFY-VC-22v"/>
-                                    <constraint firstItem="Oke-KL-aKc" firstAttribute="leading" secondItem="dRO-91-dXk" secondAttribute="leading" constant="8" id="X3U-3T-vVt"/>
-                                    <constraint firstAttribute="height" constant="200" id="Zlo-m4-UZ8"/>
-                                    <constraint firstItem="fTv-05-48G" firstAttribute="leading" secondItem="dRO-91-dXk" secondAttribute="leadingMargin" id="cgJ-g6-S0I"/>
-                                    <constraint firstAttribute="bottom" secondItem="fXi-V5-gvc" secondAttribute="bottom" id="cmF-gn-gVs"/>
-                                    <constraint firstItem="Jw8-SA-zuM" firstAttribute="top" secondItem="Oke-KL-aKc" secondAttribute="bottom" constant="8" id="d6i-Kl-ccZ"/>
-                                    <constraint firstItem="Jw8-SA-zuM" firstAttribute="leading" secondItem="dRO-91-dXk" secondAttribute="leading" constant="8" id="j5w-ot-YRz"/>
-                                    <constraint firstAttribute="trailing" secondItem="fXi-V5-gvc" secondAttribute="trailing" constant="8" id="sda-6G-zQT"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Zlo-m4-UZ8"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="dRO-91-dXk" firstAttribute="leading" secondItem="dUm-7d-N5b" secondAttribute="leadingMargin" id="Agd-br-S4E"/>
-                            <constraint firstItem="dRO-91-dXk" firstAttribute="trailing" secondItem="dUm-7d-N5b" secondAttribute="trailingMargin" id="Kl0-Sb-czc"/>
-                            <constraint firstItem="9vy-IS-nd3" firstAttribute="top" secondItem="dRO-91-dXk" secondAttribute="bottom" constant="20" id="br7-Mr-GDE"/>
-                            <constraint firstItem="dRO-91-dXk" firstAttribute="top" secondItem="8gH-kG-aYS" secondAttribute="bottom" id="fIo-fE-PzR"/>
-                        </constraints>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pys-VM-B4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3093" y="1006"/>
+            <point key="canvasLocation" x="2253" y="1006"/>
         </scene>
         <!--Horários-->
         <scene sceneID="Pcl-bO-d30">
@@ -280,7 +117,6 @@ Escola: CCBS - Turma 02G11</string>
         </scene>
     </scenes>
     <resources>
-        <image name="brush" width="2116" height="350"/>
         <image name="hours" width="25" height="25"/>
         <image name="hoursFilled" width="25" height="25"/>
     </resources>
