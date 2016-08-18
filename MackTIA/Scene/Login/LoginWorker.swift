@@ -14,7 +14,7 @@ import UIKit
 class LoginWorker {
     // MARK: Business Logic
     
-    func validadeLogin(request: LoginRequest, completionHandler: (response: Bool, error: ErrorCode?)->Void){
+    func validateLogin(request: LoginRequest, completionHandler: (response: Bool, error: ErrorCode?)->Void){
         
         let user = User(name: nil, tia: request.tia, password: request.password, campus: request.campus, campusName: "<em desenvolvimento>")
         TIAServer.sharedInstance.user = user
