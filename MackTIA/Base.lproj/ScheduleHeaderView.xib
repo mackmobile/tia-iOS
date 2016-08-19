@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10117"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ScheduleHeaderView" customModule="TIA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7D-cv-syp">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="vgc-51-EMb"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERB-nN-NJB">
+                    <rect key="frame" x="0.0" y="49" width="320" height="1"/>
+                    <color key="backgroundColor" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="u8P-45-tP3"/>
+                    </constraints>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PRd-8U-CUs">
+                    <rect key="frame" x="151" y="44" width="18" height="18"/>
+                    <color key="backgroundColor" red="0.63921568627450975" green="0.63921568627450975" blue="0.63921568627450975" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="18" id="7Xq-Ic-Krs"/>
+                        <constraint firstAttribute="height" constant="18" id="VRC-xI-Xfz"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="9"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="P7D-cv-syp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2p0-vH-a1w"/>
+                <constraint firstItem="P7D-cv-syp" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="9Wa-Av-fpT"/>
+                <constraint firstAttribute="trailing" secondItem="P7D-cv-syp" secondAttribute="trailing" id="A6H-Zx-eKh"/>
+                <constraint firstItem="PRd-8U-CUs" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ORO-co-AgD"/>
+                <constraint firstAttribute="trailing" secondItem="ERB-nN-NJB" secondAttribute="trailing" id="P02-3O-wwl"/>
+                <constraint firstItem="ERB-nN-NJB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="egO-2q-ZIm"/>
+                <constraint firstAttribute="bottom" secondItem="ERB-nN-NJB" secondAttribute="bottom" id="i1l-24-dXx"/>
+                <constraint firstItem="PRd-8U-CUs" firstAttribute="top" secondItem="ERB-nN-NJB" secondAttribute="bottom" constant="-6" id="wWL-5I-23S"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="maximumContentHeight">
+                    <real key="value" value="50"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="minimumContentHeight">
+                    <real key="value" value="50"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="viewForSegmented" destination="P7D-cv-syp" id="auI-VM-J2y"/>
+            </connections>
+            <point key="canvasLocation" x="315" y="202"/>
+        </view>
+    </objects>
+</document>

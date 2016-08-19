@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aeX-7P-jO5">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Bariol_Bold.otf">
+            <string>Bariol-Bold</string>
+            <string>Bariol-Bold</string>
+            <string>Bariol-Bold</string>
+            <string>Bariol-Bold</string>
+            <string>Bariol-Bold</string>
+            <string>Bariol-Bold</string>
+        </mutableArray>
+        <mutableArray key="Bariol_Regular.otf">
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Horários-->
+        <scene sceneID="MUA-pJ-p8p">
+            <objects>
+                <tableViewController id="Kbm-tT-b0q" customClass="SchedulesViewController" customModule="TIA" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="150" sectionHeaderHeight="18" sectionFooterHeight="18" id="wQO-AT-NwN">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="scheduleCell" rowHeight="138" id="0jQ-fo-GCb" customClass="ScheduleTableViewCell" customModule="TIA" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="49.5" width="320" height="138"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0jQ-fo-GCb" id="gRS-jx-P6T">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="137.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEORIA DA COMPUTAÇÃO" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAV-1A-SnX">
+                                            <rect key="frame" x="15" y="15" width="205" height="16"/>
+                                            <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="16"/>
+                                            <color key="textColor" red="0.85882353779999998" green="0.086274512110000007" blue="0.19607843459999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSk-Ii-UfS">
+                                            <rect key="frame" x="228" y="15" width="55" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="55" id="Pro-0a-dfW"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="16"/>
+                                            <color key="textColor" red="0.85882352941176465" green="0.086274509803921567" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turma:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gt6-It-J0E">
+                                            <rect key="frame" x="15" y="33" width="43" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="43" id="Hut-VU-vNh"/>
+                                                <constraint firstAttribute="height" constant="16" id="SsS-ur-xF3"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="14"/>
+                                            <color key="textColor" red="0.46274509803921571" green="0.46274509803921571" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07N" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ZW-Gc-Z3R">
+                                            <rect key="frame" x="61" y="34" width="159" height="14"/>
+                                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="14"/>
+                                            <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escola:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCO-dJ-wqm">
+                                            <rect key="frame" x="15" y="51" width="44" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="16" id="1pc-xF-Xfz"/>
+                                                <constraint firstAttribute="width" constant="44" id="Jua-iC-w5o"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="14"/>
+                                            <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FCI" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ay-GC-Kxn">
+                                            <rect key="frame" x="61" y="52" width="159" height="14"/>
+                                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="14"/>
+                                            <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prédio:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umc-ZX-D8w">
+                                            <rect key="frame" x="15" y="69" width="43" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="43" id="21c-O9-ygn"/>
+                                                <constraint firstAttribute="height" constant="16" id="6bL-sB-1zp"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="14"/>
+                                            <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0n-FH-huJ">
+                                            <rect key="frame" x="61" y="69" width="159" height="16"/>
+                                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
+                                            <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sala:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vH-cx-j54">
+                                            <rect key="frame" x="15" y="87" width="43" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="43" id="XF7-Wv-iG5"/>
+                                                <constraint firstAttribute="height" constant="16" id="tuZ-qV-qEe"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="14"/>
+                                            <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="302" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1TW-Uf-G8P">
+                                            <rect key="frame" x="61" y="88" width="159" height="14"/>
+                                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="14"/>
+                                            <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconHour" translatesAutoresizingMaskIntoConstraints="NO" id="lOW-QB-tuR">
+                                            <rect key="frame" x="287" y="14" width="18" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="495-yF-zbv"/>
+                                                <constraint firstAttribute="width" constant="18" id="J0w-Pu-7GP"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ATUALIZADO EM 20/06/2016" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sug-wU-VRv">
+                                            <rect key="frame" x="15" y="112.5" width="123.5" height="10"/>
+                                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="10"/>
+                                            <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Q0n-FH-huJ" firstAttribute="leading" secondItem="umc-ZX-D8w" secondAttribute="trailing" constant="3" id="1N5-Fz-xfj"/>
+                                        <constraint firstItem="8ZW-Gc-Z3R" firstAttribute="centerY" secondItem="gt6-It-J0E" secondAttribute="centerY" id="1aq-qM-vuL"/>
+                                        <constraint firstItem="gSk-Ii-UfS" firstAttribute="top" secondItem="mAV-1A-SnX" secondAttribute="top" id="29D-BR-KKq"/>
+                                        <constraint firstItem="Q0n-FH-huJ" firstAttribute="trailing" secondItem="4Ay-GC-Kxn" secondAttribute="trailing" id="3kG-IF-SQr"/>
+                                        <constraint firstItem="umc-ZX-D8w" firstAttribute="top" secondItem="WCO-dJ-wqm" secondAttribute="bottom" constant="2" id="5NT-Ti-KjH"/>
+                                        <constraint firstItem="4Ay-GC-Kxn" firstAttribute="centerY" secondItem="WCO-dJ-wqm" secondAttribute="centerY" id="84G-0l-Eu6"/>
+                                        <constraint firstItem="8ZW-Gc-Z3R" firstAttribute="trailing" secondItem="mAV-1A-SnX" secondAttribute="trailing" id="BbO-Nf-ha1"/>
+                                        <constraint firstItem="1TW-Uf-G8P" firstAttribute="trailing" secondItem="Q0n-FH-huJ" secondAttribute="trailing" id="DYx-Rw-PBf"/>
+                                        <constraint firstItem="WCO-dJ-wqm" firstAttribute="leading" secondItem="gt6-It-J0E" secondAttribute="leading" id="F49-ox-UZO"/>
+                                        <constraint firstItem="8ZW-Gc-Z3R" firstAttribute="leading" secondItem="gt6-It-J0E" secondAttribute="trailing" constant="3" id="Frj-ks-JIq"/>
+                                        <constraint firstItem="mAV-1A-SnX" firstAttribute="leading" secondItem="gRS-jx-P6T" secondAttribute="leading" constant="15" id="IRJ-1F-fzE"/>
+                                        <constraint firstAttribute="trailing" secondItem="lOW-QB-tuR" secondAttribute="trailing" constant="15" id="Ijx-fR-EFm"/>
+                                        <constraint firstItem="sug-wU-VRv" firstAttribute="top" secondItem="7vH-cx-j54" secondAttribute="bottom" constant="9.5" id="JZq-2J-2lg"/>
+                                        <constraint firstItem="gSk-Ii-UfS" firstAttribute="leading" secondItem="mAV-1A-SnX" secondAttribute="trailing" constant="8" id="MeC-i4-s13"/>
+                                        <constraint firstItem="1TW-Uf-G8P" firstAttribute="leading" secondItem="Q0n-FH-huJ" secondAttribute="leading" id="PUN-jH-vO2"/>
+                                        <constraint firstItem="1TW-Uf-G8P" firstAttribute="centerY" secondItem="7vH-cx-j54" secondAttribute="centerY" id="Pu6-di-fJ6"/>
+                                        <constraint firstItem="sug-wU-VRv" firstAttribute="leading" secondItem="7vH-cx-j54" secondAttribute="leading" id="Q7N-De-NGa"/>
+                                        <constraint firstItem="4Ay-GC-Kxn" firstAttribute="leading" secondItem="WCO-dJ-wqm" secondAttribute="trailing" constant="2" id="QJf-iy-n5z"/>
+                                        <constraint firstItem="lOW-QB-tuR" firstAttribute="leading" secondItem="gSk-Ii-UfS" secondAttribute="trailing" constant="4" id="Qq2-Fg-etr"/>
+                                        <constraint firstAttribute="trailing" secondItem="gSk-Ii-UfS" secondAttribute="trailing" constant="15" id="Wcg-qc-nVC"/>
+                                        <constraint firstItem="umc-ZX-D8w" firstAttribute="leading" secondItem="WCO-dJ-wqm" secondAttribute="leading" id="Zqf-F4-xYP"/>
+                                        <constraint firstItem="Q0n-FH-huJ" firstAttribute="centerY" secondItem="umc-ZX-D8w" secondAttribute="centerY" id="a94-Go-KDP"/>
+                                        <constraint firstItem="gt6-It-J0E" firstAttribute="top" secondItem="mAV-1A-SnX" secondAttribute="bottom" constant="2" id="cRb-lD-c6M"/>
+                                        <constraint firstItem="4Ay-GC-Kxn" firstAttribute="trailing" secondItem="8ZW-Gc-Z3R" secondAttribute="trailing" id="dcc-5T-EdX"/>
+                                        <constraint firstItem="gt6-It-J0E" firstAttribute="leading" secondItem="mAV-1A-SnX" secondAttribute="leading" id="efy-VX-aiS"/>
+                                        <constraint firstItem="7vH-cx-j54" firstAttribute="leading" secondItem="umc-ZX-D8w" secondAttribute="leading" id="gNO-bh-4Tw"/>
+                                        <constraint firstItem="7vH-cx-j54" firstAttribute="top" secondItem="umc-ZX-D8w" secondAttribute="bottom" constant="2" id="nQv-aT-TX2"/>
+                                        <constraint firstItem="lOW-QB-tuR" firstAttribute="centerY" secondItem="gSk-Ii-UfS" secondAttribute="centerY" id="qEX-Lt-y03"/>
+                                        <constraint firstAttribute="bottom" secondItem="sug-wU-VRv" secondAttribute="bottom" constant="15" id="szz-h9-RWe"/>
+                                        <constraint firstItem="WCO-dJ-wqm" firstAttribute="top" secondItem="gt6-It-J0E" secondAttribute="bottom" constant="2" id="t3R-uo-LJb"/>
+                                        <constraint firstItem="1TW-Uf-G8P" firstAttribute="leading" secondItem="7vH-cx-j54" secondAttribute="trailing" constant="3" id="t4l-gl-Z1Z"/>
+                                        <constraint firstItem="mAV-1A-SnX" firstAttribute="top" secondItem="gRS-jx-P6T" secondAttribute="top" constant="15" id="vof-ax-efH"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="PUN-jH-vO2"/>
+                                            <exclude reference="Wcg-qc-nVC"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="buildingNumberLabel" destination="Q0n-FH-huJ" id="WkG-bt-9fP"/>
+                                    <outlet property="classNameLabel" destination="8ZW-Gc-Z3R" id="0IY-A1-doP"/>
+                                    <outlet property="collegeNameLabel" destination="4Ay-GC-Kxn" id="mEO-Vg-LVw"/>
+                                    <outlet property="disciplineLabel" destination="mAV-1A-SnX" id="1qx-Aq-HUv"/>
+                                    <outlet property="numberRoomLabel" destination="1TW-Uf-G8P" id="HxW-fg-RNn"/>
+                                    <outlet property="rangeTimeLabel" destination="gSk-Ii-UfS" id="aEO-EL-fiK"/>
+                                    <outlet property="updatedAtLabel" destination="sug-wU-VRv" id="OLD-v0-huR"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Kbm-tT-b0q" id="usc-U8-Jj8"/>
+                            <outlet property="delegate" destination="Kbm-tT-b0q" id="NU2-Oi-yNm"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Horários" id="YCV-fb-dqo">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Vol-WA-txg">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="refreshAction:" destination="Kbm-tT-b0q" id="JFH-aa-wAg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Ypl-DN-mhT">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
+                    <connections>
+                        <outlet property="reloadButtonItem" destination="Vol-WA-txg" id="zd0-Ln-D7e"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A7L-cz-3G4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2253" y="1006"/>
+        </scene>
+        <!--Horários-->
+        <scene sceneID="Pcl-bO-d30">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="aeX-7P-jO5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Horários" image="hours" selectedImage="hoursFilled" id="PLJ-Mx-rFN"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO">
+                        <color key="tintColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </simulatedTabBarMetrics>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackTranslucent" id="sR9-ap-Xxo">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.8980392157" green="0.12941176469999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="0.0"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Kbm-tT-b0q" kind="relationship" relationship="rootViewController" id="6AJ-1e-l8e"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GgJ-mS-05J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="1006"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="hours" width="25" height="25"/>
+        <image name="hoursFilled" width="25" height="25"/>
+        <image name="iconHour" width="18" height="18"/>
+    </resources>
+    <color key="tintColor" red="0.8862745098" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+</document>

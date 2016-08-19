@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wGq-ag-kh1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wGq-ag-kh1">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -55,7 +55,7 @@
             <objects>
                 <tableViewController title="Notas" id="31A-s9-rZ7" customClass="ListGradeTableViewController" customModule="TIA" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="293" sectionHeaderHeight="10" sectionFooterHeight="10" id="MmF-jJ-31w">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                        <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.85882352939999995" green="0.086274509799999996" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
@@ -63,7 +63,7 @@
                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="gradeCell" rowHeight="293" id="saJ-Vr-lDy" customClass="ListGradeTableViewCell" customModule="TIA" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="113.5" width="414" height="293"/>
+                                <rect key="frame" x="0.0" y="49.5" width="414" height="293"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="saJ-Vr-lDy" id="KDP-K7-ch0">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="292.5"/>
@@ -482,7 +482,7 @@ MF = (MI + PF)/2</string>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="grade31SchoolCell" textLabel="4gj-pq-I5a" detailTextLabel="J4d-QW-4n1" rowHeight="80" style="IBUITableViewCellStyleSubtitle" id="VZ2-2A-QwE">
-                                <rect key="frame" x="0.0" y="406.5" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="342.5" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VZ2-2A-QwE" id="nYM-Qb-bhg">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
@@ -511,6 +511,7 @@ MF = (MI + PF)/2</string>
                             <outlet property="delegate" destination="31A-s9-rZ7" id="bJo-Rn-lNF"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Notas" id="uVX-kZ-4Y4">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="T9G-Nr-ntL">
@@ -540,7 +541,7 @@ MF = (MI + PF)/2</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUG-86-ZpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1761" y="277"/>
+            <point key="canvasLocation" x="1624" y="282"/>
         </scene>
     </scenes>
     <resources>

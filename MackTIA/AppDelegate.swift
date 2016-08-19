@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.tintColor = UIColor.redColor()
         
-        
         if let _ = TIAServer.sharedInstance.loginRecorded() {
             self.logUser(TIAServer.sharedInstance.user!)
             let vc = storyboard.instantiateViewControllerWithIdentifier("AtentionScreen")

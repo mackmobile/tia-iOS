@@ -9,6 +9,7 @@
 import Foundation
 
 struct Absence {
+    
     // TODO: COLOCAR O RESTO DOS ATRIBUTOS
     var atualizacao:String
     var codigo:String
@@ -20,4 +21,5 @@ struct Absence {
     var permit:Int
     var permit20:Int
     var turma:String
+
 }

@@ -55,6 +55,9 @@
 "absence_InvalidDataTitle" = "Ops :/";
 "absence_InvalidDataMessage" = "Não foi possível carregar as suas faltas. O problema pode ser temporário, mas se persistir entre em contato pelo e-mail aplicativos@mackenzie.br. Não esqueça de fornecer seus dados, como TIA, Nome e descrição do erro ;)";
 
+// Schedule interface
+"schedules_InvalidDataTitle" = "Ops :/";
+"schedules_InvalidDataMessage" = "Não foi possível carregar seus horários. O problema pode ser temporário, mas se persistir entre em contato pelo e-mail aplicativos@mackenzie.br. Não esqueça de fornecer seus dados, como TIA, Nome e descrição do erro ;)";
 
 
 // E-mail Message

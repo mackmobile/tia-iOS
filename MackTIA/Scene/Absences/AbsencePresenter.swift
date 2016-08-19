@@ -11,13 +11,11 @@
 
 import UIKit
 
-protocol AbsencePresenterInput
-{
+protocol AbsencePresenterInput {
     func presentFetchedAbsences(response: AbsenceResponse)
 }
 
-protocol AbsencePresenterOutput: class
-{
+protocol AbsencePresenterOutput: class {
     func displayFetchedAbsences(viewModel: AbsenceViewModel.Success)
     func displayFetchedAbsencesError(viewModel: AbsenceViewModel.Error)
 }

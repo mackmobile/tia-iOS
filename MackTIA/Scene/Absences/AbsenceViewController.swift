@@ -144,6 +144,7 @@ class AbsenceViewController: UITableViewController, AbsenceViewControllerInput {
             self.selectedCellIndexPath = nil
         }
         
+        // Workaround haha quem fez?
         self.tableView.beginUpdates()
         self.tableView.endUpdates()
     }

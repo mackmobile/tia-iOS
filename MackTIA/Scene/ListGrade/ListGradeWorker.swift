@@ -12,6 +12,7 @@
 import UIKit
 
 class ListGradeWorker {
+    
     // MARK: Business Logic
     
     func fetchGrades(completionHandler: (grades: [Grade], error: ErrorCode?)->Void) {
