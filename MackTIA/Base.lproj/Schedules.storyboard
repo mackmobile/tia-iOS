@@ -25,13 +25,13 @@
         <scene sceneID="MUA-pJ-p8p">
             <objects>
                 <tableViewController id="Kbm-tT-b0q" customClass="SchedulesViewController" customModule="TIA" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="wQO-AT-NwN">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="150" sectionHeaderHeight="18" sectionFooterHeight="18" id="wQO-AT-NwN">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="scheduleCell" rowHeight="138" id="0jQ-fo-GCb" customClass="ScheduleTableViewCell" customModule="TIA" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="138"/>
+                                <rect key="frame" x="0.0" y="49.5" width="320" height="138"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0jQ-fo-GCb" id="gRS-jx-P6T">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="137.5"/>
