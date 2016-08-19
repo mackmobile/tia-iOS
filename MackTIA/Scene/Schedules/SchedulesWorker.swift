@@ -16,7 +16,7 @@ class SchedulesWorker {
     // MARK: Business Logic
     
     func fetchSchedules(completionHandler:(schedules:[Schedule], error: ErrorCode?) -> Void) {
-        TIAServer.sharedInstance.sendRequet(.ClassSchedule) { (jsonData, error) in
+        TIAServer.sharedInstance.sendRequest(.ClassSchedule) { (jsonData, error) in
             guard let _  = jsonData,
                 response = jsonData!["resposta"] as? [NSDictionary] else {
                     

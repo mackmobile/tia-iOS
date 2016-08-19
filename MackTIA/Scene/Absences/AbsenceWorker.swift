@@ -16,7 +16,7 @@ class AbsenceWorker {
     // MARK: Business Logic
     
     func fetchAbsences(completionHandler:(absences:[Absence], error: ErrorCode?) -> Void) {
-        TIAServer.sharedInstance.sendRequet(.Absence) { (jsonData, error) in
+        TIAServer.sharedInstance.sendRequest(.Absence) { (jsonData, error) in
             guard let _  = jsonData,
                 response = jsonData!["resposta"] as? [NSDictionary] else {
                     

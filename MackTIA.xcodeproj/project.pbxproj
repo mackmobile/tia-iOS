@@ -241,7 +241,6 @@
 		218340851D62840A003C1075 /* Schedules */ = {
 			isa = PBXGroup;
 			children = (
-				21EBB83A1D661BE100940FB1 /* ScheduleHeader */,
 				212EBE2C1D629D7000365842 /* SchedulesConfigurator.swift */,
 				212EBE2D1D629D7000365842 /* SchedulesInteractor.swift */,
 				212EBE2E1D629D7000365842 /* SchedulesModels.swift */,
@@ -388,6 +387,7 @@
 		925E2C911CC1587000DEAF52 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				21EBB83A1D661BE100940FB1 /* ScheduleHeader */,
 				21EBB82A1D661B9E00940FB1 /* GSKStretchyHeaderView */,
 				218CE26C1D640F7D00257AAF /* iCarousel */,
 				212EBE3B1D629F5100365842 /* RS3DSegmentedControl */,
@@ -555,7 +555,7 @@
 				TargetAttributes = {
 					9289B87C1B87ADB3004284E3 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 29E7ZBNXCF;
+						DevelopmentTeam = GK6E7G94CJ;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 0;

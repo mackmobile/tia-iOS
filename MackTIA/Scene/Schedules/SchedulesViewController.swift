@@ -65,7 +65,7 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
     
     private func setupHeightCell() -> Void {
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 150.0
+        self.tableView.estimatedRowHeight = 100.0
     }
     
     func configInterfaceAnimations() {
