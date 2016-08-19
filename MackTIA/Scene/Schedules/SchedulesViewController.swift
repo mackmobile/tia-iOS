@@ -147,7 +147,8 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
         return stringDate!
     }
     
-    func getDay(date: NSDate) -> Int {
+    // Usar para colocar o dia atual na Segmented
+    private func getDay(date: NSDate) -> Int {
         let formatter = NSDateFormatter()
         formatter.timeZone = NSTimeZone(abbreviation: "BRST")
         formatter.locale = NSLocale(localeIdentifier: "pt_BR")

@@ -21,14 +21,8 @@
                     <rect key="frame" x="0.0" y="49" width="320" height="1"/>
                     <color key="backgroundColor" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="0.5" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="25" id="Mgc-qW-87C"/>
                         <constraint firstAttribute="height" constant="1" id="u8P-45-tP3"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="Mgc-qW-87C"/>
-                        </mask>
-                    </variation>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PRd-8U-CUs">
                     <rect key="frame" x="151" y="44" width="18" height="18"/>
@@ -49,15 +43,11 @@
                 <constraint firstItem="P7D-cv-syp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2p0-vH-a1w"/>
                 <constraint firstItem="P7D-cv-syp" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="9Wa-Av-fpT"/>
                 <constraint firstAttribute="trailing" secondItem="P7D-cv-syp" secondAttribute="trailing" id="A6H-Zx-eKh"/>
-                <constraint firstAttribute="bottom" secondItem="PRd-8U-CUs" secondAttribute="bottom" constant="-12" id="OtG-Bu-IyL"/>
+                <constraint firstItem="PRd-8U-CUs" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ORO-co-AgD"/>
                 <constraint firstAttribute="trailing" secondItem="ERB-nN-NJB" secondAttribute="trailing" id="P02-3O-wwl"/>
-                <constraint firstItem="P7D-cv-syp" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="PDC-sO-6Z3"/>
                 <constraint firstItem="ERB-nN-NJB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="egO-2q-ZIm"/>
-                <constraint firstItem="PRd-8U-CUs" firstAttribute="top" secondItem="P7D-cv-syp" secondAttribute="bottom" constant="-11" id="fl1-uf-alZ"/>
                 <constraint firstAttribute="bottom" secondItem="ERB-nN-NJB" secondAttribute="bottom" id="i1l-24-dXx"/>
-                <constraint firstAttribute="bottom" secondItem="P7D-cv-syp" secondAttribute="bottom" id="r3S-T8-dZT"/>
-                <constraint firstItem="P7D-cv-syp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ugh-xt-W7B"/>
-                <constraint firstItem="PRd-8U-CUs" firstAttribute="centerX" secondItem="P7D-cv-syp" secondAttribute="centerX" id="wCo-fK-out"/>
+                <constraint firstItem="PRd-8U-CUs" firstAttribute="top" secondItem="ERB-nN-NJB" secondAttribute="bottom" constant="-6" id="wWL-5I-23S"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
@@ -68,13 +58,6 @@
                     <real key="value" value="50"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="r3S-T8-dZT"/>
-                    <exclude reference="ugh-xt-W7B"/>
-                    <exclude reference="fl1-uf-alZ"/>
-                </mask>
-            </variation>
             <connections>
                 <outlet property="viewForSegmented" destination="P7D-cv-syp" id="auI-VM-J2y"/>
             </connections>

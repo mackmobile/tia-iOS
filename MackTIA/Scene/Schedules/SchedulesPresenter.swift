@@ -38,7 +38,6 @@ class SchedulesPresenter: SchedulesPresenterInput {
             filteredSchedules[Int(schedule.day!)!] = scds
         }
 
-        
         if response.error != nil {
             let error:(title:String,message:String) = ErrorParser.parse(response.error!)
             let viewModel = SchedulesViewModel.Error(errorMessage: error.message, errorTitle: error.title)

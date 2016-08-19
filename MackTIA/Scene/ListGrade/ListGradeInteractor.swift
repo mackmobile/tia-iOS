@@ -29,7 +29,7 @@ class ListGradeInteractor: ListGradeInteractorInput {
         // NOTE: Create some Worker to do the work
         
         worker = ListGradeWorker()
-        worker.fetchGrades { (grades, error) in
+        worker.fetchGrades { [unowned self] (grades, error) in
             let response = ListGradeResponse(grades: grades, error: error)
             self.output.presentFetchedGrades(response)
         }
