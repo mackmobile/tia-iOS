@@ -27,7 +27,7 @@ class SchedulesWorker {
                         return
                     }
                     
-                    let errorMessage = ErrorCode.OtherFailure(title: NSLocalizedString("absence_InvalidDataTitle", comment: "Problem with grade data from API"), message: NSLocalizedString("absence_InvalidDataMessage", comment: "Problem with absence data from API"))
+                    let errorMessage = ErrorCode.OtherFailure(title: NSLocalizedString("schedules_InvalidDataTitle", comment: "Problem with grade data from API"), message: NSLocalizedString("schedules_InvalidDataMessage", comment: "Problem with absence data from API"))
                     
                     completionHandler(schedules: [], error: errorMessage)
                     return
