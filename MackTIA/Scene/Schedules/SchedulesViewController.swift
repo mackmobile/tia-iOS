@@ -22,8 +22,12 @@ protocol SchedulesViewControllerOutput {
 
 class SchedulesViewController: UITableViewController, SchedulesViewControllerInput {
     
-    @IBOutlet weak var viewForSegmented: UIView!
+    // MARK: Outlets
     @IBOutlet weak var reloadButtonItem: UIBarButtonItem!
+    
+    // MARK: properties
+    
+    var headerView: ScheduleHeaderView?
     var segmentedControl: RS3DSegmentedControl!
     var displayedSchedules:[Schedule] = []
     var filteredSchedules = [Int:[Schedule]]()
@@ -46,6 +50,8 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupHeaderView()
+        self.setupHeightCell()
         self.configInterfaceAnimations()
         self.fetchSchedules()
         self.setupSegmentedControl()
@@ -55,6 +61,11 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.1
+    }
+    
+    private func setupHeightCell() -> Void {
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 150.0
     }
     
     func configInterfaceAnimations() {
@@ -70,6 +81,18 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
         reloadButtonItem.enabled = true
         refreshControl?.endRefreshing()
         self.navigationItem.title = "Horários"
+    }
+    
+    private func setupHeaderView() -> Void {
+        self.headerView = self.loadHeaderView()
+        if let header = self.headerView {
+            self.tableView.addSubview(header)
+        }
+    }
+    
+    private func loadHeaderView() -> ScheduleHeaderView? {
+        let nibViews = NSBundle.mainBundle().loadNibNamed("ScheduleHeaderView", owner: self, options: nil)
+        return nibViews.first as? ScheduleHeaderView
     }
     
     // MARK: Event handling
@@ -110,6 +133,20 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
+    private func dateScheduleFormatter(stringToParser: String) -> String {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        
+        var stringDate: String?
+        if let date = formatter.dateFromString(stringToParser) {
+            formatter.dateFormat = "dd/MM/yyyy"
+            stringDate = formatter.stringFromDate(date)
+        }
+        
+        stringDate = stringDate ?? ""
+        return stringDate!
+    }
+    
     func getDay(date: NSDate) -> Int {
         let formatter = NSDateFormatter()
         formatter.timeZone = NSTimeZone(abbreviation: "BRST")
@@ -135,7 +172,20 @@ extension SchedulesViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let schedule = self.displayedSchedules[indexPath.row]
+        
         let cell = self.tableView.dequeueReusableCellWithIdentifier("scheduleCell", forIndexPath: indexPath) as! ScheduleTableViewCell
+        
+        cell.disciplineLabel.text = schedule.discipline
+        cell.rangeTimeLabel.text = schedule.rangeTime
+        cell.classNameLabel.text = schedule.className
+        cell.collegeNameLabel.text = schedule.collegeName
+        cell.buildingNumberLabel?.text = schedule.buildingNumber
+        cell.numberRoomLabel?.text = schedule.numberRoom
+        if let updateAt = schedule.updatedAt {
+            cell.updatedAtLabel?.text = "ATUALIZADO EM \(self.dateScheduleFormatter(updateAt))"
+        }
+        
         return cell
     }
     
@@ -145,12 +195,12 @@ extension SchedulesViewController {
 
 extension SchedulesViewController: RS3DSegmentedControlDelegate {
     
-    func setupSegmentedControl() {
-        self.segmentedControl = RS3DSegmentedControl(frame: CGRectMake(0, 0, self.view.frame.size.width, self.viewForSegmented.frame.size.height))
+    private func setupSegmentedControl() -> Void {
+        self.segmentedControl = RS3DSegmentedControl(frame: CGRectMake(0, 0, self.view.frame.size.width, 50))
         self.segmentedControl?.delegate = self
-        self.viewForSegmented.addSubview(segmentedControl!)
+        self.headerView?.viewForSegmented.addSubview(segmentedControl)
         self.segmentedControl.selectedSegmentIndex = 0
-        self.segmentedControl?.textFont = UIFont(name: "HelveticaNeue-Bold", size: 18)
+        self.segmentedControl?.textFont = UIFont(name: "Bariol_Regular", size: 22)
         self.segmentedControl?.textColor = UIColor.redColor()
     }
     

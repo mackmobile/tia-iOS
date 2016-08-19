@@ -11,7 +11,7 @@
 #import "iCarousel.h"
 
 @interface RS3DSegmentedControl ()
-    @property(nonatomic,strong) UIImageView *backgroundImage;
+@property(nonatomic,strong) UIImageView *backgroundImage;
 @end
 
 @implementation RS3DSegmentedControl {
@@ -137,8 +137,8 @@
     switch (option)
     {
         case iCarouselOptionWrap:
-        return YES;
-        
+            return YES;
+            
         case iCarouselOptionFadeMax:
         {
             return 0.0f;
@@ -151,12 +151,12 @@
         {
             return 1.9f;
         }
-        
+            
         case iCarouselOptionOffsetMultiplier:
         {
             return 1.5f;
         }
-        
+            
         default:
         {
             return value;
