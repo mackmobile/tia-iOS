@@ -30,6 +30,13 @@ class AbsencePresenter: AbsencePresenterInput
     
     func presentFetchedAbsences(response: AbsenceResponse) {
         
+        guard response.error == nil else {
+            let error:(title:String,message:String) = ErrorParser.parse(response.error!)
+            let viewModel = AbsenceViewModel.Error(errorMessage: error.message, errorTitle: error.title)
+            output.displayFetchedAbsencesError(viewModel)
+            return
+        }
+        
         // Remove absences without presence classe
         var absences = response.absences.filter { (absence) -> Bool in
             return absence.dadas > 0
@@ -44,14 +51,7 @@ class AbsencePresenter: AbsencePresenterInput
             return ab
         }
         
-        
-        if response.error != nil {
-            let error:(title:String,message:String) = ErrorParser.parse(response.error!)
-            let viewModel = AbsenceViewModel.Error(errorMessage: error.message, errorTitle: error.title)
-            output.displayFetchedAbsencesError(viewModel)
-        } else {
-            let viewModel = AbsenceViewModel.Success(displayedAbsences: absences)
-            output.displayFetchedAbsences(viewModel)
-        }
+        let viewModel = AbsenceViewModel.Success(displayedAbsences: absences)
+        output.displayFetchedAbsences(viewModel)
     }
 }

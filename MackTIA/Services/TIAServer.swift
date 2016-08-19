@@ -67,7 +67,6 @@ class TIAServer {
     }
     
     func registerLogin() {
-        
         guard let u = user else {
             return
         }
@@ -100,7 +99,7 @@ class TIAServer {
         return parameters
     }
     
-    func sendRequet(service:ServiceURL, completionHandler:(jsonData:AnyObject?, error: ErrorCode?) -> Void) {
+    func sendRequest(service:ServiceURL, completionHandler:(jsonData:AnyObject?, error: ErrorCode?) -> Void) {
 
         // Problem with Reachability Method, some times return false, bust connection is ok
 //        if Reachability.isConnectedToNetwork() == false {
