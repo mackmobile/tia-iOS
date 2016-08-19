@@ -30,7 +30,7 @@ class LoginInteractor: LoginInteractorInput {
         // NOTE: Create some Worker to do the work
         
         worker = LoginWorker()
-        worker.validadeLogin(request) { (response, error) in
+        worker.validateLogin(request) { [unowned self] (response, error) in
             if response {
                 self.output.presentLoginAccepted()
             } else {

@@ -58,17 +58,37 @@ extension UIColor {
     }
 }
 
-
-// MARK: UIImage
 @IBDesignable
-extension UIImageView {
+extension UIView {
     @IBInspectable var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
         }
         set {
-            layer.cornerRadius = newValue
-            layer.masksToBounds = newValue > 0
+            self.layer.cornerRadius = newValue
+            self.layer.masksToBounds = newValue > 0
         }
     }
+    @IBInspectable var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            self.layer.borderWidth = newValue
+        }
+    }
+    @IBInspectable var borderColor: UIColor? {
+        get {
+            if let layerColor = self.layer.borderColor {
+                return UIColor(CGColor: layerColor)
+            }
+            else {
+                return nil
+            }
+        }
+        set {
+            self.layer.borderColor = newValue?.CGColor
+        }
+    }
+    
 }

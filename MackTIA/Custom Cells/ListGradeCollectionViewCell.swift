@@ -9,6 +9,8 @@
 import UIKit
 
 class ListGradeCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var value: UILabel!
+    
 }
