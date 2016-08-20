@@ -61,10 +61,6 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
     
     // MARK: Interface Animations
     
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
-    }
-    
     private func setupHeightCell() -> Void {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 100.0
@@ -198,6 +194,14 @@ extension SchedulesViewController {
             return header
         }
         return nil
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.001
     }
     
 }

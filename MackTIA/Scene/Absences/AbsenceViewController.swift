@@ -53,7 +53,11 @@ class AbsenceViewController: UITableViewController, AbsenceViewControllerInput {
     // MARK: Interface Animations
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.1
+        return 0.01
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.01
     }
     
     func configInterfaceAnimations() {
