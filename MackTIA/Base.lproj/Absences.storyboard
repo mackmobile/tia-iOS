@@ -6,8 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Bariol_Bold.otf">
+            <string>Bariol-Bold</string>
+        </mutableArray>
         <mutableArray key="Bariol_Regular.otf">
-            <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
@@ -68,7 +70,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="27" id="b2H-je-nGe"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="16"/>
                                             <color key="textColor" red="0.85882352941176465" green="0.086274509803921567" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
