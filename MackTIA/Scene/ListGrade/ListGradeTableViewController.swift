@@ -62,7 +62,11 @@ class ListGradeTableViewController: UITableViewController, ListGradeTableViewCon
     // MARK: Interface Animation
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.1
+        return 0.0001
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.0001
     }
     
     func configInterfaceAnimations() {
