@@ -23,6 +23,7 @@ protocol SchedulesViewControllerOutput {
 class SchedulesViewController: UITableViewController, SchedulesViewControllerInput {
     
     // MARK: Outlets
+    
     @IBOutlet weak var reloadButtonItem: UIBarButtonItem!
     
     // MARK: properties
@@ -51,16 +52,17 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
         super.viewDidLoad()
         
         self.setupHeaderView()
+        self.setupSegmentedControl()
         self.setupHeightCell()
         self.configInterfaceAnimations()
         self.fetchSchedules()
-        self.setupSegmentedControl()
+
     }
     
     // MARK: Interface Animations
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.1
+        return 50
     }
     
     private func setupHeightCell() -> Void {
@@ -85,9 +87,6 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
     
     private func setupHeaderView() -> Void {
         self.headerView = self.loadHeaderView()
-        if let header = self.headerView {
-            self.tableView.addSubview(header)
-        }
     }
     
     private func loadHeaderView() -> ScheduleHeaderView? {
@@ -136,6 +135,8 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
     private func dateScheduleFormatter(stringToParser: String) -> String {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyyMMdd"
+        formatter.timeZone = NSTimeZone(abbreviation: "BRST")
+        formatter.locale = NSLocale(localeIdentifier: "pt_BR")
         
         var stringDate: String?
         if let date = formatter.dateFromString(stringToParser) {
@@ -188,6 +189,13 @@ extension SchedulesViewController {
         }
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if let header = self.headerView {
+            return header
+        }
+        return nil
     }
     
 }

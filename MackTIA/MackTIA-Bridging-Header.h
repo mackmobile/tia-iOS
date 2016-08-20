@@ -4,4 +4,3 @@
 
 #import <CommonCrypto/CommonCrypto.h>
 #import "RS3DSegmentedControl.h"
-#import "GSKStretchyHeaderView.h"

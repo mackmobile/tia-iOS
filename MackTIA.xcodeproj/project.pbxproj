@@ -16,15 +16,11 @@
 		212EBE391D629D7000365842 /* SchedulesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212EBE321D629D7000365842 /* SchedulesWorker.swift */; };
 		212EBE3E1D629F5100365842 /* RS3DSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 212EBE3D1D629F5100365842 /* RS3DSegmentedControl.m */; };
 		217C9CE71D66A5FE000EF9C7 /* Bariol_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 217C9CE61D66A5FE000EF9C7 /* Bariol_Bold.otf */; };
+		217C9CF01D68F6DB000EF9C7 /* ScheduleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217C9CEF1D68F6DB000EF9C7 /* ScheduleHeaderView.swift */; };
+		217C9CF31D68F6FE000EF9C7 /* ScheduleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217C9CF21D68F6FE000EF9C7 /* ScheduleHeaderView.xib */; };
 		218CE26F1D640F7D00257AAF /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 218CE26E1D640F7D00257AAF /* iCarousel.m */; };
 		21EBB8241D65595F00940FB1 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBB8231D65595F00940FB1 /* Schedule.swift */; };
 		21EBB8261D656B6200940FB1 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBB8251D656B6200940FB1 /* ScheduleTableViewCell.swift */; };
-		21EBB8291D656C9C00940FB1 /* ScheduleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21EBB8271D656C9C00940FB1 /* ScheduleHeaderView.xib */; };
-		21EBB8361D661B9E00940FB1 /* GSKGeometry.c in Sources */ = {isa = PBXBuildFile; fileRef = 21EBB82C1D661B9E00940FB1 /* GSKGeometry.c */; };
-		21EBB8371D661B9E00940FB1 /* GSKStretchyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EBB82F1D661B9E00940FB1 /* GSKStretchyHeaderView.m */; };
-		21EBB8381D661B9E00940FB1 /* UIScrollView+GSKStretchyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EBB8331D661B9E00940FB1 /* UIScrollView+GSKStretchyHeaderView.m */; };
-		21EBB8391D661B9E00940FB1 /* UIView+GSKTransplantSubviews.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EBB8351D661B9E00940FB1 /* UIView+GSKTransplantSubviews.m */; };
-		21EBB83E1D661C2E00940FB1 /* ScheduleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBB83D1D661C2E00940FB1 /* ScheduleHeaderView.swift */; };
 		86038C651CC5828300A130A2 /* AbsenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86038C641CC5828300A130A2 /* AbsenceTableViewCell.swift */; };
 		921D4EFD1CC0B23600FA06D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 929C92B51B9F720500844564 /* Localizable.strings */; };
 		921D4EFE1CC0B23C00FA06D3 /* ConfigHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C1F711BAA7C02006616B5 /* ConfigHelper.swift */; };
@@ -135,21 +131,12 @@
 		212EBE3C1D629F5100365842 /* RS3DSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RS3DSegmentedControl.h; sourceTree = "<group>"; };
 		212EBE3D1D629F5100365842 /* RS3DSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RS3DSegmentedControl.m; sourceTree = "<group>"; };
 		217C9CE61D66A5FE000EF9C7 /* Bariol_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol_Bold.otf; sourceTree = "<group>"; };
+		217C9CEF1D68F6DB000EF9C7 /* ScheduleHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleHeaderView.swift; path = Views/ScheduleHeaderView/ScheduleHeaderView.swift; sourceTree = "<group>"; };
+		217C9CF21D68F6FE000EF9C7 /* ScheduleHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleHeaderView.xib; path = Views/ScheduleHeaderView/ScheduleHeaderView.xib; sourceTree = "<group>"; };
 		218CE26D1D640F7D00257AAF /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		218CE26E1D640F7D00257AAF /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		21EBB8231D65595F00940FB1 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Schedule.swift; path = Entities/Schedule.swift; sourceTree = "<group>"; };
 		21EBB8251D656B6200940FB1 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleTableViewCell.swift; path = Scene/Schedules/ScheduleTableViewCell.swift; sourceTree = "<group>"; };
-		21EBB8281D656C9C00940FB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ScheduleHeaderView.xib; sourceTree = "<group>"; };
-		21EBB82C1D661B9E00940FB1 /* GSKGeometry.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GSKGeometry.c; sourceTree = "<group>"; };
-		21EBB82D1D661B9E00940FB1 /* GSKGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSKGeometry.h; sourceTree = "<group>"; };
-		21EBB82E1D661B9E00940FB1 /* GSKStretchyHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSKStretchyHeaderView.h; sourceTree = "<group>"; };
-		21EBB82F1D661B9E00940FB1 /* GSKStretchyHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSKStretchyHeaderView.m; sourceTree = "<group>"; };
-		21EBB8311D661B9E00940FB1 /* GSKStretchyHeaderView+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GSKStretchyHeaderView+Protected.h"; sourceTree = "<group>"; };
-		21EBB8321D661B9E00940FB1 /* UIScrollView+GSKStretchyHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+GSKStretchyHeaderView.h"; sourceTree = "<group>"; };
-		21EBB8331D661B9E00940FB1 /* UIScrollView+GSKStretchyHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+GSKStretchyHeaderView.m"; sourceTree = "<group>"; };
-		21EBB8341D661B9E00940FB1 /* UIView+GSKTransplantSubviews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GSKTransplantSubviews.h"; sourceTree = "<group>"; };
-		21EBB8351D661B9E00940FB1 /* UIView+GSKTransplantSubviews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GSKTransplantSubviews.m"; sourceTree = "<group>"; };
-		21EBB83D1D661C2E00940FB1 /* ScheduleHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleHeaderView.swift; path = Views/ScheduleHeaderView.swift; sourceTree = "<group>"; };
 		86038C641CC5828300A130A2 /* AbsenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbsenceTableViewCell.swift; path = Scene/Absences/AbsenceTableViewCell.swift; sourceTree = "<group>"; };
 		922E01641CC80DF900B843A8 /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutTableViewController.swift; path = Scene/About/AboutTableViewController.swift; sourceTree = "<group>"; };
 		922E01671CC80FF800B843A8 /* LoginConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginConfigurator.swift; path = Scene/Login/LoginConfigurator.swift; sourceTree = "<group>"; };
@@ -249,6 +236,15 @@
 			path = RS3DSegmentedControl;
 			sourceTree = "<group>";
 		};
+		217C9CF11D68F6E5000EF9C7 /* ScheduleHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				217C9CEF1D68F6DB000EF9C7 /* ScheduleHeaderView.swift */,
+				217C9CF21D68F6FE000EF9C7 /* ScheduleHeaderView.xib */,
+			);
+			name = ScheduleHeaderView;
+			sourceTree = "<group>";
+		};
 		218340851D62840A003C1075 /* Schedules */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,47 +267,6 @@
 				218CE26E1D640F7D00257AAF /* iCarousel.m */,
 			);
 			path = iCarousel;
-			sourceTree = "<group>";
-		};
-		21EBB82A1D661B9E00940FB1 /* GSKStretchyHeaderView */ = {
-			isa = PBXGroup;
-			children = (
-				21EBB82B1D661B9E00940FB1 /* Classes */,
-			);
-			path = GSKStretchyHeaderView;
-			sourceTree = "<group>";
-		};
-		21EBB82B1D661B9E00940FB1 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				21EBB82C1D661B9E00940FB1 /* GSKGeometry.c */,
-				21EBB82D1D661B9E00940FB1 /* GSKGeometry.h */,
-				21EBB82E1D661B9E00940FB1 /* GSKStretchyHeaderView.h */,
-				21EBB82F1D661B9E00940FB1 /* GSKStretchyHeaderView.m */,
-				21EBB8301D661B9E00940FB1 /* Private */,
-				21EBB8341D661B9E00940FB1 /* UIView+GSKTransplantSubviews.h */,
-				21EBB8351D661B9E00940FB1 /* UIView+GSKTransplantSubviews.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		21EBB8301D661B9E00940FB1 /* Private */ = {
-			isa = PBXGroup;
-			children = (
-				21EBB8311D661B9E00940FB1 /* GSKStretchyHeaderView+Protected.h */,
-				21EBB8321D661B9E00940FB1 /* UIScrollView+GSKStretchyHeaderView.h */,
-				21EBB8331D661B9E00940FB1 /* UIScrollView+GSKStretchyHeaderView.m */,
-			);
-			path = Private;
-			sourceTree = "<group>";
-		};
-		21EBB83A1D661BE100940FB1 /* ScheduleHeader */ = {
-			isa = PBXGroup;
-			children = (
-				21EBB8271D656C9C00940FB1 /* ScheduleHeaderView.xib */,
-				21EBB83D1D661C2E00940FB1 /* ScheduleHeaderView.swift */,
-			);
-			name = ScheduleHeader;
 			sourceTree = "<group>";
 		};
 		86038C551CC5803000A130A2 /* Absences */ = {
@@ -385,6 +340,7 @@
 		924887B11CC01B9C009BFDA9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				217C9CF11D68F6E5000EF9C7 /* ScheduleHeaderView */,
 				925E2C911CC1587000DEAF52 /* Components */,
 				923099CD1CC031A10090FD0A /* Main.storyboard */,
 				923099D91CC034090090FD0A /* About.storyboard */,
@@ -400,8 +356,6 @@
 		925E2C911CC1587000DEAF52 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				21EBB83A1D661BE100940FB1 /* ScheduleHeader */,
-				21EBB82A1D661B9E00940FB1 /* GSKStretchyHeaderView */,
 				218CE26C1D640F7D00257AAF /* iCarousel */,
 				212EBE3B1D629F5100365842 /* RS3DSegmentedControl */,
 				925E2C961CC158AB00DEAF52 /* CircleGraphView.swift */,
@@ -579,7 +533,6 @@
 				TargetAttributes = {
 					9289B87C1B87ADB3004284E3 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = GK6E7G94CJ;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -619,10 +572,10 @@
 				A15BB2F61BA0762600143EBE /* Bariol_Regular.otf in Resources */,
 				929C92B31B9F720500844564 /* Localizable.strings in Resources */,
 				923099CF1CC031A10090FD0A /* Main.storyboard in Resources */,
-				21EBB8291D656C9C00940FB1 /* ScheduleHeaderView.xib in Resources */,
 				A15BB2D51B9ACBD900143EBE /* Images.xcassets in Resources */,
 				927932341D67DB1500127C8C /* CampusMap.storyboard in Resources */,
 				923099D21CC032950090FD0A /* Absences.storyboard in Resources */,
+				217C9CF31D68F6FE000EF9C7 /* ScheduleHeaderView.xib in Resources */,
 				9289B8901B87ADB3004284E3 /* LaunchScreen.xib in Resources */,
 				927932471D67DCB300127C8C /* CampusMap.plist in Resources */,
 				217C9CE71D66A5FE000EF9C7 /* Bariol_Bold.otf in Resources */,
@@ -682,7 +635,6 @@
 				928786B11CC70FAF00AC72BD /* AbsenceWorker.swift in Sources */,
 				925E2C9C1CC15A4600DEAF52 /* TIAServer.swift in Sources */,
 				925E2CA81CC1780600DEAF52 /* Grade.swift in Sources */,
-				21EBB83E1D661C2E00940FB1 /* ScheduleHeaderView.swift in Sources */,
 				92309A091CC067B50090FD0A /* ListGradeConfigurator.swift in Sources */,
 				925E2C8F1CC1585D00DEAF52 /* ErrorCode.swift in Sources */,
 				21EBB8241D65595F00940FB1 /* Schedule.swift in Sources */,
@@ -692,7 +644,6 @@
 				212EBE341D629D7000365842 /* SchedulesInteractor.swift in Sources */,
 				922E01651CC80DF900B843A8 /* AboutTableViewController.swift in Sources */,
 				928786AD1CC70FAF00AC72BD /* AbsenceModels.swift in Sources */,
-				21EBB8381D661B9E00940FB1 /* UIScrollView+GSKStretchyHeaderView.m in Sources */,
 				922E01711CC80FF800B843A8 /* LoginPresenter.swift in Sources */,
 				925E2C9A1CC158ED00DEAF52 /* extension.swift in Sources */,
 				21EBB8261D656B6200940FB1 /* ScheduleTableViewCell.swift in Sources */,
@@ -707,11 +658,10 @@
 				928786AB1CC70FAF00AC72BD /* AbsenceConfigurator.swift in Sources */,
 				92309A0B1CC067B50090FD0A /* ListGradeModels.swift in Sources */,
 				92309A0F1CC067B50090FD0A /* ListGradeWorker.swift in Sources */,
-				21EBB8361D661B9E00940FB1 /* GSKGeometry.c in Sources */,
 				928786AE1CC70FAF00AC72BD /* AbsencePresenter.swift in Sources */,
 				92309A0D1CC067B50090FD0A /* ListGradeRouter.swift in Sources */,
-				21EBB8371D661B9E00940FB1 /* GSKStretchyHeaderView.m in Sources */,
 				212EBE3E1D629F5100365842 /* RS3DSegmentedControl.m in Sources */,
+				217C9CF01D68F6DB000EF9C7 /* ScheduleHeaderView.swift in Sources */,
 				9289B8831B87ADB3004284E3 /* AppDelegate.swift in Sources */,
 				212EBE391D629D7000365842 /* SchedulesWorker.swift in Sources */,
 				92309A0C1CC067B50090FD0A /* ListGradePresenter.swift in Sources */,
@@ -730,7 +680,6 @@
 				925E2C971CC158AB00DEAF52 /* CircleGraphView.swift in Sources */,
 				92309A0A1CC067B50090FD0A /* ListGradeInteractor.swift in Sources */,
 				922E016E1CC80FF800B843A8 /* LoginConfigurator.swift in Sources */,
-				21EBB8391D661B9E00940FB1 /* UIView+GSKTransplantSubviews.m in Sources */,
 				212EBE361D629D7000365842 /* SchedulesPresenter.swift in Sources */,
 				928786B01CC70FAF00AC72BD /* AbsenceViewController.swift in Sources */,
 				212EBE351D629D7000365842 /* SchedulesModels.swift in Sources */,
@@ -769,14 +718,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		21EBB8271D656C9C00940FB1 /* ScheduleHeaderView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				21EBB8281D656C9C00940FB1 /* Base */,
-			);
-			name = ScheduleHeaderView.xib;
-			sourceTree = "<group>";
-		};
 		923099CD1CC031A10090FD0A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
