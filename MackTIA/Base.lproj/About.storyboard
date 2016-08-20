@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6ge-04-s8i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6ge-04-s8i">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -950,11 +950,7 @@ Design do Aplicativo iOS
         <scene sceneID="WY2-v4-GNS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6ge-04-s8i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Mais" image="more" id="1eA-66-8l2">
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="more_selected"/>
-                        </userDefinedRuntimeAttributes>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Mais" image="more" selectedImage="moreFilled" id="1eA-66-8l2"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO">
                         <color key="tintColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1259,7 +1255,7 @@ Ao continuar você declara estar ciente destes possíveis problemas.</string>
         <image name="mack" width="70" height="70"/>
         <image name="mackmobile" width="70" height="70"/>
         <image name="more" width="25" height="25"/>
-        <image name="more_selected" width="25" height="25"/>
+        <image name="moreFilled" width="25" height="25"/>
         <image name="rafael" width="144" height="169"/>
     </resources>
     <inferredMetricsTieBreakers>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eKm-EP-g4d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0n3-Ex-UiL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Campus Map View Controller-->
+        <!--Higienópolis-->
         <scene sceneID="011-sb-tGX">
             <objects>
                 <viewController id="eKm-EP-g4d" customClass="CampusMapViewController" customModule="TIA" customModuleProvider="target" sceneMemberID="viewController">
@@ -13,11 +13,11 @@
                         <viewControllerLayoutGuide type="bottom" id="mI6-wM-NRv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EHQ-bL-Yls">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYO-E6-kNU">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYO-E6-kNU">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <connections>
                                     <outlet property="delegate" destination="eKm-EP-g4d" id="TKy-Vg-Gm8"/>
                                 </connections>
@@ -31,13 +31,45 @@
                             <constraint firstItem="bYO-E6-kNU" firstAttribute="top" secondItem="3E9-9f-MDd" secondAttribute="bottom" id="fIB-X3-NyZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Higienópolis" id="9eB-ID-yIV"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="mapView" destination="bYO-E6-kNU" id="ABQ-to-cIb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zmb-g9-Jhh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="729" y="473"/>
+            <point key="canvasLocation" x="586" y="457"/>
+        </scene>
+        <!--Campus-->
+        <scene sceneID="kUS-ob-Xqj">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="0n3-Ex-UiL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Campus" image="campus" selectedImage="campusFilled" id="Yqu-lY-FQY"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO">
+                        <color key="tintColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </simulatedTabBarMetrics>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackTranslucent" id="d4d-cX-Nh7">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.8980392157" green="0.12941176469999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="0.0"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="eKm-EP-g4d" kind="relationship" relationship="rootViewController" id="cAz-u9-voS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sol-f9-SH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="177" y="457"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="campus" width="25" height="25"/>
+        <image name="campusFilled" width="25" height="25"/>
+    </resources>
 </document>

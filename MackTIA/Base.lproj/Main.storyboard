@@ -32,8 +32,8 @@
                         <segue destination="CgE-uu-bc4" kind="relationship" relationship="viewControllers" id="rht-34-qUy"/>
                         <segue destination="xGw-xd-SN3" kind="relationship" relationship="viewControllers" id="ea6-pe-cei"/>
                         <segue destination="zlJ-el-2Im" kind="relationship" relationship="viewControllers" id="enJ-D6-tNe"/>
-                        <segue destination="LTS-ZZ-Lhj" kind="relationship" relationship="viewControllers" id="4vr-9z-VNG"/>
                         <segue destination="Yl1-49-8qi" kind="relationship" relationship="viewControllers" id="TCk-hb-Unl"/>
+                        <segue destination="LTS-ZZ-Lhj" kind="relationship" relationship="viewControllers" id="4vr-9z-VNG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCc-vF-fni" sceneMemberID="firstResponder"/>
@@ -237,7 +237,7 @@
         <scene sceneID="67Y-sX-O7s">
             <objects>
                 <viewControllerPlaceholder storyboardName="Absences" id="CgE-uu-bc4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="TaW-UD-pcJ"/>
+                    <tabBarItem key="tabBarItem" title="absences" id="TaW-UD-pcJ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8V-U9-glU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -247,7 +247,7 @@
         <scene sceneID="XCv-W3-4MC">
             <objects>
                 <viewControllerPlaceholder storyboardName="Grades" id="xGw-xd-SN3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="VJT-ZB-5dl"/>
+                    <tabBarItem key="tabBarItem" title="grades" id="VJT-ZB-5dl"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44e-Dk-bYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -257,7 +257,7 @@
         <scene sceneID="ADD-9e-WeF">
             <objects>
                 <viewControllerPlaceholder storyboardName="About" id="LTS-ZZ-Lhj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="bDm-Mg-hEW"/>
+                    <tabBarItem key="tabBarItem" title="about" id="bDm-Mg-hEW"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bI1-6p-MPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -267,7 +267,7 @@
         <scene sceneID="74S-BE-hPr">
             <objects>
                 <viewControllerPlaceholder storyboardName="Schedules" id="zlJ-el-2Im" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Ekx-k6-V2Q"/>
+                    <tabBarItem key="tabBarItem" title="Schedules" id="Ekx-k6-V2Q"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEu-td-SbI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -277,7 +277,7 @@
         <scene sceneID="dGx-Rg-1ow">
             <objects>
                 <viewControllerPlaceholder storyboardName="CampusMap" id="Yl1-49-8qi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="pef-uw-hOC"/>
+                    <tabBarItem key="tabBarItem" title="campus" id="pef-uw-hOC"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiB-Pu-eNJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

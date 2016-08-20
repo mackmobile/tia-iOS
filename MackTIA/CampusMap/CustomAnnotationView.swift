@@ -8,7 +8,7 @@
 
 import MapKit
 
-class CustomAnnotation: MKAnnotationView {
+class CustomAnnotationView: MKAnnotationView {
 
     /*
     // Only override drawRect: if you perform custom drawing.

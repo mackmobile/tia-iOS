@@ -26,6 +26,12 @@
 		21EBB8391D661B9E00940FB1 /* UIView+GSKTransplantSubviews.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EBB8351D661B9E00940FB1 /* UIView+GSKTransplantSubviews.m */; };
 		21EBB83E1D661C2E00940FB1 /* ScheduleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBB83D1D661C2E00940FB1 /* ScheduleHeaderView.swift */; };
 		86038C651CC5828300A130A2 /* AbsenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86038C641CC5828300A130A2 /* AbsenceTableViewCell.swift */; };
+		921660881D68B5500094854E /* CampusMapAnnotation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921660871D68B5500094854E /* CampusMapAnnotation.xib */; };
+		9216608A1D68CDBC0094854E /* CampusMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921660891D68CDBC0094854E /* CampusMapAnnotationView.swift */; };
+		9216608E1D68E3210094854E /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216608D1D68E3210094854E /* CustomAnnotationView.swift */; };
+		921660911D68F86C0094854E /* TIAServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C9B1CC15A4600DEAF52 /* TIAServer.swift */; };
+		921660921D68F86C0094854E /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C8D1CC1585D00DEAF52 /* ErrorCode.swift */; };
+		921660931D68F86C0094854E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C8E1CC1585D00DEAF52 /* Reachability.swift */; };
 		921D4EFD1CC0B23600FA06D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 929C92B51B9F720500844564 /* Localizable.strings */; };
 		921D4EFE1CC0B23C00FA06D3 /* ConfigHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C1F711BAA7C02006616B5 /* ConfigHelper.swift */; };
 		922E01651CC80DF900B843A8 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E01641CC80DF900B843A8 /* AboutTableViewController.swift */; };
@@ -62,9 +68,6 @@
 		925E2C971CC158AB00DEAF52 /* CircleGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C961CC158AB00DEAF52 /* CircleGraphView.swift */; };
 		925E2C9A1CC158ED00DEAF52 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C991CC158ED00DEAF52 /* extension.swift */; };
 		925E2C9C1CC15A4600DEAF52 /* TIAServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C9B1CC15A4600DEAF52 /* TIAServer.swift */; };
-		925E2C9D1CC1614E00DEAF52 /* TIAServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C9B1CC15A4600DEAF52 /* TIAServer.swift */; };
-		925E2C9E1CC1615100DEAF52 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C8D1CC1585D00DEAF52 /* ErrorCode.swift */; };
-		925E2C9F1CC1615500DEAF52 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C8E1CC1585D00DEAF52 /* Reachability.swift */; };
 		925E2CA01CC1615B00DEAF52 /* CircleGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C961CC158AB00DEAF52 /* CircleGraphView.swift */; };
 		925E2CA11CC1615E00DEAF52 /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C921CC1587E00DEAF52 /* AKPickerView.swift */; };
 		925E2CA21CC1616300DEAF52 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C931CC1587E00DEAF52 /* ProgressBarView.swift */; };
@@ -151,6 +154,9 @@
 		21EBB8351D661B9E00940FB1 /* UIView+GSKTransplantSubviews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GSKTransplantSubviews.m"; sourceTree = "<group>"; };
 		21EBB83D1D661C2E00940FB1 /* ScheduleHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleHeaderView.swift; path = Views/ScheduleHeaderView.swift; sourceTree = "<group>"; };
 		86038C641CC5828300A130A2 /* AbsenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbsenceTableViewCell.swift; path = Scene/Absences/AbsenceTableViewCell.swift; sourceTree = "<group>"; };
+		921660871D68B5500094854E /* CampusMapAnnotation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CampusMapAnnotation.xib; sourceTree = "<group>"; };
+		921660891D68CDBC0094854E /* CampusMapAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusMapAnnotationView.swift; sourceTree = "<group>"; };
+		9216608D1D68E3210094854E /* CustomAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 		922E01641CC80DF900B843A8 /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutTableViewController.swift; path = Scene/About/AboutTableViewController.swift; sourceTree = "<group>"; };
 		922E01671CC80FF800B843A8 /* LoginConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginConfigurator.swift; path = Scene/Login/LoginConfigurator.swift; sourceTree = "<group>"; };
 		922E01681CC80FF800B843A8 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginInteractor.swift; path = Scene/Login/LoginInteractor.swift; sourceTree = "<group>"; };
@@ -393,6 +399,7 @@
 				923099D01CC032950090FD0A /* Absences.storyboard */,
 				9289B88E1B87ADB3004284E3 /* LaunchScreen.xib */,
 				927932321D67DB1500127C8C /* CampusMap.storyboard */,
+				921660871D68B5500094854E /* CampusMapAnnotation.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -438,6 +445,8 @@
 				9279323B1D67DB8300127C8C /* CampusMapViewController.swift */,
 				927932461D67DCB300127C8C /* CampusMap.plist */,
 				927932481D67E26200127C8C /* CampusMapAnnotation.swift */,
+				921660891D68CDBC0094854E /* CampusMapAnnotationView.swift */,
+				9216608D1D68E3210094854E /* CustomAnnotationView.swift */,
 			);
 			path = CampusMap;
 			sourceTree = "<group>";
@@ -579,7 +588,7 @@
 				TargetAttributes = {
 					9289B87C1B87ADB3004284E3 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = GK6E7G94CJ;
+						DevelopmentTeam = 34E95R7U23;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -628,6 +637,7 @@
 				217C9CE71D66A5FE000EF9C7 /* Bariol_Bold.otf in Resources */,
 				923099D51CC033990090FD0A /* Grades.storyboard in Resources */,
 				923099DB1CC034090090FD0A /* About.storyboard in Resources */,
+				921660881D68B5500094854E /* CampusMapAnnotation.xib in Resources */,
 				92B9E8E01B87CA07004C1DE4 /* config.plist in Resources */,
 				923099D81CC033BB0090FD0A /* Schedules.storyboard in Resources */,
 			);
@@ -704,6 +714,7 @@
 				925E2CAB1CC18BA400DEAF52 /* ListGradeCollectionViewCell.swift in Sources */,
 				925E2CA21CC1616300DEAF52 /* ProgressBarView.swift in Sources */,
 				922E01741CC80FF800B843A8 /* LoginWorker.swift in Sources */,
+				9216608A1D68CDBC0094854E /* CampusMapAnnotationView.swift in Sources */,
 				928786AB1CC70FAF00AC72BD /* AbsenceConfigurator.swift in Sources */,
 				92309A0B1CC067B50090FD0A /* ListGradeModels.swift in Sources */,
 				92309A0F1CC067B50090FD0A /* ListGradeWorker.swift in Sources */,
@@ -734,6 +745,7 @@
 				212EBE361D629D7000365842 /* SchedulesPresenter.swift in Sources */,
 				928786B01CC70FAF00AC72BD /* AbsenceViewController.swift in Sources */,
 				212EBE351D629D7000365842 /* SchedulesModels.swift in Sources */,
+				9216608E1D68E3210094854E /* CustomAnnotationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,17 +753,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921660931D68F86C0094854E /* Reachability.swift in Sources */,
+				921660921D68F86C0094854E /* ErrorCode.swift in Sources */,
 				9287869A1CC54BDC00AC72BD /* ListGradeWorker.swift in Sources */,
 				9289B89C1B87ADB3004284E3 /* MackTIATests.swift in Sources */,
 				9287869E1CC55F7000AC72BD /* ErrorParser.swift in Sources */,
-				925E2C9F1CC1615500DEAF52 /* Reachability.swift in Sources */,
 				928786B41CC7111600AC72BD /* User.swift in Sources */,
 				925E2CA31CC1616400DEAF52 /* ProgressBarView.swift in Sources */,
-				925E2C9E1CC1615100DEAF52 /* ErrorCode.swift in Sources */,
 				9246DC521CC0AF21003E73C3 /* AppDelegate.swift in Sources */,
 				921D4EFE1CC0B23C00FA06D3 /* ConfigHelper.swift in Sources */,
+				921660911D68F86C0094854E /* TIAServer.swift in Sources */,
 				9287869B1CC54C5F00AC72BD /* Grade.swift in Sources */,
-				925E2C9D1CC1614E00DEAF52 /* TIAServer.swift in Sources */,
 				925E2CA01CC1615B00DEAF52 /* CircleGraphView.swift in Sources */,
 				925E2CA11CC1615E00DEAF52 /* AKPickerView.swift in Sources */,
 				925E2CA41CC1616F00DEAF52 /* extension.swift in Sources */,

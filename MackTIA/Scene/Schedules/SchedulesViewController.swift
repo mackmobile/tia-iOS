@@ -192,7 +192,7 @@ extension SchedulesViewController {
     
 }
 
- // MARK: Segmented Control
+// MARK: Segmented Control
 
 extension SchedulesViewController: RS3DSegmentedControlDelegate {
     

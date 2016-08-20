@@ -9,19 +9,25 @@
 import MapKit
 
 class CampusMapAnnotation: NSObject, MKAnnotation {
-    let title:String?
-    let locationName:String
+    let name:String
+    let buildName:String
+    let number:String
     let coordinate: CLLocationCoordinate2D
     
-    init(title:String, locationName:String, coordinate:CLLocationCoordinate2D) {
-        self.title = title
-        self.locationName = locationName
+    init(name:String, buildName:String, number:String, coordinate:CLLocationCoordinate2D) {
+        self.name = name
+        self.buildName = buildName
+        self.number = number
         self.coordinate = coordinate
         
         super.init()
     }
     
-    var subtitle: String? {
-        return locationName
+    var title:String? {
+        return name
+    }
+    
+    var subtitle:String? {
+        return buildName
     }
 }

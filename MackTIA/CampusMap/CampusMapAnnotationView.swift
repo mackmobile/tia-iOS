@@ -6,16 +6,16 @@
 //  Copyright © 2016 Mackenzie. All rights reserved.
 //
 
-import UIKit
+import MapKit
 
 class CampusMapAnnotationView: MKAnnotationView {
-
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var buildName: UILabel!
+    @IBOutlet weak var number: UILabel!
+    
+    func setup(annotation: CampusMapAnnotation) {
+        self.name.text = annotation.name
+        self.buildName.text = annotation.buildName
+        self.number.text = annotation.number
     }
-    */
-
 }
