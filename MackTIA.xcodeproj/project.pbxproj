@@ -22,7 +22,6 @@
 		21EBB8241D65595F00940FB1 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBB8231D65595F00940FB1 /* Schedule.swift */; };
 		21EBB8261D656B6200940FB1 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBB8251D656B6200940FB1 /* ScheduleTableViewCell.swift */; };
 		86038C651CC5828300A130A2 /* AbsenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86038C641CC5828300A130A2 /* AbsenceTableViewCell.swift */; };
-		921660881D68B5500094854E /* CampusMapAnnotation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921660871D68B5500094854E /* CampusMapAnnotation.xib */; };
 		9216608A1D68CDBC0094854E /* CampusMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921660891D68CDBC0094854E /* CampusMapAnnotationView.swift */; };
 		9216608E1D68E3210094854E /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216608D1D68E3210094854E /* CustomAnnotationView.swift */; };
 		921660911D68F86C0094854E /* TIAServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C9B1CC15A4600DEAF52 /* TIAServer.swift */; };
@@ -141,7 +140,6 @@
 		21EBB8231D65595F00940FB1 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Schedule.swift; path = Entities/Schedule.swift; sourceTree = "<group>"; };
 		21EBB8251D656B6200940FB1 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleTableViewCell.swift; path = Scene/Schedules/ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		86038C641CC5828300A130A2 /* AbsenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbsenceTableViewCell.swift; path = Scene/Absences/AbsenceTableViewCell.swift; sourceTree = "<group>"; };
-		921660871D68B5500094854E /* CampusMapAnnotation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CampusMapAnnotation.xib; sourceTree = "<group>"; };
 		921660891D68CDBC0094854E /* CampusMapAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusMapAnnotationView.swift; sourceTree = "<group>"; };
 		9216608D1D68E3210094854E /* CustomAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 		922E01641CC80DF900B843A8 /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutTableViewController.swift; path = Scene/About/AboutTableViewController.swift; sourceTree = "<group>"; };
@@ -355,7 +353,6 @@
 				923099D01CC032950090FD0A /* Absences.storyboard */,
 				9289B88E1B87ADB3004284E3 /* LaunchScreen.xib */,
 				927932321D67DB1500127C8C /* CampusMap.storyboard */,
-				921660871D68B5500094854E /* CampusMapAnnotation.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -591,7 +588,6 @@
 				217C9CE71D66A5FE000EF9C7 /* Bariol_Bold.otf in Resources */,
 				923099D51CC033990090FD0A /* Grades.storyboard in Resources */,
 				923099DB1CC034090090FD0A /* About.storyboard in Resources */,
-				921660881D68B5500094854E /* CampusMapAnnotation.xib in Resources */,
 				92B9E8E01B87CA07004C1DE4 /* config.plist in Resources */,
 				923099D81CC033BB0090FD0A /* Schedules.storyboard in Resources */,
 			);
@@ -898,10 +894,7 @@
 				INFOPLIST_FILE = MackTIA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SDKROOT)/usr/lib/system",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = br.mackenzie.app.TIA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -926,10 +919,7 @@
 				INFOPLIST_FILE = MackTIA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SDKROOT)/usr/lib/system",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = br.mackenzie.app.TIA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

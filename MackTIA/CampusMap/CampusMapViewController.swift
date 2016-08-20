@@ -16,6 +16,7 @@ import MapKit
 
 class CampusMapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
+    let locationManager = CLLocationManager()
     
     // MARK: Object lifecycle
     
@@ -27,6 +28,14 @@ class CampusMapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        let authstate = CLLocationManager.authorizationStatus()
+        if(authstate == CLAuthorizationStatus.NotDetermined){
+            print("Not Authorised")
+            locationManager.requestWhenInUseAuthorization()
+        }
+        
         loadPinAnnotations()
     }
     
@@ -54,8 +63,6 @@ class CampusMapViewController: UIViewController {
             }
         }
     }
-    
-    
 }
 
 // MARK: - Map View delegate
@@ -68,54 +75,13 @@ extension CampusMapViewController: MKMapViewDelegate {
             return nil
         }
         
-        let view = self.mapView.dequeueReusableAnnotationViewWithIdentifier("CampusMap") ?? CustomAnnotationView(annotation: annotation, reuseIdentifier: "CampusMap")
+        let view = self.mapView.dequeueReusableAnnotationViewWithIdentifier("CampusMap") ?? MKAnnotationView(annotation: annotation, reuseIdentifier: "CampusMap")
         
         let image = UIImage(named: "pin\(annotation.number)") ?? UIImage(named: "pinDefault")
         view.image = image
         view.enabled = true
         view.canShowCallout = true
-        //        let imageAccessory = UIImageView(image: UIImage(named: "pinView45"))
-        //        imageAccessory.contentMode = .ScaleAspectFit
-        //        view.leftCalloutAccessoryView = imageAccessory
         
         return view
     }
-    
-//    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
-//        
-//        guard let annotation = view.annotation as? CampusMapAnnotation else {
-//            print(#function, "Unknown annotation")
-//            return
-//        }
-//        
-//        guard view.subviews.count == 0 else {
-//            for subview in view.subviews {
-//                subview.removeFromSuperview()
-//            }
-//            return
-//        }
-//        
-//        guard let customView = NSBundle.mainBundle().loadNibNamed("CampusMapAnnotation", owner: self, options: nil)[0] as? CampusMapAnnotationView else {
-//            print(#function, "Problem in loadNibNamed for 'CampusMapAnnotation' id")
-//            return
-//        }
-//        
-//        customView.buildName.text = annotation.buildName
-//        customView.name.text = annotation.name
-//        customView.number.text = annotation.number
-//        
-//        customView.frame.origin = CGPointMake(-customView.frame.size.width/2 + 15, -customView.frame.size.height)
-//        
-//        view.addSubview(customView)
-//        
-////        self.mapView.centerCoordinate = annotation.coordinate
-//    }
-//    
-//    func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
-//        if view.isKindOfClass(CustomAnnotationView) {
-//            for subview in view.subviews {
-//                subview.removeFromSuperview()
-//            }
-//        }
-//    }
 }
