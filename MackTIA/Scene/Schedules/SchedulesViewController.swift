@@ -120,8 +120,10 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
     func displayFetchedSchedules(viewModel: SchedulesViewModel.Success) {
         self.stopReloadAnimation()
         filteredSchedules = viewModel.displayedSchedules
-        self.segmentedControl.carousel.reloadData()
-        tableView.reloadData()
+        if (filteredSchedules.count > 0) {
+            self.segmentedControl.carousel.reloadData()
+            tableView.reloadData()
+        }
     }
     
     func displayFetchedSchedulesError(viewModel: SchedulesViewModel.Error) {
