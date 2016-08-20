@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>location</key>
+		<string>{-23.547652, -46.651106}</string>
+		<key>name</key>
+		<string>Laboratórios de Informática</string>
+        <key>buildName</key>
+        <string>Ed. Rev. Mattathias Gomes Dos Santos</string>
+		<key>number</key>
+		<string>33</string>
+	</dict>
+	<dict>
+		<key>location</key>
+		<string>{-23.548179, -46.650358}</string>
+		<key>name</key>
+		<string>Portaria</string>
+        <key>buildName</key>
+        <string>Rua da Consolação</string>
+		<key>number</key>
+		<string>C3</string>
+	</dict>
+	<dict>
+		<key>location</key>
+		<string>{-23.547912, -46.650314}</string>
+		<key>name</key>
+		<string>Pós-graduação e Administração Geral</string>
+        <key>buildName</key>
+        <string>Ed. João Calvino</string>
+		<key>number</key>
+		<string>41</string>
+	</dict>
+    <dict>
+        <key>location</key>
+        <string>{-23.547509, -46.651360}</string>
+        <key>name</key>
+        <string>Faculdade de Computação e Informática</string>
+        <key>buildName</key>
+        <string>Ed. Rev. Mattathias Gomes Dos Santos</string>
+        <key>number</key>
+        <string>31</string>
+    </dict>
+</array>
+</plist>
