@@ -75,18 +75,20 @@ class ListGradeTableViewController: UITableViewController, ListGradeTableViewCon
     
     private func startReloadAnimation() {
         reloadButtonItem.enabled = false
+        self.navigationItem.title = "Carregando Notas"
     }
     
     private func stopReloadAnimation() {
         reloadButtonItem.enabled = true
         refreshControl?.endRefreshing()
+        self.navigationItem.title = "Notas"
     }
     
     func handleRefresh(refreshControl: UIRefreshControl) {
         startReloadAnimation()
         let delayInSeconds = 1.0;
         let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+        dispatch_after(popTime, dispatch_get_main_queue()) { [unowned self] () -> Void in
             self.fetchGrades()
         }
     }
@@ -100,11 +102,11 @@ class ListGradeTableViewController: UITableViewController, ListGradeTableViewCon
     }
     
     @IBAction func reloadData(sender: AnyObject) {
-        fetchGrades()
+        self.fetchGrades()
     }
     
-    func doSomethingOnLoad() {
-        fetchGrades()
+    private func doSomethingOnLoad() -> Void {
+        self.fetchGrades()
     }
     
     // MARK: Display logic

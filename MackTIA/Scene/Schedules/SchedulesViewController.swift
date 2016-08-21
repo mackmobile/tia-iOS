@@ -215,7 +215,7 @@ extension SchedulesViewController: RS3DSegmentedControlDelegate {
         self.segmentedControl?.delegate = self
         self.headerView?.viewForSegmented.addSubview(segmentedControl)
         self.segmentedControl.selectedSegmentIndex = 0
-        self.segmentedControl?.textFont = UIFont(name: "Bariol_Regular", size: 22)
+        self.segmentedControl?.textFont = UIFont(name: "Bariol_Regular", size: 35)
         self.segmentedControl?.textColor = UIColor.redColor()
     }
     
