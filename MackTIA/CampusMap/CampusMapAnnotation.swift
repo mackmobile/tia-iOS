@@ -13,12 +13,14 @@ class CampusMapAnnotation: NSObject, MKAnnotation {
     let buildName:String
     let number:String
     let coordinate: CLLocationCoordinate2D
+    let color: UIColor
     
-    init(name:String, buildName:String, number:String, coordinate:CLLocationCoordinate2D) {
+    init(name:String, buildName:String, number:String, coordinate:CLLocationCoordinate2D, color: String) {
         self.name = name
         self.buildName = buildName
         self.number = number
         self.coordinate = coordinate
+        self.color = UIColor(hex: color)
         
         super.init()
     }

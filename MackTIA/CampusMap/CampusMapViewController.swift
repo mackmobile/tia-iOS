@@ -58,7 +58,7 @@ class CampusMapViewController: UIViewController {
                 let point = CGPointFromString(newPinData["location"]!)
                 let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(point.x), longitude: CLLocationDegrees(point.y))
                 
-                let annotation = CampusMapAnnotation(name: newPinData["name"]!, buildName: newPinData["buildName"]!, number: newPinData["number"]!, coordinate: coordinate)
+                let annotation = CampusMapAnnotation(name: newPinData["name"]!, buildName: newPinData["buildName"]!, number: newPinData["number"]!, coordinate: coordinate, color: newPinData["color"]!)
                 mapView.addAnnotation(annotation)
             }
         }
@@ -77,10 +77,12 @@ extension CampusMapViewController: MKMapViewDelegate {
         
         let view = self.mapView.dequeueReusableAnnotationViewWithIdentifier("CampusMap") ?? MKAnnotationView(annotation: annotation, reuseIdentifier: "CampusMap")
         
-        let image = UIImage(named: "pin\(annotation.number)") ?? UIImage(named: "pinDefault")
-        view.image = image
+        let img =  UIImage(named: "pin")!.insertText(text: annotation.number, size: 16.0, offset: 0.2, color: annotation.color)
+        
+        view.image = img
         view.enabled = true
         view.canShowCallout = true
+        view.centerOffset = CGPoint(x: 0, y: -img.size.height/2)
         
         return view
     }
