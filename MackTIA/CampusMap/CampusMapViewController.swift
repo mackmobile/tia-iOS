@@ -11,12 +11,14 @@
 
 import UIKit
 import MapKit
+import Polyline
 
 
 
 class CampusMapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
+    var locValue: CLLocationCoordinate2D?
     
     // MARK: Object lifecycle
     
@@ -86,4 +88,34 @@ extension CampusMapViewController: MKMapViewDelegate {
         
         return view
     }
+    
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        if let origin = locValue {
+            DirectionsAPI.sharedInstance.getPolyline(origin, destination: view.annotation!.coordinate) { (polylineEncoded, error) in
+                var coordinates: [CLLocationCoordinate2D] = decodePolyline(polylineEncoded!)!
+                coordinates.insert(origin, atIndex: 0)
+                coordinates.append(view.annotation!.coordinate)
+                let myPolyline = MKPolyline(coordinates: &coordinates, count: coordinates.count)
+                self.mapView.removeOverlays(self.mapView.overlays)
+                self.mapView.addOverlay(myPolyline)
+                
+            }
+        }
+    }
+
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is MKPolyline {
+            let lineView = MKPolylineRenderer(overlay: overlay)
+            lineView.strokeColor = UIColor.redColor()
+            lineView.lineWidth = 2;
+            
+            return lineView
+        }
+        return MKPolylineRenderer()
+    }
+    
+    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+        locValue = userLocation.coordinate
+    }
+
 }

@@ -97,6 +97,10 @@
 		92B9E8E01B87CA07004C1DE4 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E8DF1B87CA07004C1DE4 /* config.plist */; };
 		A15BB2D51B9ACBD900143EBE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A15BB2D41B9ACBD900143EBE /* Images.xcassets */; };
 		A15BB2F61BA0762600143EBE /* Bariol_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A15BB2F51BA0762600143EBE /* Bariol_Regular.otf */; };
+		B19990271D6CB98300A909C7 /* DirectionsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19990261D6CB98300A909C7 /* DirectionsAPI.swift */; };
+		B19990291D6CBD2000A909C7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B19990281D6CBD2000A909C7 /* CoreLocation.framework */; };
+		B199902B1D6CC48900A909C7 /* DirectionsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B199902A1D6CC48900A909C7 /* DirectionsAPITests.swift */; };
+		B1B6FD371D6CF5BF00BCA74E /* Polyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B6FD361D6CF5BF00BCA74E /* Polyline.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +208,10 @@
 		92F212DC1CEF70060076E628 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A15BB2D41B9ACBD900143EBE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A15BB2F51BA0762600143EBE /* Bariol_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol_Regular.otf; sourceTree = "<group>"; };
+		B19990261D6CB98300A909C7 /* DirectionsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectionsAPI.swift; path = Services/DirectionsAPI.swift; sourceTree = "<group>"; };
+		B19990281D6CBD2000A909C7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B199902A1D6CC48900A909C7 /* DirectionsAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsAPITests.swift; sourceTree = "<group>"; };
+		B1B6FD361D6CF5BF00BCA74E /* Polyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Polyline.framework; path = Carthage/Build/iOS/Polyline.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +219,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1B6FD371D6CF5BF00BCA74E /* Polyline.framework in Frameworks */,
+				B19990291D6CBD2000A909C7 /* CoreLocation.framework in Frameworks */,
 				923099CC1CC02E3A0090FD0A /* Crashlytics.framework in Frameworks */,
 				923099CB1CC02E3A0090FD0A /* Fabric.framework in Frameworks */,
 				927932451D67DC1100127C8C /* MapKit.framework in Frameworks */,
@@ -319,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				925E2C9B1CC15A4600DEAF52 /* TIAServer.swift */,
+				B19990261D6CB98300A909C7 /* DirectionsAPI.swift */,
 				925E2C8D1CC1585D00DEAF52 /* ErrorCode.swift */,
 				925E2C8E1CC1585D00DEAF52 /* Reachability.swift */,
 			);
@@ -461,6 +472,7 @@
 			isa = PBXGroup;
 			children = (
 				9289B89B1B87ADB3004284E3 /* MackTIATests.swift */,
+				B199902A1D6CC48900A909C7 /* DirectionsAPITests.swift */,
 				9289B8991B87ADB3004284E3 /* Supporting Files */,
 			);
 			path = MackTIATests;
@@ -477,6 +489,8 @@
 		ACBE292C7FDC7D68CEBDD74B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B1B6FD361D6CF5BF00BCA74E /* Polyline.framework */,
+				B19990281D6CBD2000A909C7 /* CoreLocation.framework */,
 				927932441D67DC1100127C8C /* MapKit.framework */,
 				923099DF1CC045F70090FD0A /* Alamofire.framework */,
 				923099C91CC02E3A0090FD0A /* Fabric.framework */,
@@ -624,6 +638,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Polyline.framework",
 			);
 			outputPaths = (
 			);
@@ -658,6 +673,7 @@
 				925E2C941CC1587E00DEAF52 /* AKPickerView.swift in Sources */,
 				922E01701CC80FF800B843A8 /* LoginModels.swift in Sources */,
 				928786AF1CC70FAF00AC72BD /* AbsenceRouter.swift in Sources */,
+				B19990271D6CB98300A909C7 /* DirectionsAPI.swift in Sources */,
 				922E01721CC80FF800B843A8 /* LoginRouter.swift in Sources */,
 				925E2CAB1CC18BA400DEAF52 /* ListGradeCollectionViewCell.swift in Sources */,
 				925E2CA21CC1616300DEAF52 /* ProgressBarView.swift in Sources */,
@@ -713,6 +729,7 @@
 				925E2CA01CC1615B00DEAF52 /* CircleGraphView.swift in Sources */,
 				925E2CA11CC1615E00DEAF52 /* AKPickerView.swift in Sources */,
 				925E2CA41CC1616F00DEAF52 /* extension.swift in Sources */,
+				B199902B1D6CC48900A909C7 /* DirectionsAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -946,7 +963,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "br.mackenzie.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MackTIA/MackTIA-Bridging-Header.h";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MackTIA.app/MackTIA";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TIA.app/TIA";
 			};
 			name = Debug;
 		};
@@ -964,7 +981,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "br.mackenzie.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MackTIA/MackTIA-Bridging-Header.h";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MackTIA.app/MackTIA";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TIA.app/TIA";
 			};
 			name = Release;
 		};
