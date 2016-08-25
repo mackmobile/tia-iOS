@@ -19,6 +19,7 @@ class CampusMapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     var locValue: CLLocationCoordinate2D?
+    let centerCoordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(-23.546954), longitude: CLLocationDegrees(-46.651796))
     
     // MARK: Object lifecycle
     
@@ -50,7 +51,6 @@ class CampusMapViewController: UIViewController {
         
         // Set MapView Region
         // -23.546954, -46.651796
-        let centerCoordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(-23.546954), longitude: CLLocationDegrees(-46.651796))
         let region = MKCoordinateRegionMakeWithDistance(centerCoordinate, 600, 600)
         mapView.setRegion(region, animated: false)
         
@@ -91,13 +91,25 @@ extension CampusMapViewController: MKMapViewDelegate {
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
         if let origin = locValue {
+            let destination = view.annotation!.coordinate
+            if CLLocation(location: origin).distanceFromLocation(CLLocation(location: destination)) > 3000 {
+                let alert = UIAlertController(title: NSLocalizedString("campusmap_errorTooFarAwayTitle", comment: "Too far away"), message: NSLocalizedString("campusmap_errorTooFarAwayMessage", comment: "Too far away"), preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                return
+            }
             DirectionsAPI.sharedInstance.getPolyline(origin, destination: view.annotation!.coordinate) { (polylineEncoded, error) in
-                var coordinates: [CLLocationCoordinate2D] = decodePolyline(polylineEncoded!)!
-                coordinates.insert(origin, atIndex: 0)
-                coordinates.append(view.annotation!.coordinate)
-                let myPolyline = MKPolyline(coordinates: &coordinates, count: coordinates.count)
-                self.mapView.removeOverlays(self.mapView.overlays)
-                self.mapView.addOverlay(myPolyline)
+                if (error == nil && polylineEncoded != nil) {
+                    guard let coordinates: [CLLocationCoordinate2D] = decodePolyline(polylineEncoded!) else {
+                        return
+                    }
+                    var waypoints = coordinates
+                    waypoints.insert(origin, atIndex: 0)
+                    waypoints.append(view.annotation!.coordinate)
+                    let myPolyline = MKPolyline(coordinates: &waypoints, count: waypoints.count)
+                    self.mapView.removeOverlays(self.mapView.overlays)
+                    self.mapView.addOverlay(myPolyline)
+                }
                 
             }
         }
@@ -116,6 +128,21 @@ extension CampusMapViewController: MKMapViewDelegate {
     
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
         locValue = userLocation.coordinate
+    }
+    
+    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        let centerLocation = CLLocation(location: centerCoordinate)
+        let centerMapView = CLLocation(location: mapView.centerCoordinate)
+        if mapView.camera.altitude > 1500.00 {
+            let region = MKCoordinateRegionMakeWithDistance(centerMapView.coordinate, 600, 600)
+            mapView.setRegion(region, animated: true)
+        }
+        if centerLocation.distanceFromLocation(centerMapView) > 600.00 {
+            
+            let span = mapView.region.span
+            let region = MKCoordinateRegionMake(centerCoordinate, span)
+            mapView.setRegion(region, animated: true)
+        }
     }
 
 }
