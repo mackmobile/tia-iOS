@@ -168,7 +168,13 @@ extension SchedulesViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.displayedSchedules.count
+        
+        let number = self.displayedSchedules.count
+        
+        if number == 0 {
+            self.showEmptyMessage(NSLocalizedString("empty_table_schedule", comment: "Sem horario disponivel"))
+        }
+        return number
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

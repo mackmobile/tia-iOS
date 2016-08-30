@@ -79,6 +79,7 @@ class TIAServer {
     }
     
     func logoff() {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("statement")
         NSUserDefaults.standardUserDefaults().removeObjectForKey("tia")
         NSUserDefaults.standardUserDefaults().removeObjectForKey("password")
         NSUserDefaults.standardUserDefaults().removeObjectForKey("campus")

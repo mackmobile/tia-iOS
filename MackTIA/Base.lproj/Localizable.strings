@@ -65,3 +65,8 @@
 "e-mail_successMessageSentMessage"    = "Seu e-mail foi enviado e ficamos gratos pela sua(s) critica(s) e/ou sugestão(ões) :)";
 "e-mail_errorMessageSentTitle"      = "Ops :/";
 "e-mail_errorMessageSentMessage"    = "Ocorreu algum problema ao tentar enviar o e-mail. Se não estiver conseguindo enviar por aqui, envie um e-mail para aplicativos@mackenzie.br. Obrigado!";
+
+// Empty Table
+"empty_table_schedule" = "Nenhum horário disponível no momento";
+"empty_table_absence" = "Nenhuma disciplina encontrada no momento";
+"empty_table_grade" = "Nenhuma disciplina encontrada no momento";
