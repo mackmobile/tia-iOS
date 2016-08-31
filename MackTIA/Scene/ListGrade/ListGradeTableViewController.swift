@@ -150,7 +150,13 @@ extension ListGradeTableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.grades.count
+        
+        let number = self.grades.count
+        
+        if number == 0 {
+            self.showEmptyMessage(NSLocalizedString("empty_table_grade", comment: "Sem faltas disponiveis"))
+        }
+        return number
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

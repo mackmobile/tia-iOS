@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let _ = TIAServer.sharedInstance.loginRecorded() {
             self.logUser(TIAServer.sharedInstance.user!)
-            let vc = storyboard.instantiateViewControllerWithIdentifier("AtentionScreen")
+            let vc = storyboard.instantiateViewControllerWithIdentifier("MainScreen")
             self.window?.rootViewController = vc
             self.window?.makeKeyAndVisible()
             return true

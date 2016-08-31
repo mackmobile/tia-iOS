@@ -115,7 +115,12 @@ class AbsenceViewController: UITableViewController, AbsenceViewControllerInput {
     // MARK: UITableViewDataSource
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return displayedAbsences.count
+        let number = displayedAbsences.count
+        
+        if number == 0 {
+            self.showEmptyMessage(NSLocalizedString("empty_table_absence", comment: "Sem faltas disponiveis"))
+        }
+        return number
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

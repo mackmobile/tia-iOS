@@ -29,6 +29,8 @@
 		921660931D68F86C0094854E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C8E1CC1585D00DEAF52 /* Reachability.swift */; };
 		921D4EFD1CC0B23600FA06D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 929C92B51B9F720500844564 /* Localizable.strings */; };
 		921D4EFE1CC0B23C00FA06D3 /* ConfigHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C1F711BAA7C02006616B5 /* ConfigHelper.swift */; };
+		92256C781D7371460029C397 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92256C771D7371460029C397 /* TableViewExtension.swift */; };
+		92256C7A1D737A180029C397 /* StatementTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92256C791D737A180029C397 /* StatementTableViewController.swift */; };
 		922E01651CC80DF900B843A8 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E01641CC80DF900B843A8 /* AboutTableViewController.swift */; };
 		922E016E1CC80FF800B843A8 /* LoginConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E01671CC80FF800B843A8 /* LoginConfigurator.swift */; };
 		922E016F1CC80FF800B843A8 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E01681CC80FF800B843A8 /* LoginInteractor.swift */; };
@@ -146,6 +148,8 @@
 		86038C641CC5828300A130A2 /* AbsenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbsenceTableViewCell.swift; path = Scene/Absences/AbsenceTableViewCell.swift; sourceTree = "<group>"; };
 		921660891D68CDBC0094854E /* CampusMapAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusMapAnnotationView.swift; sourceTree = "<group>"; };
 		9216608D1D68E3210094854E /* CustomAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		92256C771D7371460029C397 /* TableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewExtension.swift; path = Helpers/TableViewExtension.swift; sourceTree = "<group>"; };
+		92256C791D737A180029C397 /* StatementTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatementTableViewController.swift; path = Scene/About/StatementTableViewController.swift; sourceTree = "<group>"; };
 		922E01641CC80DF900B843A8 /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutTableViewController.swift; path = Scene/About/AboutTableViewController.swift; sourceTree = "<group>"; };
 		922E01671CC80FF800B843A8 /* LoginConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginConfigurator.swift; path = Scene/Login/LoginConfigurator.swift; sourceTree = "<group>"; };
 		922E01681CC80FF800B843A8 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginInteractor.swift; path = Scene/Login/LoginInteractor.swift; sourceTree = "<group>"; };
@@ -386,6 +390,7 @@
 				925E2C991CC158ED00DEAF52 /* extension.swift */,
 				923C1F711BAA7C02006616B5 /* ConfigHelper.swift */,
 				9287869C1CC55E8F00AC72BD /* ErrorParser.swift */,
+				92256C771D7371460029C397 /* TableViewExtension.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -417,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				922E01641CC80DF900B843A8 /* AboutTableViewController.swift */,
+				92256C791D737A180029C397 /* StatementTableViewController.swift */,
 			);
 			name = About;
 			sourceTree = "<group>";
@@ -656,6 +662,7 @@
 				928786AC1CC70FAF00AC72BD /* AbsenceInteractor.swift in Sources */,
 				928786B11CC70FAF00AC72BD /* AbsenceWorker.swift in Sources */,
 				925E2C9C1CC15A4600DEAF52 /* TIAServer.swift in Sources */,
+				92256C781D7371460029C397 /* TableViewExtension.swift in Sources */,
 				925E2CA81CC1780600DEAF52 /* Grade.swift in Sources */,
 				92309A091CC067B50090FD0A /* ListGradeConfigurator.swift in Sources */,
 				925E2C8F1CC1585D00DEAF52 /* ErrorCode.swift in Sources */,
@@ -685,6 +692,7 @@
 				928786AE1CC70FAF00AC72BD /* AbsencePresenter.swift in Sources */,
 				92309A0D1CC067B50090FD0A /* ListGradeRouter.swift in Sources */,
 				212EBE3E1D629F5100365842 /* RS3DSegmentedControl.m in Sources */,
+				92256C7A1D737A180029C397 /* StatementTableViewController.swift in Sources */,
 				217C9CF01D68F6DB000EF9C7 /* ScheduleHeaderView.swift in Sources */,
 				9289B8831B87ADB3004284E3 /* AppDelegate.swift in Sources */,
 				212EBE391D629D7000365842 /* SchedulesWorker.swift in Sources */,

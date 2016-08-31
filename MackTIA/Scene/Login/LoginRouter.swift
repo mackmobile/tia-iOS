@@ -21,7 +21,10 @@ class LoginRouter: LoginRouterInput {
   // MARK: Navigation
   
   func navigateToMainView() {
-    viewController.performSegueWithIdentifier("login", sender: nil)
+    if let _ = NSUserDefaults.standardUserDefaults().objectForKey("statement") as? String {
+        viewController.performSegueWithIdentifier("login", sender: nil)
+    }
+    viewController.performSegueWithIdentifier("firstLogin", sender: nil)
   }
   
   // MARK: Communication

@@ -69,3 +69,8 @@
 // CampusMap
 "campusmap_errorTooFarAwayTitle"      = "Muito longe";
 "campusmap_errorTooFarAwayMessage"      = "Você está muito longe do Mackenzie.";
+
+// Empty Table
+"empty_table_schedule" = "Nenhum horário disponível no momento";
+"empty_table_absence" = "Nenhuma disciplina encontrada no momento";
+"empty_table_grade" = "Nenhuma disciplina encontrada no momento";
