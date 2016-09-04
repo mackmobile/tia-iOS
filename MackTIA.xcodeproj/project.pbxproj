@@ -99,10 +99,13 @@
 		92B9E8E01B87CA07004C1DE4 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E8DF1B87CA07004C1DE4 /* config.plist */; };
 		A15BB2D51B9ACBD900143EBE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A15BB2D41B9ACBD900143EBE /* Images.xcassets */; };
 		A15BB2F61BA0762600143EBE /* Bariol_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A15BB2F51BA0762600143EBE /* Bariol_Regular.otf */; };
+		B133DB9C1D7CA836000B8CB7 /* CampusMapRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B133DB9B1D7CA836000B8CB7 /* CampusMapRegion.swift */; };
+		B133DB9E1D7CB9F4000B8CB7 /* Mackenzie.gpx in Resources */ = {isa = PBXBuildFile; fileRef = B133DB9D1D7CB9F4000B8CB7 /* Mackenzie.gpx */; };
 		B19990271D6CB98300A909C7 /* DirectionsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19990261D6CB98300A909C7 /* DirectionsAPI.swift */; };
 		B19990291D6CBD2000A909C7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B19990281D6CBD2000A909C7 /* CoreLocation.framework */; };
 		B199902B1D6CC48900A909C7 /* DirectionsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B199902A1D6CC48900A909C7 /* DirectionsAPITests.swift */; };
 		B1B6FD371D6CF5BF00BCA74E /* Polyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B6FD361D6CF5BF00BCA74E /* Polyline.framework */; };
+		B1F348071D764090001B619F /* CampusMapRegions.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1F348061D764090001B619F /* CampusMapRegions.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,10 +215,13 @@
 		92F212DC1CEF70060076E628 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A15BB2D41B9ACBD900143EBE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A15BB2F51BA0762600143EBE /* Bariol_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol_Regular.otf; sourceTree = "<group>"; };
+		B133DB9B1D7CA836000B8CB7 /* CampusMapRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusMapRegion.swift; sourceTree = "<group>"; };
+		B133DB9D1D7CB9F4000B8CB7 /* Mackenzie.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Mackenzie.gpx; sourceTree = "<group>"; };
 		B19990261D6CB98300A909C7 /* DirectionsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectionsAPI.swift; path = Services/DirectionsAPI.swift; sourceTree = "<group>"; };
 		B19990281D6CBD2000A909C7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B199902A1D6CC48900A909C7 /* DirectionsAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsAPITests.swift; sourceTree = "<group>"; };
 		B1B6FD361D6CF5BF00BCA74E /* Polyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Polyline.framework; path = Carthage/Build/iOS/Polyline.framework; sourceTree = "<group>"; };
+		B1F348061D764090001B619F /* CampusMapRegions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CampusMapRegions.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -411,7 +417,9 @@
 			children = (
 				9279323B1D67DB8300127C8C /* CampusMapViewController.swift */,
 				927932461D67DCB300127C8C /* CampusMap.plist */,
+				B1F348061D764090001B619F /* CampusMapRegions.plist */,
 				927932481D67E26200127C8C /* CampusMapAnnotation.swift */,
+				B133DB9B1D7CA836000B8CB7 /* CampusMapRegion.swift */,
 				921660891D68CDBC0094854E /* CampusMapAnnotationView.swift */,
 				9216608D1D68E3210094854E /* CustomAnnotationView.swift */,
 			);
@@ -464,6 +472,7 @@
 		9289B8801B87ADB3004284E3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B133DB9D1D7CB9F4000B8CB7 /* Mackenzie.gpx */,
 				9246DC531CC0B036003E73C3 /* MackTIA-Bridging-Header.h */,
 				217C9CE61D66A5FE000EF9C7 /* Bariol_Bold.otf */,
 				A15BB2F51BA0762600143EBE /* Bariol_Regular.otf */,
@@ -597,6 +606,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A15BB2F61BA0762600143EBE /* Bariol_Regular.otf in Resources */,
+				B133DB9E1D7CB9F4000B8CB7 /* Mackenzie.gpx in Resources */,
 				929C92B31B9F720500844564 /* Localizable.strings in Resources */,
 				923099CF1CC031A10090FD0A /* Main.storyboard in Resources */,
 				A15BB2D51B9ACBD900143EBE /* Images.xcassets in Resources */,
@@ -609,6 +619,7 @@
 				923099D51CC033990090FD0A /* Grades.storyboard in Resources */,
 				923099DB1CC034090090FD0A /* About.storyboard in Resources */,
 				92B9E8E01B87CA07004C1DE4 /* config.plist in Resources */,
+				B1F348071D764090001B619F /* CampusMapRegions.plist in Resources */,
 				923099D81CC033BB0090FD0A /* Schedules.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -704,6 +715,7 @@
 				922E016F1CC80FF800B843A8 /* LoginInteractor.swift in Sources */,
 				928786B31CC710CF00AC72BD /* User.swift in Sources */,
 				86038C651CC5828300A130A2 /* AbsenceTableViewCell.swift in Sources */,
+				B133DB9C1D7CA836000B8CB7 /* CampusMapRegion.swift in Sources */,
 				928786A31CC70F9900AC72BD /* Absence.swift in Sources */,
 				9287869D1CC55E8F00AC72BD /* ErrorParser.swift in Sources */,
 				927932491D67E26200127C8C /* CampusMapAnnotation.swift in Sources */,

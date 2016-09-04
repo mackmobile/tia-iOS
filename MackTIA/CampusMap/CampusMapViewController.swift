@@ -20,6 +20,7 @@ class CampusMapViewController: UIViewController {
     let locationManager = CLLocationManager()
     var locValue: CLLocationCoordinate2D?
     let centerCoordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(-23.546954), longitude: CLLocationDegrees(-46.651796))
+    var routeOverlay: MKPolyline?
     
     // MARK: Object lifecycle
     
@@ -40,6 +41,8 @@ class CampusMapViewController: UIViewController {
         }
         
         loadPinAnnotations()
+        loadRegions()
+        
     }
     
     // MARK: Event handling
@@ -62,6 +65,20 @@ class CampusMapViewController: UIViewController {
                 
                 let annotation = CampusMapAnnotation(name: newPinData["name"]!, buildName: newPinData["buildName"]!, number: newPinData["number"]!, coordinate: coordinate, color: newPinData["color"]!)
                 mapView.addAnnotation(annotation)
+            }
+        }
+    }
+    
+    func loadRegions() {
+        
+        let filePath = NSBundle.mainBundle().pathForResource("CampusMapRegions", ofType: "plist")
+        let properties = NSArray(contentsOfFile: filePath!)
+        
+        // Add Map Annotation
+        for item in properties! {
+            if let newPinData = item as? [String: String] {
+                let region = CampusMapRegion(name: newPinData["name"]!, polylineString: newPinData["polylineString"]!, color: newPinData["color"]!)
+                self.mapView.addOverlay(region)
             }
         }
     }
@@ -107,7 +124,12 @@ extension CampusMapViewController: MKMapViewDelegate {
                     waypoints.insert(origin, atIndex: 0)
                     waypoints.append(view.annotation!.coordinate)
                     let myPolyline = MKPolyline(coordinates: &waypoints, count: waypoints.count)
-                    self.mapView.removeOverlays(self.mapView.overlays)
+                    if self.routeOverlay != nil {
+                        if self.mapView.overlays.contains(self.routeOverlay!) {
+                            self.mapView.removeOverlays([self.routeOverlay!])
+                        }
+                    }
+                    self.routeOverlay = myPolyline
                     self.mapView.addOverlay(myPolyline)
                 }
                 
@@ -122,6 +144,13 @@ extension CampusMapViewController: MKMapViewDelegate {
             lineView.lineWidth = 2;
             
             return lineView
+        } else if let region = overlay as? CampusMapRegion {
+            let polygonView = MKPolygonRenderer(overlay: overlay)
+            polygonView.lineWidth = 2;
+            polygonView.strokeColor = region.strokeColor
+            polygonView.fillColor = region.fillColor
+            
+            return polygonView
         }
         return MKPolylineRenderer()
     }
