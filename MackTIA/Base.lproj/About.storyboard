@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6ge-04-s8i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6ge-04-s8i">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -7,6 +7,8 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Bariol_Regular.otf">
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
@@ -490,8 +492,73 @@ Idealizador do Aplicativo
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="Vit-XG-qHp">
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="Tho-y7-EC7">
                                         <rect key="frame" x="0.0" y="815.5" width="375" height="95"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tho-y7-EC7" id="CYj-Sn-s2F">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evandro" translatesAutoresizingMaskIntoConstraints="NO" id="KW8-QY-F0q">
+                                                    <rect key="frame" x="16" y="10" width="75" height="75"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="KW8-QY-F0q" secondAttribute="height" multiplier="1:1" id="Ysc-xS-Akl"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="35"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evandro Viva" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqW-xa-iUc">
+                                                    <rect key="frame" x="101" y="17" width="266" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="heS-UE-wLp"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
+                                                    <color key="textColor" red="0.8862745098" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t97-BH-ufi">
+                                                    <rect key="frame" x="101" y="32" width="266" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="Uid-Re-avD"/>
+                                                        <constraint firstAttribute="height" constant="21" id="jGX-kL-PKp"/>
+                                                    </constraints>
+                                                    <string key="text">Aluno da Faculdade de Engenharia Elétrica
+Desenvolvimento do Aplicativo iOS
+</string>
+                                                    <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="jGX-kL-PKp"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="KW8-QY-F0q" secondAttribute="bottom" constant="2" id="4y4-3e-B4t"/>
+                                                <constraint firstItem="KW8-QY-F0q" firstAttribute="leading" secondItem="CYj-Sn-s2F" secondAttribute="leadingMargin" constant="8" id="DBO-Ba-8FL"/>
+                                                <constraint firstItem="t97-BH-ufi" firstAttribute="top" secondItem="CYj-Sn-s2F" secondAttribute="topMargin" constant="24" id="HYe-Hb-X2n"/>
+                                                <constraint firstItem="KW8-QY-F0q" firstAttribute="top" secondItem="CYj-Sn-s2F" secondAttribute="topMargin" constant="2" id="bDY-KE-k7n"/>
+                                                <constraint firstItem="dqW-xa-iUc" firstAttribute="top" secondItem="CYj-Sn-s2F" secondAttribute="topMargin" constant="9" id="iMg-uR-n8q"/>
+                                                <constraint firstItem="KW8-QY-F0q" firstAttribute="centerY" secondItem="dqW-xa-iUc" secondAttribute="centerY" id="nVG-6d-n9S"/>
+                                                <constraint firstItem="t97-BH-ufi" firstAttribute="trailing" secondItem="dqW-xa-iUc" secondAttribute="trailing" id="tcd-7C-SV4"/>
+                                                <constraint firstItem="dqW-xa-iUc" firstAttribute="leading" secondItem="KW8-QY-F0q" secondAttribute="trailing" constant="10" id="w4u-Tv-Fb4"/>
+                                                <constraint firstItem="t97-BH-ufi" firstAttribute="leading" secondItem="dqW-xa-iUc" secondAttribute="leading" id="xM3-NY-HtS"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="dqW-xa-iUc" secondAttribute="trailing" id="xbA-gl-Yge"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="nVG-6d-n9S"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="Vit-XG-qHp">
+                                        <rect key="frame" x="0.0" y="910.5" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vit-XG-qHp" id="8NA-uY-kN8">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
@@ -556,7 +623,7 @@ Desenvolvimento do Aplicativo iOS
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="dpo-rb-a1z">
-                                        <rect key="frame" x="0.0" y="910.5" width="375" height="95"/>
+                                        <rect key="frame" x="0.0" y="1005.5" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dpo-rb-a1z" id="S9u-bJ-8F3">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
@@ -621,7 +688,7 @@ Design do Aplicativo</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="dNe-AX-6cb">
-                                        <rect key="frame" x="0.0" y="1005.5" width="375" height="95"/>
+                                        <rect key="frame" x="0.0" y="1100.5" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dNe-AX-6cb" id="kMM-bo-uuQ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
@@ -686,7 +753,7 @@ Contribuidor/Desenvolvedor de Serviços Web
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="FCD-8W-OEH">
-                                        <rect key="frame" x="0.0" y="1100.5" width="375" height="95"/>
+                                        <rect key="frame" x="0.0" y="1195.5" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FCD-8W-OEH" id="7h8-uw-LVh">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
@@ -751,7 +818,7 @@ Desenvolvimento do Aplicativo iOS
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="Hi0-2l-eCt">
-                                        <rect key="frame" x="0.0" y="1195.5" width="375" height="95"/>
+                                        <rect key="frame" x="0.0" y="1290.5" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hi0-2l-eCt" id="NUs-6G-66s">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
@@ -820,7 +887,7 @@ Design do Aplicativo iOS
                             <tableViewSection headerTitle="Apoio" footerTitle="Copyright© 2015 Instituto Presbiteriano Mackenzie" id="xvg-oW-aSc">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="dwz-Cw-hhx">
-                                        <rect key="frame" x="0.0" y="1332.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="1427.5" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dwz-Cw-hhx" id="M8G-1r-TuP">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
@@ -853,7 +920,7 @@ Design do Aplicativo iOS
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="WZE-R8-OmF">
-                                        <rect key="frame" x="0.0" y="1382.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="1477.5" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WZE-R8-OmF" id="CTN-wJ-enW">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
@@ -886,7 +953,7 @@ Design do Aplicativo iOS
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="6K6-oH-buR">
-                                        <rect key="frame" x="0.0" y="1432.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="1527.5" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6K6-oH-buR" id="1Zz-2f-7IO">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
@@ -1236,6 +1303,7 @@ Ao continuar você declara estar ciente destes possíveis problemas.</string>
     <resources>
         <image name="aleph" width="133" height="133"/>
         <image name="bia" width="133" height="133"/>
+        <image name="evandro" width="956" height="956"/>
         <image name="fci" width="70" height="70"/>
         <image name="feroli" width="264" height="264"/>
         <image name="icon_appstore" width="33" height="33"/>
