@@ -69,6 +69,8 @@
 // CampusMap
 "campusmap_errorTooFarAwayTitle"      = "Muito longe";
 "campusmap_errorTooFarAwayMessage"      = "Você está muito longe do Mackenzie.";
+"campusmap_errorBuildNotFoundTitle"     = "Prédio não encontrado";
+"campusmap_errorBuildNotFoundMessage"   = "Prédio %@ não encontrado.";
 
 // Empty Table
 "empty_table_schedule" = "Nenhum horário disponível no momento";

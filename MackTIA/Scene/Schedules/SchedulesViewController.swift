@@ -111,6 +111,21 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
         self.fetchSchedules()
     }
     
+    @IBAction func routeButtonTouched(sender: UIButton) {
+        if let cell = sender.superview?.superview as? ScheduleTableViewCell {
+            let indexPath = tableView.indexPathForCell(cell)!
+            let schedule = self.displayedSchedules[indexPath.row]
+            
+            if let nav = self.tabBarController?.viewControllers![3] as? UINavigationController {
+                if let vc = nav.topViewController as? CampusMapViewController {
+                    vc.traceRouteTo(buildName: schedule.buildingNumber!)
+                    self.tabBarController?.selectedIndex = 3
+                }
+            }
+        }
+    }
+    
+    
     // MARK: Display logic
     
     func displayFetchedSchedules(viewModel: SchedulesViewModel.Success) {

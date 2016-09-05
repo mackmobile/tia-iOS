@@ -19,8 +19,11 @@ class CampusMapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     var locValue: CLLocationCoordinate2D?
+    var retryDestination: CLLocationCoordinate2D?
     let centerCoordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(-23.546954), longitude: CLLocationDegrees(-46.651796))
     var routeOverlay: MKPolyline?
+    
+    var flag = false
     
     // MARK: Object lifecycle
     
@@ -82,6 +85,54 @@ class CampusMapViewController: UIViewController {
             }
         }
     }
+    
+    func traceRouteTo(buildName buildName: String) {
+        let filePath = NSBundle.mainBundle().pathForResource("CampusMap", ofType: "plist")
+        let buildNameFormatted = String(Int(buildName) ?? 0)
+        let properties = NSArray(contentsOfFile: filePath!) as! [[String: String]]
+        if let destination = properties.filter({$0["number"] == buildNameFormatted}).first {
+            let point = CGPointFromString(destination["location"]!)
+            let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(point.x), longitude: CLLocationDegrees(point.y))
+            traceRouteTo(coordinate: coordinate)
+        } else {
+            let alert = UIAlertController(title: NSLocalizedString("campusmap_errorBuildNotFoundTitle", comment: "Too far away"), message: String(format: NSLocalizedString("campusmap_errorBuildNotFoundMessage", comment: "Too far away"), buildName), preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func traceRouteTo(coordinate destination: CLLocationCoordinate2D) {
+        if let origin = locValue {
+            if CLLocation(location: origin).distanceFromLocation(CLLocation(location: destination)) > 3000 {
+                let alert = UIAlertController(title: NSLocalizedString("campusmap_errorTooFarAwayTitle", comment: "Too far away"), message: NSLocalizedString("campusmap_errorTooFarAwayMessage", comment: "Too far away"), preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                return
+            }
+            DirectionsAPI.sharedInstance.getPolyline(origin, destination: destination) { (polylineEncoded, error) in
+                if (error == nil && polylineEncoded != nil) {
+                    guard let coordinates: [CLLocationCoordinate2D] = decodePolyline(polylineEncoded!) else {
+                        return
+                    }
+                    var waypoints = coordinates
+                    waypoints.insert(origin, atIndex: 0)
+                    waypoints.append(destination)
+                    let myPolyline = MKPolyline(coordinates: &waypoints, count: waypoints.count)
+                    if self.routeOverlay != nil {
+                        if self.mapView.overlays.contains(self.routeOverlay!) {
+                            self.mapView.removeOverlays([self.routeOverlay!])
+                        }
+                    }
+                    self.routeOverlay = myPolyline
+                    self.mapView.addOverlay(myPolyline)
+                }
+                
+            }
+        } else {
+            retryDestination = destination
+        }
+    }
+
 }
 
 // MARK: - Map View delegate
@@ -107,34 +158,7 @@ extension CampusMapViewController: MKMapViewDelegate {
     }
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
-        if let origin = locValue {
-            let destination = view.annotation!.coordinate
-            if CLLocation(location: origin).distanceFromLocation(CLLocation(location: destination)) > 3000 {
-                let alert = UIAlertController(title: NSLocalizedString("campusmap_errorTooFarAwayTitle", comment: "Too far away"), message: NSLocalizedString("campusmap_errorTooFarAwayMessage", comment: "Too far away"), preferredStyle: .Alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
-                return
-            }
-            DirectionsAPI.sharedInstance.getPolyline(origin, destination: view.annotation!.coordinate) { (polylineEncoded, error) in
-                if (error == nil && polylineEncoded != nil) {
-                    guard let coordinates: [CLLocationCoordinate2D] = decodePolyline(polylineEncoded!) else {
-                        return
-                    }
-                    var waypoints = coordinates
-                    waypoints.insert(origin, atIndex: 0)
-                    waypoints.append(view.annotation!.coordinate)
-                    let myPolyline = MKPolyline(coordinates: &waypoints, count: waypoints.count)
-                    if self.routeOverlay != nil {
-                        if self.mapView.overlays.contains(self.routeOverlay!) {
-                            self.mapView.removeOverlays([self.routeOverlay!])
-                        }
-                    }
-                    self.routeOverlay = myPolyline
-                    self.mapView.addOverlay(myPolyline)
-                }
-                
-            }
-        }
+        traceRouteTo(coordinate: view.annotation!.coordinate)
     }
 
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
@@ -157,21 +181,30 @@ extension CampusMapViewController: MKMapViewDelegate {
     
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
         locValue = userLocation.coordinate
+        if retryDestination != nil {
+            traceRouteTo(coordinate: retryDestination!)
+            retryDestination = nil
+        }
     }
     
     func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        if flag {
+            flag = false
+            return
+        }
         let centerLocation = CLLocation(location: centerCoordinate)
         let centerMapView = CLLocation(location: mapView.centerCoordinate)
         if mapView.camera.altitude > 1500.00 {
-            let region = MKCoordinateRegionMakeWithDistance(centerMapView.coordinate, 600, 600)
+            let region = MKCoordinateRegionMakeWithDistance(centerCoordinate, 600, 600)
             mapView.setRegion(region, animated: true)
+            flag = true
         }
         if centerLocation.distanceFromLocation(centerMapView) > 600.00 {
             
             let span = mapView.region.span
             let region = MKCoordinateRegionMake(centerCoordinate, span)
             mapView.setRegion(region, animated: true)
+            flag = true
         }
     }
-
 }
