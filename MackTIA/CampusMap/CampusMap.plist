@@ -66,9 +66,10 @@
 		<key>location</key>
 		<string>{-23.547509, -46.651360}</string>
 		<key>name</key>
-		<string>Faculdade de Computação e Informática</string>
+		<string>FCI</string>
 		<key>buildName</key>
-		<string>Ed. Rev. Mattathias Gomes Dos Santos</string>
+		<string>Faculdade de Computação e Informática
+Ed. Rev. Mattathias Gomes Dos Santos</string>
 		<key>number</key>
 		<string>31</string>
 		<key>color</key>

@@ -12,16 +12,19 @@
 import UIKit
 import MapKit
 import Polyline
-
+import GoogleMaps
 
 
 class CampusMapViewController: UIViewController {
-    @IBOutlet weak var mapView: MKMapView!
+    
+    @IBOutlet weak var mapView: GMSMapView!
+    
     let locationManager = CLLocationManager()
     var locValue: CLLocationCoordinate2D?
     var retryDestination: CLLocationCoordinate2D?
     let centerCoordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(-23.546954), longitude: CLLocationDegrees(-46.651796))
-    var routeOverlay: MKPolyline?
+    var routeOverlay: GMSPolyline?
+    
     
     var flag = false
     
@@ -37,15 +40,31 @@ class CampusMapViewController: UIViewController {
         super.viewDidLoad()
         
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.delegate = self
         let authstate = CLLocationManager.authorizationStatus()
         if(authstate == CLAuthorizationStatus.NotDetermined){
             print("Not Authorised")
             locationManager.requestWhenInUseAuthorization()
         }
         
+        mapView.tintColor = UIColor.redColor()
+        mapView.myLocationEnabled = true
+        mapView.delegate = self
+        
+        
         loadPinAnnotations()
         loadRegions()
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.locationManager.startUpdatingLocation()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.locationManager.stopUpdatingLocation()
     }
     
     // MARK: Event handling
@@ -55,10 +74,7 @@ class CampusMapViewController: UIViewController {
         let filePath = NSBundle.mainBundle().pathForResource("CampusMap", ofType: "plist")
         let properties = NSArray(contentsOfFile: filePath!)
         
-        // Set MapView Region
-        // -23.546954, -46.651796
-        let region = MKCoordinateRegionMakeWithDistance(centerCoordinate, 600, 600)
-        mapView.setRegion(region, animated: false)
+        mapView.camera = GMSCameraPosition.cameraWithTarget(self.centerCoordinate, zoom: 18)
         
         // Add Map Annotation
         for item in properties! {
@@ -66,8 +82,13 @@ class CampusMapViewController: UIViewController {
                 let point = CGPointFromString(newPinData["location"]!)
                 let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(point.x), longitude: CLLocationDegrees(point.y))
                 
-                let annotation = CampusMapAnnotation(name: newPinData["name"]!, buildName: newPinData["buildName"]!, number: newPinData["number"]!, coordinate: coordinate, color: newPinData["color"]!)
-                mapView.addAnnotation(annotation)
+                let img =  UIImage(named: "pin")!.insertText(text: newPinData["number"]!, size: 16.0, offset: 0.2, color: UIColor(hex: newPinData["color"]!))
+                
+                let marker = GMSMarker(position: coordinate)
+                marker.title = newPinData["name"]
+                marker.snippet = newPinData["buildName"]
+                marker.icon = img
+                marker.map = mapView
             }
         }
     }
@@ -78,24 +99,30 @@ class CampusMapViewController: UIViewController {
         let properties = NSArray(contentsOfFile: filePath!)
         
         // Add Map Annotation
+        // to create encoded polyline: https://google-developers.appspot.com/maps/documentation/utilities/polyline-utility/polylineutility
+        
         for item in properties! {
             if let newPinData = item as? [String: String] {
-                let region = CampusMapRegion(name: newPinData["name"]!, polylineString: newPinData["polylineString"]!, color: newPinData["color"]!)
-                self.mapView.addOverlay(region)
+                let path = GMSMutablePath(fromEncodedPath: newPinData["polylineString"]!)
+                let polygon = GMSPolygon(path: path)
+                polygon.title = newPinData["name"]
+                polygon.fillColor = UIColor(hex: newPinData["color"]!).colorWithAlphaComponent(0.5)
+                polygon.map = mapView
+                
             }
         }
     }
     
-    func traceRouteTo(buildName buildName: String) {
+    func traceRouteTo(buildNumber buildNumber: String) {
         let filePath = NSBundle.mainBundle().pathForResource("CampusMap", ofType: "plist")
-        let buildNameFormatted = String(Int(buildName) ?? 0)
+        let buildNameFormatted = String(Int(buildNumber) ?? 0)
         let properties = NSArray(contentsOfFile: filePath!) as! [[String: String]]
         if let destination = properties.filter({$0["number"] == buildNameFormatted}).first {
             let point = CGPointFromString(destination["location"]!)
             let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(point.x), longitude: CLLocationDegrees(point.y))
             traceRouteTo(coordinate: coordinate)
         } else {
-            let alert = UIAlertController(title: NSLocalizedString("campusmap_errorBuildNotFoundTitle", comment: "Too far away"), message: String(format: NSLocalizedString("campusmap_errorBuildNotFoundMessage", comment: "Too far away"), buildName), preferredStyle: .Alert)
+            let alert = UIAlertController(title: NSLocalizedString("campusmap_errorBuildNotFoundTitle", comment: "Too far away"), message: String(format: NSLocalizedString("campusmap_errorBuildNotFoundMessage", comment: "Too far away"), buildNumber), preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
@@ -109,102 +136,74 @@ class CampusMapViewController: UIViewController {
                 self.presentViewController(alert, animated: true, completion: nil)
                 return
             }
-            DirectionsAPI.sharedInstance.getPolyline(origin, destination: destination) { (polylineEncoded, error) in
-                if (error == nil && polylineEncoded != nil) {
-                    guard let coordinates: [CLLocationCoordinate2D] = decodePolyline(polylineEncoded!) else {
-                        return
-                    }
-                    var waypoints = coordinates
-                    waypoints.insert(origin, atIndex: 0)
-                    waypoints.append(destination)
-                    let myPolyline = MKPolyline(coordinates: &waypoints, count: waypoints.count)
-                    if self.routeOverlay != nil {
-                        if self.mapView.overlays.contains(self.routeOverlay!) {
-                            self.mapView.removeOverlays([self.routeOverlay!])
-                        }
-                    }
-                    self.routeOverlay = myPolyline
-                    self.mapView.addOverlay(myPolyline)
+            DirectionsAPI.sharedInstance.getPolyline(origin, destination: destination) { [weak self] (polylineEncoded, error) in
+                
+                guard polylineEncoded != nil else {
+                    print(#function, "Problema ao obter a rota")
+                    return
                 }
                 
+                let path = GMSPath(fromEncodedPath: polylineEncoded!)
+                
+                if self?.routeOverlay == nil {
+                    self?.routeOverlay = GMSPolyline(path: path)
+                } else {
+                    self?.routeOverlay?.path = path
+                }
+                
+                guard let polyline = self?.routeOverlay else {
+                    return
+                }
+                
+                //                polyline.strokeColor = UIColor.redColor().colorWithAlphaComponent(0.5)
+                polyline.strokeWidth = 3
+                let styles = [GMSStrokeStyle.solidColor(UIColor.redColor().colorWithAlphaComponent(0.6)), GMSStrokeStyle.solidColor(UIColor.clearColor())]
+                let lengths = [1,2]
+                polyline.spans = GMSStyleSpans(polyline.path!, styles, lengths, kGMSLengthRhumb)
+                
+                polyline.map = self?.mapView
             }
         } else {
             retryDestination = destination
         }
     }
-
+    
 }
 
 // MARK: - Map View delegate
 
-extension CampusMapViewController: MKMapViewDelegate {
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        
-        guard let annotation = annotation as? CampusMapAnnotation else {
-            print(#function, "Problem with CampusMapAnnotation NIB")
-            return nil
-        }
-        
-        let view = self.mapView.dequeueReusableAnnotationViewWithIdentifier("CampusMap") ?? MKAnnotationView(annotation: annotation, reuseIdentifier: "CampusMap")
-        
-        let img =  UIImage(named: "pin")!.insertText(text: annotation.number, size: 16.0, offset: 0.2, color: annotation.color)
-        
-        view.image = img
-        view.enabled = true
-        view.canShowCallout = true
-        view.centerOffset = CGPoint(x: 0, y: -img.size.height/2)
-        
-        return view
-    }
-    
-    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
-        traceRouteTo(coordinate: view.annotation!.coordinate)
-    }
+extension CampusMapViewController: GMSMapViewDelegate, CLLocationManagerDelegate {
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            self.locValue = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            
+            if retryDestination != nil {
+                traceRouteTo(coordinate: retryDestination!)
+                retryDestination = nil
+            }
 
-    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
-        if overlay is MKPolyline {
-            let lineView = MKPolylineRenderer(overlay: overlay)
-            lineView.strokeColor = UIColor.redColor()
-            lineView.lineWidth = 2;
-            
-            return lineView
-        } else if let region = overlay as? CampusMapRegion {
-            let polygonView = MKPolygonRenderer(overlay: overlay)
-            polygonView.lineWidth = 2;
-            polygonView.strokeColor = region.strokeColor
-            polygonView.fillColor = region.fillColor
-            
-            return polygonView
-        }
-        return MKPolylineRenderer()
-    }
-    
-    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
-        locValue = userLocation.coordinate
-        if retryDestination != nil {
-            traceRouteTo(coordinate: retryDestination!)
-            retryDestination = nil
         }
     }
     
-    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+    func mapView(mapView: GMSMapView, didTapMarker marker: GMSMarker) -> Bool {
+        self.traceRouteTo(coordinate: marker.position)
+        return true
+    }
+    
+    func mapView(mapView: GMSMapView, didChangeCameraPosition position: GMSCameraPosition) {
         if flag {
             flag = false
             return
         }
-        let centerLocation = CLLocation(location: centerCoordinate)
-        let centerMapView = CLLocation(location: mapView.centerCoordinate)
-        if mapView.camera.altitude > 1500.00 {
-            let region = MKCoordinateRegionMakeWithDistance(centerCoordinate, 600, 600)
-            mapView.setRegion(region, animated: true)
-            flag = true
-        }
-        if centerLocation.distanceFromLocation(centerMapView) > 600.00 {
+        
+        let centerLocation = CLLocation(location: self.centerCoordinate)
+        let centerMapView = CLLocation(location: mapView.camera.target)
+
+        if centerLocation.distanceFromLocation(centerMapView) > 650.00 {
             
-            let span = mapView.region.span
-            let region = MKCoordinateRegionMake(centerCoordinate, span)
-            mapView.setRegion(region, animated: true)
+            mapView.animateToCameraPosition(GMSCameraPosition.cameraWithTarget(self.centerCoordinate, zoom: 18))
             flag = true
         }
+        
     }
 }

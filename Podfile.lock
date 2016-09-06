@@ -1,0 +1,36 @@
+PODS:
+  - Alamofire (3.4.2)
+  - AlamofireImage (2.4.1):
+    - Alamofire (~> 3.3)
+  - Crashlytics (3.8.0):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.8)
+  - GoogleMaps (2.0.1):
+    - GoogleMaps/Maps (= 2.0.1)
+  - GoogleMaps/Base (2.0.1)
+  - GoogleMaps/Maps (2.0.1):
+    - GoogleMaps/Base (= 2.0.1)
+  - HTMLReader (0.9.6)
+  - Polyline (3.2.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.4)
+  - AlamofireImage (~> 2.0)
+  - Crashlytics
+  - Fabric
+  - GoogleMaps
+  - HTMLReader (~> 0.9)
+  - Polyline (~> 3.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 6aa33201d20d069e1598891cf928883ff1888c7a
+  AlamofireImage: 3ccf3347d9ea24580dc11fb892770a0be6a29826
+  Crashlytics: 8601d9c74a4c4d28f3e7f408bf4c0e490c70e8b4
+  Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
+  GoogleMaps: f09da64fc987c1aa29394567c3cab5a3df83c402
+  HTMLReader: 7e21488ee378afc56ccade8af35840c4e03e434c
+  Polyline: 4968bf16ceddd579e1e60820edc74a2271ec9c59
+
+PODFILE CHECKSUM: 711776f33def1f0d1ea2bf2cc4a1ed116da00452
+
+COCOAPODS: 1.0.1

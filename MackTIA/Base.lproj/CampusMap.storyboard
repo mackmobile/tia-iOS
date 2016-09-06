@@ -4,44 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Higienópolis-->
-        <scene sceneID="011-sb-tGX">
-            <objects>
-                <viewController id="eKm-EP-g4d" customClass="CampusMapViewController" customModule="TIA" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3E9-9f-MDd"/>
-                        <viewControllerLayoutGuide type="bottom" id="mI6-wM-NRv"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="EHQ-bL-Yls">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYO-E6-kNU">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
-                                <connections>
-                                    <outlet property="delegate" destination="eKm-EP-g4d" id="TKy-Vg-Gm8"/>
-                                </connections>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="bYO-E6-kNU" firstAttribute="leading" secondItem="EHQ-bL-Yls" secondAttribute="leading" id="GYS-8v-GvD"/>
-                            <constraint firstItem="mI6-wM-NRv" firstAttribute="top" secondItem="bYO-E6-kNU" secondAttribute="bottom" id="Var-FQ-oYW"/>
-                            <constraint firstAttribute="trailing" secondItem="bYO-E6-kNU" secondAttribute="trailing" id="d7a-y6-TS2"/>
-                            <constraint firstItem="bYO-E6-kNU" firstAttribute="top" secondItem="3E9-9f-MDd" secondAttribute="bottom" id="fIB-X3-NyZ"/>
-                        </constraints>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Higienópolis" id="9eB-ID-yIV"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="mapView" destination="bYO-E6-kNU" id="ABQ-to-cIb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zmb-g9-Jhh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="586" y="457"/>
-        </scene>
         <!--Campus-->
         <scene sceneID="kUS-ob-Xqj">
             <objects>
@@ -62,12 +24,46 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="eKm-EP-g4d" kind="relationship" relationship="rootViewController" id="cAz-u9-voS"/>
+                        <segue destination="5D6-iG-vYf" kind="relationship" relationship="rootViewController" id="9WM-uK-scU"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sol-f9-SH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="177" y="457"/>
+        </scene>
+        <!--Higienópolis-->
+        <scene sceneID="C96-4q-Dbe">
+            <objects>
+                <viewController id="5D6-iG-vYf" customClass="CampusMapViewController" customModule="TIA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6sC-I4-fCb"/>
+                        <viewControllerLayoutGuide type="bottom" id="rt0-UD-nQx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DrT-by-SIs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Le7-oh-tM3" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Le7-oh-tM3" firstAttribute="leading" secondItem="DrT-by-SIs" secondAttribute="leading" id="1bJ-fH-WFb"/>
+                            <constraint firstItem="rt0-UD-nQx" firstAttribute="top" secondItem="Le7-oh-tM3" secondAttribute="bottom" id="IST-ud-dkP"/>
+                            <constraint firstAttribute="trailing" secondItem="Le7-oh-tM3" secondAttribute="trailing" id="cw2-Tc-Zq0"/>
+                            <constraint firstItem="Le7-oh-tM3" firstAttribute="top" secondItem="6sC-I4-fCb" secondAttribute="bottom" id="veZ-gV-ngA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Higienópolis" id="dBR-WA-TDj"/>
+                    <connections>
+                        <outlet property="mapView" destination="Le7-oh-tM3" id="WSQ-6a-gL3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dki-t9-Ihh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="599" y="457"/>
         </scene>
     </scenes>
     <resources>

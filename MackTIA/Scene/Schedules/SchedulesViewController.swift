@@ -118,7 +118,7 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
             
             if let nav = self.tabBarController?.viewControllers![3] as? UINavigationController {
                 if let vc = nav.topViewController as? CampusMapViewController {
-                    vc.traceRouteTo(buildName: schedule.buildingNumber!)
+                    vc.traceRouteTo(buildNumber: schedule.buildingNumber ?? "")
                     self.tabBarController?.selectedIndex = 3
                 }
             }

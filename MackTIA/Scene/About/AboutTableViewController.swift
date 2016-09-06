@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 import Social
 import MessageUI
+import AlamofireImage
+import Alamofire
+import HTMLReader
 
 // TODO: Colocar todo o texto no Localizable.string
 
@@ -18,6 +21,7 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
     @IBOutlet weak var tiaLabel: UILabel!
     @IBOutlet weak var userLabel: UILabel!
 
+    @IBOutlet weak var userPhoto: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +33,28 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
         
         let tia = TIAServer.sharedInstance.user?.tia ?? "tia não encontrado"
         tiaLabel.text = "TIA: \(tia)"
-    }
+        
+        userPhoto?.image = UIImage(named: "icon_user")
+        userPhoto.layer.cornerRadius = userPhoto.bounds.width/2
+        userPhoto.layer.masksToBounds = true
+        
+        Alamofire.request(.GET, "http://moodle.mackenzie.br/moodle/mack_addons/fotos.php?username=\(tia)").responseString { [weak userPhoto] (response) in
+            if let result = response.result.value {
+                let doc = HTMLDocument(string: result)
+                if let imageTag = doc.firstNodeMatchingSelector("img") {
+                    if let imageURL = imageTag.attributes["src"] {
+                        print(#function, "downloading image")
+                        Alamofire.request(.GET, imageURL).responseImage { (response) in
+                            if let image = response.result.value {
+                                userPhoto?.image = image
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+            }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)

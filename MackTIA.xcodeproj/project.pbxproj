@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0508578B2CDA95F109E2AE49 /* Pods_TIA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD204C7AF62E21EBAF11147 /* Pods_TIA.framework */; };
 		212EBE331D629D7000365842 /* SchedulesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212EBE2C1D629D7000365842 /* SchedulesConfigurator.swift */; };
 		212EBE341D629D7000365842 /* SchedulesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212EBE2D1D629D7000365842 /* SchedulesInteractor.swift */; };
 		212EBE351D629D7000365842 /* SchedulesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212EBE2E1D629D7000365842 /* SchedulesModels.swift */; };
@@ -22,15 +23,10 @@
 		21EBB8241D65595F00940FB1 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBB8231D65595F00940FB1 /* Schedule.swift */; };
 		21EBB8261D656B6200940FB1 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBB8251D656B6200940FB1 /* ScheduleTableViewCell.swift */; };
 		86038C651CC5828300A130A2 /* AbsenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86038C641CC5828300A130A2 /* AbsenceTableViewCell.swift */; };
-		9216608A1D68CDBC0094854E /* CampusMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921660891D68CDBC0094854E /* CampusMapAnnotationView.swift */; };
-		9216608E1D68E3210094854E /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9216608D1D68E3210094854E /* CustomAnnotationView.swift */; };
-		921660911D68F86C0094854E /* TIAServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C9B1CC15A4600DEAF52 /* TIAServer.swift */; };
-		921660921D68F86C0094854E /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C8D1CC1585D00DEAF52 /* ErrorCode.swift */; };
-		921660931D68F86C0094854E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C8E1CC1585D00DEAF52 /* Reachability.swift */; };
 		921D4EFD1CC0B23600FA06D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 929C92B51B9F720500844564 /* Localizable.strings */; };
-		921D4EFE1CC0B23C00FA06D3 /* ConfigHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C1F711BAA7C02006616B5 /* ConfigHelper.swift */; };
 		92256C781D7371460029C397 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92256C771D7371460029C397 /* TableViewExtension.swift */; };
 		92256C7A1D737A180029C397 /* StatementTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92256C791D737A180029C397 /* StatementTableViewController.swift */; };
+		9226EC9A1D7E4DAB00665551 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 927932441D67DC1100127C8C /* MapKit.framework */; };
 		922E01651CC80DF900B843A8 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E01641CC80DF900B843A8 /* AboutTableViewController.swift */; };
 		922E016E1CC80FF800B843A8 /* LoginConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E01671CC80FF800B843A8 /* LoginConfigurator.swift */; };
 		922E016F1CC80FF800B843A8 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E01681CC80FF800B843A8 /* LoginInteractor.swift */; };
@@ -39,14 +35,11 @@
 		922E01721CC80FF800B843A8 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E016B1CC80FF800B843A8 /* LoginRouter.swift */; };
 		922E01731CC80FF800B843A8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E016C1CC80FF800B843A8 /* LoginViewController.swift */; };
 		922E01741CC80FF800B843A8 /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E016D1CC80FF800B843A8 /* LoginWorker.swift */; };
-		923099CB1CC02E3A0090FD0A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923099C91CC02E3A0090FD0A /* Fabric.framework */; };
-		923099CC1CC02E3A0090FD0A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923099CA1CC02E3A0090FD0A /* Crashlytics.framework */; };
 		923099CF1CC031A10090FD0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923099CD1CC031A10090FD0A /* Main.storyboard */; };
 		923099D21CC032950090FD0A /* Absences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923099D01CC032950090FD0A /* Absences.storyboard */; };
 		923099D51CC033990090FD0A /* Grades.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923099D31CC033990090FD0A /* Grades.storyboard */; };
 		923099D81CC033BB0090FD0A /* Schedules.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923099D61CC033BB0090FD0A /* Schedules.storyboard */; };
 		923099DB1CC034090090FD0A /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923099D91CC034090090FD0A /* About.storyboard */; };
-		923099E01CC045F70090FD0A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923099DF1CC045F70090FD0A /* Alamofire.framework */; };
 		92309A091CC067B50090FD0A /* ListGradeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92309A021CC067B50090FD0A /* ListGradeConfigurator.swift */; };
 		92309A0A1CC067B50090FD0A /* ListGradeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92309A031CC067B50090FD0A /* ListGradeInteractor.swift */; };
 		92309A0B1CC067B50090FD0A /* ListGradeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92309A041CC067B50090FD0A /* ListGradeModels.swift */; };
@@ -58,30 +51,20 @@
 		9246DC4D1CC0AE0C003E73C3 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923099DF1CC045F70090FD0A /* Alamofire.framework */; };
 		9246DC4E1CC0AE11003E73C3 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923099C91CC02E3A0090FD0A /* Fabric.framework */; };
 		9246DC4F1CC0AE11003E73C3 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923099CA1CC02E3A0090FD0A /* Crashlytics.framework */; };
-		9246DC521CC0AF21003E73C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289B8821B87ADB3004284E3 /* AppDelegate.swift */; };
 		925E2C8F1CC1585D00DEAF52 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C8D1CC1585D00DEAF52 /* ErrorCode.swift */; };
 		925E2C901CC1585D00DEAF52 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C8E1CC1585D00DEAF52 /* Reachability.swift */; };
 		925E2C941CC1587E00DEAF52 /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C921CC1587E00DEAF52 /* AKPickerView.swift */; };
 		925E2C971CC158AB00DEAF52 /* CircleGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C961CC158AB00DEAF52 /* CircleGraphView.swift */; };
 		925E2C9A1CC158ED00DEAF52 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C991CC158ED00DEAF52 /* extension.swift */; };
 		925E2C9C1CC15A4600DEAF52 /* TIAServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C9B1CC15A4600DEAF52 /* TIAServer.swift */; };
-		925E2CA01CC1615B00DEAF52 /* CircleGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C961CC158AB00DEAF52 /* CircleGraphView.swift */; };
-		925E2CA11CC1615E00DEAF52 /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C921CC1587E00DEAF52 /* AKPickerView.swift */; };
 		925E2CA21CC1616300DEAF52 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C931CC1587E00DEAF52 /* ProgressBarView.swift */; };
-		925E2CA31CC1616400DEAF52 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C931CC1587E00DEAF52 /* ProgressBarView.swift */; };
-		925E2CA41CC1616F00DEAF52 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2C991CC158ED00DEAF52 /* extension.swift */; };
 		925E2CA61CC1774E00DEAF52 /* ListGradeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2CA51CC1774E00DEAF52 /* ListGradeTableViewCell.swift */; };
 		925E2CA81CC1780600DEAF52 /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2CA71CC1780600DEAF52 /* Grade.swift */; };
 		925E2CAB1CC18BA400DEAF52 /* ListGradeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2CAA1CC18BA400DEAF52 /* ListGradeCollectionViewCell.swift */; };
 		927932341D67DB1500127C8C /* CampusMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927932321D67DB1500127C8C /* CampusMap.storyboard */; };
 		927932421D67DB8300127C8C /* CampusMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9279323B1D67DB8300127C8C /* CampusMapViewController.swift */; };
-		927932451D67DC1100127C8C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 927932441D67DC1100127C8C /* MapKit.framework */; };
 		927932471D67DCB300127C8C /* CampusMap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 927932461D67DCB300127C8C /* CampusMap.plist */; };
-		927932491D67E26200127C8C /* CampusMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927932481D67E26200127C8C /* CampusMapAnnotation.swift */; };
-		9287869A1CC54BDC00AC72BD /* ListGradeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92309A081CC067B50090FD0A /* ListGradeWorker.swift */; };
-		9287869B1CC54C5F00AC72BD /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2CA71CC1780600DEAF52 /* Grade.swift */; };
 		9287869D1CC55E8F00AC72BD /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287869C1CC55E8F00AC72BD /* ErrorParser.swift */; };
-		9287869E1CC55F7000AC72BD /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287869C1CC55E8F00AC72BD /* ErrorParser.swift */; };
 		928786A31CC70F9900AC72BD /* Absence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928786A21CC70F9900AC72BD /* Absence.swift */; };
 		928786AB1CC70FAF00AC72BD /* AbsenceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928786A41CC70FAF00AC72BD /* AbsenceConfigurator.swift */; };
 		928786AC1CC70FAF00AC72BD /* AbsenceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928786A51CC70FAF00AC72BD /* AbsenceInteractor.swift */; };
@@ -91,20 +74,14 @@
 		928786B01CC70FAF00AC72BD /* AbsenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928786A91CC70FAF00AC72BD /* AbsenceViewController.swift */; };
 		928786B11CC70FAF00AC72BD /* AbsenceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928786AA1CC70FAF00AC72BD /* AbsenceWorker.swift */; };
 		928786B31CC710CF00AC72BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928786B21CC710CF00AC72BD /* User.swift */; };
-		928786B41CC7111600AC72BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928786B21CC710CF00AC72BD /* User.swift */; };
 		9289B8831B87ADB3004284E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289B8821B87ADB3004284E3 /* AppDelegate.swift */; };
 		9289B8901B87ADB3004284E3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9289B88E1B87ADB3004284E3 /* LaunchScreen.xib */; };
-		9289B89C1B87ADB3004284E3 /* MackTIATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9289B89B1B87ADB3004284E3 /* MackTIATests.swift */; };
 		929C92B31B9F720500844564 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 929C92B51B9F720500844564 /* Localizable.strings */; };
-		92B9E8E01B87CA07004C1DE4 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92B9E8DF1B87CA07004C1DE4 /* config.plist */; };
+		92EB036E1D7F072F00A1E5D3 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EB036D1D7F072F00A1E5D3 /* UIImageExtension.swift */; };
 		A15BB2D51B9ACBD900143EBE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A15BB2D41B9ACBD900143EBE /* Images.xcassets */; };
 		A15BB2F61BA0762600143EBE /* Bariol_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A15BB2F51BA0762600143EBE /* Bariol_Regular.otf */; };
-		B133DB9C1D7CA836000B8CB7 /* CampusMapRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B133DB9B1D7CA836000B8CB7 /* CampusMapRegion.swift */; };
 		B133DB9E1D7CB9F4000B8CB7 /* Mackenzie.gpx in Resources */ = {isa = PBXBuildFile; fileRef = B133DB9D1D7CB9F4000B8CB7 /* Mackenzie.gpx */; };
 		B19990271D6CB98300A909C7 /* DirectionsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19990261D6CB98300A909C7 /* DirectionsAPI.swift */; };
-		B19990291D6CBD2000A909C7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B19990281D6CBD2000A909C7 /* CoreLocation.framework */; };
-		B199902B1D6CC48900A909C7 /* DirectionsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B199902A1D6CC48900A909C7 /* DirectionsAPITests.swift */; };
-		B1B6FD371D6CF5BF00BCA74E /* Polyline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B6FD361D6CF5BF00BCA74E /* Polyline.framework */; };
 		B1F348071D764090001B619F /* CampusMapRegions.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1F348061D764090001B619F /* CampusMapRegions.plist */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +109,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1B2B5DB738EFBEDF54D16A4F /* Pods-TIA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIA.release.xcconfig"; path = "Pods/Target Support Files/Pods-TIA/Pods-TIA.release.xcconfig"; sourceTree = "<group>"; };
 		212EBE2C1D629D7000365842 /* SchedulesConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SchedulesConfigurator.swift; path = Scene/Schedules/SchedulesConfigurator.swift; sourceTree = "<group>"; };
 		212EBE2D1D629D7000365842 /* SchedulesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SchedulesInteractor.swift; path = Scene/Schedules/SchedulesInteractor.swift; sourceTree = "<group>"; };
 		212EBE2E1D629D7000365842 /* SchedulesModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SchedulesModels.swift; path = Scene/Schedules/SchedulesModels.swift; sourceTree = "<group>"; };
@@ -149,8 +127,6 @@
 		21EBB8231D65595F00940FB1 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Schedule.swift; path = Entities/Schedule.swift; sourceTree = "<group>"; };
 		21EBB8251D656B6200940FB1 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleTableViewCell.swift; path = Scene/Schedules/ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		86038C641CC5828300A130A2 /* AbsenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbsenceTableViewCell.swift; path = Scene/Absences/AbsenceTableViewCell.swift; sourceTree = "<group>"; };
-		921660891D68CDBC0094854E /* CampusMapAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusMapAnnotationView.swift; sourceTree = "<group>"; };
-		9216608D1D68E3210094854E /* CustomAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 		92256C771D7371460029C397 /* TableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewExtension.swift; path = Helpers/TableViewExtension.swift; sourceTree = "<group>"; };
 		92256C791D737A180029C397 /* StatementTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatementTableViewController.swift; path = Scene/About/StatementTableViewController.swift; sourceTree = "<group>"; };
 		922E01641CC80DF900B843A8 /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutTableViewController.swift; path = Scene/About/AboutTableViewController.swift; sourceTree = "<group>"; };
@@ -187,7 +163,6 @@
 		9279323B1D67DB8300127C8C /* CampusMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusMapViewController.swift; sourceTree = "<group>"; };
 		927932441D67DC1100127C8C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		927932461D67DCB300127C8C /* CampusMap.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CampusMap.plist; sourceTree = "<group>"; };
-		927932481D67E26200127C8C /* CampusMapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusMapAnnotation.swift; sourceTree = "<group>"; };
 		9287869C1CC55E8F00AC72BD /* ErrorParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorParser.swift; path = Helpers/ErrorParser.swift; sourceTree = "<group>"; };
 		928786A21CC70F9900AC72BD /* Absence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Absence.swift; path = Entities/Absence.swift; sourceTree = "<group>"; };
 		928786A41CC70FAF00AC72BD /* AbsenceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbsenceConfigurator.swift; path = Scene/Absences/AbsenceConfigurator.swift; sourceTree = "<group>"; };
@@ -211,17 +186,18 @@
 		9289B89A1B87ADB3004284E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9289B89B1B87ADB3004284E3 /* MackTIATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MackTIATests.swift; sourceTree = "<group>"; };
 		929C92BA1B9F7C7000844564 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		92B9E8DF1B87CA07004C1DE4 /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = config.plist; path = WebAPI/config.plist; sourceTree = "<group>"; };
+		92EB036D1D7F072F00A1E5D3 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageExtension.swift; path = Helpers/UIImageExtension.swift; sourceTree = "<group>"; };
 		92F212DC1CEF70060076E628 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9CD204C7AF62E21EBAF11147 /* Pods_TIA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TIA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A15BB2D41B9ACBD900143EBE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A15BB2F51BA0762600143EBE /* Bariol_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol_Regular.otf; sourceTree = "<group>"; };
-		B133DB9B1D7CA836000B8CB7 /* CampusMapRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusMapRegion.swift; sourceTree = "<group>"; };
 		B133DB9D1D7CB9F4000B8CB7 /* Mackenzie.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Mackenzie.gpx; sourceTree = "<group>"; };
 		B19990261D6CB98300A909C7 /* DirectionsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectionsAPI.swift; path = Services/DirectionsAPI.swift; sourceTree = "<group>"; };
 		B19990281D6CBD2000A909C7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B199902A1D6CC48900A909C7 /* DirectionsAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsAPITests.swift; sourceTree = "<group>"; };
 		B1B6FD361D6CF5BF00BCA74E /* Polyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Polyline.framework; path = Carthage/Build/iOS/Polyline.framework; sourceTree = "<group>"; };
 		B1F348061D764090001B619F /* CampusMapRegions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CampusMapRegions.plist; sourceTree = "<group>"; };
+		CE8B2B82B32CB10B838E64EF /* Pods-TIA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TIA/Pods-TIA.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,12 +205,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1B6FD371D6CF5BF00BCA74E /* Polyline.framework in Frameworks */,
-				B19990291D6CBD2000A909C7 /* CoreLocation.framework in Frameworks */,
-				923099CC1CC02E3A0090FD0A /* Crashlytics.framework in Frameworks */,
-				923099CB1CC02E3A0090FD0A /* Fabric.framework in Frameworks */,
-				927932451D67DC1100127C8C /* MapKit.framework in Frameworks */,
-				923099E01CC045F70090FD0A /* Alamofire.framework in Frameworks */,
+				9226EC9A1D7E4DAB00665551 /* MapKit.framework in Frameworks */,
+				0508578B2CDA95F109E2AE49 /* Pods_TIA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +369,7 @@
 				923C1F711BAA7C02006616B5 /* ConfigHelper.swift */,
 				9287869C1CC55E8F00AC72BD /* ErrorParser.swift */,
 				92256C771D7371460029C397 /* TableViewExtension.swift */,
+				92EB036D1D7F072F00A1E5D3 /* UIImageExtension.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -418,10 +391,6 @@
 				9279323B1D67DB8300127C8C /* CampusMapViewController.swift */,
 				927932461D67DCB300127C8C /* CampusMap.plist */,
 				B1F348061D764090001B619F /* CampusMapRegions.plist */,
-				927932481D67E26200127C8C /* CampusMapAnnotation.swift */,
-				B133DB9B1D7CA836000B8CB7 /* CampusMapRegion.swift */,
-				921660891D68CDBC0094854E /* CampusMapAnnotationView.swift */,
-				9216608D1D68E3210094854E /* CustomAnnotationView.swift */,
 			);
 			path = CampusMap;
 			sourceTree = "<group>";
@@ -442,6 +411,7 @@
 				9289B8981B87ADB3004284E3 /* MackTIATests */,
 				9289B87E1B87ADB3004284E3 /* Products */,
 				ACBE292C7FDC7D68CEBDD74B /* Frameworks */,
+				B2C384B998588D8F5104EF14 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -477,7 +447,6 @@
 				217C9CE61D66A5FE000EF9C7 /* Bariol_Bold.otf */,
 				A15BB2F51BA0762600143EBE /* Bariol_Regular.otf */,
 				9289B8811B87ADB3004284E3 /* Info.plist */,
-				92B9E8DF1B87CA07004C1DE4 /* config.plist */,
 				929C92B51B9F720500844564 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
@@ -510,8 +479,18 @@
 				923099DF1CC045F70090FD0A /* Alamofire.framework */,
 				923099C91CC02E3A0090FD0A /* Fabric.framework */,
 				923099CA1CC02E3A0090FD0A /* Crashlytics.framework */,
+				9CD204C7AF62E21EBAF11147 /* Pods_TIA.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2C384B998588D8F5104EF14 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE8B2B82B32CB10B838E64EF /* Pods-TIA.debug.xcconfig */,
+				1B2B5DB738EFBEDF54D16A4F /* Pods-TIA.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,12 +500,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9289B89F1B87ADB3004284E3 /* Build configuration list for PBXNativeTarget "TIA" */;
 			buildPhases = (
+				722E22F65D06236E1E1C6081 /* [CP] Check Pods Manifest.lock */,
 				9289B8791B87ADB3004284E3 /* Sources */,
 				9289B87A1B87ADB3004284E3 /* Frameworks */,
 				9289B87B1B87ADB3004284E3 /* Resources */,
 				92B9E8CD1B87C887004C1DE4 /* Embed Frameworks */,
-				923099C51CC02CD80090FD0A /* ShellScript */,
-				923099E11CC0461A0090FD0A /* ShellScript */,
+				923099C51CC02CD80090FD0A /* [Fabric] Run Script */,
+				D30DBEF688AB59103C9ABFAA /* [CP] Embed Pods Frameworks */,
+				8E6FFC69612DC1615737766D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -618,7 +599,6 @@
 				217C9CE71D66A5FE000EF9C7 /* Bariol_Bold.otf in Resources */,
 				923099D51CC033990090FD0A /* Grades.storyboard in Resources */,
 				923099DB1CC034090090FD0A /* About.storyboard in Resources */,
-				92B9E8E01B87CA07004C1DE4 /* config.plist in Resources */,
 				B1F348071D764090001B619F /* CampusMapRegions.plist in Resources */,
 				923099D81CC033BB0090FD0A /* Schedules.storyboard in Resources */,
 			);
@@ -635,33 +615,64 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		923099C51CC02CD80090FD0A /* ShellScript */ = {
+		722E22F65D06236E1E1C6081 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run c827b1e06013cb3a55d7d26359651127705bbad3 5ff544eeb37be23967d2c8d0593b370e4b479166dfe570d0910fd71a42370d81";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
-		923099E11CC0461A0090FD0A /* ShellScript */ = {
+		8E6FFC69612DC1615737766D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Polyline.framework",
 			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TIA/Pods-TIA-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		923099C51CC02CD80090FD0A /* [Fabric] Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[Fabric] Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" c827b1e06013cb3a55d7d26359651127705bbad3 5ff544eeb37be23967d2c8d0593b370e4b479166dfe570d0910fd71a42370d81";
+		};
+		D30DBEF688AB59103C9ABFAA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TIA/Pods-TIA-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -680,6 +691,7 @@
 				21EBB8241D65595F00940FB1 /* Schedule.swift in Sources */,
 				212EBE371D629D7000365842 /* SchedulesRouter.swift in Sources */,
 				212EBE381D629D7000365842 /* SchedulesViewController.swift in Sources */,
+				92EB036E1D7F072F00A1E5D3 /* UIImageExtension.swift in Sources */,
 				923C1F721BAA7C02006616B5 /* ConfigHelper.swift in Sources */,
 				212EBE341D629D7000365842 /* SchedulesInteractor.swift in Sources */,
 				922E01651CC80DF900B843A8 /* AboutTableViewController.swift in Sources */,
@@ -696,7 +708,6 @@
 				925E2CAB1CC18BA400DEAF52 /* ListGradeCollectionViewCell.swift in Sources */,
 				925E2CA21CC1616300DEAF52 /* ProgressBarView.swift in Sources */,
 				922E01741CC80FF800B843A8 /* LoginWorker.swift in Sources */,
-				9216608A1D68CDBC0094854E /* CampusMapAnnotationView.swift in Sources */,
 				928786AB1CC70FAF00AC72BD /* AbsenceConfigurator.swift in Sources */,
 				92309A0B1CC067B50090FD0A /* ListGradeModels.swift in Sources */,
 				92309A0F1CC067B50090FD0A /* ListGradeWorker.swift in Sources */,
@@ -715,10 +726,8 @@
 				922E016F1CC80FF800B843A8 /* LoginInteractor.swift in Sources */,
 				928786B31CC710CF00AC72BD /* User.swift in Sources */,
 				86038C651CC5828300A130A2 /* AbsenceTableViewCell.swift in Sources */,
-				B133DB9C1D7CA836000B8CB7 /* CampusMapRegion.swift in Sources */,
 				928786A31CC70F9900AC72BD /* Absence.swift in Sources */,
 				9287869D1CC55E8F00AC72BD /* ErrorParser.swift in Sources */,
-				927932491D67E26200127C8C /* CampusMapAnnotation.swift in Sources */,
 				92309A0E1CC067B50090FD0A /* ListGradeTableViewController.swift in Sources */,
 				212EBE331D629D7000365842 /* SchedulesConfigurator.swift in Sources */,
 				925E2C971CC158AB00DEAF52 /* CircleGraphView.swift in Sources */,
@@ -727,7 +736,6 @@
 				212EBE361D629D7000365842 /* SchedulesPresenter.swift in Sources */,
 				928786B01CC70FAF00AC72BD /* AbsenceViewController.swift in Sources */,
 				212EBE351D629D7000365842 /* SchedulesModels.swift in Sources */,
-				9216608E1D68E3210094854E /* CustomAnnotationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,21 +743,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				921660931D68F86C0094854E /* Reachability.swift in Sources */,
-				921660921D68F86C0094854E /* ErrorCode.swift in Sources */,
-				9287869A1CC54BDC00AC72BD /* ListGradeWorker.swift in Sources */,
-				9289B89C1B87ADB3004284E3 /* MackTIATests.swift in Sources */,
-				9287869E1CC55F7000AC72BD /* ErrorParser.swift in Sources */,
-				928786B41CC7111600AC72BD /* User.swift in Sources */,
-				925E2CA31CC1616400DEAF52 /* ProgressBarView.swift in Sources */,
-				9246DC521CC0AF21003E73C3 /* AppDelegate.swift in Sources */,
-				921D4EFE1CC0B23C00FA06D3 /* ConfigHelper.swift in Sources */,
-				921660911D68F86C0094854E /* TIAServer.swift in Sources */,
-				9287869B1CC54C5F00AC72BD /* Grade.swift in Sources */,
-				925E2CA01CC1615B00DEAF52 /* CircleGraphView.swift in Sources */,
-				925E2CA11CC1615E00DEAF52 /* AKPickerView.swift in Sources */,
-				925E2CA41CC1616F00DEAF52 /* extension.swift in Sources */,
-				B199902B1D6CC48900A909C7 /* DirectionsAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -918,6 +911,7 @@
 		};
 		9289B8A01B87ADB3004284E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE8B2B82B32CB10B838E64EF /* Pods-TIA.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -926,7 +920,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = MackTIA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -943,6 +936,7 @@
 		};
 		9289B8A11B87ADB3004284E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B2B5DB738EFBEDF54D16A4F /* Pods-TIA.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -951,7 +945,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = MackTIA/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

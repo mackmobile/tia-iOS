@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Fabric
 import Crashlytics
+import GoogleMaps
 
 
 @UIApplicationMain
@@ -20,7 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        Fabric.with([Crashlytics.self()])
+        // Fabric: Crashyltics and Analytics
+        Fabric.with([Crashlytics.self])
+        
+        // Google API
+        GMSServices.provideAPIKey("AIzaSyCboJix6gXaxiCwBN52axQal_4thEDViZY")
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.tintColor = UIColor.redColor()

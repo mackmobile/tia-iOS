@@ -298,7 +298,7 @@
                             <tableViewSection id="I3U-3k-ZMr">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="214" id="ybO-ee-2r9">
-                                        <rect key="frame" x="0.0" y="99" width="320" height="214"/>
+                                        <rect key="frame" x="0.0" y="35" width="320" height="214"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ybO-ee-2r9" id="ZlN-B7-tmb">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="213.5"/>
@@ -348,7 +348,7 @@ Ao continuar você declara estar ciente destes possíveis problemas.</string>
                             <tableViewSection headerTitle="Limitações" id="38B-C2-hwG">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="qM0-YQ-Hao">
-                                        <rect key="frame" x="0.0" y="363" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="299" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qM0-YQ-Hao" id="Uvd-aT-nok">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -386,7 +386,7 @@ Ao continuar você declara estar ciente destes possíveis problemas.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="k8c-Fa-WD3">
-                                        <rect key="frame" x="0.0" y="407" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="343" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k8c-Fa-WD3" id="e1W-js-9N2">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -424,7 +424,7 @@ Ao continuar você declara estar ciente destes possíveis problemas.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="KA8-ho-Io5">
-                                        <rect key="frame" x="0.0" y="451" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="387" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KA8-ho-Io5" id="N0I-Om-01X">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -466,7 +466,7 @@ Ao continuar você declara estar ciente destes possíveis problemas.</string>
                             <tableViewSection headerTitle="Ajuda" id="m4n-dZ-6Bh">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="79p-VY-4JF">
-                                        <rect key="frame" x="0.0" y="545" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="481" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="79p-VY-4JF" id="Zoy-Oq-nCE">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -502,7 +502,7 @@ Ao continuar você declara estar ciente destes possíveis problemas.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="kga-rk-boJ">
-                                        <rect key="frame" x="0.0" y="589" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="525" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kga-rk-boJ" id="a69-H0-XLf">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
