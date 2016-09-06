@@ -47,6 +47,7 @@
 		92309A0D1CC067B50090FD0A /* ListGradeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92309A061CC067B50090FD0A /* ListGradeRouter.swift */; };
 		92309A0E1CC067B50090FD0A /* ListGradeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92309A071CC067B50090FD0A /* ListGradeTableViewController.swift */; };
 		92309A0F1CC067B50090FD0A /* ListGradeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92309A081CC067B50090FD0A /* ListGradeWorker.swift */; };
+		9239C8A41D7F5AB9006E922A /* MapRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239C8A31D7F5AB9006E922A /* MapRequest.swift */; };
 		923C1F721BAA7C02006616B5 /* ConfigHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923C1F711BAA7C02006616B5 /* ConfigHelper.swift */; };
 		9246DC4D1CC0AE0C003E73C3 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923099DF1CC045F70090FD0A /* Alamofire.framework */; };
 		9246DC4E1CC0AE11003E73C3 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923099C91CC02E3A0090FD0A /* Fabric.framework */; };
@@ -63,7 +64,6 @@
 		925E2CAB1CC18BA400DEAF52 /* ListGradeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925E2CAA1CC18BA400DEAF52 /* ListGradeCollectionViewCell.swift */; };
 		927932341D67DB1500127C8C /* CampusMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927932321D67DB1500127C8C /* CampusMap.storyboard */; };
 		927932421D67DB8300127C8C /* CampusMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9279323B1D67DB8300127C8C /* CampusMapViewController.swift */; };
-		927932471D67DCB300127C8C /* CampusMap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 927932461D67DCB300127C8C /* CampusMap.plist */; };
 		9287869D1CC55E8F00AC72BD /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9287869C1CC55E8F00AC72BD /* ErrorParser.swift */; };
 		928786A31CC70F9900AC72BD /* Absence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928786A21CC70F9900AC72BD /* Absence.swift */; };
 		928786AB1CC70FAF00AC72BD /* AbsenceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928786A41CC70FAF00AC72BD /* AbsenceConfigurator.swift */; };
@@ -82,7 +82,6 @@
 		A15BB2F61BA0762600143EBE /* Bariol_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A15BB2F51BA0762600143EBE /* Bariol_Regular.otf */; };
 		B133DB9E1D7CB9F4000B8CB7 /* Mackenzie.gpx in Resources */ = {isa = PBXBuildFile; fileRef = B133DB9D1D7CB9F4000B8CB7 /* Mackenzie.gpx */; };
 		B19990271D6CB98300A909C7 /* DirectionsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19990261D6CB98300A909C7 /* DirectionsAPI.swift */; };
-		B1F348071D764090001B619F /* CampusMapRegions.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1F348061D764090001B619F /* CampusMapRegions.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +146,7 @@
 		92309A061CC067B50090FD0A /* ListGradeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListGradeRouter.swift; path = Scene/ListGrade/ListGradeRouter.swift; sourceTree = "<group>"; };
 		92309A071CC067B50090FD0A /* ListGradeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListGradeTableViewController.swift; path = Scene/ListGrade/ListGradeTableViewController.swift; sourceTree = "<group>"; };
 		92309A081CC067B50090FD0A /* ListGradeWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListGradeWorker.swift; path = Scene/ListGrade/ListGradeWorker.swift; sourceTree = "<group>"; };
+		9239C8A31D7F5AB9006E922A /* MapRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapRequest.swift; path = Services/MapRequest.swift; sourceTree = "<group>"; };
 		923C1F711BAA7C02006616B5 /* ConfigHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigHelper.swift; path = Helpers/ConfigHelper.swift; sourceTree = "<group>"; };
 		9246DC531CC0B036003E73C3 /* MackTIA-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MackTIA-Bridging-Header.h"; sourceTree = "<group>"; };
 		925E2C8D1CC1585D00DEAF52 /* ErrorCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorCode.swift; path = Services/ErrorCode.swift; sourceTree = "<group>"; };
@@ -162,7 +162,6 @@
 		927932331D67DB1500127C8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CampusMap.storyboard; sourceTree = "<group>"; };
 		9279323B1D67DB8300127C8C /* CampusMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusMapViewController.swift; sourceTree = "<group>"; };
 		927932441D67DC1100127C8C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		927932461D67DCB300127C8C /* CampusMap.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CampusMap.plist; sourceTree = "<group>"; };
 		9287869C1CC55E8F00AC72BD /* ErrorParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorParser.swift; path = Helpers/ErrorParser.swift; sourceTree = "<group>"; };
 		928786A21CC70F9900AC72BD /* Absence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Absence.swift; path = Entities/Absence.swift; sourceTree = "<group>"; };
 		928786A41CC70FAF00AC72BD /* AbsenceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbsenceConfigurator.swift; path = Scene/Absences/AbsenceConfigurator.swift; sourceTree = "<group>"; };
@@ -196,7 +195,6 @@
 		B19990281D6CBD2000A909C7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B199902A1D6CC48900A909C7 /* DirectionsAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsAPITests.swift; sourceTree = "<group>"; };
 		B1B6FD361D6CF5BF00BCA74E /* Polyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Polyline.framework; path = Carthage/Build/iOS/Polyline.framework; sourceTree = "<group>"; };
-		B1F348061D764090001B619F /* CampusMapRegions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CampusMapRegions.plist; sourceTree = "<group>"; };
 		CE8B2B82B32CB10B838E64EF /* Pods-TIA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TIA/Pods-TIA.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -314,6 +312,7 @@
 				B19990261D6CB98300A909C7 /* DirectionsAPI.swift */,
 				925E2C8D1CC1585D00DEAF52 /* ErrorCode.swift */,
 				925E2C8E1CC1585D00DEAF52 /* Reachability.swift */,
+				9239C8A31D7F5AB9006E922A /* MapRequest.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -389,8 +388,6 @@
 			isa = PBXGroup;
 			children = (
 				9279323B1D67DB8300127C8C /* CampusMapViewController.swift */,
-				927932461D67DCB300127C8C /* CampusMap.plist */,
-				B1F348061D764090001B619F /* CampusMapRegions.plist */,
 			);
 			path = CampusMap;
 			sourceTree = "<group>";
@@ -595,11 +592,9 @@
 				923099D21CC032950090FD0A /* Absences.storyboard in Resources */,
 				217C9CF31D68F6FE000EF9C7 /* ScheduleHeaderView.xib in Resources */,
 				9289B8901B87ADB3004284E3 /* LaunchScreen.xib in Resources */,
-				927932471D67DCB300127C8C /* CampusMap.plist in Resources */,
 				217C9CE71D66A5FE000EF9C7 /* Bariol_Bold.otf in Resources */,
 				923099D51CC033990090FD0A /* Grades.storyboard in Resources */,
 				923099DB1CC034090090FD0A /* About.storyboard in Resources */,
-				B1F348071D764090001B619F /* CampusMapRegions.plist in Resources */,
 				923099D81CC033BB0090FD0A /* Schedules.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,6 +680,7 @@
 				928786B11CC70FAF00AC72BD /* AbsenceWorker.swift in Sources */,
 				925E2C9C1CC15A4600DEAF52 /* TIAServer.swift in Sources */,
 				92256C781D7371460029C397 /* TableViewExtension.swift in Sources */,
+				9239C8A41D7F5AB9006E922A /* MapRequest.swift in Sources */,
 				925E2CA81CC1780600DEAF52 /* Grade.swift in Sources */,
 				92309A091CC067B50090FD0A /* ListGradeConfigurator.swift in Sources */,
 				925E2C8F1CC1585D00DEAF52 /* ErrorCode.swift in Sources */,

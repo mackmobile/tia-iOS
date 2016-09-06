@@ -31,7 +31,7 @@
             </objects>
             <point key="canvasLocation" x="177" y="457"/>
         </scene>
-        <!--Higienópolis-->
+        <!--Campus-->
         <scene sceneID="C96-4q-Dbe">
             <objects>
                 <viewController id="5D6-iG-vYf" customClass="CampusMapViewController" customModule="TIA" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,7 +56,14 @@
                             <constraint firstItem="Le7-oh-tM3" firstAttribute="top" secondItem="6sC-I4-fCb" secondAttribute="bottom" id="veZ-gV-ngA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Higienópolis" id="dBR-WA-TDj"/>
+                    <navigationItem key="navigationItem" title="Campus" id="dBR-WA-TDj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="MDs-On-PTS">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="reloadButton:" destination="5D6-iG-vYf" id="J6k-7y-o0S"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="Le7-oh-tM3" id="WSQ-6a-gL3"/>
                     </connections>

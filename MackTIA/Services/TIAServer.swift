@@ -11,11 +11,11 @@ import Alamofire
 import UIKit
 
 enum ServiceURL:String {
-    // TODO: Precisa que o servidor devolva o nome do aluno no servico ping.php
     case Login          = "https://www3.mackenzie.com.br/tia/tia_mobile/ping.php"
     case Grades         = "https://www3.mackenzie.com.br/tia/tia_mobile/notas.php"
     case Absence        = "https://www3.mackenzie.com.br/tia/tia_mobile/faltas.php"
     case ClassSchedule  = "https://www3.mackenzie.com.br/tia/tia_mobile/horarios.php"
+    case Map            = "https://www3.mackenzie.com.br/tia/tia_mobile/mapa.php"
 }
 
 private enum Token:String {

@@ -15,15 +15,21 @@ import Polyline
 import GoogleMaps
 
 
-class CampusMapViewController: UIViewController {
+class CampusMapViewController: UIViewController, MapRequest {
     
     @IBOutlet weak var mapView: GMSMapView!
     
     let locationManager = CLLocationManager()
     var locValue: CLLocationCoordinate2D?
     var retryDestination: CLLocationCoordinate2D?
-    let centerCoordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(-23.546954), longitude: CLLocationDegrees(-46.651796))
+    var centerCoordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(-0), longitude: CLLocationDegrees(0))
+    var zoomDefault:Float = 1.0
+    var distanceDefault:Float = 1.0
+    var zoomMax:Float = 1.0
     var routeOverlay: GMSPolyline?
+    var pins:[[String:String]] = []
+    var regions:[[String:String]] = []
+    var campusName:String = "Campus"
     
     
     var flag = false
@@ -51,15 +57,15 @@ class CampusMapViewController: UIViewController {
         mapView.myLocationEnabled = true
         mapView.delegate = self
         
-        
-        loadPinAnnotations()
-        loadRegions()
-        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.locationManager.startUpdatingLocation()
+        
+        if self.pins.count == 0 || self.regions.count == 0 || self.distanceDefault <= 1 {
+            self.loadMapDataRemotely()
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -69,55 +75,80 @@ class CampusMapViewController: UIViewController {
     
     // MARK: Event handling
     
+    @IBAction func reloadButton(sender: AnyObject) {
+        self.loadMapDataRemotely()
+    }
+    
+    func loadMapDataRemotely() {
+        
+        guard let campus = TIAServer.sharedInstance.user?.campus else {
+            print(#function, "Problema com o campus do aluno. O atributo Campus não pode ser nulo")
+            return
+        }
+        
+        self.loadData(campus, completionHandler: { [weak self] (name, center, zoom, distance, zoomMax, pins, regions, error) in
+            guard error == nil else {
+                print(#function, "Erro na busca dos dados: \(error)")
+                return
+            }
+            
+            self?.pins = pins
+            self?.regions = regions
+            self?.campusName = name
+            self?.centerCoordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(center.x), longitude: CLLocationDegrees(center.y))
+            self?.zoomDefault = zoom
+            self?.distanceDefault = distance
+            self?.zoomMax = zoomMax
+            
+            self?.navigationItem.title = self?.campusName
+            
+            self?.mapView.clear()
+            
+            self?.loadPinAnnotations()
+            self?.loadRegions()
+            })
+    }
+    
+    
     func loadPinAnnotations() {
         
-        let filePath = NSBundle.mainBundle().pathForResource("CampusMap", ofType: "plist")
-        let properties = NSArray(contentsOfFile: filePath!)
-        
-        mapView.camera = GMSCameraPosition.cameraWithTarget(self.centerCoordinate, zoom: 18)
+        mapView.camera = GMSCameraPosition.cameraWithTarget(self.centerCoordinate, zoom: self.zoomDefault)
         
         // Add Map Annotation
-        for item in properties! {
-            if let newPinData = item as? Dictionary<String,String>{
-                let point = CGPointFromString(newPinData["location"]!)
-                let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(point.x), longitude: CLLocationDegrees(point.y))
-                
-                let img =  UIImage(named: "pin")!.insertText(text: newPinData["number"]!, size: 16.0, offset: 0.2, color: UIColor(hex: newPinData["color"]!))
-                
-                let marker = GMSMarker(position: coordinate)
-                marker.title = newPinData["name"]
-                marker.snippet = newPinData["buildName"]
-                marker.icon = img
-                marker.map = mapView
-            }
+        for item in self.pins {
+            let point = CGPointFromString(item["location"]!)
+            let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(point.x), longitude: CLLocationDegrees(point.y))
+            
+            let img =  UIImage(named: "pin")!.insertText(text: item["number"]!, size: 16.0, offset: 0.2, color: UIColor(hex: item["color"]!))
+            
+            let marker = GMSMarker(position: coordinate)
+            marker.title = item["name"]
+            marker.snippet = item["buildName"]
+            marker.icon = img
+            marker.appearAnimation = kGMSMarkerAnimationPop
+            marker.map = mapView
         }
     }
     
     func loadRegions() {
         
-        let filePath = NSBundle.mainBundle().pathForResource("CampusMapRegions", ofType: "plist")
-        let properties = NSArray(contentsOfFile: filePath!)
-        
         // Add Map Annotation
         // to create encoded polyline: https://google-developers.appspot.com/maps/documentation/utilities/polyline-utility/polylineutility
         
-        for item in properties! {
-            if let newPinData = item as? [String: String] {
-                let path = GMSMutablePath(fromEncodedPath: newPinData["polylineString"]!)
-                let polygon = GMSPolygon(path: path)
-                polygon.title = newPinData["name"]
-                polygon.fillColor = UIColor(hex: newPinData["color"]!).colorWithAlphaComponent(0.5)
-                polygon.map = mapView
-                
-            }
+        for item in self.regions {
+            let path = GMSMutablePath(fromEncodedPath: item["polylineString"]!)
+            let polygon = GMSPolygon(path: path)
+            polygon.title = item["name"]
+            polygon.fillColor = UIColor(hex: item["color"]!).colorWithAlphaComponent(0.5)
+            polygon.map = mapView
         }
     }
     
     func traceRouteTo(buildNumber buildNumber: String) {
-        let filePath = NSBundle.mainBundle().pathForResource("CampusMap", ofType: "plist")
+        
         let buildNameFormatted = String(Int(buildNumber) ?? 0)
-        let properties = NSArray(contentsOfFile: filePath!) as! [[String: String]]
-        if let destination = properties.filter({$0["number"] == buildNameFormatted}).first {
+        
+        if let destination = self.pins.filter({$0["number"] == buildNameFormatted}).first {
             let point = CGPointFromString(destination["location"]!)
             let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(point.x), longitude: CLLocationDegrees(point.y))
             traceRouteTo(coordinate: coordinate)
@@ -155,11 +186,11 @@ class CampusMapViewController: UIViewController {
                     return
                 }
                 
-                //                polyline.strokeColor = UIColor.redColor().colorWithAlphaComponent(0.5)
-                polyline.strokeWidth = 3
-                let styles = [GMSStrokeStyle.solidColor(UIColor.redColor().colorWithAlphaComponent(0.6)), GMSStrokeStyle.solidColor(UIColor.clearColor())]
-                let lengths = [1,2]
-                polyline.spans = GMSStyleSpans(polyline.path!, styles, lengths, kGMSLengthRhumb)
+                polyline.strokeWidth = 4
+                polyline.strokeColor = UIColor.redColor().colorWithAlphaComponent(0.6)
+//                let styles = [GMSStrokeStyle.solidColor(UIColor.redColor().colorWithAlphaComponent(0.6)), GMSStrokeStyle.solidColor(UIColor.clearColor())]
+//                let lengths = [1,2]
+//                polyline.spans = GMSStyleSpans(polyline.path!, styles, lengths, kGMSLengthRhumb)
                 
                 polyline.map = self?.mapView
             }
@@ -167,7 +198,6 @@ class CampusMapViewController: UIViewController {
             retryDestination = destination
         }
     }
-    
 }
 
 // MARK: - Map View delegate
@@ -181,16 +211,17 @@ extension CampusMapViewController: GMSMapViewDelegate, CLLocationManagerDelegate
                 traceRouteTo(coordinate: retryDestination!)
                 retryDestination = nil
             }
-
+            
         }
     }
     
     func mapView(mapView: GMSMapView, didTapMarker marker: GMSMarker) -> Bool {
         self.traceRouteTo(coordinate: marker.position)
-        return true
+        return false
     }
     
     func mapView(mapView: GMSMapView, didChangeCameraPosition position: GMSCameraPosition) {
+        
         if flag {
             flag = false
             return
@@ -198,10 +229,9 @@ extension CampusMapViewController: GMSMapViewDelegate, CLLocationManagerDelegate
         
         let centerLocation = CLLocation(location: self.centerCoordinate)
         let centerMapView = CLLocation(location: mapView.camera.target)
-
-        if centerLocation.distanceFromLocation(centerMapView) > 650.00 {
-            
-            mapView.animateToCameraPosition(GMSCameraPosition.cameraWithTarget(self.centerCoordinate, zoom: 18))
+        
+        if centerLocation.distanceFromLocation(centerMapView) > Double(self.distanceDefault) || mapView.camera.zoom < self.zoomMax {
+            mapView.animateToCameraPosition(GMSCameraPosition.cameraWithTarget(self.centerCoordinate, zoom: self.zoomDefault))
             flag = true
         }
         

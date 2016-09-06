@@ -76,3 +76,8 @@
 "empty_table_schedule" = "Nenhum horário disponível no momento";
 "empty_table_absence" = "Nenhuma disciplina encontrada no momento";
 "empty_table_grade" = "Nenhuma disciplina encontrada no momento";
+
+// Map
+
+"error_invalidDataFormatTitle" = "Dados com problema";
+"error_invalidDataFormatMessage" = "Problema com a informação vinda do servido";
