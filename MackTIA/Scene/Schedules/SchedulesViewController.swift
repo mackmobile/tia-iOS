@@ -197,8 +197,12 @@ extension SchedulesViewController {
         
         let cell = self.tableView.dequeueReusableCellWithIdentifier("scheduleCell", forIndexPath: indexPath) as! ScheduleTableViewCell
         
+        let dateFormat = NSDateFormatter()
+        dateFormat.dateFormat = "hh:mm"
+        dateFormat.timeZone = NSTimeZone(name: "GMT-3")
+        
         cell.disciplineLabel.text = schedule.discipline
-        cell.rangeTimeLabel.text = schedule.rangeTime
+        cell.rangeTimeLabel.text = "\(dateFormat.stringFromDate(schedule.startTime ?? NSDate())) - \(dateFormat.stringFromDate(schedule.endTime ?? NSDate()))"
         cell.classNameLabel.text = schedule.className
         cell.collegeNameLabel.text = schedule.collegeName
         cell.buildingNumberLabel?.text = schedule.buildingNumber

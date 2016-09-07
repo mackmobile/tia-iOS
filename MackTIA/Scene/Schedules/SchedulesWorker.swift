@@ -38,8 +38,11 @@ class SchedulesWorker {
                 return
             }
             
+            // TODO:  arrumar aqui
             
-            completionHandler(schedules: self.parseJSON(response), error: nil)
+            let schedules = self.parseJSON(response)
+            
+            completionHandler(schedules: schedules, error: nil)
         }
     }
     
@@ -57,16 +60,25 @@ class SchedulesWorker {
                 collegeName    = scheduleData["escola_nome"] as? String,
                 buildingNumber = scheduleData["predio"] as? String,
                 numberRoom     = scheduleData["sala"] as? String,
-                rangeTime      = scheduleData["hora"] as? String,
+                auxDate        = scheduleData["hora"] as? String,
                 day            = scheduleData["dia"] as? String,
                 updateAt       = scheduleData["update"] as? String
             else {
                 continue
             }
             
+            let format = NSDateFormatter()
+            format.dateFormat = "hh:mm"
+            format.timeZone = NSTimeZone(name: "GMT-3")
+            
+            let startTime = format.dateFromString(auxDate)
+            let endTime = startTime?.dateByAddingTimeInterval(2700)
+            
+            print("Start: \(format.stringFromDate(startTime!)) - End: \(format.stringFromDate(endTime!))")
+            
             // TODO: ADD OS ATRIBUTOS AQUI
             schedules.append(
-                Schedule(code: code, discipline: discipline, day: day, className: className, collegeName: collegeName, buildingNumber: buildingNumber, numberRoom: numberRoom, rangeTime: rangeTime, updatedAt: updateAt)
+                Schedule(code: code, discipline: discipline, day: day, className: className, collegeName: collegeName, buildingNumber: buildingNumber, numberRoom: numberRoom, startTime: startTime, endTime: endTime, updatedAt: updateAt)
             )
         }
         
