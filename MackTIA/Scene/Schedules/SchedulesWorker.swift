@@ -15,26 +15,26 @@ class SchedulesWorker {
     
     // MARK: Business Logic
     
-    func fetchSchedules(completionHandler:(schedules:[Schedule], error: ErrorCode?) -> Void) {
-        TIAServer.sharedInstance.sendRequest(.ClassSchedule) { (jsonData, error) in
+    func fetchSchedules(_ completionHandler:@escaping (_ schedules:[Schedule], _ error: ErrorCode?) -> Void) {
+        TIAServer.sharedInstance.sendRequest(service: .ClassSchedule) { (jsonData, error) in
             guard let _  = jsonData,
-                response = jsonData!["resposta"] as? [NSDictionary] else {
+                let response = jsonData!["resposta"] as? [NSDictionary] else {
                     
                     if let _ = jsonData?["erro"] as? String  {
                         let errorMessage = jsonData?["erro"]
                         print(#function, "Server report error: \(errorMessage)")
-                        completionHandler(schedules: [], error: ErrorCode.InvalidLoginCredentials(title: NSLocalizedString("error_invalidLoginCredentials_title", comment: "User credentials error"), message: NSLocalizedString("error_invalidLoginCredentials_message", comment: "User credentials error")))
+                        completionHandler([], ErrorCode.invalidLoginCredentials(title: NSLocalizedString("error_invalidLoginCredentials_title", comment: "User credentials error"), message: NSLocalizedString("error_invalidLoginCredentials_message", comment: "User credentials error")))
                         return
                     }
                     
-                    let errorMessage = ErrorCode.OtherFailure(title: NSLocalizedString("schedules_InvalidDataTitle", comment: "Problem with schedule data from API"), message: NSLocalizedString("schedules_InvalidDataMessage", comment: "Problem with absence data from API"))
+                    let errorMessage = ErrorCode.otherFailure(title: NSLocalizedString("schedules_InvalidDataTitle", comment: "Problem with schedule data from API"), message: NSLocalizedString("schedules_InvalidDataMessage", comment: "Problem with absence data from API"))
                     
-                    completionHandler(schedules: [], error: errorMessage)
+                    completionHandler([], errorMessage)
                     return
             }
             
             if error != nil {
-                completionHandler(schedules: [], error: error)
+                completionHandler([], error)
                 return
             }
             
@@ -42,11 +42,11 @@ class SchedulesWorker {
             
             let schedules = self.parseJSON(response)
             
-            completionHandler(schedules: schedules, error: nil)
+            completionHandler(schedules, nil)
         }
     }
     
-    private func parseJSON(response:[AnyObject]) -> [Schedule] {
+    fileprivate func parseJSON(_ response:[AnyObject]) -> [Schedule] {
         
         var schedules:[Schedule] = []
         
@@ -55,26 +55,27 @@ class SchedulesWorker {
             // TODO: PEGAR O RESTO DOS ATRIBUTOS
             guard let
                 discipline     = scheduleData["nome"] as? String,
-                code           = scheduleData["codigo"] as? String,
-                className      = scheduleData["turma"] as? String,
-                collegeName    = scheduleData["escola_nome"] as? String,
-                buildingNumber = scheduleData["predio"] as? String,
-                numberRoom     = scheduleData["sala"] as? String,
-                auxDate        = scheduleData["hora"] as? String,
-                day            = scheduleData["dia"] as? String,
-                updateAt       = scheduleData["update"] as? String
+                let code           = scheduleData["codigo"] as? String,
+                let className      = scheduleData["turma"] as? String,
+                let collegeName    = scheduleData["escola_nome"] as? String,
+                let buildingNumber = scheduleData["predio"] as? String,
+                let numberRoom     = scheduleData["sala"] as? String,
+                let auxDate        = scheduleData["hora"] as? String,
+                let day            = scheduleData["dia"] as? String,
+                let updateAt       = scheduleData["update"] as? String
             else {
                 continue
             }
             
-            let format = NSDateFormatter()
-            format.dateFormat = "hh:mm"
-            format.timeZone = NSTimeZone(name: "GMT-3")
+            let format = DateFormatter()
+            format.dateFormat = "HH:mm"
+            format.timeZone = TimeZone(identifier: "GMT-3")
             
-            let startTime = format.dateFromString(auxDate)
-            let endTime = startTime?.dateByAddingTimeInterval(2700)
+            let startTime = format.date(from: auxDate)
+            let endTime = startTime?.addingTimeInterval(2700)
             
-            print("Start: \(format.stringFromDate(startTime!)) - End: \(format.stringFromDate(endTime!))")
+            print("- Start: \(startTime) - End: \(endTime)")
+            print("Start: \(format.string(from: startTime ?? Date())) - End: \(format.string(from: endTime ?? Date()))")
             
             // TODO: ADD OS ATRIBUTOS AQUI
             schedules.append(

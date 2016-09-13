@@ -43,7 +43,7 @@ class SchedulesRouter: SchedulesRouterInput
   
   // MARK: Communication
   
-  func passDataToNextScene(segue: UIStoryboardSegue)
+  func passDataToNextScene(_ segue: UIStoryboardSegue)
   {
     // NOTE: Teach the router which scenes it can communicate with
     
@@ -52,7 +52,7 @@ class SchedulesRouter: SchedulesRouterInput
     }
   }
   
-  func passDataToSomewhereScene(segue: UIStoryboardSegue)
+  func passDataToSomewhereScene(_ segue: UIStoryboardSegue)
   {
     // NOTE: Teach the router how to pass data to the next scene
     

@@ -12,11 +12,11 @@
 import UIKit
 
 protocol AbsenceInteractorInput {
-    func fetchAbsences(request: AbsenceRequest)
+    func fetchAbsences(_ request: AbsenceRequest)
 }
 
 protocol AbsenceInteractorOutput {
-    func presentFetchedAbsences(response: AbsenceResponse)
+    func presentFetchedAbsences(_ response: AbsenceResponse)
 }
 
 class AbsenceInteractor: AbsenceInteractorInput {
@@ -25,7 +25,7 @@ class AbsenceInteractor: AbsenceInteractorInput {
     
     // MARK: Business logic
     
-    func fetchAbsences(request: AbsenceRequest) {
+    func fetchAbsences(_ request: AbsenceRequest) {
         worker = AbsenceWorker()
         worker.fetchAbsences { [unowned self] (absences, error) in
             let response = AbsenceResponse(absences: absences, error: error)

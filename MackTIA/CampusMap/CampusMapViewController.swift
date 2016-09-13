@@ -11,7 +11,7 @@
 
 import UIKit
 import MapKit
-import Polyline
+//import Polyline
 import GoogleMaps
 
 
@@ -48,18 +48,17 @@ class CampusMapViewController: UIViewController, MapRequest {
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.delegate = self
         let authstate = CLLocationManager.authorizationStatus()
-        if(authstate == CLAuthorizationStatus.NotDetermined){
+        if(authstate == CLAuthorizationStatus.notDetermined){
             print("Not Authorised")
             locationManager.requestWhenInUseAuthorization()
         }
         
-        mapView.tintColor = UIColor.redColor()
-        mapView.myLocationEnabled = true
+        mapView.tintColor = UIColor.red
+        mapView.isMyLocationEnabled = true
         mapView.delegate = self
-        
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.locationManager.startUpdatingLocation()
         
@@ -68,14 +67,14 @@ class CampusMapViewController: UIViewController, MapRequest {
         }
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.locationManager.stopUpdatingLocation()
     }
     
     // MARK: Event handling
     
-    @IBAction func reloadButton(sender: AnyObject) {
+    @IBAction func reloadButton(_ sender: AnyObject) {
         self.loadMapDataRemotely()
     }
     
@@ -112,7 +111,7 @@ class CampusMapViewController: UIViewController, MapRequest {
     
     func loadPinAnnotations() {
         
-        mapView.camera = GMSCameraPosition.cameraWithTarget(self.centerCoordinate, zoom: self.zoomDefault)
+        mapView.camera = GMSCameraPosition.camera(withTarget: self.centerCoordinate, zoom: self.zoomDefault)
         
         // Add Map Annotation
         for item in self.pins {
@@ -136,15 +135,17 @@ class CampusMapViewController: UIViewController, MapRequest {
         // to create encoded polyline: https://google-developers.appspot.com/maps/documentation/utilities/polyline-utility/polylineutility
         
         for item in self.regions {
-            let path = GMSMutablePath(fromEncodedPath: item["polylineString"]!)
-            let polygon = GMSPolygon(path: path)
-            polygon.title = item["name"]
-            polygon.fillColor = UIColor(hex: item["color"]!).colorWithAlphaComponent(0.5)
-            polygon.map = mapView
+            if let coordsString = item["polylineString"] {
+                let path = GMSMutablePath(fromEncodedPath: coordsString)
+                let polygon = GMSPolygon(path: path)
+                polygon.title = item["name"]
+                polygon.fillColor = UIColor(hex: item["color"]!).withAlphaComponent(0.5)
+                polygon.map = mapView
+            }
         }
     }
     
-    func traceRouteTo(buildNumber buildNumber: String) {
+    func traceRouteTo(buildNumber: String) {
         
         let buildNameFormatted = String(Int(buildNumber) ?? 0)
         
@@ -153,18 +154,18 @@ class CampusMapViewController: UIViewController, MapRequest {
             let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(point.x), longitude: CLLocationDegrees(point.y))
             traceRouteTo(coordinate: coordinate)
         } else {
-            let alert = UIAlertController(title: NSLocalizedString("campusmap_errorBuildNotFoundTitle", comment: "Too far away"), message: String(format: NSLocalizedString("campusmap_errorBuildNotFoundMessage", comment: "Too far away"), buildNumber), preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            let alert = UIAlertController(title: NSLocalizedString("campusmap_errorBuildNotFoundTitle", comment: "Too far away"), message: String(format: NSLocalizedString("campusmap_errorBuildNotFoundMessage", comment: "Too far away"), buildNumber), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
     func traceRouteTo(coordinate destination: CLLocationCoordinate2D) {
         if let origin = locValue {
-            if CLLocation(location: origin).distanceFromLocation(CLLocation(location: destination)) > 3000 {
-                let alert = UIAlertController(title: NSLocalizedString("campusmap_errorTooFarAwayTitle", comment: "Too far away"), message: NSLocalizedString("campusmap_errorTooFarAwayMessage", comment: "Too far away"), preferredStyle: .Alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
+            if CLLocation(location: origin).distance(from: CLLocation(location: destination)) > 3000 {
+                let alert = UIAlertController(title: NSLocalizedString("campusmap_errorTooFarAwayTitle", comment: "Too far away"), message: NSLocalizedString("campusmap_errorTooFarAwayMessage", comment: "Too far away"), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
                 return
             }
             DirectionsAPI.sharedInstance.getPolyline(origin, destination: destination) { [weak self] (polylineEncoded, error) in
@@ -187,10 +188,10 @@ class CampusMapViewController: UIViewController, MapRequest {
                 }
                 
                 polyline.strokeWidth = 4
-                polyline.strokeColor = UIColor.redColor().colorWithAlphaComponent(0.6)
-//                let styles = [GMSStrokeStyle.solidColor(UIColor.redColor().colorWithAlphaComponent(0.6)), GMSStrokeStyle.solidColor(UIColor.clearColor())]
-//                let lengths = [1,2]
-//                polyline.spans = GMSStyleSpans(polyline.path!, styles, lengths, kGMSLengthRhumb)
+                polyline.strokeColor = UIColor.red.withAlphaComponent(0.6)
+                //                let styles = [GMSStrokeStyle.solidColor(UIColor.redColor().colorWithAlphaComponent(0.6)), GMSStrokeStyle.solidColor(UIColor.clearColor())]
+                //                let lengths = [1,2]
+                //                polyline.spans = GMSStyleSpans(polyline.path!, styles, lengths, kGMSLengthRhumb)
                 
                 polyline.map = self?.mapView
             }
@@ -203,7 +204,7 @@ class CampusMapViewController: UIViewController, MapRequest {
 // MARK: - Map View delegate
 
 extension CampusMapViewController: GMSMapViewDelegate, CLLocationManagerDelegate {
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             self.locValue = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             
@@ -215,12 +216,12 @@ extension CampusMapViewController: GMSMapViewDelegate, CLLocationManagerDelegate
         }
     }
     
-    func mapView(mapView: GMSMapView, didTapMarker marker: GMSMarker) -> Bool {
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         self.traceRouteTo(coordinate: marker.position)
         return false
     }
     
-    func mapView(mapView: GMSMapView, didChangeCameraPosition position: GMSCameraPosition) {
+    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
         
         if flag {
             flag = false
@@ -230,8 +231,8 @@ extension CampusMapViewController: GMSMapViewDelegate, CLLocationManagerDelegate
         let centerLocation = CLLocation(location: self.centerCoordinate)
         let centerMapView = CLLocation(location: mapView.camera.target)
         
-        if centerLocation.distanceFromLocation(centerMapView) > Double(self.distanceDefault) || mapView.camera.zoom < self.zoomMax {
-            mapView.animateToCameraPosition(GMSCameraPosition.cameraWithTarget(self.centerCoordinate, zoom: self.zoomDefault))
+        if centerLocation.distance(from: centerMapView) > Double(self.distanceDefault) || mapView.camera.zoom < self.zoomMax {
+            mapView.animate(to: GMSCameraPosition.camera(withTarget: self.centerCoordinate, zoom: self.zoomDefault))
             flag = true
         }
         

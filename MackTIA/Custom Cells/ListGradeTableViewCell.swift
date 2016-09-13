@@ -34,20 +34,20 @@ class ListGradeTableViewCell: UITableViewCell {
         layer.masksToBounds = true
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        if self.selected {
-            UIView.animateWithDuration(0.3, delay: 0.0, options:[], animations: { () -> Void in
+        if self.isSelected {
+            UIView.animate(withDuration: 0.3, delay: 0.0, options:[], animations: { () -> Void in
                 self.contentView.backgroundColor = UIColor(hex: "FAFAFA")
                 }, completion: nil)
         } else {
-            UIView.animateWithDuration(0.3, delay: 0.0, options:[], animations: { () -> Void in
+            UIView.animate(withDuration: 0.3, delay: 0.0, options:[], animations: { () -> Void in
                 self.contentView.backgroundColor = UIColor(hex: "FFFFFF")
                 }, completion: nil)
         }
     }
     
-    func config(grade:Grade) {
+    func config(_ grade:Grade) {
         self.classNameLabel.text = grade.className
         self.formulaLabel.text = grade.formula
         self.grades = grade.grades
@@ -68,11 +68,11 @@ extension ListGradeTableViewCell: UICollectionViewDataSource {
     
     
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView == ni1CollectionView || collectionView == ni2CollectionView {
             return 6
@@ -81,23 +81,23 @@ extension ListGradeTableViewCell: UICollectionViewDataSource {
         return 5
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == ni1CollectionView {
-            let key = ni1ComponentsKey[indexPath.row]
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("gradeCell", forIndexPath: indexPath) as! ListGradeCollectionViewCell
+            let key = ni1ComponentsKey[(indexPath as NSIndexPath).row]
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gradeCell", for: indexPath) as! ListGradeCollectionViewCell
             cell.title.text = key
             cell.value.text = grades[key] ?? "-"
             return cell
         } else if collectionView == ni2CollectionView {
-            let key = ni2ComponentsKey[indexPath.row]
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("gradeCell", forIndexPath: indexPath) as! ListGradeCollectionViewCell
+            let key = ni2ComponentsKey[(indexPath as NSIndexPath).row]
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gradeCell", for: indexPath) as! ListGradeCollectionViewCell
             cell.title.text = key
             cell.value.text = grades[key] ?? "-"
             return cell
         } else if collectionView == otherGradesCollectionView {
-            let key = otherComponentsKey[indexPath.row]
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("gradeCell", forIndexPath: indexPath) as! ListGradeCollectionViewCell
+            let key = otherComponentsKey[(indexPath as NSIndexPath).row]
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gradeCell", for: indexPath) as! ListGradeCollectionViewCell
             cell.title.text = key
             cell.value.text = grades[key] ?? "-"
             return cell

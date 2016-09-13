@@ -12,11 +12,11 @@
 import UIKit
 
 protocol SchedulesInteractorInput {
-    func fetchSchedules(request: SchedulesRequest)
+    func fetchSchedules(_ request: SchedulesRequest)
 }
 
 protocol SchedulesInteractorOutput {
-    func presentFetchedSchedules(response: SchedulesResponse)
+    func presentFetchedSchedules(_ response: SchedulesResponse)
 }
 
 class SchedulesInteractor: SchedulesInteractorInput {
@@ -24,7 +24,7 @@ class SchedulesInteractor: SchedulesInteractorInput {
     var worker: SchedulesWorker!
   
     // MARK: Business logic
-    func fetchSchedules(request: SchedulesRequest) -> Void {
+    func fetchSchedules(_ request: SchedulesRequest) -> Void {
         worker = SchedulesWorker()
         worker.fetchSchedules { [weak copySelf = self] (schedules, error) in
             let response = SchedulesResponse(schedules: schedules, error: error)

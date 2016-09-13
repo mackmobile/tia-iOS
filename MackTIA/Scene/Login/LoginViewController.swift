@@ -16,14 +16,14 @@ import Crashlytics
 // Metodos que poderao ser invocados pelo Presenter
 protocol LoginViewControllerInput
 {
-    func displayLoginFailure(viewModel: LoginViewModel)
+    func displayLoginFailure(_ viewModel: LoginViewModel)
     func loginAccepted()
 }
 
 // Metodos que podem ser invocados no Interector
 protocol LoginViewControllerOutput
 {
-    func validateLogin(request: LoginRequest)
+    func validateLogin(_ request: LoginRequest)
 }
 
 class LoginViewController: UIViewController, AKPickerViewDataSource, AKPickerViewDelegate, UITextFieldDelegate, LoginViewControllerInput
@@ -66,7 +66,7 @@ class LoginViewController: UIViewController, AKPickerViewDataSource, AKPickerVie
         self.configView()
     }
     
-    private func configView() {
+    fileprivate func configView() {
         let paddingViewTia = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 50))
         let paddingViewPass = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 50))
         
@@ -76,9 +76,9 @@ class LoginViewController: UIViewController, AKPickerViewDataSource, AKPickerVie
         
         self.tiaTextField.layer.cornerRadius = 7
         self.tiaTextField.leftView = paddingViewTia
-        self.tiaTextField.leftViewMode = .Always
+        self.tiaTextField.leftViewMode = .always
         self.tiaTextField.rightView = paddingViewTia
-        self.tiaTextField.rightViewMode = .Always
+        self.tiaTextField.rightViewMode = .always
         self.tiaTextField.attributedPlaceholder = tiaPlaceholder
         
         let passPlaceholder = NSMutableAttributedString(string: NSLocalizedString("password", comment: "Password Placeholder")) // Localized text here!
@@ -87,9 +87,9 @@ class LoginViewController: UIViewController, AKPickerViewDataSource, AKPickerVie
         
         self.passTextField.layer.cornerRadius = 7
         self.passTextField.leftView = paddingViewPass
-        self.passTextField.leftViewMode = .Always
+        self.passTextField.leftViewMode = .always
         self.passTextField.rightView = paddingViewPass
-        self.passTextField.rightViewMode = .Always
+        self.passTextField.rightViewMode = .always
         self.passTextField.attributedPlaceholder = passPlaceholder
         
         self.loginButton.layer.cornerRadius = 7
@@ -99,38 +99,38 @@ class LoginViewController: UIViewController, AKPickerViewDataSource, AKPickerVie
         self.campusPickerView.layer.cornerRadius = 7
         self.campusPickerView.selectItem(1, animated: false)
         self.campusPickerView.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7)
-        self.campusPickerView.highlightedTextColor = UIColor.whiteColor()
+        self.campusPickerView.highlightedTextColor = UIColor.white
         
         // este codigo existe para que na storyboard a view e o activityIndicator possam ficar de fundo sem atrapalhar o trabalho do desgin
-        self.view.bringSubviewToFront(self.whaitingView)
-        self.view.bringSubviewToFront(self.activityIndicator)
-        self.activityIndicator.hidden = true
-        self.whaitingView.hidden = true
+        self.view.bringSubview(toFront: self.whaitingView)
+        self.view.bringSubview(toFront: self.activityIndicator)
+        self.activityIndicator.isHidden = true
+        self.whaitingView.isHidden = true
         
         // Observer keyboard events
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.keyboardWasShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.keyboardWasHide(_:)), name:UIKeyboardWillHideNotification, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWasShow(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWasHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil);
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     
     // Necessario para evitar problema com notificacoes enviadas para VC que nao existe mais
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self);
+        NotificationCenter.default.removeObserver(self);
     }
     
     // Necessario para remover teclado da tela caso o usario toque fora dele
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
     // MARK: Event handling
     
-    @IBAction func login(sender: AnyObject) {
+    @IBAction func login(_ sender: AnyObject) {
         // prepare interface
-        self.whaitingView.hidden = false
+        self.whaitingView.isHidden = false
         self.activityIndicator.startAnimating()
         
         // get interface data
@@ -147,17 +147,17 @@ class LoginViewController: UIViewController, AKPickerViewDataSource, AKPickerVie
     
     // MARK: Display logic
     
-    func displayLoginFailure(viewModel: LoginViewModel) {
-        let alert = UIAlertController(title: viewModel.errorTitle, message: viewModel.errorMessage, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-        self.presentViewController(alert, animated: true) { 
+    func displayLoginFailure(_ viewModel: LoginViewModel) {
+        let alert = UIAlertController(title: viewModel.errorTitle, message: viewModel.errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true) { 
             self.activityIndicator?.stopAnimating()
-            self.whaitingView.hidden = true
+            self.whaitingView.isHidden = true
         }
         
         // FABRIC - Login error
         // TODO: melhorar o log no fabric
-        Answers.logLoginWithMethod("Digits", success: false, customAttributes: ["metodo":"login no servidor"])
+        Answers.logLogin(withMethod: "Digits", success: false, customAttributes: ["metodo":"login no servidor"])
     }
     
     func loginAccepted() {
@@ -166,24 +166,24 @@ class LoginViewController: UIViewController, AKPickerViewDataSource, AKPickerVie
         
         // FABRIC - Login accpeted
         // TODO: conferir no fabric
-        Answers.logLoginWithMethod("Digits", success: false, customAttributes: ["metodo":"login no servidor"])
+        Answers.logLogin(withMethod: "Digits", success: false, customAttributes: ["metodo":"login no servidor"])
     }
     
     
     // MARK: Util Methods
     
-    func keyboardWasShow(notification: NSNotification) {
-        var info = notification.userInfo!
-        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+    func keyboardWasShow(_ notification: Notification) {
+        var info = (notification as NSNotification).userInfo!
+        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         
-        UIView.animateWithDuration(0.5, animations: { () -> Void in
+        UIView.animate(withDuration: 0.5, animations: { () -> Void in
             self.bottomConstraint.constant = keyboardFrame.size.height + 20
             self.view.layoutIfNeeded()
         })
     }
     
-    func keyboardWasHide(notification: NSNotification) {
-        UIView.animateWithDuration(0.5, animations: { () -> Void in
+    func keyboardWasHide(_ notification: Notification) {
+        UIView.animate(withDuration: 0.5, animations: { () -> Void in
             self.bottomConstraint.constant = 102
             self.view.layoutIfNeeded()
         })
@@ -198,16 +198,16 @@ class LoginViewController: UIViewController, AKPickerViewDataSource, AKPickerVie
     }
     
     // MARK: - AKPickerView
-    func numberOfItemsInPickerView(pickerView: AKPickerView) -> Int {
+    func numberOfItemsInPickerView(_ pickerView: AKPickerView) -> Int {
         return self.campus.count
     }
     
-    func pickerView(pickerView: AKPickerView, titleForItem item: Int) -> String {
+    func pickerView(_ pickerView: AKPickerView, titleForItem item: Int) -> String {
         return self.campus[item]
     }
     
     // MARK: - TextFieldDelegate
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if textField == passTextField {
             self.login(self.loginButton)
@@ -227,11 +227,11 @@ class LoginViewController: UIViewController, AKPickerViewDataSource, AKPickerVie
     
     // MARK: Rotation Support
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.Portrait
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
     }
     
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return false
     }
 }

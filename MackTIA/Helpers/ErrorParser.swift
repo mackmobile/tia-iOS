@@ -9,21 +9,21 @@
 import UIKit
 
 class ErrorParser: NSObject {
-    class func parse(error:ErrorCode) -> (title:String,message:String) {
+    class func parse(_ error:ErrorCode) -> (title:String,message:String) {
         var errorTitle:String = ""
         var errorMessage:String = ""
         
         switch error {
-        case let .InvalidLoginCredentials(title,message):
+        case let .invalidLoginCredentials(title,message):
             errorTitle = title
             errorMessage = message
-        case .NoInternetConnection:
+        case .noInternetConnection:
             errorTitle = NSLocalizedString("error_noInternetConnection_title", comment: "Internet problem")
             errorMessage = NSLocalizedString("error_noInternetConnection_message", comment: "Internet problem")
-        case .DomainNotFound:
+        case .domainNotFound:
             errorTitle = NSLocalizedString("error_domainNotFound_title", comment: "Domain problem")
             errorMessage = NSLocalizedString("error_domainNotFound_message", comment: "Domain problem")
-        case let .OtherFailure(title, message):
+        case let .otherFailure(title, message):
             errorTitle = title
             errorMessage = message
         }

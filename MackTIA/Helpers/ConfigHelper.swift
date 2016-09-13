@@ -13,14 +13,27 @@ import Foundation
  */
 class ConfigHelper {
     
-    class var sharedInstance : ConfigHelper {
+//    private static var __once: () = {
+//            Static.instance = ConfigHelper()
+//        }()
+//    
+//    class var sharedInstance : ConfigHelper {
+//        struct Static {
+//            static var onceToken : Int = 0
+//            static var instance : ConfigHelper? = nil
+//        }
+//        _ = ConfigHelper.__once
+//        return Static.instance!
+//    }
+
+    class var sharedInstance: ConfigHelper {
         struct Static {
-            static var onceToken : dispatch_once_t = 0
-            static var instance : ConfigHelper? = nil
+            static var instance: ConfigHelper?
+            static var doOnce: () {
+                Static.instance = ConfigHelper()
+            }
         }
-        dispatch_once(&Static.onceToken) {
-            Static.instance = ConfigHelper()
-        }
+        Static.doOnce
         return Static.instance!
     }
     
@@ -30,10 +43,10 @@ class ConfigHelper {
     var horariosURL:String!
     
     
-    private init() {
+    fileprivate init() {
         
         // Verifica se o arquivo config.plist existe
-        guard let path = NSBundle.mainBundle().pathForResource("config", ofType: "plist") else {
+        guard let path = Bundle.main.path(forResource: "config", ofType: "plist") else {
             self.faltasURL      = ""
             self.notasURL       = ""
             self.loginURL       = ""
@@ -44,10 +57,10 @@ class ConfigHelper {
         let config = NSDictionary(contentsOfFile: path)!
         
         // Verifica se existem as configurações de URL necessárias
-        guard let faltasURL = config.objectForKey("faltasURL") as? String ,
-            let notasURL  = config.objectForKey("notasURL")  as? String ,
-            let loginURL  = config.objectForKey("loginURL")  as? String ,
-            let horariosURL  = config.objectForKey("horariosURL")  as? String else {
+        guard let faltasURL = config.object(forKey: "faltasURL") as? String ,
+            let notasURL  = config.object(forKey: "notasURL")  as? String ,
+            let loginURL  = config.object(forKey: "loginURL")  as? String ,
+            let horariosURL  = config.object(forKey: "horariosURL")  as? String else {
                 self.faltasURL      = ""
                 self.notasURL       = ""
                 self.loginURL       = ""

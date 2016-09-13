@@ -25,15 +25,15 @@ class CircleGraphView: UIView {
     @IBInspectable
     var arcWidth:CGFloat = 10.0
     @IBInspectable
-    var arcColor:UIColor = UIColor.yellowColor()
+    var arcColor:UIColor = UIColor.yellow
     @IBInspectable
-    var maxArcColor:UIColor = UIColor.greenColor()
+    var maxArcColor:UIColor = UIColor.green
     @IBInspectable
-    var arcBackgroundColor:UIColor = UIColor.blackColor()
+    var arcBackgroundColor:UIColor = UIColor.black
     
     
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         //Important constants for circle
         let fullCircle = 2.0 * CGFloat(M_PI)
         let start:CGFloat = -0.25 * fullCircle
@@ -42,14 +42,14 @@ class CircleGraphView: UIView {
 //        let maxEnd:CGFloat = maxArc * fullCircle + start
         
         //find the centerpoint of the rect
-        let centerPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect))
+        let centerPoint = CGPoint(x: rect.midX, y: rect.midY)
         
         //define the radius by the smallest side of the view
         var radius:CGFloat = 0.0
-        if CGRectGetWidth(rect) > CGRectGetHeight(rect){
-            radius = (CGRectGetWidth(rect) - arcWidth) / 2.0
+        if rect.width > rect.height{
+            radius = (rect.width - arcWidth) / 2.0
         }else{
-            radius = (CGRectGetHeight(rect) - arcWidth) / 2.0
+            radius = (rect.height - arcWidth) / 2.0
         }
         
         
@@ -64,13 +64,14 @@ class CircleGraphView: UIView {
         
         
         //set line attributes
-        CGContextSetLineWidth(context, arcWidth)
-        CGContextSetLineCap(context, CGLineCap.Round)
+        context?.setLineWidth(arcWidth)
+        context?.setLineCap(CGLineCap.round)
         
         //make the circle background
-        CGContextSetStrokeColorWithColor(context, arcBackgroundColor.CGColor)
-        CGContextAddArc(context, centerPoint.x, centerPoint.y, radius, 0, fullCircle, 0)
-        CGContextStrokePath(context)
+        context?.setStrokeColor(arcBackgroundColor.cgColor)
+        context?.addArc(center: centerPoint, radius: radius, startAngle: 0, endAngle: fullCircle, clockwise: false)
+//        CGContextAddArc(context, centerPoint.x, centerPoint.y, radius, 0, fullCircle, 0)
+        context?.strokePath()
         
 //        //make the circle max
 //        CGContextSetStrokeColorWithColor(context, maxArcColor.CGColor)
@@ -78,9 +79,10 @@ class CircleGraphView: UIView {
 //        CGContextStrokePath(context)
         
         //make the main circle
-        CGContextSetStrokeColorWithColor(context, arcColor.CGColor)
-        CGContextAddArc(context, centerPoint.x, centerPoint.y, radius, start, end, 0)
-        CGContextStrokePath(context)
+        context?.setStrokeColor(arcColor.cgColor)
+        context?.addArc(center: centerPoint, radius: radius, startAngle: start, endAngle: end, clockwise: false)
+//        CGContextAddArc(context, centerPoint.x, centerPoint.y, radius, start, end, 0)
+        context?.strokePath()
         
         
         

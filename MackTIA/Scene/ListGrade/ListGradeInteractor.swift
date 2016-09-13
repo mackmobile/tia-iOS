@@ -12,11 +12,11 @@
 import UIKit
 
 protocol ListGradeInteractorInput {
-    func fetchGrades(request: ListGradeRequest)
+    func fetchGrades(_ request: ListGradeRequest)
 }
 
 protocol ListGradeInteractorOutput {
-    func presentFetchedGrades(response: ListGradeResponse)
+    func presentFetchedGrades(_ response: ListGradeResponse)
 }
 
 class ListGradeInteractor: ListGradeInteractorInput {
@@ -25,7 +25,7 @@ class ListGradeInteractor: ListGradeInteractorInput {
     
     // MARK: Business logic
     
-    func fetchGrades(request: ListGradeRequest) {
+    func fetchGrades(_ request: ListGradeRequest) {
         // NOTE: Create some Worker to do the work
         
         worker = ListGradeWorker()

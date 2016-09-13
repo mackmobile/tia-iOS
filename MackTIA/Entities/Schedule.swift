@@ -17,8 +17,8 @@ struct Schedule {
     var collegeName: String?
     var buildingNumber: String?
     var numberRoom: String?
-    var startTime: NSDate?
-    var endTime: NSDate?
+    var startTime: Date?
+    var endTime: Date?
     var updatedAt: String?
 
 }

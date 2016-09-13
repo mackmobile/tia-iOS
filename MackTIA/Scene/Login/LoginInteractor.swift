@@ -12,11 +12,11 @@
 import UIKit
 
 protocol LoginInteractorInput {
-    func validateLogin(request: LoginRequest)
+    func validateLogin(_ request: LoginRequest)
 }
 
 protocol LoginInteractorOutput {
-    func presentLoginError(response: LoginResponse)
+    func presentLoginError(_ response: LoginResponse)
     func presentLoginAccepted()
 }
 
@@ -26,7 +26,7 @@ class LoginInteractor: LoginInteractorInput {
     
     // MARK: Business logic
     
-    func validateLogin(request: LoginRequest) {
+    func validateLogin(_ request: LoginRequest) {
         // NOTE: Create some Worker to do the work
         
         worker = LoginWorker()

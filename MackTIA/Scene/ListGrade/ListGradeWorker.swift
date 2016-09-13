@@ -15,32 +15,32 @@ class ListGradeWorker {
     
     // MARK: Business Logic
     
-    func fetchGrades(completionHandler: (grades: [Grade], error: ErrorCode?)->Void) {
-        TIAServer.sharedInstance.sendRequest(ServiceURL.Grades) { [weak copySelf = self] (jsonData, error) in
+    func fetchGrades(_ completionHandler: @escaping (_ grades: [Grade], _ error: ErrorCode?)->Void) {
+        TIAServer.sharedInstance.sendRequest(service: ServiceURL.Grades) { [weak copySelf = self] (jsonData, error) in
             let grades = copySelf?.parseJSON(jsonData)
             
             if error != nil {
-                completionHandler(grades: [], error: error)
+                completionHandler([], error)
                 return
             }
 
             guard let safeGrades = grades else {
-                completionHandler(grades: [],error: ErrorCode.OtherFailure(title: NSLocalizedString("grade_InvalidDataTitle", comment: "Problem with grade data from API"), message: NSLocalizedString("grade_InvalidDataMessage", comment: "Problem with grade data from API")))
+                completionHandler([],ErrorCode.otherFailure(title: NSLocalizedString("grade_InvalidDataTitle", comment: "Problem with grade data from API"), message: NSLocalizedString("grade_InvalidDataMessage", comment: "Problem with grade data from API")))
                 return
             }
             
             if let _ = jsonData?["erro"] as? String  {
                 let errorMessage = jsonData?["erro"]
                 print(#function, "Server report error: \(errorMessage)")
-                completionHandler(grades: [], error: ErrorCode.InvalidLoginCredentials(title: NSLocalizedString("error_invalidLoginCredentials_title", comment: "User credentials error"), message: NSLocalizedString("error_invalidLoginCredentials_message", comment: "User credentials error")))
+                completionHandler([], ErrorCode.invalidLoginCredentials(title: NSLocalizedString("error_invalidLoginCredentials_title", comment: "User credentials error"), message: NSLocalizedString("error_invalidLoginCredentials_message", comment: "User credentials error")))
                 return
             }
             
-            completionHandler(grades: safeGrades, error: nil)
+            completionHandler(safeGrades, nil)
         }
     }
     
-    private func parseJSON(response:AnyObject?) -> [Grade]? {
+    fileprivate func parseJSON(_ response:AnyObject?) -> [Grade]? {
         
         guard let jsonData = response as? [String:AnyObject] else {
             print(#function, "JSON format is incorrect")

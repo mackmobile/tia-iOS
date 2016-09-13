@@ -11,9 +11,9 @@ import UIKit
 class StatementTableViewController: UITableViewController {
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "accept" {
-            NSUserDefaults.standardUserDefaults().setObject("accepted", forKey: "statement")
+            UserDefaults.standard.set("accepted", forKey: "statement")
         }
     }
 }

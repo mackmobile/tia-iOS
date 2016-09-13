@@ -13,43 +13,50 @@ import UIKit
 
 // MARK: Connect View, Interactor, and Presenter
 
-extension AbsenceViewController: AbsencePresenterOutput
-{
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-    {
+extension AbsenceViewController: AbsencePresenterOutput {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         router.passDataToNextScene(segue)
     }
 }
 
-extension AbsenceInteractor: AbsenceViewControllerOutput
-{
+extension AbsenceInteractor: AbsenceViewControllerOutput {
 }
 
-extension AbsencePresenter: AbsenceInteractorOutput
-{
+extension AbsencePresenter: AbsenceInteractorOutput {
 }
 
-class AbsenceConfigurator
-{
-    // MARK: Object lifecycle
+class AbsenceConfigurator {
+//    private static var __once: () = {
+//            Static.instance = AbsenceConfigurator()
+//        }()
+//    // MARK: Object lifecycle
+//    
+//    class var sharedInstance: AbsenceConfigurator
+//    {
+//        struct Static {
+//            static var instance: AbsenceConfigurator?
+//            static var token: Int = 0
+//        }
+//        
+//        _ = AbsenceConfigurator.__once
+//        
+//        return Static.instance!
+//    }
     
-    class var sharedInstance: AbsenceConfigurator
-    {
+    class var sharedInstance: AbsenceConfigurator {
         struct Static {
             static var instance: AbsenceConfigurator?
-            static var token: dispatch_once_t = 0
+            static var doOnce: () {
+                Static.instance = AbsenceConfigurator()
+            }
         }
-        
-        dispatch_once(&Static.token) {
-            Static.instance = AbsenceConfigurator()
-        }
-        
+        Static.doOnce
         return Static.instance!
     }
     
     // MARK: Configuration
     
-    func configure(viewController: AbsenceViewController)
+    func configure(_ viewController: AbsenceViewController)
     {
         let router = AbsenceRouter()
         router.viewController = viewController

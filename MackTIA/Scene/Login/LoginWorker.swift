@@ -14,27 +14,27 @@ import UIKit
 class LoginWorker {
     // MARK: Business Logic
     
-    func validateLogin(request: LoginRequest, completionHandler: (response: Bool, error: ErrorCode?)->Void) { 
+    func validateLogin(_ request: LoginRequest, completionHandler: @escaping (_ response: Bool, _ error: ErrorCode?)->Void) { 
         
         let user = User(name: nil, tia: request.tia, password: request.password, campus: request.campus, campusName: "<em desenvolvimento>")
         TIAServer.sharedInstance.user = user
         // TODO: depois que resolver a mudanca na API voltar para requisicao do tipo login
-        TIAServer.sharedInstance.sendRequest(ServiceURL.Login) { (jsonData, error) in
+        TIAServer.sharedInstance.sendRequest(service: ServiceURL.Login) { (jsonData, error) in
             
             guard error == nil else {
-                completionHandler(response: false, error: error)
+                completionHandler(false, error)
                 return
             }
             
             guard jsonData != nil else {
-                completionHandler(response: false, error: ErrorCode.OtherFailure(title: NSLocalizedString("login_defaultErrorTitle", comment: "Something is wrong with the Server"), message: NSLocalizedString("login_defaultErrorMessage", comment: "Related message")))
+                completionHandler(false, ErrorCode.otherFailure(title: NSLocalizedString("login_defaultErrorTitle", comment: "Something is wrong with the Server"), message: NSLocalizedString("login_defaultErrorMessage", comment: "Related message")))
                 return
             }
             
             if let _ = jsonData!["erro"] as? String  {
                 let errorMessage = jsonData?["erro"]
                 print(#function, "Server report error: \(errorMessage)")
-                completionHandler(response: false, error: ErrorCode.InvalidLoginCredentials(title: NSLocalizedString("error_invalidLoginCredentials_title", comment: "User credentials error"), message: NSLocalizedString("error_invalidLoginCredentials_message", comment: "User credentials error")))
+                completionHandler(false, ErrorCode.invalidLoginCredentials(title: NSLocalizedString("error_invalidLoginCredentials_title", comment: "User credentials error"), message: NSLocalizedString("error_invalidLoginCredentials_message", comment: "User credentials error")))
                 return
             }
             
@@ -46,7 +46,7 @@ class LoginWorker {
             }
             
             TIAServer.sharedInstance.registerLogin()
-            completionHandler(response: true, error: nil)
+            completionHandler(true, nil)
         }
     }
 }

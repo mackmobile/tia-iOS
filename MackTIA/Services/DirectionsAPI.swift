@@ -24,27 +24,27 @@ class DirectionsAPI {
     
     // MARK: Singleton Methods
     static let sharedInstance = DirectionsAPI()
-    let alamoFireManager:Alamofire.Manager?
+    let alamofireManager:Alamofire.SessionManager?
     
     init() {
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 25 // seconds
         configuration.timeoutIntervalForResource = 25
-        self.alamoFireManager = Alamofire.Manager(configuration: configuration)
+        self.alamofireManager = Alamofire.SessionManager(configuration: configuration)
     }
     
     
     // MARK: API Communication
     
-    func getPolyline(origin: CLLocationCoordinate2D, destination: CLLocationCoordinate2D, completionHandler:(polylineEncoded:String?, error: ErrorCode?) -> Void) {
+    func getPolyline(_ origin: CLLocationCoordinate2D, destination: CLLocationCoordinate2D, completionHandler:@escaping (_ polylineEncoded:String?, _ error: ErrorCode?) -> Void) {
         
-        guard let _ = self.alamoFireManager else {
+        guard let alamofireManager = self.alamofireManager else {
             print(#function, "Não foi possível criar objeto Manager para conexão web")
-            completionHandler(polylineEncoded: nil, error: ErrorCode.DomainNotFound)
+            completionHandler(nil, ErrorCode.domainNotFound)
             return
         }
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         let parameters: [String: String] = [
             "origin": "\(origin.latitude),\(origin.longitude)",
@@ -53,23 +53,23 @@ class DirectionsAPI {
             "key": Token.APIKey.rawValue
         ]
         
-        alamoFireManager!.request(.GET, DirectionsURL.Base.rawValue, parameters: parameters).responseJSON { response in
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        alamofireManager.request(DirectionsURL.Base.rawValue, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             
             if response.result.error != nil {
                 print(#function, response.result.error)
-                completionHandler(polylineEncoded: nil, error: ErrorCode.DomainNotFound)
+                completionHandler(nil, ErrorCode.domainNotFound)
                 return
             } else {
-                if let data = response.result.value as? [String: AnyObject] {
+                if let data = response.result.value as? [String: Any] {
                     guard let routes = data["routes"] as? [[String: AnyObject]], let first = routes.first, let overview_polyline = first["overview_polyline"] as? [String: AnyObject], let polyline = overview_polyline["points"] as? String else {
-                        completionHandler(polylineEncoded: nil, error: ErrorCode.OtherFailure(title: NSLocalizedString("error_noDataFound_title", comment: "No data found"), message: NSLocalizedString("error_noDataFound_message", comment: "No data found")))
+                        completionHandler(nil, ErrorCode.otherFailure(title: NSLocalizedString("error_noDataFound_title", comment: "No data found"), message: NSLocalizedString("error_noDataFound_message", comment: "No data found")))
                         return
                     }
-                    completionHandler(polylineEncoded: polyline, error: nil)
+                    completionHandler(polyline, nil)
                     return
                 } else {
-                    completionHandler(polylineEncoded: nil, error: ErrorCode.OtherFailure(title: NSLocalizedString("error_noDataFound_title", comment: "No data found"), message: NSLocalizedString("error_noDataFound_message", comment: "No data found")))
+                    completionHandler(nil, ErrorCode.otherFailure(title: NSLocalizedString("error_noDataFound_title", comment: "No data found"), message: NSLocalizedString("error_noDataFound_message", comment: "No data found")))
                     return
                 }
             }

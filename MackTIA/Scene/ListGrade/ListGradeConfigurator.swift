@@ -14,7 +14,7 @@ import UIKit
 // MARK: Connect View, Interactor, and Presenter
 
 extension ListGradeTableViewController: ListGradePresenterOutput {
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         router.passDataToNextScene(segue)
     }
 }
@@ -26,24 +26,36 @@ extension ListGradePresenter: ListGradeInteractorOutput {
 }
 
 class ListGradeConfigurator {
-    // MARK: Object lifecycle
+//    private static var __once: () = {
+//            Static.instance = ListGradeConfigurator()
+//        }()
+//    // MARK: Object lifecycle
+//    
+//    class var sharedInstance: ListGradeConfigurator {
+//        struct Static {
+//            static var instance: ListGradeConfigurator?
+//            static var token: Int = 0
+//        }
+//        
+//        _ = ListGradeConfigurator.__once
+//        
+//        return Static.instance!
+//    }
     
     class var sharedInstance: ListGradeConfigurator {
         struct Static {
             static var instance: ListGradeConfigurator?
-            static var token: dispatch_once_t = 0
+            static var doOnce: () {
+                Static.instance = ListGradeConfigurator()
+            }
         }
-        
-        dispatch_once(&Static.token) {
-            Static.instance = ListGradeConfigurator()
-        }
-        
+        Static.doOnce
         return Static.instance!
     }
     
     // MARK: Configuration
     
-    func configure(viewController: ListGradeTableViewController) {
+    func configure(_ viewController: ListGradeTableViewController) {
         let router = ListGradeRouter()
         router.viewController = viewController
         

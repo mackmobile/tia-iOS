@@ -27,6 +27,7 @@
 		92256C781D7371460029C397 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92256C771D7371460029C397 /* TableViewExtension.swift */; };
 		92256C7A1D737A180029C397 /* StatementTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92256C791D737A180029C397 /* StatementTableViewController.swift */; };
 		9226EC9A1D7E4DAB00665551 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 927932441D67DC1100127C8C /* MapKit.framework */; };
+		922AD6B11D874E2800F5C4BF /* CoordinateDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922AD6B01D874E2800F5C4BF /* CoordinateDecoder.swift */; };
 		922E01651CC80DF900B843A8 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E01641CC80DF900B843A8 /* AboutTableViewController.swift */; };
 		922E016E1CC80FF800B843A8 /* LoginConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E01671CC80FF800B843A8 /* LoginConfigurator.swift */; };
 		922E016F1CC80FF800B843A8 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E01681CC80FF800B843A8 /* LoginInteractor.swift */; };
@@ -128,6 +129,7 @@
 		86038C641CC5828300A130A2 /* AbsenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbsenceTableViewCell.swift; path = Scene/Absences/AbsenceTableViewCell.swift; sourceTree = "<group>"; };
 		92256C771D7371460029C397 /* TableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewExtension.swift; path = Helpers/TableViewExtension.swift; sourceTree = "<group>"; };
 		92256C791D737A180029C397 /* StatementTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatementTableViewController.swift; path = Scene/About/StatementTableViewController.swift; sourceTree = "<group>"; };
+		922AD6B01D874E2800F5C4BF /* CoordinateDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoordinateDecoder.swift; path = Helpers/CoordinateDecoder.swift; sourceTree = "<group>"; };
 		922E01641CC80DF900B843A8 /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutTableViewController.swift; path = Scene/About/AboutTableViewController.swift; sourceTree = "<group>"; };
 		922E01671CC80FF800B843A8 /* LoginConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginConfigurator.swift; path = Scene/Login/LoginConfigurator.swift; sourceTree = "<group>"; };
 		922E01681CC80FF800B843A8 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginInteractor.swift; path = Scene/Login/LoginInteractor.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				9287869C1CC55E8F00AC72BD /* ErrorParser.swift */,
 				92256C771D7371460029C397 /* TableViewExtension.swift */,
 				92EB036D1D7F072F00A1E5D3 /* UIImageExtension.swift */,
+				922AD6B01D874E2800F5C4BF /* CoordinateDecoder.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -541,12 +544,13 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Mackenzie;
 				TargetAttributes = {
 					9289B87C1B87ADB3004284E3 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = 292X57GPEK;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -622,7 +626,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8E6FFC69612DC1615737766D /* [CP] Copy Pods Resources */ = {
@@ -702,6 +706,7 @@
 				B19990271D6CB98300A909C7 /* DirectionsAPI.swift in Sources */,
 				922E01721CC80FF800B843A8 /* LoginRouter.swift in Sources */,
 				925E2CAB1CC18BA400DEAF52 /* ListGradeCollectionViewCell.swift in Sources */,
+				922AD6B11D874E2800F5C4BF /* CoordinateDecoder.swift in Sources */,
 				925E2CA21CC1616300DEAF52 /* ProgressBarView.swift in Sources */,
 				922E01741CC80FF800B843A8 /* LoginWorker.swift in Sources */,
 				928786AB1CC70FAF00AC72BD /* AbsenceConfigurator.swift in Sources */,
@@ -834,8 +839,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -880,8 +887,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -900,6 +909,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -909,6 +919,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE8B2B82B32CB10B838E64EF /* Pods-TIA.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -926,6 +937,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MackTIA/MackTIA-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -934,6 +946,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1B2B5DB738EFBEDF54D16A4F /* Pods-TIA.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -950,6 +963,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MackTIA/MackTIA-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

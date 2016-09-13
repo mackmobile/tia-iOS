@@ -12,7 +12,7 @@ import UIKit
 // MARK: String
 extension UITableViewController {
     
-    func showEmptyMessage(message:String) {
+    func showEmptyMessage(_ message:String) {
 //        let messageLabel = UILabel(frame: CGRectMake(0,0,self.view.bounds.size.width, self.view.bounds.size.height))
 //        messageLabel.text = message
 //        messageLabel.textColor = UIColor(colorLiteralRed: 1, green: 0, blue: 0, alpha: 0.5)

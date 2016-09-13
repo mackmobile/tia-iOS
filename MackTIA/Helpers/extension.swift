@@ -13,10 +13,10 @@ import CoreLocation
 // MARK: String
 extension String  {
     var md5: String! {
-        let str = self.cStringUsingEncoding(NSUTF8StringEncoding)
-        let strLen = CC_LONG(self.lengthOfBytesUsingEncoding(NSUTF8StringEncoding))
+        let str = self.cString(using: String.Encoding.utf8)
+        let strLen = CC_LONG(self.lengthOfBytes(using: String.Encoding.utf8))
         let digestLen = Int(CC_MD5_DIGEST_LENGTH)
-        let result = UnsafeMutablePointer<CUnsignedChar>.alloc(digestLen)
+        let result = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: digestLen)
         
         CC_MD5(str!, strLen, result)
         
@@ -25,7 +25,7 @@ extension String  {
             hash.appendFormat("%02x", result[i])
         }
         
-        result.dealloc(digestLen)
+        result.deallocate(capacity: digestLen)
         
         return String(format: hash as String)
     }
@@ -35,24 +35,24 @@ extension String  {
 // MARK: UIColor
 extension UIColor {
     convenience init (hex:String) {
-        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString
+        var cString:String = hex.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines).uppercased()
         
         if (cString.hasPrefix("#")) {
-            cString = (cString as NSString).substringFromIndex(1)
+            cString = (cString as NSString).substring(from: 1)
         }
         if (cString.characters.count != 6) {
             self.init()
             return
         }
         
-        let rString = (cString as NSString).substringToIndex(2)
-        let gString = ((cString as NSString).substringFromIndex(2) as NSString).substringToIndex(2)
-        let bString = ((cString as NSString).substringFromIndex(4) as NSString).substringToIndex(2)
+        let rString = (cString as NSString).substring(to: 2)
+        let gString = ((cString as NSString).substring(from: 2) as NSString).substring(to: 2)
+        let bString = ((cString as NSString).substring(from: 4) as NSString).substring(to: 2)
         
         var r:CUnsignedInt = 0, g:CUnsignedInt = 0, b:CUnsignedInt = 0;
-        NSScanner(string: rString).scanHexInt(&r)
-        NSScanner(string: gString).scanHexInt(&g)
-        NSScanner(string: bString).scanHexInt(&b)
+        Scanner(string: rString).scanHexInt32(&r)
+        Scanner(string: gString).scanHexInt32(&g)
+        Scanner(string: bString).scanHexInt32(&b)
         
         self.init(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
     }
@@ -87,20 +87,20 @@ extension UIView {
     @IBInspectable var borderColor: UIColor? {
         get {
             if let layerColor = self.layer.borderColor {
-                return UIColor(CGColor: layerColor)
+                return UIColor(cgColor: layerColor)
             }
             else {
                 return nil
             }
         }
         set {
-            self.layer.borderColor = newValue?.CGColor
+            self.layer.borderColor = newValue?.cgColor
         }
     }
 }
 
 extension Array {
-    func contains<T where T : Equatable>(obj: T) -> Bool {
+    func contains<T>(_ obj: T) -> Bool where T : Equatable {
         return self.filter({$0 as? T == obj}).count > 0
     }
 }

@@ -12,12 +12,12 @@
 import UIKit
 
 protocol AbsencePresenterInput {
-    func presentFetchedAbsences(response: AbsenceResponse)
+    func presentFetchedAbsences(_ response: AbsenceResponse)
 }
 
 protocol AbsencePresenterOutput: class {
-    func displayFetchedAbsences(viewModel: AbsenceViewModel.Success)
-    func displayFetchedAbsencesError(viewModel: AbsenceViewModel.Error)
+    func displayFetchedAbsences(_ viewModel: AbsenceViewModel.Success)
+    func displayFetchedAbsencesError(_ viewModel: AbsenceViewModel.Error)
 }
 
 class AbsencePresenter: AbsencePresenterInput
@@ -26,7 +26,7 @@ class AbsencePresenter: AbsencePresenterInput
     
     // MARK: Presentation logic
     
-    func presentFetchedAbsences(response: AbsenceResponse) {
+    func presentFetchedAbsences(_ response: AbsenceResponse) {
         
         guard response.error == nil else {
             let error:(title:String,message:String) = ErrorParser.parse(response.error!)

@@ -12,12 +12,12 @@
 import UIKit
 
 protocol SchedulesViewControllerInput {
-    func displayFetchedSchedules(viewModel: SchedulesViewModel.Success)
-    func displayFetchedSchedulesError(viewModel: SchedulesViewModel.Error)
+    func displayFetchedSchedules(_ viewModel: SchedulesViewModel.Success)
+    func displayFetchedSchedulesError(_ viewModel: SchedulesViewModel.Error)
 }
 
 protocol SchedulesViewControllerOutput {
-    func fetchSchedules(request: SchedulesRequest)
+    func fetchSchedules(_ request: SchedulesRequest)
 }
 
 class SchedulesViewController: UITableViewController, SchedulesViewControllerInput {
@@ -61,42 +61,42 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
     
     // MARK: Interface Animations
     
-    private func setupHeightCell() -> Void {
+    fileprivate func setupHeightCell() -> Void {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 100.0
     }
     
     func configInterfaceAnimations() {
-        self.refreshControl?.addTarget(self, action: #selector(SchedulesViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(SchedulesViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
     }
     
-    private func startReloadAnimation() {
-        self.reloadButtonItem.enabled = false
+    fileprivate func startReloadAnimation() {
+        self.reloadButtonItem.isEnabled = false
         self.navigationItem.title = "Carregando Horários"
     }
     
-    private func stopReloadAnimation() {
-        reloadButtonItem.enabled = true
+    fileprivate func stopReloadAnimation() {
+        reloadButtonItem.isEnabled = true
         refreshControl?.endRefreshing()
         self.navigationItem.title = "Horários"
     }
     
-    private func setupHeaderView() -> Void {
+    fileprivate func setupHeaderView() -> Void {
         self.headerView = self.loadHeaderView()
     }
     
-    private func loadHeaderView() -> ScheduleHeaderView? {
-        let nibViews = NSBundle.mainBundle().loadNibNamed("ScheduleHeaderView", owner: self, options: nil)
-        return nibViews.first as? ScheduleHeaderView
+    fileprivate func loadHeaderView() -> ScheduleHeaderView? {
+        let nibViews = Bundle.main.loadNibNamed("ScheduleHeaderView", owner: self, options: nil)
+        return nibViews?.first as? ScheduleHeaderView
     }
     
     // MARK: Event handling
     
-    func handleRefresh(refreshControl: UIRefreshControl) {
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
         self.startReloadAnimation()
         let delayInSeconds = 1.0;
-        let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-        dispatch_after(popTime, dispatch_get_main_queue()) { [weak self] () -> Void in
+        let popTime = DispatchTime.now() + Double(Int64(delayInSeconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC);
+        DispatchQueue.main.asyncAfter(deadline: popTime) { [weak self] () -> Void in
             self?.fetchSchedules()
         }
     }
@@ -107,14 +107,14 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
         output.fetchSchedules(request)
     }
     
-    @IBAction func refreshAction(sender: AnyObject) {
+    @IBAction func refreshAction(_ sender: AnyObject) {
         self.fetchSchedules()
     }
     
-    @IBAction func routeButtonTouched(sender: UIButton) {
+    @IBAction func routeButtonTouched(_ sender: UIButton) {
         if let cell = sender.superview?.superview as? ScheduleTableViewCell {
-            let indexPath = tableView.indexPathForCell(cell)!
-            let schedule = self.displayedSchedules[indexPath.row]
+            let indexPath = tableView.indexPath(for: cell)!
+            let schedule = self.displayedSchedules[(indexPath as NSIndexPath).row]
             
             if let nav = self.tabBarController?.viewControllers![3] as? UINavigationController {
                 if let vc = nav.topViewController as? CampusMapViewController {
@@ -128,7 +128,7 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
     
     // MARK: Display logic
     
-    func displayFetchedSchedules(viewModel: SchedulesViewModel.Success) {
+    func displayFetchedSchedules(_ viewModel: SchedulesViewModel.Success) {
         self.stopReloadAnimation()
         filteredSchedules = viewModel.displayedSchedules
         if (filteredSchedules.count > 0) {
@@ -137,24 +137,24 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
         }
     }
     
-    func displayFetchedSchedulesError(viewModel: SchedulesViewModel.Error) {
+    func displayFetchedSchedulesError(_ viewModel: SchedulesViewModel.Error) {
         self.stopReloadAnimation()
         
-        let alert = UIAlertController(title: viewModel.errorTitle, message: viewModel.errorMessage, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: viewModel.errorTitle, message: viewModel.errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
-    private func dateScheduleFormatter(stringToParser: String) -> String {
-        let formatter = NSDateFormatter()
+    fileprivate func dateScheduleFormatter(_ stringToParser: String) -> String {
+        let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMdd"
-        formatter.timeZone = NSTimeZone(abbreviation: "BRST")
-        formatter.locale = NSLocale(localeIdentifier: "pt_BR")
+        formatter.timeZone = TimeZone(abbreviation: "BRST")
+        formatter.locale = Locale(identifier: "pt_BR")
         
         var stringDate: String?
-        if let date = formatter.dateFromString(stringToParser) {
+        if let date = formatter.date(from: stringToParser) {
             formatter.dateFormat = "dd/MM/yyyy"
-            stringDate = formatter.stringFromDate(date)
+            stringDate = formatter.string(from: date)
         }
         
         stringDate = stringDate ?? ""
@@ -162,12 +162,12 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
     }
     
     // Usar para colocar o dia atual na Segmented
-    private func getDay(date: NSDate) -> Int {
-        let formatter = NSDateFormatter()
-        formatter.timeZone = NSTimeZone(abbreviation: "BRST")
-        formatter.locale = NSLocale(localeIdentifier: "pt_BR")
+    fileprivate func getDay(_ date: Date) -> Int {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(abbreviation: "BRST")
+        formatter.locale = Locale(identifier: "pt_BR")
         formatter.dateFormat = "dd"
-        let string: String = formatter.stringFromDate(date)
+        let string: String = formatter.string(from: date)
         
         return Int(string)!
     }
@@ -178,11 +178,11 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
 
 extension SchedulesViewController {
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         let number = self.displayedSchedules.count
         
@@ -192,17 +192,17 @@ extension SchedulesViewController {
         return number
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let schedule = self.displayedSchedules[indexPath.row]
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let schedule = self.displayedSchedules[(indexPath as NSIndexPath).row]
         
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("scheduleCell", forIndexPath: indexPath) as! ScheduleTableViewCell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as! ScheduleTableViewCell
         
-        let dateFormat = NSDateFormatter()
-        dateFormat.dateFormat = "hh:mm"
-        dateFormat.timeZone = NSTimeZone(name: "GMT-3")
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "HH:mm"
+        dateFormat.timeZone = TimeZone(identifier: "GMT-3")
         
         cell.disciplineLabel.text = schedule.discipline
-        cell.rangeTimeLabel.text = "\(dateFormat.stringFromDate(schedule.startTime ?? NSDate())) - \(dateFormat.stringFromDate(schedule.endTime ?? NSDate()))"
+        cell.rangeTimeLabel.text = "\(dateFormat.string(from: schedule.startTime as Date? ?? Date())) - \(dateFormat.string(from: schedule.endTime as Date? ?? Date()))"
         cell.classNameLabel.text = schedule.className
         cell.collegeNameLabel.text = schedule.collegeName
         cell.buildingNumberLabel?.text = schedule.buildingNumber
@@ -214,18 +214,18 @@ extension SchedulesViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let header = self.headerView {
             return header
         }
         return nil
     }
     
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
     
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.001
     }
     
@@ -235,26 +235,26 @@ extension SchedulesViewController {
 
 extension SchedulesViewController: RS3DSegmentedControlDelegate {
     
-    private func setupSegmentedControl() -> Void {
-        self.segmentedControl = RS3DSegmentedControl(frame: CGRectMake(0, 0, self.view.frame.size.width, 50))
+    fileprivate func setupSegmentedControl() -> Void {
+        self.segmentedControl = RS3DSegmentedControl(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
         self.segmentedControl?.delegate = self
         self.headerView?.viewForSegmented.addSubview(segmentedControl)
         self.segmentedControl.selectedSegmentIndex = 0
         self.segmentedControl?.textFont = UIFont(name: "Bariol_Regular", size: 35)
-        self.segmentedControl?.textColor = UIColor.redColor()
+        self.segmentedControl?.textColor = UIColor.red
     }
     
-    func numberOfSegmentsIn3DSegmentedControl(segmentedControl: RS3DSegmentedControl!) -> UInt {
+    func number(ofSegmentsIn3DSegmentedControl segmentedControl: RS3DSegmentedControl!) -> UInt {
         self.keysW = Array(filteredSchedules.keys)
         return UInt(filteredSchedules.count)
     }
     
-    func titleForSegmentAtIndex(segmentIndex: UInt, segmentedControl: RS3DSegmentedControl!) -> String! {
+    func titleForSegment(at segmentIndex: UInt, segmentedControl: RS3DSegmentedControl!) -> String! {
         let day = weekDays[self.keysW[Int(segmentIndex)]]
         return day
     }
     
-    func didSelectSegmentAtIndex(segmentIndex: UInt, segmentedControl: RS3DSegmentedControl!) {
+    func didSelectSegment(at segmentIndex: UInt, segmentedControl: RS3DSegmentedControl!) {
         self.displayedSchedules = filteredSchedules[self.keysW[Int(segmentIndex)]]!
         self.tableView.reloadData()
     }

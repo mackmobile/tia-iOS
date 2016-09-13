@@ -9,8 +9,8 @@
 import Foundation
 
 enum ErrorCode {
-    case NoInternetConnection
-    case InvalidLoginCredentials(title:String,message:String)
-    case DomainNotFound
-    case OtherFailure(title:String,message:String)
+    case noInternetConnection
+    case invalidLoginCredentials(title:String,message:String)
+    case domainNotFound
+    case otherFailure(title:String,message:String)
 }

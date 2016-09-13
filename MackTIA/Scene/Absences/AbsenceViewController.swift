@@ -13,13 +13,13 @@ import UIKit
 
 // Metodos que poderao ser invocados pelo Presenter
 protocol AbsenceViewControllerInput {
-    func displayFetchedAbsences(viewModel: AbsenceViewModel.Success)
-    func displayFetchedAbsencesError(viewModel: AbsenceViewModel.Error)
+    func displayFetchedAbsences(_ viewModel: AbsenceViewModel.Success)
+    func displayFetchedAbsencesError(_ viewModel: AbsenceViewModel.Error)
 }
 
 // Metodos que podem ser invocados no Interector
 protocol AbsenceViewControllerOutput {
-    func fetchAbsences(request: AbsenceRequest)
+    func fetchAbsences(_ request: AbsenceRequest)
 }
 
 class AbsenceViewController: UITableViewController, AbsenceViewControllerInput {
@@ -31,7 +31,7 @@ class AbsenceViewController: UITableViewController, AbsenceViewControllerInput {
     var router: AbsenceRouter!
     
     // Interface Animation Parameters
-    var selectedCellIndexPath:NSIndexPath?
+    var selectedCellIndexPath:IndexPath?
     let selectedCellHeight:CGFloat = 150
     let unselectedCellHeight:CGFloat = 58
     
@@ -52,36 +52,36 @@ class AbsenceViewController: UITableViewController, AbsenceViewControllerInput {
     
     // MARK: Interface Animations
     
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.01
     }
     
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.01
     }
     
     func configInterfaceAnimations() {
-        self.refreshControl?.addTarget(self, action: #selector(AbsenceViewController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(AbsenceViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
     }
     
-    private func startReloadAnimation() {
-        reloadButtonItem.enabled = false
+    fileprivate func startReloadAnimation() {
+        reloadButtonItem.isEnabled = false
         self.navigationItem.title = "Carregando Faltas"
     }
     
-    private func stopReloadAnimation() {
-        reloadButtonItem.enabled = true
+    fileprivate func stopReloadAnimation() {
+        reloadButtonItem.isEnabled = true
         refreshControl?.endRefreshing()
         self.navigationItem.title = "Faltas"
     }
     
     // MARK: Event handling
     
-    func handleRefresh(refreshControl: UIRefreshControl) {
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
         self.startReloadAnimation()
         let delayInSeconds = 1.0;
-        let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+        let popTime = DispatchTime.now() + Double(Int64(delayInSeconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC);
+        DispatchQueue.main.asyncAfter(deadline: popTime) { () -> Void in
             self.fetchAbsences()
         }
     }
@@ -92,29 +92,29 @@ class AbsenceViewController: UITableViewController, AbsenceViewControllerInput {
         output.fetchAbsences(request)
     }
     
-    @IBAction func refreshAction(sender: AnyObject) {
+    @IBAction func refreshAction(_ sender: AnyObject) {
         fetchAbsences()
     }
     
     // MARK: Display logic
     
-    func displayFetchedAbsences(viewModel: AbsenceViewModel.Success) {
+    func displayFetchedAbsences(_ viewModel: AbsenceViewModel.Success) {
         self.stopReloadAnimation()
         displayedAbsences = viewModel.displayedAbsences
         tableView.reloadData()
     }
     
-    func displayFetchedAbsencesError(viewModel: AbsenceViewModel.Error) {
+    func displayFetchedAbsencesError(_ viewModel: AbsenceViewModel.Error) {
         self.stopReloadAnimation()
         
-        let alert = UIAlertController(title: viewModel.errorTitle, message: viewModel.errorMessage, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: viewModel.errorTitle, message: viewModel.errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: UITableViewDataSource
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let number = displayedAbsences.count
         
         if number == 0 {
@@ -123,9 +123,9 @@ class AbsenceViewController: UITableViewController, AbsenceViewControllerInput {
         return number
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("faltaCell") as! AbsenceTableViewCell
-        let absence = displayedAbsences[indexPath.row]
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "faltaCell") as! AbsenceTableViewCell
+        let absence = displayedAbsences[(indexPath as NSIndexPath).row]
         
         cell.nomeDaDisciplinaLabel.text = absence.disciplina
         cell.faltasLabel.text = "\(absence.faltas)"
@@ -143,12 +143,12 @@ class AbsenceViewController: UITableViewController, AbsenceViewControllerInput {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath != self.selectedCellIndexPath {
             self.selectedCellIndexPath = indexPath
         } else {
             if let _ = self.selectedCellIndexPath {
-                self.tableView.deselectRowAtIndexPath(self.selectedCellIndexPath!, animated: true)
+                self.tableView.deselectRow(at: self.selectedCellIndexPath!, animated: true)
             }
             self.selectedCellIndexPath = nil
         }
@@ -158,7 +158,7 @@ class AbsenceViewController: UITableViewController, AbsenceViewControllerInput {
         self.tableView.endUpdates()
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if self.selectedCellIndexPath == indexPath {
             return self.selectedCellHeight

@@ -21,15 +21,15 @@ class LoginRouter: LoginRouterInput {
   // MARK: Navigation
   
   func navigateToMainView() {
-    if let _ = NSUserDefaults.standardUserDefaults().objectForKey("statement") as? String {
-        viewController.performSegueWithIdentifier("login", sender: nil)
+    if let _ = UserDefaults.standard.object(forKey: "statement") as? String {
+        viewController.performSegue(withIdentifier: "login", sender: nil)
     }
-    viewController.performSegueWithIdentifier("firstLogin", sender: nil)
+    viewController.performSegue(withIdentifier: "firstLogin", sender: nil)
   }
   
   // MARK: Communication
   
-  func passDataToNextScene(segue: UIStoryboardSegue) {
+  func passDataToNextScene(_ segue: UIStoryboardSegue) {
     // NOTE: Teach the router which scenes it can communicate with
     
     // if segue.identifier == "mainView" {
@@ -37,7 +37,7 @@ class LoginRouter: LoginRouterInput {
     // }
   }
   
-  func passDataToSomewhereScene(segue: UIStoryboardSegue) {
+  func passDataToSomewhereScene(_ segue: UIStoryboardSegue) {
     // NOTE: Teach the router how to pass data to the next scene
 
     // let someWhereViewController = segue.destinationViewController as! SomeWhereViewController

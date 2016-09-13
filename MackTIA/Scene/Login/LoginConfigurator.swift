@@ -14,7 +14,7 @@ import UIKit
 // MARK: Connect View, Interactor, and Presenter
 
 extension LoginViewController: LoginPresenterOutput {
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         router.passDataToNextScene(segue)
     }
 }
@@ -26,24 +26,36 @@ extension LoginPresenter: LoginInteractorOutput {
 }
 
 class LoginConfigurator {
-    // MARK: Object lifecycle
-    
+//    private static var __once: () = {
+//            Static.instance = LoginConfigurator()
+//        }()
+//    // MARK: Object lifecycle
+//    
+//    class var sharedInstance: LoginConfigurator {
+//        struct Static {
+//            static var instance: LoginConfigurator?
+//            static var token: Int = 0
+//        }
+//        
+//        _ = LoginConfigurator.__once
+//        
+//        return Static.instance!
+//    }
+
     class var sharedInstance: LoginConfigurator {
         struct Static {
             static var instance: LoginConfigurator?
-            static var token: dispatch_once_t = 0
+            static var doOnce: () {
+                Static.instance = LoginConfigurator()
+            }
         }
-        
-        dispatch_once(&Static.token) {
-            Static.instance = LoginConfigurator()
-        }
-        
+        Static.doOnce
         return Static.instance!
     }
     
     // MARK: Configuration
     
-    func configure(viewController: LoginViewController) {
+    func configure(_ viewController: LoginViewController) {
         let router = LoginRouter()
         router.viewController = viewController
         

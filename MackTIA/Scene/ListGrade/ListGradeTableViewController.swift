@@ -12,12 +12,12 @@
 import UIKit
 
 protocol ListGradeTableViewControllerInput {
-    func displayFetchedGrades(viewModel: ListGradeViewModel.Success)
-    func displayFetchedGradesError(viewModel: ListGradeViewModel.Error)
+    func displayFetchedGrades(_ viewModel: ListGradeViewModel.Success)
+    func displayFetchedGradesError(_ viewModel: ListGradeViewModel.Error)
 }
 
 protocol ListGradeTableViewControllerOutput {
-    func fetchGrades(request: ListGradeRequest)
+    func fetchGrades(_ request: ListGradeRequest)
 }
 
 class ListGradeTableViewController: UITableViewController, ListGradeTableViewControllerInput {
@@ -28,7 +28,7 @@ class ListGradeTableViewController: UITableViewController, ListGradeTableViewCon
     @IBOutlet weak var reloadButtonItem: UIBarButtonItem!
     
     // Interface Animation Parameters
-    var selectedCellIndexPath:NSIndexPath?
+    var selectedCellIndexPath:IndexPath?
     let selectedCellHeight:CGFloat = 293
     let unselectedCellHeight:CGFloat = 58
     let school31CellHeight:CGFloat = 80
@@ -48,11 +48,11 @@ class ListGradeTableViewController: UITableViewController, ListGradeTableViewCon
         configInterfaceAnimations()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if self.selectedCellIndexPath != nil {
-            self.tableView.deselectRowAtIndexPath(self.selectedCellIndexPath!, animated: false)
+            self.tableView.deselectRow(at: self.selectedCellIndexPath!, animated: false)
             self.selectedCellIndexPath = nil
         }
         self.tableView.beginUpdates()
@@ -61,82 +61,82 @@ class ListGradeTableViewController: UITableViewController, ListGradeTableViewCon
     
     // MARK: Interface Animation
     
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.0001
     }
     
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.0001
     }
     
     func configInterfaceAnimations() {
-        self.refreshControl?.addTarget(self, action: #selector(ListGradeTableViewController.handleRefresh(_:)), forControlEvents: .ValueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(ListGradeTableViewController.handleRefresh(_:)), for: .valueChanged)
     }
     
-    private func startReloadAnimation() {
-        reloadButtonItem.enabled = false
+    fileprivate func startReloadAnimation() {
+        reloadButtonItem.isEnabled = false
         self.navigationItem.title = "Carregando Notas"
     }
     
-    private func stopReloadAnimation() {
-        reloadButtonItem.enabled = true
+    fileprivate func stopReloadAnimation() {
+        reloadButtonItem.isEnabled = true
         refreshControl?.endRefreshing()
         self.navigationItem.title = "Notas"
     }
     
-    func handleRefresh(refreshControl: UIRefreshControl) {
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
         startReloadAnimation()
         let delayInSeconds = 1.0;
-        let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-        dispatch_after(popTime, dispatch_get_main_queue()) { [unowned self] () -> Void in
+        let popTime = DispatchTime.now() + Double(Int64(delayInSeconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC);
+        DispatchQueue.main.asyncAfter(deadline: popTime) { [unowned self] () -> Void in
             self.fetchGrades()
         }
     }
     
     // MARK: Event handling
     
-    private func fetchGrades() {
+    fileprivate func fetchGrades() {
         startReloadAnimation()
         let request = ListGradeRequest()
         output.fetchGrades(request)
     }
     
-    @IBAction func reloadData(sender: AnyObject) {
+    @IBAction func reloadData(_ sender: AnyObject) {
         self.fetchGrades()
     }
     
-    private func doSomethingOnLoad() -> Void {
+    fileprivate func doSomethingOnLoad() -> Void {
         self.fetchGrades()
     }
     
     // MARK: Display logic
     
-    func displayFetchedGrades(viewModel: ListGradeViewModel.Success) {
+    func displayFetchedGrades(_ viewModel: ListGradeViewModel.Success) {
         self.stopReloadAnimation()
         
         self.grades = viewModel.grades
-        dispatch_async(dispatch_get_main_queue()) { 
+        DispatchQueue.main.async { 
             self.tableView.reloadData()
         }
     }
     
-    func displayFetchedGradesError(viewModel: ListGradeViewModel.Error) {
+    func displayFetchedGradesError(_ viewModel: ListGradeViewModel.Error) {
         self.stopReloadAnimation()
         
-        let alert = UIAlertController(title: viewModel.errorTitle, message: viewModel.errorMessage, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: viewModel.errorTitle, message: viewModel.errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
 extension ListGradeTableViewController {
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath != self.selectedCellIndexPath {
             self.selectedCellIndexPath = indexPath
         } else {
             if let _ = self.selectedCellIndexPath {
-                self.tableView.deselectRowAtIndexPath(self.selectedCellIndexPath!, animated: true)
+                self.tableView.deselectRow(at: self.selectedCellIndexPath!, animated: true)
             }
             self.selectedCellIndexPath = nil
         }
@@ -145,11 +145,11 @@ extension ListGradeTableViewController {
         self.tableView.endUpdates()
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         let number = self.grades.count
         
@@ -159,23 +159,23 @@ extension ListGradeTableViewController {
         return number
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if grades[indexPath.row].schoolCode.rangeOfString("31") != nil {
-            let cell = tableView.dequeueReusableCellWithIdentifier("grade31SchoolCell")
-            cell?.textLabel?.text = grades[indexPath.row].className
+        if grades[(indexPath as NSIndexPath).row].schoolCode.range(of: "31") != nil {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "grade31SchoolCell")
+            cell?.textLabel?.text = grades[(indexPath as NSIndexPath).row].className
             cell?.detailTextLabel?.text = "Em desenvolvimento - FAU"
             return cell!
         }
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("gradeCell") as! ListGradeTableViewCell
-        cell.config(grades[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "gradeCell") as! ListGradeTableViewCell
+        cell.config(grades[(indexPath as NSIndexPath).row])
         return cell
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        if grades[indexPath.row].schoolCode.rangeOfString("31") != nil {
+        if grades[(indexPath as NSIndexPath).row].schoolCode.range(of: "31") != nil {
             return self.school31CellHeight
         }
         
@@ -185,21 +185,21 @@ extension ListGradeTableViewController {
         return self.unselectedCellHeight
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         // Remove seperator inset
-        if cell.respondsToSelector(Selector("setSeparatorInset:")) {
-            cell.separatorInset = UIEdgeInsetsZero
+        if cell.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
+            cell.separatorInset = UIEdgeInsets.zero
         }
         
         // Prevent the cell from inheriting the Table View's margin settings
-        if cell.respondsToSelector(Selector("setPreservesSuperviewLayoutMargins:")) {
+        if cell.responds(to: #selector(setter: UIView.preservesSuperviewLayoutMargins)) {
             cell.preservesSuperviewLayoutMargins = false
         }
         
         // Explictly set your cell's layout margins
-        if cell.respondsToSelector(Selector("setLayoutMargins:")) {
-            cell.layoutMargins = UIEdgeInsetsZero
+        if cell.responds(to: #selector(setter: UIView.layoutMargins)) {
+            cell.layoutMargins = UIEdgeInsets.zero
         }
     }
 }

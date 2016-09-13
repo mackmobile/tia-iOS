@@ -12,12 +12,12 @@
 import UIKit
 
 protocol LoginPresenterInput {
-    func presentLoginError(response: LoginResponse)
+    func presentLoginError(_ response: LoginResponse)
     func presentLoginAccepted()
 }
 
 protocol LoginPresenterOutput: class {
-    func displayLoginFailure(viewModel: LoginViewModel)
+    func displayLoginFailure(_ viewModel: LoginViewModel)
     func loginAccepted()
 }
 
@@ -26,7 +26,7 @@ class LoginPresenter: LoginPresenterInput {
     
     // MARK: Presentation logic
     
-    func presentLoginError(response: LoginResponse) {
+    func presentLoginError(_ response: LoginResponse) {
         
         let errorTitle = NSLocalizedString("login_defaultErrorTitle", comment: "Login Error Title")
         let errorMessage = NSLocalizedString("login_defaultErrorMessage", comment: "Default login error message")

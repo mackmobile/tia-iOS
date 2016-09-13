@@ -12,12 +12,12 @@
 import UIKit
 
 protocol SchedulesPresenterInput {
-    func presentFetchedSchedules(response: SchedulesResponse)
+    func presentFetchedSchedules(_ response: SchedulesResponse)
 }
 
 protocol SchedulesPresenterOutput: class {
-    func displayFetchedSchedules(viewModel: SchedulesViewModel.Success)
-    func displayFetchedSchedulesError(viewModel: SchedulesViewModel.Error)
+    func displayFetchedSchedules(_ viewModel: SchedulesViewModel.Success)
+    func displayFetchedSchedulesError(_ viewModel: SchedulesViewModel.Error)
 }
 
 class SchedulesPresenter: SchedulesPresenterInput {
@@ -26,7 +26,7 @@ class SchedulesPresenter: SchedulesPresenterInput {
 
     // MARK: Presentation logic
     
-    func presentFetchedSchedules(response: SchedulesResponse) {
+    func presentFetchedSchedules(_ response: SchedulesResponse) {
         
         var filteredSchedules : [Int : [Schedule]] = [:]
         let allSchedules = response.schedules

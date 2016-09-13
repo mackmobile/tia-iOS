@@ -15,7 +15,7 @@ import UIKit
 
 extension SchedulesViewController: SchedulesPresenterOutput
 {
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
     router.passDataToNextScene(segue)
   }
@@ -31,25 +31,37 @@ extension SchedulesPresenter: SchedulesInteractorOutput
 
 class SchedulesConfigurator
 {
-  // MARK: Object lifecycle
-  
-  class var sharedInstance: SchedulesConfigurator
-  {
-    struct Static {
-      static var instance: SchedulesConfigurator?
-      static var token: dispatch_once_t = 0
+//  private static var __once: () = {
+//      Static.instance = SchedulesConfigurator()
+//    }()
+//  // MARK: Object lifecycle
+//  
+//  class var sharedInstance: SchedulesConfigurator
+//  {
+//    struct Static {
+//      static var instance: SchedulesConfigurator?
+//      static var token: Int = 0
+//    }
+//    
+//    _ = SchedulesConfigurator.__once
+//    
+//    return Static.instance!
+//  }
+
+    class var sharedInstance: SchedulesConfigurator {
+        struct Static {
+            static var instance: SchedulesConfigurator?
+            static var doOnce: () {
+                Static.instance = SchedulesConfigurator()
+            }
+        }
+        Static.doOnce
+        return Static.instance!
     }
     
-    dispatch_once(&Static.token) {
-      Static.instance = SchedulesConfigurator()
-    }
-    
-    return Static.instance!
-  }
-  
   // MARK: Configuration
   
-  func configure(viewController: SchedulesViewController)
+  func configure(_ viewController: SchedulesViewController)
   {
     let router = SchedulesRouter()
     router.viewController = viewController

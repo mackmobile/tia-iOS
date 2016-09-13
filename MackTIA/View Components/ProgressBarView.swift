@@ -25,16 +25,16 @@ class ProgressBarView: UIView {
     @IBInspectable
     var progressWidth:CGFloat = 10.0
     @IBInspectable
-    var progressColor:UIColor = UIColor.yellowColor()
+    var progressColor:UIColor = UIColor.yellow
     @IBInspectable
-    var progressBackgroundColor:UIColor = UIColor.blackColor()
+    var progressBackgroundColor:UIColor = UIColor.black
     
     
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         //Important constants for circle
-        let start:CGPoint   = CGPointMake(CGRectGetMinX(rect), CGRectGetMidY(rect))
-        let end:CGPoint     = CGPointMake(CGRectGetMaxX(rect), CGRectGetMidY(rect))
+        let start:CGPoint   = CGPoint(x: rect.minX, y: rect.midY)
+        let end:CGPoint     = CGPoint(x: rect.maxX, y: rect.midY)
         
         var aux:CGFloat = endPercent
         if endPercent > maxPercent {
@@ -43,26 +43,26 @@ class ProgressBarView: UIView {
         
         //Calculating end point of progress bar
         let space:CGFloat   = end.x - start.x
-        let endProgress = CGPointMake((space * aux)/maxPercent, end.y)
+        let endProgress = CGPoint(x: (space * aux)/maxPercent, y: end.y)
         
         //starting point for all drawing code is getting the context.
         let context = UIGraphicsGetCurrentContext()
         
         //set line attributes
-        CGContextSetLineWidth(context, progressWidth)
-        CGContextSetLineCap(context, CGLineCap.Round)
+        context?.setLineWidth(progressWidth)
+        context?.setLineCap(CGLineCap.round)
         
         //make the line background
-        CGContextSetStrokeColorWithColor(context, progressBackgroundColor.CGColor)
-        CGContextMoveToPoint(context, start.x, start.y)
-        CGContextAddLineToPoint(context, end.x, end.y)
-        CGContextStrokePath(context)
+        context?.setStrokeColor(progressBackgroundColor.cgColor)
+        context?.move(to: CGPoint(x: start.x, y: start.y))
+        context?.addLine(to: CGPoint(x: end.x, y: end.y))
+        context?.strokePath()
         
         //make the progress
-        CGContextSetStrokeColorWithColor(context, progressColor.CGColor)
-        CGContextMoveToPoint(context, start.x, start.y)
-        CGContextAddLineToPoint(context, endProgress.x, endProgress.y)
-        CGContextStrokePath(context)
+        context?.setStrokeColor(progressColor.cgColor)
+        context?.move(to: CGPoint(x: start.x, y: start.y))
+        context?.addLine(to: CGPoint(x: endProgress.x, y: endProgress.y))
+        context?.strokePath()
     }
     
 }

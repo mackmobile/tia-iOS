@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import UIKit
 
 enum ServiceURL:String {
     case Login          = "https://www3.mackenzie.com.br/tia/tia_mobile/ping.php"
@@ -27,36 +26,37 @@ class TIAServer {
     
     // MARK: Singleton Methods
     static let sharedInstance = TIAServer()
-    let alamoFireManager:Alamofire.Manager?
+    let alamofireManager:Alamofire.SessionManager?
     
     init() {
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 25 // seconds
         configuration.timeoutIntervalForResource = 25
-        self.alamoFireManager = Alamofire.Manager(configuration: configuration)
+        self.alamofireManager = Alamofire.SessionManager(configuration: configuration)
     }
     
     // MARK: Security Parameters and Methods
     var user:User?
     
-    private func makeToken() -> String {
-        let date = NSDate()
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components([NSCalendarUnit.Day, NSCalendarUnit.Month, NSCalendarUnit.Year], fromDate: date)
-        let day = components.day < 10 ? "0\(components.day)" : "\(components.day)"
-        let month = components.month < 10 ? "0\(components.month)" : "\(components.month)"
-        let token = "\(Token.parte1.rawValue)\(month)\(components.year)\(day)\(Token.parte2.rawValue)"
+    fileprivate func makeToken() -> String {
+        let date = Date()
+        let calendar = Calendar.current
+        let components = (calendar as NSCalendar).components([NSCalendar.Unit.day, NSCalendar.Unit.month, NSCalendar.Unit.year], from: date)
+        let day = (components.day ?? 0) < 10 ? "0\(components.day ?? 0)" : "\(components.day ?? 0)"
+        let month = (components.month ?? 0) < 10 ? "0\(components.month ?? 0)" : "\(components.month ?? 0)"
+        let year = components.year ?? 0
+        let token = "\(Token.parte1.rawValue)\(month)\(year)\(day)\(Token.parte2.rawValue)"
         return token.md5
     }
     
     // MARK: Login Manager
     
     func loginRecorded() -> User? {
-        guard let tia = NSUserDefaults.standardUserDefaults().objectForKey("tia") as? String,
-            let password = NSUserDefaults.standardUserDefaults().objectForKey("password") as? String,
-            let campus = NSUserDefaults.standardUserDefaults().objectForKey("campus") as? String,
-            let name = NSUserDefaults.standardUserDefaults().objectForKey("name") as? String,
-            let campusName = NSUserDefaults.standardUserDefaults().objectForKey("campusName") as? String else {
+        guard let tia = UserDefaults.standard.object(forKey: "tia") as? String,
+            let password = UserDefaults.standard.object(forKey: "password") as? String,
+            let campus = UserDefaults.standard.object(forKey: "campus") as? String,
+            let name = UserDefaults.standard.object(forKey: "name") as? String,
+            let campusName = UserDefaults.standard.object(forKey: "campusName") as? String else {
                 self.logoff()
                 return nil
         }
@@ -71,26 +71,26 @@ class TIAServer {
             return
         }
         
-        NSUserDefaults.standardUserDefaults().setObject(u.tia, forKey: "tia")
-        NSUserDefaults.standardUserDefaults().setObject(u.password, forKey: "password")
-        NSUserDefaults.standardUserDefaults().setObject(u.campus, forKey: "campus")
-        NSUserDefaults.standardUserDefaults().setObject(u.name, forKey: "name")
-        NSUserDefaults.standardUserDefaults().setObject(u.campusName, forKey: "campusName")
+        UserDefaults.standard.set(u.tia, forKey: "tia")
+        UserDefaults.standard.set(u.password, forKey: "password")
+        UserDefaults.standard.set(u.campus, forKey: "campus")
+        UserDefaults.standard.set(u.name, forKey: "name")
+        UserDefaults.standard.set(u.campusName, forKey: "campusName")
     }
     
     func logoff() {
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("statement")
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("tia")
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("password")
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("campus")
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("name")
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("campusName")
+        UserDefaults.standard.removeObject(forKey: "statement")
+        UserDefaults.standard.removeObject(forKey: "tia")
+        UserDefaults.standard.removeObject(forKey: "password")
+        UserDefaults.standard.removeObject(forKey: "campus")
+        UserDefaults.standard.removeObject(forKey: "name")
+        UserDefaults.standard.removeObject(forKey: "campusName")
     }
     
     
     // MARK: Server Communication
     
-    private func getRequestParameters() -> [String:String] {
+    fileprivate func getRequestParameters() -> [String:Any] {
         let parameters = [
             "mat": self.user?.tia ?? " ",
             "pass": self.user?.password ?? " ",
@@ -100,7 +100,7 @@ class TIAServer {
         return parameters
     }
     
-    func sendRequest(service:ServiceURL, completionHandler:(jsonData:AnyObject?, error: ErrorCode?) -> Void) {
+    func sendRequest(service:ServiceURL, completionHandler:@escaping (_ jsonData:AnyObject?, _ error: ErrorCode?) -> Void) {
 
         // Problem with Reachability Method, some times return false, bust connection is ok
 //        if Reachability.isConnectedToNetwork() == false {
@@ -109,27 +109,29 @@ class TIAServer {
 //        }
 //        print(#function, "URL: \(service.rawValue)\nPARAMETERS: \(self.getRequestParameters())")
         
-        guard let _ = self.alamoFireManager else {
+        guard let alamofireManager = self.alamofireManager else {
             print(#function, "Não foi possível criar objeto Manager para conexão web")
-            completionHandler(jsonData: nil, error: ErrorCode.DomainNotFound)
+            completionHandler(nil, ErrorCode.domainNotFound)
             return
         }
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        alamoFireManager!.request(.POST, service.rawValue, parameters: self.getRequestParameters()).responseJSON { response in
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+
+        alamofireManager.request(service.rawValue, method: .post, parameters: self.getRequestParameters(), encoding: URLEncoding.default).responseJSON { (response) in
+            
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             
             if response.result.error != nil {
                 print(#function, response.result.error)
-                completionHandler(jsonData: nil, error: ErrorCode.DomainNotFound)
+                completionHandler(nil, ErrorCode.domainNotFound)
                 return
             } else {
                 if let jsonData = response.result.value {
-                    completionHandler(jsonData: jsonData, error: nil)
+                    completionHandler(jsonData as AnyObject?, nil)
                     return
                 } else {
-                    completionHandler(jsonData: nil, error: ErrorCode.OtherFailure(title: NSLocalizedString("error_noDataFound_title", comment: "No data found"), message: NSLocalizedString("error_noDataFound_message", comment: "No data found")))
+                    completionHandler(nil, ErrorCode.otherFailure(title: NSLocalizedString("error_noDataFound_title", comment: "No data found"), message: NSLocalizedString("error_noDataFound_message", comment: "No data found")))
                     return
                 }
             }
