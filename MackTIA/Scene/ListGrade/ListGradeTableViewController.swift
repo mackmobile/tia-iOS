@@ -25,6 +25,11 @@ class ListGradeTableViewController: UITableViewController, ListGradeTableViewCon
     var router: ListGradeRouter!
     var grades:[Grade] = []
     
+    let defaultCellIdentifier = "defaultCell"
+    let emptyCellIdentifier = "emptyCell"
+    let loadingCellIdentifier = "loadingCell"
+    var firstLoadingFlag = true
+    
     @IBOutlet weak var reloadButtonItem: UIBarButtonItem!
     
     // Interface Animation Parameters
@@ -115,6 +120,7 @@ class ListGradeTableViewController: UITableViewController, ListGradeTableViewCon
         self.stopReloadAnimation()
         
         self.grades = viewModel.grades
+        self.firstLoadingFlag = false
         DispatchQueue.main.async { 
             self.tableView.reloadData()
         }
@@ -154,12 +160,23 @@ extension ListGradeTableViewController {
         let number = self.grades.count
         
         if number == 0 {
-            self.showEmptyMessage(NSLocalizedString("empty_table_grade", comment: "Sem faltas disponiveis"))
+//            self.showEmptyMessage(NSLocalizedString("empty_table_grade", comment: "Sem faltas disponiveis"))
+            return 1
         }
         return number
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if self.grades.count == 0 {
+            if self.firstLoadingFlag {
+                let cell = tableView.dequeueReusableCell(withIdentifier: self.loadingCellIdentifier) ?? UITableViewCell()
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: self.emptyCellIdentifier) ?? UITableViewCell()
+                return cell
+            }
+        }
         
         if grades[(indexPath as NSIndexPath).row].schoolCode.range(of: "31") != nil {
             let cell = tableView.dequeueReusableCell(withIdentifier: "grade31SchoolCell")
@@ -168,12 +185,16 @@ extension ListGradeTableViewController {
             return cell!
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "gradeCell") as! ListGradeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.defaultCellIdentifier) as! ListGradeTableViewCell
         cell.config(grades[(indexPath as NSIndexPath).row])
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if grades.count == 0 {
+            return 100.0
+        }
         
         if grades[(indexPath as NSIndexPath).row].schoolCode.range(of: "31") != nil {
             return self.school31CellHeight

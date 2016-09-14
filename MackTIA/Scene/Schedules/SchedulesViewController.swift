@@ -25,6 +25,10 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
     // MARK: Outlets
     
     @IBOutlet weak var reloadButtonItem: UIBarButtonItem!
+    let defaultCellIdentifier = "defaultCell"
+    let emptyCellIdentifier = "emptyCell"
+    let loadingCellIdentifier = "loadingCell"
+    var firstLoadingFlag = true
     
     // MARK: properties
     
@@ -32,7 +36,7 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
     var segmentedControl: RS3DSegmentedControl!
     var displayedSchedules:[Schedule] = []
     var filteredSchedules = [Int:[Schedule]]()
-    var keysW: [Int] = []
+    var keysW: [Int] = [1,2,3,4,5,6,7]
     let weekDays = [1 : "DOMINGO", 2 : "SEGUNDA", 3 : "TERÇA", 4 : "QUARTA", 5 : "QUINTA", 6 : "SEXTA" , 7 : "SÁBADO"]
     
     // MARK: VIPER properties
@@ -56,7 +60,7 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
         self.setupHeightCell()
         self.configInterfaceAnimations()
         self.fetchSchedules()
-
+        
     }
     
     // MARK: Interface Animations
@@ -132,8 +136,12 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
         self.stopReloadAnimation()
         filteredSchedules = viewModel.displayedSchedules
         if (filteredSchedules.count > 0) {
-            self.segmentedControl.carousel.reloadData()
-            tableView.reloadData()
+            self.firstLoadingFlag = false
+            DispatchQueue.main.async {
+                self.segmentedControl.selectedSegmentIndex = UInt((Date.getDayOfWeek() ?? 1)-1)
+                self.segmentedControl.carousel.reloadData()
+                self.tableView.reloadData()
+            }
         }
     }
     
@@ -187,31 +195,42 @@ extension SchedulesViewController {
         let number = self.displayedSchedules.count
         
         if number == 0 {
-            self.showEmptyMessage(NSLocalizedString("empty_table_schedule", comment: "Sem horario disponivel"))
+//            self.showEmptyMessage(NSLocalizedString("empty_table_schedule", comment: "Sem horario disponivel"))
+            return 1
         }
         return number
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let schedule = self.displayedSchedules[(indexPath as NSIndexPath).row]
         
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as! ScheduleTableViewCell
-        
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "HH:mm"
-        dateFormat.timeZone = TimeZone(identifier: "GMT-3")
-        
-        cell.disciplineLabel.text = schedule.discipline
-        cell.rangeTimeLabel.text = "\(dateFormat.string(from: schedule.startTime as Date? ?? Date())) - \(dateFormat.string(from: schedule.endTime as Date? ?? Date()))"
-        cell.classNameLabel.text = schedule.className
-        cell.collegeNameLabel.text = schedule.collegeName
-        cell.buildingNumberLabel?.text = schedule.buildingNumber
-        cell.numberRoomLabel?.text = schedule.numberRoom
-        if let updateAt = schedule.updatedAt {
-            cell.updatedAtLabel?.text = "ATUALIZADO EM \(self.dateScheduleFormatter(updateAt))"
+        if self.displayedSchedules.count > 0 {
+            
+            let schedule = self.displayedSchedules[(indexPath as NSIndexPath).row]
+            
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: self.defaultCellIdentifier, for: indexPath) as! ScheduleTableViewCell
+            
+            let dateFormat = DateFormatter()
+            dateFormat.dateFormat = "HH:mm"
+            dateFormat.timeZone = TimeZone(identifier: "GMT-3")
+            
+            cell.disciplineLabel.text = schedule.discipline
+            cell.rangeTimeLabel.text = "\(dateFormat.string(from: schedule.startTime as Date? ?? Date())) - \(dateFormat.string(from: schedule.endTime as Date? ?? Date()))"
+            cell.classNameLabel.text = schedule.className
+            cell.collegeNameLabel.text = schedule.collegeName
+            cell.buildingNumberLabel?.text = schedule.buildingNumber
+            cell.numberRoomLabel?.text = schedule.numberRoom
+            if let updateAt = schedule.updatedAt {
+                cell.updatedAtLabel?.text = "ATUALIZADO EM \(self.dateScheduleFormatter(updateAt))"
+            }
+            
+            return cell
+        } else if self.firstLoadingFlag {
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: self.loadingCellIdentifier, for: indexPath)
+            return cell
+        } else {
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: self.emptyCellIdentifier, for: indexPath)
+            return cell
         }
-        
-        return cell
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -245,8 +264,9 @@ extension SchedulesViewController: RS3DSegmentedControlDelegate {
     }
     
     func number(ofSegmentsIn3DSegmentedControl segmentedControl: RS3DSegmentedControl!) -> UInt {
-        self.keysW = Array(filteredSchedules.keys)
-        return UInt(filteredSchedules.count)
+        //        self.keysW = Array(filteredSchedules.keys)
+        //        return UInt(filteredSchedules.count)
+        return UInt(self.keysW.count)
     }
     
     func titleForSegment(at segmentIndex: UInt, segmentedControl: RS3DSegmentedControl!) -> String! {
@@ -255,7 +275,14 @@ extension SchedulesViewController: RS3DSegmentedControlDelegate {
     }
     
     func didSelectSegment(at segmentIndex: UInt, segmentedControl: RS3DSegmentedControl!) {
-        self.displayedSchedules = filteredSchedules[self.keysW[Int(segmentIndex)]]!
-        self.tableView.reloadData()
+        
+        let scheduleIndex = self.keysW[Int(segmentIndex)]
+        
+        if filteredSchedules.keys.contains(scheduleIndex) {
+            if let schedules = filteredSchedules[scheduleIndex] {
+                self.displayedSchedules = schedules
+                self.tableView.reloadData()
+            }
+        }
     }
 }

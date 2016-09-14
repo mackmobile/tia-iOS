@@ -104,3 +104,14 @@ extension Array {
         return self.filter({$0 as? T == obj}).count > 0
     }
 }
+
+
+extension Date {
+    static func getDayOfWeek()->Int? {
+        let todayDate = Date()
+        let myCalendar = NSCalendar(identifier: .gregorian)
+        
+        let weekDay = myCalendar?.component(.weekday, from: todayDate)
+        return weekDay
+    }
+}

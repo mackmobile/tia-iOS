@@ -22,3 +22,33 @@ struct Schedule {
     var updatedAt: String?
 
 }
+
+extension Schedule {
+    static func ==(left:Schedule, right:Schedule) -> Bool {
+        if left.code != right.code {
+            return false
+        }
+        
+        if left.discipline != right.discipline {
+            return false
+        }
+        
+        if left.day != right.day {
+            return false
+        }
+        
+        if left.buildingNumber != right.buildingNumber {
+            return false
+        }
+        
+        if left.numberRoom != right.numberRoom {
+            return false
+        }
+        
+        if left.endTime != right.startTime {
+            return false
+        }
+        
+        return true
+    }
+}

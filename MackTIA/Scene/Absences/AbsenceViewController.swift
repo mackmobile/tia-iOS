@@ -35,6 +35,11 @@ class AbsenceViewController: UITableViewController, AbsenceViewControllerInput {
     let selectedCellHeight:CGFloat = 150
     let unselectedCellHeight:CGFloat = 58
     
+    let defaultCellIdentifier = "defaultCell"
+    let emptyCellIdentifier = "emptyCell"
+    let loadingCellIdentifier = "loadingCell"
+    var firstLoadingFlag = true
+    
     // MARK: Object lifecycle
     
     override func awakeFromNib() {
@@ -101,7 +106,10 @@ class AbsenceViewController: UITableViewController, AbsenceViewControllerInput {
     func displayFetchedAbsences(_ viewModel: AbsenceViewModel.Success) {
         self.stopReloadAnimation()
         displayedAbsences = viewModel.displayedAbsences
-        tableView.reloadData()
+        self.firstLoadingFlag = false
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func displayFetchedAbsencesError(_ viewModel: AbsenceViewModel.Error) {
@@ -118,13 +126,29 @@ class AbsenceViewController: UITableViewController, AbsenceViewControllerInput {
         let number = displayedAbsences.count
         
         if number == 0 {
-            self.showEmptyMessage(NSLocalizedString("empty_table_absence", comment: "Sem faltas disponiveis"))
+            //self.showEmptyMessage(NSLocalizedString("empty_table_absence", comment: "Sem faltas disponiveis"))
+            return 1
         }
         return number
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "faltaCell") as! AbsenceTableViewCell
+        
+        if self.displayedAbsences.count == 0 {
+            if self.firstLoadingFlag {
+                let cell = tableView.dequeueReusableCell(withIdentifier: self.loadingCellIdentifier) ?? UITableViewCell()
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: self.emptyCellIdentifier) ?? UITableViewCell()
+                return cell
+            }
+        }
+        
+        
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: self.defaultCellIdentifier) as? AbsenceTableViewCell else {
+            print(#function, "Problema ao carregar a celula de faltas")
+            return UITableViewCell()
+        }
         let absence = displayedAbsences[(indexPath as NSIndexPath).row]
         
         cell.nomeDaDisciplinaLabel.text = absence.disciplina

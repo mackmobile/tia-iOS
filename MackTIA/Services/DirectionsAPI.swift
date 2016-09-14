@@ -36,7 +36,7 @@ class DirectionsAPI {
     
     // MARK: API Communication
     
-    func getPolyline(_ origin: CLLocationCoordinate2D, destination: CLLocationCoordinate2D, completionHandler:@escaping (_ polylineEncoded:String?, _ error: ErrorCode?) -> Void) {
+    func getPolyline(origin: CLLocationCoordinate2D, destination: CLLocationCoordinate2D, completionHandler:@escaping (_ polylineEncoded:String?, _ error: ErrorCode?) -> Void) {
         
         guard let alamofireManager = self.alamofireManager else {
             print(#function, "Não foi possível criar objeto Manager para conexão web")

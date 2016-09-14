@@ -168,7 +168,7 @@ class CampusMapViewController: UIViewController, MapRequest {
                 self.present(alert, animated: true, completion: nil)
                 return
             }
-            DirectionsAPI.sharedInstance.getPolyline(origin, destination: destination) { [weak self] (polylineEncoded, error) in
+            DirectionsAPI.sharedInstance.getPolyline(origin: origin, destination: destination) { [weak self] (polylineEncoded, error) in
                 
                 guard polylineEncoded != nil else {
                     print(#function, "Problema ao obter a rota")
