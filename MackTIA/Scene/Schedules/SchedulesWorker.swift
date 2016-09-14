@@ -54,7 +54,7 @@ class SchedulesWorker {
             
             // TODO: PEGAR O RESTO DOS ATRIBUTOS
             guard let
-                discipline     = scheduleData["nome"] as? String,
+                discipline         = scheduleData["nome"] as? String,
                 let code           = scheduleData["codigo"] as? String,
                 let className      = scheduleData["turma"] as? String,
                 let collegeName    = scheduleData["escola_nome"] as? String,

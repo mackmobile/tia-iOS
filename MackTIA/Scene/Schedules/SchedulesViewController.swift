@@ -61,9 +61,28 @@ class SchedulesViewController: UITableViewController, SchedulesViewControllerInp
         self.configInterfaceAnimations()
         self.fetchSchedules()
         
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(SchedulesViewController.swipeGesture(_:)))
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(SchedulesViewController.swipeGesture(_:)))
+        swipeRight.direction = .right
+        swipeLeft.direction  = .left
+        self.tableView.addGestureRecognizer(swipeRight)
+        self.tableView.addGestureRecognizer(swipeLeft)
     }
     
     // MARK: Interface Animations
+    
+    func swipeGesture(_ sender: UISwipeGestureRecognizer) {
+        
+        if sender.direction == .left {
+            let position = Int(self.segmentedControl.selectedSegmentIndex)
+            let nextPosition = (position == self.keysW.count-1) ? 0 : position+1
+            self.segmentedControl.selectedSegmentIndex = UInt(nextPosition)
+        } else {
+            let position = Int(self.segmentedControl.selectedSegmentIndex)
+            let nextPosition = (position == 0) ? self.keysW.count-1 : position-1
+            self.segmentedControl.selectedSegmentIndex = UInt(nextPosition)
+        }
+    }
     
     fileprivate func setupHeightCell() -> Void {
         self.tableView.rowHeight = UITableViewAutomaticDimension

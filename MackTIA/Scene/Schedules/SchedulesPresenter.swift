@@ -37,24 +37,32 @@ class SchedulesPresenter: SchedulesPresenterInput {
         
         
         // Ordena as aulas para mesclar aulas consecutivas da mesma disciplina e local
-        var orderedSchedule = response.schedules.sorted(by: {
-            if ($0.day ?? "") == ($1.day ?? "") {
-                return ($0.startTime ?? Date()) < ($1.startTime ?? Date())
-            }
-            return ($0.day ?? "") < ($1.day ?? "")
-        })
+        var orderedSchedules = response.schedules
         
+        var i = (orderedSchedules.count - 1)
+        while i >= 0 {
+            var j = 1
+            while j <= i {
+                if orderedSchedules[j] < orderedSchedules[j-1] {
+                    let temp = orderedSchedules[j-1]
+                    orderedSchedules[j-1] = orderedSchedules[j]
+                    orderedSchedules[j] = temp
+                }
+                j += 1
+            }
+            i -= 1
+        }
         
         // Combina aulas consecutivas da mesma disciplina no mesmo local
         var index = 0
         while true {
-            if orderedSchedule.count == (index + 1) {
+            if orderedSchedules.count == (index + 1) {
                 break
             }
             
-            if orderedSchedule[index] == orderedSchedule[index+1] {
-                orderedSchedule[index].endTime = orderedSchedule[index+1].endTime
-                orderedSchedule.remove(at: index+1)
+            if orderedSchedules[index] == orderedSchedules[index+1] {
+                orderedSchedules[index].endTime = orderedSchedules[index+1].endTime
+                orderedSchedules.remove(at: index+1)
                 continue
             }
             index += 1
@@ -65,7 +73,7 @@ class SchedulesPresenter: SchedulesPresenterInput {
         // A view precisa que o dicionario tenha previsto todos os dias
         var filteredSchedules : [Int : [Schedule]] = [1:[],2:[],3:[],4:[],5:[],6:[],7:[]]
         
-        for schedule in orderedSchedule {
+        for schedule in orderedSchedules {
             if let day = Int(schedule.day ?? "0") {
                 var scds = filteredSchedules[day]
                 scds = scds ?? [Schedule]()

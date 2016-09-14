@@ -51,4 +51,12 @@ extension Schedule {
         
         return true
     }
+    
+    static func <(left:Schedule, right:Schedule) -> Bool {
+        if (left.day ?? "") == (right.day ?? "") {
+            return (left.startTime ?? Date()) < (right.startTime ?? Date())
+        }
+        
+        return (left.day ?? "") < (right.day ?? "")
+    }
 }

@@ -160,7 +160,6 @@ extension ListGradeTableViewController {
         let number = self.grades.count
         
         if number == 0 {
-//            self.showEmptyMessage(NSLocalizedString("empty_table_grade", comment: "Sem faltas disponiveis"))
             return 1
         }
         return number
