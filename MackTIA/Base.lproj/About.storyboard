@@ -1,41 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6ge-04-s8i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6ge-04-s8i">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Bariol_Regular.otf">
+        <array key="Bariol_Regular.otf">
             <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-            <string>Bariol-Regular</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <scenes>
         <!--TIA-->
@@ -45,30 +19,28 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="p5q-dU-DsZ">
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Usuário" id="BNS-MX-gOG">
                                 <cells>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="i5z-QF-l9c">
-                                        <rect key="frame" x="0.0" y="49.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i5z-QF-l9c" id="zgF-cf-enR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <frame key="frameInset" width="375" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_user" translatesAutoresizingMaskIntoConstraints="NO" id="5H8-R0-vNc">
-                                                    <rect key="frame" x="16" y="10" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="5H8-R0-vNc" secondAttribute="height" multiplier="1:1" id="BVr-or-02f"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1o-VP-Al4">
-                                                    <rect key="frame" x="56" y="14" width="311" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="acX-8v-8GW"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -83,25 +55,23 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="ZWO-kP-7Tp">
-                                        <rect key="frame" x="0.0" y="99.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="106" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZWO-kP-7Tp" id="zjc-tI-4C2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <frame key="frameInset" width="375" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tia" translatesAutoresizingMaskIntoConstraints="NO" id="nM2-tY-SwQ">
-                                                    <rect key="frame" x="16" y="10" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="nM2-tY-SwQ" secondAttribute="height" multiplier="1:1" id="hBO-80-jAc"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIA:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDi-DK-UGB">
-                                                    <rect key="frame" x="56" y="14" width="311" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="ZcW-XT-lt2"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -120,25 +90,23 @@
                             <tableViewSection headerTitle="Importante" id="vx6-NV-iGW">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" rowHeight="50" id="skj-CT-8Pz">
-                                        <rect key="frame" x="0.0" y="191.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="205" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="skj-CT-8Pz" id="ba6-qV-dJA">
-                                            <rect key="frame" x="0.0" y="0.0" width="328" height="49.5"/>
+                                            <frame key="frameInset" width="328" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_warning_shield" translatesAutoresizingMaskIntoConstraints="NO" id="xYJ-KC-P6f">
-                                                    <rect key="frame" x="16" y="10" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="xYJ-KC-P6f" secondAttribute="height" multiplier="1:1" id="nbU-4m-cRM"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aplicativo em fase de teste" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htH-ET-XV6">
-                                                    <rect key="frame" x="56" y="14" width="264" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="KbV-ig-mOP"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -161,23 +129,21 @@
                             <tableViewSection headerTitle="Social" id="4KU-cB-TTg">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="50" id="Aa7-wB-c2q">
-                                        <rect key="frame" x="0.0" y="283.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="304" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Aa7-wB-c2q" id="ron-Yd-aMz">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="49.5"/>
+                                            <frame key="frameInset" width="342" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Curtir página do Mackenzie" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oag-9X-fU9">
-                                                    <rect key="frame" x="56" y="14" width="278" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="RPW-bx-MLO"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_facebook" translatesAutoresizingMaskIntoConstraints="NO" id="Bb1-6o-fHS">
-                                                    <rect key="frame" x="16" y="10" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Bb1-6o-fHS" secondAttribute="height" multiplier="1:1" id="A4b-nl-JSd"/>
                                                     </constraints>
@@ -194,25 +160,23 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="50" id="vBJ-FL-09c">
-                                        <rect key="frame" x="0.0" y="333.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="354" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vBJ-FL-09c" id="pSY-qj-PqA">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="49.5"/>
+                                            <frame key="frameInset" width="342" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_facebook" translatesAutoresizingMaskIntoConstraints="NO" id="u13-Kb-YP4">
-                                                    <rect key="frame" x="16" y="10" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="u13-Kb-YP4" secondAttribute="height" multiplier="1:1" id="gzT-Zq-20a"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Curtir página da TV Mackenzie" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1T-WR-eWg">
-                                                    <rect key="frame" x="56" y="14" width="278" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="tUJ-yv-bNE"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -227,25 +191,23 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="50" id="U03-rE-Hsw">
-                                        <rect key="frame" x="0.0" y="383.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="404" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U03-rE-Hsw" id="LR0-5X-Yot">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="49.5"/>
+                                            <frame key="frameInset" width="342" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_facebook" translatesAutoresizingMaskIntoConstraints="NO" id="1SJ-Wk-Xtk">
-                                                    <rect key="frame" x="16" y="10" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="1SJ-Wk-Xtk" secondAttribute="height" multiplier="1:1" id="y8d-R2-Txx"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Curtir página da Rádio Mackenzie" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tp-zo-kdL">
-                                                    <rect key="frame" x="56" y="14" width="278" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="xBF-wZ-FDl"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -260,25 +222,23 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="50" id="zYV-1w-yeC">
-                                        <rect key="frame" x="0.0" y="433.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="454" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zYV-1w-yeC" id="DIt-Ir-zdN">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="49.5"/>
+                                            <frame key="frameInset" width="342" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_twitter" translatesAutoresizingMaskIntoConstraints="NO" id="Oja-GG-Cy0">
-                                                    <rect key="frame" x="16" y="10" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Oja-GG-Cy0" secondAttribute="height" multiplier="1:1" id="cZW-F8-RB1"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Falar do App no Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYt-yC-jfT">
-                                                    <rect key="frame" x="56" y="14" width="278" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="A8b-72-A5S"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -293,25 +253,23 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="50" id="RSh-Kc-sHB">
-                                        <rect key="frame" x="0.0" y="483.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="504" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RSh-Kc-sHB" id="gM4-YN-4b5">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="49.5"/>
+                                            <frame key="frameInset" width="342" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_email" translatesAutoresizingMaskIntoConstraints="NO" id="e7a-gj-NcP">
-                                                    <rect key="frame" x="16" y="10" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="e7a-gj-NcP" secondAttribute="height" multiplier="1:1" id="hln-dD-XWH"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sugestões" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPQ-bh-Ycl">
-                                                    <rect key="frame" x="56" y="14" width="278" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="kjc-w7-RIr"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -326,25 +284,23 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="50" id="HdZ-4d-dER">
-                                        <rect key="frame" x="0.0" y="533.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="554" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HdZ-4d-dER" id="6uM-vI-B4S">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="49.5"/>
+                                            <frame key="frameInset" width="342" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_appstore" translatesAutoresizingMaskIntoConstraints="NO" id="E6j-Y3-YFQ">
-                                                    <rect key="frame" x="16" y="10" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="E6j-Y3-YFQ" secondAttribute="height" multiplier="1:1" id="eDh-65-rmJ"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avaliar na AppStore" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Quh-Fo-Zii">
-                                                    <rect key="frame" x="56" y="14" width="278" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="rt8-lG-38V"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -363,14 +319,13 @@
                             <tableViewSection headerTitle="Equipe" id="Tr0-Ip-0LE">
                                 <cells>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="Ea9-jS-i43">
-                                        <rect key="frame" x="0.0" y="625.5" width="375" height="95"/>
+                                        <rect key="frame" x="0.0" y="653" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ea9-jS-i43" id="I0F-v2-AIc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
+                                            <frame key="frameInset" width="375" height="94"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="joaquim" translatesAutoresizingMaskIntoConstraints="NO" id="Lmw-ey-vZn">
-                                                    <rect key="frame" x="16" y="10" width="75" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Lmw-ey-vZn" secondAttribute="height" multiplier="1:1" id="uhl-2P-bG5"/>
                                                     </constraints>
@@ -381,16 +336,14 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joaquim Pessôa Filho" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wa-U8-52r">
-                                                    <rect key="frame" x="101" y="17" width="266" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="4rq-Ij-I7B"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
-                                                    <color key="textColor" red="0.8862745098" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.8862745098" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DV-Bu-Oex">
-                                                    <rect key="frame" x="101" y="32" width="266" height="48"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="48" id="KUJ-Cq-iiD"/>
                                                         <constraint firstAttribute="height" constant="21" id="kNq-2Y-1yd"/>
@@ -399,7 +352,7 @@
 Desenvolvedor/Design do Aplicativo iOS
 Mentor no projeto MackMobile</string>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -428,14 +381,13 @@ Mentor no projeto MackMobile</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="ZAy-YK-qbf">
-                                        <rect key="frame" x="0.0" y="720.5" width="375" height="95"/>
+                                        <rect key="frame" x="0.0" y="748" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZAy-YK-qbf" id="fQG-kO-7Pu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
+                                            <frame key="frameInset" width="375" height="94"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lucas" translatesAutoresizingMaskIntoConstraints="NO" id="E07-ss-usD">
-                                                    <rect key="frame" x="16" y="10" width="75" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="E07-ss-usD" secondAttribute="height" multiplier="1:1" id="yye-vT-FYX"/>
                                                     </constraints>
@@ -446,16 +398,14 @@ Mentor no projeto MackMobile</string>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lucas Salton Cardinali" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHE-4k-SwV">
-                                                    <rect key="frame" x="101" y="17" width="266" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="yMB-Bn-SUk"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
-                                                    <color key="textColor" red="0.89928382640000004" green="0.12798005339999999" blue="0.001599563868" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.86274516582489014" green="0.0" blue="0.023529423400759697" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGI-3G-3sx">
-                                                    <rect key="frame" x="101" y="32" width="266" height="48"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="3w8-3F-5wk"/>
                                                         <constraint firstAttribute="height" constant="48" id="7Tl-ZJ-9Cy"/>
@@ -464,7 +414,7 @@ Mentor no projeto MackMobile</string>
 Idealizador do Aplicativo
 </string>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -493,14 +443,13 @@ Idealizador do Aplicativo
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="Tho-y7-EC7">
-                                        <rect key="frame" x="0.0" y="815.5" width="375" height="95"/>
+                                        <rect key="frame" x="0.0" y="843" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tho-y7-EC7" id="CYj-Sn-s2F">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
+                                            <frame key="frameInset" width="375" height="94"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evandro" translatesAutoresizingMaskIntoConstraints="NO" id="KW8-QY-F0q">
-                                                    <rect key="frame" x="16" y="10" width="75" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="KW8-QY-F0q" secondAttribute="height" multiplier="1:1" id="Ysc-xS-Akl"/>
                                                     </constraints>
@@ -511,16 +460,14 @@ Idealizador do Aplicativo
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evandro Viva" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqW-xa-iUc">
-                                                    <rect key="frame" x="101" y="17" width="266" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="heS-UE-wLp"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
-                                                    <color key="textColor" red="0.8862745098" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.8862745098" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t97-BH-ufi">
-                                                    <rect key="frame" x="101" y="32" width="266" height="48"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="48" id="Uid-Re-avD"/>
                                                         <constraint firstAttribute="height" constant="21" id="jGX-kL-PKp"/>
@@ -529,7 +476,7 @@ Idealizador do Aplicativo
 Desenvolvimento do Aplicativo iOS
 </string>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -558,14 +505,13 @@ Desenvolvimento do Aplicativo iOS
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="Vit-XG-qHp">
-                                        <rect key="frame" x="0.0" y="910.5" width="375" height="95"/>
+                                        <rect key="frame" x="0.0" y="938" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vit-XG-qHp" id="8NA-uY-kN8">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
+                                            <frame key="frameInset" width="375" height="94"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="luciano" translatesAutoresizingMaskIntoConstraints="NO" id="7hp-e2-iAM">
-                                                    <rect key="frame" x="16" y="10" width="75" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="7hp-e2-iAM" secondAttribute="height" multiplier="1:1" id="bhW-ca-1fJ"/>
                                                     </constraints>
@@ -576,16 +522,14 @@ Desenvolvimento do Aplicativo iOS
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luciano Turrini" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7O-gk-Lao">
-                                                    <rect key="frame" x="101" y="17" width="266" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="XrH-Rk-xoF"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
-                                                    <color key="textColor" red="0.83921568629999999" green="0.0" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.83921568629999999" green="0.0" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSJ-QM-LH3">
-                                                    <rect key="frame" x="101" y="32" width="266" height="48"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="AfT-6e-MZL"/>
                                                         <constraint firstAttribute="height" constant="48" id="ltu-gQ-At3"/>
@@ -594,7 +538,7 @@ Desenvolvimento do Aplicativo iOS
 Desenvolvimento do Aplicativo iOS
 </string>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -623,14 +567,13 @@ Desenvolvimento do Aplicativo iOS
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="dpo-rb-a1z">
-                                        <rect key="frame" x="0.0" y="1005.5" width="375" height="95"/>
+                                        <rect key="frame" x="0.0" y="1033" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dpo-rb-a1z" id="S9u-bJ-8F3">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
+                                            <frame key="frameInset" width="375" height="94"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bia" translatesAutoresizingMaskIntoConstraints="NO" id="jXd-zl-jzM">
-                                                    <rect key="frame" x="16" y="10" width="75" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="jXd-zl-jzM" secondAttribute="height" multiplier="1:1" id="Uvo-5k-Utu"/>
                                                     </constraints>
@@ -641,16 +584,14 @@ Desenvolvimento do Aplicativo iOS
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beatriz de Almeida Pacheco" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjS-wy-SCT">
-                                                    <rect key="frame" x="101" y="17" width="266" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Whh-Gm-0JU"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
-                                                    <color key="textColor" red="0.89928382640000004" green="0.12798005339999999" blue="0.001599563868" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.86274516582489014" green="0.0" blue="0.023529423400759697" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NnM-fc-CC1">
-                                                    <rect key="frame" x="101" y="39" width="266" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="48" id="C6G-sO-fWe"/>
                                                         <constraint firstAttribute="height" constant="21" id="nZj-5V-wIU"/>
@@ -658,7 +599,7 @@ Desenvolvimento do Aplicativo iOS
                                                     <string key="text">Professora e Pesquisadora da FCI
 Design do Aplicativo</string>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -688,14 +629,13 @@ Design do Aplicativo</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="dNe-AX-6cb">
-                                        <rect key="frame" x="0.0" y="1100.5" width="375" height="95"/>
+                                        <rect key="frame" x="0.0" y="1128" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dNe-AX-6cb" id="kMM-bo-uuQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
+                                            <frame key="frameInset" width="375" height="94"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rafael" translatesAutoresizingMaskIntoConstraints="NO" id="PHi-It-FaR">
-                                                    <rect key="frame" x="16" y="10" width="75" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="PHi-It-FaR" secondAttribute="height" multiplier="1:1" id="Cos-xm-3Fj"/>
                                                     </constraints>
@@ -706,16 +646,14 @@ Design do Aplicativo</string>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rafael de Souza Mota" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7r-Bs-hsW">
-                                                    <rect key="frame" x="101" y="17" width="266" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="UTv-Ky-bj5"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
-                                                    <color key="textColor" red="0.94117647059999998" green="0.0" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.94117647059999998" green="0.0" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuD-l3-qwq">
-                                                    <rect key="frame" x="101" y="32" width="266" height="48"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="BCB-rK-smz"/>
                                                         <constraint firstAttribute="height" constant="48" id="q4y-LT-Ljj"/>
@@ -724,7 +662,7 @@ Design do Aplicativo</string>
 Contribuidor/Desenvolvedor de Serviços Web
 </string>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -753,14 +691,13 @@ Contribuidor/Desenvolvedor de Serviços Web
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="FCD-8W-OEH">
-                                        <rect key="frame" x="0.0" y="1195.5" width="375" height="95"/>
+                                        <rect key="frame" x="0.0" y="1223" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FCD-8W-OEH" id="7h8-uw-LVh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
+                                            <frame key="frameInset" width="375" height="94"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aleph" translatesAutoresizingMaskIntoConstraints="NO" id="3tg-SC-pUw">
-                                                    <rect key="frame" x="16" y="10" width="75" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="3tg-SC-pUw" secondAttribute="height" multiplier="1:1" id="baa-qT-Mt1"/>
                                                     </constraints>
@@ -771,16 +708,14 @@ Contribuidor/Desenvolvedor de Serviços Web
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aleph Retamal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nL-MV-Ylb">
-                                                    <rect key="frame" x="101" y="17" width="266" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="eAz-ce-We8"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
-                                                    <color key="textColor" red="0.8862745098" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.8862745098" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFW-rE-PhO">
-                                                    <rect key="frame" x="101" y="32" width="266" height="48"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="7FB-NW-IPw"/>
                                                         <constraint firstAttribute="height" constant="48" id="B7E-W7-iK7"/>
@@ -789,7 +724,7 @@ Contribuidor/Desenvolvedor de Serviços Web
 Desenvolvimento do Aplicativo iOS
 </string>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -818,14 +753,13 @@ Desenvolvimento do Aplicativo iOS
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="Hi0-2l-eCt">
-                                        <rect key="frame" x="0.0" y="1290.5" width="375" height="95"/>
+                                        <rect key="frame" x="0.0" y="1318" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hi0-2l-eCt" id="NUs-6G-66s">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
+                                            <frame key="frameInset" width="375" height="94"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feroli" translatesAutoresizingMaskIntoConstraints="NO" id="k8U-c0-OHj">
-                                                    <rect key="frame" x="16" y="10" width="75" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="k8U-c0-OHj" secondAttribute="height" multiplier="1:1" id="hDe-qf-aKi"/>
                                                     </constraints>
@@ -836,16 +770,14 @@ Desenvolvimento do Aplicativo iOS
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rafael Carvalho" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83p-1w-ffc">
-                                                    <rect key="frame" x="101" y="17" width="266" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="4ns-96-6ik"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
-                                                    <color key="textColor" red="0.83921568629999999" green="0.0" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.83921568629999999" green="0.0" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yK-yz-hH3">
-                                                    <rect key="frame" x="101" y="32" width="266" height="48"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="48" id="Enx-xl-YCJ"/>
                                                         <constraint firstAttribute="height" constant="21" id="oew-fM-TDe"/>
@@ -854,7 +786,7 @@ Desenvolvimento do Aplicativo iOS
 Design do Aplicativo iOS
 </string>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -887,25 +819,23 @@ Design do Aplicativo iOS
                             <tableViewSection headerTitle="Apoio" footerTitle="Copyright© 2015 Instituto Presbiteriano Mackenzie" id="xvg-oW-aSc">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="dwz-Cw-hhx">
-                                        <rect key="frame" x="0.0" y="1427.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="1469" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dwz-Cw-hhx" id="M8G-1r-TuP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <frame key="frameInset" width="375" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fci" translatesAutoresizingMaskIntoConstraints="NO" id="3dn-PV-Stc">
-                                                    <rect key="frame" x="16" y="10" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="3dn-PV-Stc" secondAttribute="height" multiplier="1:1" id="bcq-zv-eqD"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Faculdade de Computação e Informática" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEk-p3-nhU">
-                                                    <rect key="frame" x="56" y="14" width="311" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="q6Q-Mv-dRs"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -920,25 +850,23 @@ Design do Aplicativo iOS
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="WZE-R8-OmF">
-                                        <rect key="frame" x="0.0" y="1477.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="1519" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WZE-R8-OmF" id="CTN-wJ-enW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <frame key="frameInset" width="375" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mackmobile" translatesAutoresizingMaskIntoConstraints="NO" id="phg-05-NQZ">
-                                                    <rect key="frame" x="16" y="10" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="phg-05-NQZ" secondAttribute="height" multiplier="1:1" id="CAF-I2-3I9"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mack Mobile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8L-bY-8Eb">
-                                                    <rect key="frame" x="56" y="14" width="311" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="LPZ-FC-zm0"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -953,25 +881,23 @@ Design do Aplicativo iOS
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="6K6-oH-buR">
-                                        <rect key="frame" x="0.0" y="1527.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="1569" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6K6-oH-buR" id="1Zz-2f-7IO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <frame key="frameInset" width="375" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mack" translatesAutoresizingMaskIntoConstraints="NO" id="uAd-yA-TQU">
-                                                    <rect key="frame" x="16" y="10" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="uAd-yA-TQU" secondAttribute="height" multiplier="1:1" id="O45-My-PfM"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Divisão de Tecnologia da Informação" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Gh-QJ-jKB">
-                                                    <rect key="frame" x="56" y="14" width="311" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Mc7-T8-Sku"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -996,13 +922,12 @@ Design do Aplicativo iOS
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="TIA" id="WhL-b3-1pf">
                         <barButtonItem key="rightBarButtonItem" title="Sair" id="s48-cr-ppy">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="logoutButton:" destination="mWq-u3-R8O" id="P4p-ZY-u11"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tiaLabel" destination="ZDi-DK-UGB" id="kFS-W5-3L5"/>
                         <outlet property="userLabel" destination="I1o-VP-Al4" id="gxI-19-lDM"/>
@@ -1012,7 +937,7 @@ Design do Aplicativo iOS
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LAs-hE-uo5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="931.5" y="850.5"/>
+            <point key="canvasLocation" x="988" y="849"/>
         </scene>
         <!--Mais-->
         <scene sceneID="WY2-v4-GNS">
@@ -1021,16 +946,15 @@ Design do Aplicativo iOS
                     <tabBarItem key="tabBarItem" title="Mais" image="more" selectedImage="moreFilled" id="1eA-66-8l2"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO">
-                        <color key="tintColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </simulatedTabBarMetrics>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gNV-gh-FKa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gNV-gh-FKa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.86274516580000005" green="0.0" blue="0.023529423399999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1040,7 +964,7 @@ Design do Aplicativo iOS
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tpd-VL-Ytc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="491.5" y="850.5"/>
+            <point key="canvasLocation" x="228" y="849"/>
         </scene>
         <!--LoginScreen-->
         <scene sceneID="xyP-Bh-t49">
@@ -1048,7 +972,7 @@ Design do Aplicativo iOS
                 <viewControllerPlaceholder storyboardIdentifier="telaLogin" storyboardName="Main" referencedIdentifier="LoginScreen" id="NX1-qb-4eH" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XOn-Ch-Kxh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1286" y="402"/>
+            <point key="canvasLocation" x="1563" y="411"/>
         </scene>
         <!--Atenção-->
         <scene sceneID="N4o-4E-qd4">
@@ -1057,9 +981,9 @@ Design do Aplicativo iOS
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="18" id="LMb-uE-Mvh">
                         <rect key="frame" x="0.0" y="64" width="375" height="587"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection id="3vo-nH-5jc">
                                 <cells>
@@ -1067,18 +991,16 @@ Design do Aplicativo iOS
                                         <rect key="frame" x="0.0" y="35" width="375" height="214"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Tm-m5-Hqd" id="ArJ-zV-QE5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="213.5"/>
+                                            <frame key="frameInset" width="375" height="213"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_warning_shield" translatesAutoresizingMaskIntoConstraints="NO" id="xqV-98-Bin">
-                                                    <rect key="frame" x="16" y="18" width="28" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="Y3y-sS-8IK"/>
                                                         <constraint firstAttribute="width" constant="28" id="ozx-Gr-wWg"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="headTruncation" numberOfLines="0" baselineAdjustment="none" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="rNU-to-fTm">
-                                                    <rect key="frame" x="52" y="18" width="315" height="188"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="188" id="Cxe-v5-LcI"/>
                                                     </constraints>
@@ -1087,11 +1009,11 @@ Em caso de dúvida, SEMPRE verifique suas notas e faltas diretamente no site ofi
 
 Ao continuar você declara estar ciente destes possíveis problemas.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="rNU-to-fTm" firstAttribute="top" secondItem="ArJ-zV-QE5" secondAttribute="topMargin" constant="10" id="7eo-1g-1GQ"/>
                                                 <constraint firstItem="rNU-to-fTm" firstAttribute="leading" secondItem="xqV-98-Bin" secondAttribute="trailing" constant="8" id="Jh4-BS-9tn"/>
@@ -1112,23 +1034,21 @@ Ao continuar você declara estar ciente destes possíveis problemas.</string>
                             <tableViewSection headerTitle="Limitações" id="fNQ-Lg-Y6i">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="QwX-tl-dGB">
-                                        <rect key="frame" x="0.0" y="299" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="306" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QwX-tl-dGB" id="uPh-SZ-aSj">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_services" translatesAutoresizingMaskIntoConstraints="NO" id="G1s-bp-eDO">
-                                                    <rect key="frame" x="16" y="8" width="28" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="GiO-uE-HKj"/>
                                                         <constraint firstAttribute="width" constant="28" id="mVC-Bu-zhw"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aplicativo em fase de teste" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdv-2d-N3T">
-                                                    <rect key="frame" x="52" y="11" width="315" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1148,23 +1068,21 @@ Ao continuar você declara estar ciente destes possíveis problemas.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="p3x-TH-G31">
-                                        <rect key="frame" x="0.0" y="343" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="350" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p3x-TH-G31" id="Erg-2A-5rE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_test_tube" translatesAutoresizingMaskIntoConstraints="NO" id="7di-9z-tCA">
-                                                    <rect key="frame" x="16" y="8" width="28" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="28" id="Dbl-y5-osn"/>
                                                         <constraint firstAttribute="height" constant="28" id="hEf-yD-ca1"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Somente para alunos da graduação" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vk-UN-NRu">
-                                                    <rect key="frame" x="52" y="11" width="315" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1184,23 +1102,21 @@ Ao continuar você declara estar ciente destes possíveis problemas.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="X0U-U2-Yiy">
-                                        <rect key="frame" x="0.0" y="387" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="394" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X0U-U2-Yiy" id="dcS-hM-z6Y">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_architecture" translatesAutoresizingMaskIntoConstraints="NO" id="KkC-vZ-PxC">
-                                                    <rect key="frame" x="16" y="8" width="28" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="28" id="6le-4m-rnw"/>
                                                         <constraint firstAttribute="height" constant="28" id="ZeY-g1-n62"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAU - Notas em desenvolvimento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Qs-LO-igO">
-                                                    <rect key="frame" x="52" y="11" width="315" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1224,23 +1140,21 @@ Ao continuar você declara estar ciente destes possíveis problemas.</string>
                             <tableViewSection headerTitle="Ajuda" id="flq-I1-06a">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="PET-ys-959">
-                                        <rect key="frame" x="0.0" y="481" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="495" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PET-ys-959" id="dYy-UU-Cki">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_handshake" translatesAutoresizingMaskIntoConstraints="NO" id="eer-gh-FAl">
-                                                    <rect key="frame" x="16" y="8" width="28" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="dRv-zY-Hor"/>
                                                         <constraint firstAttribute="width" constant="28" id="wPc-ui-Ehj"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ajude-nos a melhorar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLn-HP-6Bf">
-                                                    <rect key="frame" x="52" y="12" width="315" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1254,23 +1168,21 @@ Ao continuar você declara estar ciente destes possíveis problemas.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GYZ-fU-trj">
-                                        <rect key="frame" x="0.0" y="525" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="539" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GYZ-fU-trj" id="c16-Qy-OvI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_email" translatesAutoresizingMaskIntoConstraints="NO" id="qt2-zR-uOE">
-                                                    <rect key="frame" x="16" y="8" width="28" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="7tb-wf-VOS"/>
                                                         <constraint firstAttribute="width" constant="28" id="itY-ym-83M"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="aplicativos@mackenzie.br" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqd-Qk-SRs">
-                                                    <rect key="frame" x="52" y="12" width="315" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1298,7 +1210,7 @@ Ao continuar você declara estar ciente destes possíveis problemas.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngw-6Y-KSr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1452.5" y="850.5"/>
+            <point key="canvasLocation" x="2015" y="728"/>
         </scene>
     </scenes>
     <resources>
@@ -1316,7 +1228,7 @@ Ao continuar você declara estar ciente destes possíveis problemas.</string>
         <image name="icon_test_tube" width="34" height="34"/>
         <image name="icon_tia" width="33" height="33"/>
         <image name="icon_twitter" width="33" height="33"/>
-        <image name="icon_user" width="33" height="33"/>
+        <image name="icon_user" width="25" height="25"/>
         <image name="icon_warning_shield" width="32" height="32"/>
         <image name="joaquim" width="298" height="298"/>
         <image name="lucas" width="60" height="69"/>
@@ -1330,5 +1242,5 @@ Ao continuar você declara estar ciente destes possíveis problemas.</string>
     <inferredMetricsTieBreakers>
         <segue reference="Tnd-QR-Yge"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.8862745098" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.8862745098" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

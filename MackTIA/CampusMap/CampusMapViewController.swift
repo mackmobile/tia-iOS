@@ -31,7 +31,12 @@ class CampusMapViewController: UIViewController, MapRequest {
     var regions:[[String:String]] = []
     var campusName:String = "Campus"
     
+    // Para evitar problema quando o aluno clica primeiro em rota para uma aula
+    // antes de abrir o mapa
+    var firstTime = true
+    var buildNumber:String?
     
+    // Para buscar rota quando estiver proximo ao Mack
     var flag = false
     
     // MARK: Object lifecycle
@@ -127,6 +132,14 @@ class CampusMapViewController: UIViewController, MapRequest {
             marker.appearAnimation = kGMSMarkerAnimationPop
             marker.map = mapView
         }
+        
+        if firstTime {
+            firstTime = false
+            if let bn = self.buildNumber {
+                self.buildNumber = nil
+                self.traceRouteTo(buildNumber: bn)
+            }
+        }
     }
     
     func loadRegions() {
@@ -146,6 +159,11 @@ class CampusMapViewController: UIViewController, MapRequest {
     }
     
     func traceRouteTo(buildNumber: String) {
+        
+        if firstTime {
+            self.buildNumber = buildNumber
+            return
+        }
         
         let buildNameFormatted = String(Int(buildNumber) ?? 0)
         

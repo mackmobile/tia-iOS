@@ -54,20 +54,21 @@ class SchedulesPresenter: SchedulesPresenterInput {
         }
         
         // Combina aulas consecutivas da mesma disciplina no mesmo local
-        var index = 0
-        while true {
-            if orderedSchedules.count == (index + 1) {
-                break
+        if orderedSchedules.count > 0 {
+            var index = 0
+            while true {
+                if orderedSchedules.count == (index + 1) {
+                    break
+                }
+                
+                if orderedSchedules[index] == orderedSchedules[index+1] {
+                    orderedSchedules[index].endTime = orderedSchedules[index+1].endTime
+                    orderedSchedules.remove(at: index+1)
+                    continue
+                }
+                index += 1
             }
-            
-            if orderedSchedules[index] == orderedSchedules[index+1] {
-                orderedSchedules[index].endTime = orderedSchedules[index+1].endTime
-                orderedSchedules.remove(at: index+1)
-                continue
-            }
-            index += 1
         }
-        
         
         // Cria um dicionario usando o dia da semana como chave
         // A view precisa que o dicionario tenha previsto todos os dias

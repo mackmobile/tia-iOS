@@ -74,9 +74,6 @@ class SchedulesWorker {
             let startTime = format.date(from: auxDate)
             let endTime = startTime?.addingTimeInterval(2700)
             
-            print("- Start: \(startTime) - End: \(endTime)")
-            print("Start: \(format.string(from: startTime ?? Date())) - End: \(format.string(from: endTime ?? Date()))")
-            
             // TODO: ADD OS ATRIBUTOS AQUI
             schedules.append(
                 Schedule(code: code, discipline: discipline, day: day, className: className, collegeName: collegeName, buildingNumber: buildingNumber, numberRoom: numberRoom, startTime: startTime, endTime: endTime, updatedAt: updateAt)

@@ -34,10 +34,10 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
         let tia = TIAServer.sharedInstance.user?.tia ?? "tia não encontrado"
         tiaLabel.text = "TIA: \(tia)"
         
-        userPhoto?.image = UIImage(named: "icon_user")
-        userPhoto.layer.cornerRadius = userPhoto.bounds.width/2
-        userPhoto.layer.masksToBounds = true
-        
+//        userPhoto?.image = UIImage(named: "icon_user")
+//        userPhoto.layer.cornerRadius = userPhoto.bounds.width/2
+//        userPhoto.layer.masksToBounds = true
+//        
 //        Alamofire.request(.GET, "http://moodle.mackenzie.br/moodle/mack_addons/fotos.php?username=\(tia)").responseString { [weak userPhoto] (response) in
 //            if let result = response.result.value {
 //                let doc = HTMLDocument(string: result)

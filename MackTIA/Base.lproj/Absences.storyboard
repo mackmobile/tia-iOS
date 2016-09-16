@@ -354,26 +354,17 @@
                                     <frame key="frameInset" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="emptyScheduleCell" text="🤔 nenhuma disciplina encontrada" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ys-v2-B5y">
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="83.5" id="gVF-jf-BbP"/>
-                                                <constraint firstAttribute="width" constant="205" id="xYj-VC-4GB"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🤔 nenhuma disciplina encontrada" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ys-v2-B5y">
                                             <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
                                             <color key="textColor" red="0.85882353779999998" green="0.086274512110000007" blue="0.19607843459999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="xYj-VC-4GB"/>
-                                                </mask>
-                                            </variation>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="4Ys-v2-B5y" firstAttribute="bottom" secondItem="TRu-5n-5fT" secondAttribute="bottomMargin" constant="7" id="JFa-rk-bku"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="4Ys-v2-B5y" secondAttribute="trailing" constant="10" id="dNd-o5-6V2"/>
-                                        <constraint firstItem="4Ys-v2-B5y" firstAttribute="top" secondItem="TRu-5n-5fT" secondAttribute="topMargin" constant="7" id="gNb-yb-p3g"/>
-                                        <constraint firstItem="4Ys-v2-B5y" firstAttribute="leading" secondItem="TRu-5n-5fT" secondAttribute="leadingMargin" constant="7" id="vUr-9g-rB7"/>
+                                        <constraint firstAttribute="trailing" secondItem="4Ys-v2-B5y" secondAttribute="trailing" id="8cp-Q8-ZNG"/>
+                                        <constraint firstAttribute="bottom" secondItem="4Ys-v2-B5y" secondAttribute="bottom" id="dJp-Pp-Kkf"/>
+                                        <constraint firstItem="4Ys-v2-B5y" firstAttribute="leading" secondItem="TRu-5n-5fT" secondAttribute="leading" id="mKI-Yy-dcI"/>
+                                        <constraint firstItem="4Ys-v2-B5y" firstAttribute="top" secondItem="TRu-5n-5fT" secondAttribute="top" id="oZ3-uz-Jj7"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -387,25 +378,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="emptyScheduleCell" text="☁️ buscando ..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5T-t0-SjL">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="205" id="8wS-xx-Zgp"/>
-                                                <constraint firstAttribute="height" constant="83.5" id="nmp-qJ-5Q2"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
                                             <color key="textColor" red="0.85882353779999998" green="0.086274512110000007" blue="0.19607843459999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="8wS-xx-Zgp"/>
-                                                </mask>
-                                            </variation>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="L5T-t0-SjL" firstAttribute="top" secondItem="jsU-l8-fuO" secondAttribute="topMargin" constant="7" id="99I-pU-ybA"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="L5T-t0-SjL" secondAttribute="trailing" constant="10" id="DYE-iB-vq4"/>
-                                        <constraint firstItem="L5T-t0-SjL" firstAttribute="leading" secondItem="jsU-l8-fuO" secondAttribute="leadingMargin" constant="7" id="q6f-es-Ylz"/>
-                                        <constraint firstItem="L5T-t0-SjL" firstAttribute="bottom" secondItem="jsU-l8-fuO" secondAttribute="bottomMargin" constant="7" id="sf5-y3-yVP"/>
+                                        <constraint firstAttribute="bottom" secondItem="L5T-t0-SjL" secondAttribute="bottom" id="HY2-dV-8vs"/>
+                                        <constraint firstItem="L5T-t0-SjL" firstAttribute="top" secondItem="jsU-l8-fuO" secondAttribute="top" id="gpq-fN-vgw"/>
+                                        <constraint firstItem="L5T-t0-SjL" firstAttribute="leading" secondItem="jsU-l8-fuO" secondAttribute="leading" id="oW3-h1-9GH"/>
+                                        <constraint firstAttribute="trailing" secondItem="L5T-t0-SjL" secondAttribute="trailing" id="wzU-Wp-A1Z"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -423,6 +405,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="PV9-6B-e0L">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <attributedString key="attributedTitle">
                             <fragment content="Atualizando as Faltas">
@@ -440,7 +423,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72A-Qx-OT6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1814" y="-388"/>
+            <point key="canvasLocation" x="1813.5" y="-388.5"/>
         </scene>
     </scenes>
     <resources>
