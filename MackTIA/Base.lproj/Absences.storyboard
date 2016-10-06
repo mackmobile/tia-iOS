@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jGv-Gt-Vos">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jGv-Gt-Vos">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -20,7 +20,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO">
                         <color key="tintColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </simulatedTabBarMetrics>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="blackTranslucent" id="GxI-Di-bVE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackTranslucent" id="GxI-Di-bVE">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.86125087738037109" green="0.0056083798408508301" blue="0.021495765075087547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -55,6 +55,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOME DA DISCIPLINA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgO-XW-UcM">
+                                            <accessibility key="accessibilityConfiguration" hint="Disciplina"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="27" id="b2H-je-nGe"/>
                                             </constraints>
@@ -111,38 +112,43 @@
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNn-LT-IW6">
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Faltas:" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppg-tl-Mcb">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aulas Previstas:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGn-iJ-MSn">
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                    </accessibility>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="cGJ-WB-25e"/>
-                                                        <constraint firstAttribute="height" constant="20" id="mj0-Uc-Ye9"/>
-                                                        <constraint firstAttribute="height" constant="17" id="tvl-B6-pJd"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="8fB-Db-jTF"/>
+                                                        <constraint firstAttribute="width" constant="100" id="RMY-GR-lIo"/>
+                                                        <constraint firstAttribute="height" constant="20" id="fv0-qs-OTM"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="vid-dX-MvQ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="12"/>
                                                     <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="cGJ-WB-25e"/>
-                                                            <exclude reference="tvl-B6-pJd"/>
-                                                        </mask>
-                                                    </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atualizado em:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHm-Me-qBx">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrV-jW-Be7">
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                    </accessibility>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="3SY-YH-tQv"/>
-                                                        <constraint firstAttribute="height" constant="17" id="F0g-Wv-uD0"/>
+                                                        <constraint firstAttribute="height" constant="17" id="dGl-an-vmE"/>
+                                                        <constraint firstAttribute="width" constant="40" id="ooU-HC-zer"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="uF8-aO-8WL"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="wEA-IP-FBj"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="12"/>
-                                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="14"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="3SY-YH-tQv"/>
-                                                            <exclude reference="F0g-Wv-uD0"/>
+                                                            <exclude reference="dGl-an-vmE"/>
+                                                            <exclude reference="uF8-aO-8WL"/>
                                                         </mask>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permitidas (25%):" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ira-rZ-BAy">
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                    </accessibility>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="2ar-Sj-IRg"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="See-zu-0wE"/>
@@ -158,19 +164,37 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrV-jW-Be7">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XK7-OY-l4e">
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="17" id="dGl-an-vmE"/>
-                                                        <constraint firstAttribute="width" constant="40" id="ooU-HC-zer"/>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="uF8-aO-8WL"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="wEA-IP-FBj"/>
+                                                        <constraint firstAttribute="height" constant="17" id="3mG-me-IHt"/>
+                                                        <constraint firstAttribute="width" constant="40" id="VNx-mY-d8E"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="huc-fP-qHE"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="14"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="dGl-an-vmE"/>
-                                                            <exclude reference="uF8-aO-8WL"/>
+                                                            <exclude reference="3mG-me-IHt"/>
+                                                            <exclude reference="huc-fP-qHE"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Faltas:" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppg-tl-Mcb">
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                    </accessibility>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="cGJ-WB-25e"/>
+                                                        <constraint firstAttribute="height" constant="20" id="mj0-Uc-Ye9"/>
+                                                        <constraint firstAttribute="height" constant="17" id="tvl-B6-pJd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="12"/>
+                                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="cGJ-WB-25e"/>
+                                                            <exclude reference="tvl-B6-pJd"/>
                                                         </mask>
                                                     </variation>
                                                 </label>
@@ -189,29 +213,21 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aulas Previstas:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGn-iJ-MSn">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atualizado em:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHm-Me-qBx">
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                    </accessibility>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="8fB-Db-jTF"/>
-                                                        <constraint firstAttribute="width" constant="100" id="RMY-GR-lIo"/>
-                                                        <constraint firstAttribute="height" constant="20" id="fv0-qs-OTM"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="vid-dX-MvQ"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="3SY-YH-tQv"/>
+                                                        <constraint firstAttribute="height" constant="17" id="F0g-Wv-uD0"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="12"/>
                                                     <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XK7-OY-l4e">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="17" id="3mG-me-IHt"/>
-                                                        <constraint firstAttribute="width" constant="40" id="VNx-mY-d8E"/>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="huc-fP-qHE"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="14"/>
-                                                    <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="3mG-me-IHt"/>
-                                                            <exclude reference="huc-fP-qHE"/>
+                                                            <exclude reference="3SY-YH-tQv"/>
+                                                            <exclude reference="F0g-Wv-uD0"/>
                                                         </mask>
                                                     </variation>
                                                 </label>

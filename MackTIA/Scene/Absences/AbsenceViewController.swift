@@ -164,6 +164,11 @@ class AbsenceViewController: UITableViewController, AbsenceViewControllerInput {
         cell.circleGraph.endArc = CGFloat(absence.percentual/25)
         cell.circleProgressTotalLabel.text = "\(absence.percentual)%"
 //        cell.circleProgressLabel.text =
+        
+        
+        cell.accessibilityElements = []
+        
+        
         return cell
     }
     
