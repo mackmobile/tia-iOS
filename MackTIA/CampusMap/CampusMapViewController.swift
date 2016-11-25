@@ -39,6 +39,13 @@ class CampusMapViewController: UIViewController, MapRequest {
     // Para buscar rota quando estiver proximo ao Mack
     var flag = false
     
+//    // Variavel responsavel pelo destino final
+//    var currentBuildingPin:[[String:String]] = [] {
+//        didSet{
+//            loadPinAnnotations()
+//        }
+//    }
+    
     // MARK: Object lifecycle
     
     override func awakeFromNib() {
@@ -118,12 +125,13 @@ class CampusMapViewController: UIViewController, MapRequest {
         
         mapView.camera = GMSCameraPosition.camera(withTarget: self.centerCoordinate, zoom: self.zoomDefault)
         
+        
         // Add Map Annotation
         for item in self.pins {
             let point = CGPointFromString(item["location"]!)
             let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(point.x), longitude: CLLocationDegrees(point.y))
             
-            let img =  UIImage(named: "pin")!.insertText(text: item["number"]!, size: 16.0, offset: 0.2, color: UIColor(hex: item["color"]!))
+            let img =  UIImage(named: "pin")!.insertText(text: item["number"]!, size: 13.0, offset: 0.2, color: UIColor(hex: item["color"]!))
             
             let marker = GMSMarker(position: coordinate)
             marker.title = item["name"]
@@ -168,8 +176,21 @@ class CampusMapViewController: UIViewController, MapRequest {
         let buildNameFormatted = String(Int(buildNumber) ?? 0)
         
         if let destination = self.pins.filter({$0["number"] == buildNameFormatted}).first {
+            
             let point = CGPointFromString(destination["location"]!)
             let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(point.x), longitude: CLLocationDegrees(point.y))
+            
+            self.mapView.clear()
+            
+            let img =  UIImage(named: "pin")!.insertText(text: destination["number"]!, size: 13.0, offset: 0.2, color: UIColor(hex: destination["color"]!))
+            
+            let marker = GMSMarker(position: coordinate)
+            marker.title = destination["name"]
+            marker.snippet = destination["buildName"]
+            marker.icon = img
+            marker.appearAnimation = kGMSMarkerAnimationPop
+            marker.map = mapView
+            
             traceRouteTo(coordinate: coordinate)
         } else {
             let alert = UIAlertController(title: NSLocalizedString("campusmap_errorBuildNotFoundTitle", comment: "Too far away"), message: String(format: NSLocalizedString("campusmap_errorBuildNotFoundMessage", comment: "Too far away"), buildNumber), preferredStyle: .alert)

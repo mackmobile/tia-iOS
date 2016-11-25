@@ -26,21 +26,6 @@ extension LoginPresenter: LoginInteractorOutput {
 }
 
 class LoginConfigurator {
-//    private static var __once: () = {
-//            Static.instance = LoginConfigurator()
-//        }()
-//    // MARK: Object lifecycle
-//    
-//    class var sharedInstance: LoginConfigurator {
-//        struct Static {
-//            static var instance: LoginConfigurator?
-//            static var token: Int = 0
-//        }
-//        
-//        _ = LoginConfigurator.__once
-//        
-//        return Static.instance!
-//    }
 
     class var sharedInstance: LoginConfigurator {
         struct Static {
