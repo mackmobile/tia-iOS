@@ -83,6 +83,7 @@
 		A15BB2F61BA0762600143EBE /* Bariol_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A15BB2F51BA0762600143EBE /* Bariol_Regular.otf */; };
 		B133DB9E1D7CB9F4000B8CB7 /* Mackenzie.gpx in Resources */ = {isa = PBXBuildFile; fileRef = B133DB9D1D7CB9F4000B8CB7 /* Mackenzie.gpx */; };
 		B19990271D6CB98300A909C7 /* DirectionsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19990261D6CB98300A909C7 /* DirectionsAPI.swift */; };
+		F7B07FBB1E7CC324007F5DD5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B07FBA1E7CC324007F5DD5 /* MainTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +199,7 @@
 		B199902A1D6CC48900A909C7 /* DirectionsAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsAPITests.swift; sourceTree = "<group>"; };
 		B1B6FD361D6CF5BF00BCA74E /* Polyline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Polyline.framework; path = Carthage/Build/iOS/Polyline.framework; sourceTree = "<group>"; };
 		CE8B2B82B32CB10B838E64EF /* Pods-TIA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TIA/Pods-TIA.debug.xcconfig"; sourceTree = "<group>"; };
+		F7B07FBA1E7CC324007F5DD5 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -433,6 +435,7 @@
 				924887B11CC01B9C009BFDA9 /* Views */,
 				922E01661CC80FC500B843A8 /* Scenes */,
 				9289B8821B87ADB3004284E3 /* AppDelegate.swift */,
+				F7B07FBA1E7CC324007F5DD5 /* MainTabBarController.swift */,
 				A15BB2D41B9ACBD900143EBE /* Images.xcassets */,
 				9289B8801B87ADB3004284E3 /* Supporting Files */,
 			);
@@ -680,6 +683,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7B07FBB1E7CC324007F5DD5 /* MainTabBarController.swift in Sources */,
 				928786AC1CC70FAF00AC72BD /* AbsenceInteractor.swift in Sources */,
 				928786B11CC70FAF00AC72BD /* AbsenceWorker.swift in Sources */,
 				925E2C9C1CC15A4600DEAF52 /* TIAServer.swift in Sources */,

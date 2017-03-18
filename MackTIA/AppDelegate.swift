@@ -16,8 +16,16 @@ import GoogleMaps
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var window: UIWindow?
+    // MARK: - Enum used for 3DTouch Shortcuts
+    enum Shortcut: String {
+        case openAbsence = "OpenAbsences"
+        case openGrades = "OpenGrades"
+        case openSchedules = "OpenSchedules"
+        case openCampus = "OpenCampusMap"
+    }
     
+    // MARK: -
+    var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -42,7 +50,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc = storyboard.instantiateViewController(withIdentifier: "LoginScreen")
         self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
-        return true
+        
+        
+        // 3DTouch
+        
+        var isLaunchedFromQuickAction = false
+        
+        //Check if app is beign launched from QuickAction
+        if let shortcutItems = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+            
+            isLaunchedFromQuickAction = true
+            
+            //Handle Shortcut Item
+            let _ = self.handleQuickAction(shortcutItems)
+        }
+        
+        return !isLaunchedFromQuickAction
     }
     
     func logUser(_ user:User) {
@@ -77,5 +100,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
     }
     
+    
+    //3DTouch Functions
+    //Method to access the QuickActions
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        
+        //Handle Quick Action
+        completionHandler(handleQuickAction(shortcutItem))
+    }
+    
+    //Method to handle quick actions by the Shortcut Item
+    func handleQuickAction(_ shortcutItem: UIApplicationShortcutItem) -> Bool {
+        
+        //Create a Boolean which is a Indicatior if the QuickAction is correct
+        var quickActionHandled = false
+        
+        //Get the type of the ShortcutItem
+        let type = shortcutItem.type.components(separatedBy: ".").last!
+        
+        //Get Tab Controller
+        guard let tabController = self.window?.rootViewController as? UITabBarController else {
+            //Error handling
+            return false
+        }
+        
+        //Verify if the type is in Enum of Shortcuts
+        if let shortcutType = Shortcut.init(rawValue: type) {
+            
+            switch shortcutType {
+                
+            case .openAbsence:
+                tabController.selectedIndex = 0
+                quickActionHandled = true
+                
+            case .openGrades:
+                tabController.selectedIndex = 1
+                quickActionHandled = true
+                
+            case .openSchedules:
+                tabController.selectedIndex = 2
+                quickActionHandled = true
+                
+            case .openCampus:
+                tabController.selectedIndex = 3
+                quickActionHandled = true
+            }
+        }
+        
+        return quickActionHandled
+    }
 }
-
