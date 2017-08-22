@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jGv-Gt-Vos">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Bariol_Regular.otf">
+            <string>Bariol-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Faltas-->
+        <scene sceneID="C4b-63-RGB">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="jGv-Gt-Vos" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Faltas" image="absence" selectedImage="absenceFilled" id="A09-1T-CPw"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO">
+                        <color key="tintColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </simulatedTabBarMetrics>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackTranslucent" id="GxI-Di-bVE">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.86125087738037109" green="0.0056083798408508301" blue="0.021495765075087547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="0.0"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hfQ-fC-RJA" kind="relationship" relationship="rootViewController" id="Jpg-VY-z7Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iyr-w6-DDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1068" y="-388"/>
+        </scene>
+        <!--Faltas-->
+        <scene sceneID="NX7-xy-ufd">
+            <objects>
+                <tableViewController id="hfQ-fC-RJA" customClass="AbsenceViewController" customModule="TIA" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EZn-Mw-DaT">
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.85882352939999995" green="0.086274509799999996" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="defaultCell" rowHeight="150" id="ACx-ZZ-OLh" customClass="AbsenceTableViewCell" customModule="TIA" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ACx-ZZ-OLh" id="gKN-22-9NB">
+                                    <frame key="frameInset" width="375" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOME DA DISCIPLINA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgO-XW-UcM">
+                                            <accessibility key="accessibilityConfiguration" hint="Disciplina"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="27" id="b2H-je-nGe"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
+                                            <color key="textColor" red="0.85882352941176465" green="0.086274509803921567" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bn4-A1-MCy" customClass="ProgressBarView" customModule="TIA" customModuleProvider="target">
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="10" id="Cao-1o-QdA"/>
+                                                <constraint firstAttribute="width" constant="50" id="yQQ-BZ-qbC"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="endPercent">
+                                                    <real key="value" value="0.050000000000000003"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="maxPercent">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="progressWidth">
+                                                    <real key="value" value="1.5"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                                    <color key="value" red="0.86274516582489014" green="0.0" blue="0.023529423400759697" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="progressBackgroundColor">
+                                                    <color key="value" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="yQQ-BZ-qbC"/>
+                                                </mask>
+                                            </variation>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7y-aL-eJg">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="RIK-ZK-7xM"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="aAB-rS-2Vo"/>
+                                                <constraint firstAttribute="height" constant="17" id="gKv-v2-cq5"/>
+                                                <constraint firstAttribute="width" constant="28" id="r4d-z1-J9l"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="12"/>
+                                            <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="RIK-ZK-7xM"/>
+                                                    <exclude reference="aAB-rS-2Vo"/>
+                                                    <exclude reference="gKv-v2-cq5"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNn-LT-IW6">
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aulas Previstas:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGn-iJ-MSn">
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                    </accessibility>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="8fB-Db-jTF"/>
+                                                        <constraint firstAttribute="width" constant="100" id="RMY-GR-lIo"/>
+                                                        <constraint firstAttribute="height" constant="20" id="fv0-qs-OTM"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="vid-dX-MvQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="12"/>
+                                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrV-jW-Be7">
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                    </accessibility>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="dGl-an-vmE"/>
+                                                        <constraint firstAttribute="width" constant="40" id="ooU-HC-zer"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="uF8-aO-8WL"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="wEA-IP-FBj"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="dGl-an-vmE"/>
+                                                            <exclude reference="uF8-aO-8WL"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permitidas (25%):" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ira-rZ-BAy">
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                    </accessibility>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="2ar-Sj-IRg"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="See-zu-0wE"/>
+                                                        <constraint firstAttribute="height" constant="17" id="Upl-eN-9UG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="12"/>
+                                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="See-zu-0wE"/>
+                                                            <exclude reference="Upl-eN-9UG"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XK7-OY-l4e">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="3mG-me-IHt"/>
+                                                        <constraint firstAttribute="width" constant="40" id="VNx-mY-d8E"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="huc-fP-qHE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="3mG-me-IHt"/>
+                                                            <exclude reference="huc-fP-qHE"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Faltas:" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppg-tl-Mcb">
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                    </accessibility>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="cGJ-WB-25e"/>
+                                                        <constraint firstAttribute="height" constant="20" id="mj0-Uc-Ye9"/>
+                                                        <constraint firstAttribute="height" constant="17" id="tvl-B6-pJd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="12"/>
+                                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="cGJ-WB-25e"/>
+                                                            <exclude reference="tvl-B6-pJd"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qn-Qb-Ned">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="QQq-e9-A4s"/>
+                                                        <constraint firstAttribute="width" constant="40" id="eVo-oP-gan"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="gvI-yf-ENc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="QQq-e9-A4s"/>
+                                                            <exclude reference="gvI-yf-ENc"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atualizado em:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHm-Me-qBx">
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                    </accessibility>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="3SY-YH-tQv"/>
+                                                        <constraint firstAttribute="height" constant="17" id="F0g-Wv-uD0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="12"/>
+                                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="3SY-YH-tQv"/>
+                                                            <exclude reference="F0g-Wv-uD0"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H3X-18-RhB">
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOH-Yf-MNN" customClass="CircleGraphView" customModule="TIA" customModuleProvider="target">
+                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="QOH-Yf-MNN" secondAttribute="height" multiplier="1:1" id="d5D-WM-ms1"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="endArc">
+                                                                    <real key="value" value="0.5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="arcWidth">
+                                                                    <real key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="arcColor">
+                                                                    <color key="value" red="0.85882352939999995" green="0.086274509799999996" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="arcBackgroundColor">
+                                                                    <color key="value" red="0.94856119155883789" green="0.94856119155883789" blue="0.94856119155883789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="maxArcColor">
+                                                                    <color key="value" red="0.63853308460000002" green="1" blue="0.71023284480000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="maxArc">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kb-lh-SPq">
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="Q3M-rG-T5n"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="11"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="de 25%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLj-z8-LNN">
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="CEp-tR-7QZ"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="9"/>
+                                                            <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" secondItem="QOH-Yf-MNN" secondAttribute="height" id="Am3-cu-XXa"/>
+                                                        <constraint firstItem="QOH-Yf-MNN" firstAttribute="centerX" secondItem="QLj-z8-LNN" secondAttribute="centerX" id="EXU-75-YSE"/>
+                                                        <constraint firstItem="QOH-Yf-MNN" firstAttribute="centerY" secondItem="1Kb-lh-SPq" secondAttribute="centerY" constant="5" id="p3q-hL-GAB"/>
+                                                        <constraint firstAttribute="centerX" secondItem="QOH-Yf-MNN" secondAttribute="centerX" id="uRX-9y-hak"/>
+                                                        <constraint firstAttribute="centerY" secondItem="QOH-Yf-MNN" secondAttribute="centerY" id="wQV-ze-4Kb"/>
+                                                        <constraint firstItem="QOH-Yf-MNN" firstAttribute="centerY" secondItem="QLj-z8-LNN" secondAttribute="centerY" constant="-5" id="wYG-dp-4ho"/>
+                                                        <constraint firstItem="QOH-Yf-MNN" firstAttribute="centerX" secondItem="1Kb-lh-SPq" secondAttribute="centerX" id="zQb-co-IF5"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="QOH-Yf-MNN" firstAttribute="centerX" secondItem="bHm-Me-qBx" secondAttribute="centerX" id="0ad-CI-Pd4"/>
+                                                <constraint firstItem="2Qn-Qb-Ned" firstAttribute="leading" secondItem="Ppg-tl-Mcb" secondAttribute="trailing" constant="5" id="0kr-ai-3Bg"/>
+                                                <constraint firstAttribute="bottom" secondItem="bHm-Me-qBx" secondAttribute="bottom" id="0oG-7A-HK9"/>
+                                                <constraint firstItem="sGn-iJ-MSn" firstAttribute="trailing" secondItem="Ira-rZ-BAy" secondAttribute="trailing" id="2kI-9Z-lUO"/>
+                                                <constraint firstItem="Ppg-tl-Mcb" firstAttribute="bottom" secondItem="2Qn-Qb-Ned" secondAttribute="bottom" id="37B-wx-kKY"/>
+                                                <constraint firstItem="Ira-rZ-BAy" firstAttribute="trailing" secondItem="Ppg-tl-Mcb" secondAttribute="trailing" id="3YN-sn-acY"/>
+                                                <constraint firstItem="sGn-iJ-MSn" firstAttribute="top" secondItem="UNn-LT-IW6" secondAttribute="top" id="3g3-N6-901"/>
+                                                <constraint firstItem="Ira-rZ-BAy" firstAttribute="top" secondItem="sGn-iJ-MSn" secondAttribute="bottom" id="HNg-Ub-47c"/>
+                                                <constraint firstItem="H3X-18-RhB" firstAttribute="top" secondItem="UNn-LT-IW6" secondAttribute="topMargin" id="HaO-W9-0IG"/>
+                                                <constraint firstItem="H3X-18-RhB" firstAttribute="trailing" secondItem="UNn-LT-IW6" secondAttribute="trailingMargin" id="JCD-74-h1m"/>
+                                                <constraint firstItem="XK7-OY-l4e" firstAttribute="bottom" secondItem="Ira-rZ-BAy" secondAttribute="bottom" id="JgN-5j-Bv4"/>
+                                                <constraint firstAttribute="height" constant="85" id="Nkv-Xl-Xov"/>
+                                                <constraint firstItem="sGn-iJ-MSn" firstAttribute="leading" secondItem="Ira-rZ-BAy" secondAttribute="leading" id="OvS-9o-tG0"/>
+                                                <constraint firstItem="bHm-Me-qBx" firstAttribute="top" secondItem="H3X-18-RhB" secondAttribute="bottom" constant="5" id="WDS-w5-EtN"/>
+                                                <constraint firstAttribute="trailing" secondItem="bHm-Me-qBx" secondAttribute="trailing" id="Y28-vr-PZA"/>
+                                                <constraint firstItem="sGn-iJ-MSn" firstAttribute="top" secondItem="jrV-jW-Be7" secondAttribute="top" id="Yhs-xO-cFf"/>
+                                                <constraint firstItem="Ppg-tl-Mcb" firstAttribute="top" secondItem="Ira-rZ-BAy" secondAttribute="bottom" id="ZDO-b4-zP6"/>
+                                                <constraint firstItem="sGn-iJ-MSn" firstAttribute="leading" secondItem="UNn-LT-IW6" secondAttribute="leading" id="aGE-S1-6xQ"/>
+                                                <constraint firstItem="Ira-rZ-BAy" firstAttribute="leading" secondItem="Ppg-tl-Mcb" secondAttribute="leading" id="elW-vo-SOH"/>
+                                                <constraint firstItem="XK7-OY-l4e" firstAttribute="top" secondItem="Ira-rZ-BAy" secondAttribute="top" id="fMt-0k-cM0"/>
+                                                <constraint firstItem="bHm-Me-qBx" firstAttribute="trailing" secondItem="UNn-LT-IW6" secondAttribute="trailingMargin" id="fQv-xa-aoc"/>
+                                                <constraint firstItem="sGn-iJ-MSn" firstAttribute="bottom" secondItem="jrV-jW-Be7" secondAttribute="bottom" id="gVQ-lL-FaS"/>
+                                                <constraint firstItem="bHm-Me-qBx" firstAttribute="leading" secondItem="UNn-LT-IW6" secondAttribute="leading" id="hB1-zy-rIY"/>
+                                                <constraint firstItem="H3X-18-RhB" firstAttribute="leading" secondItem="XK7-OY-l4e" secondAttribute="trailing" constant="5" id="iPL-AQ-qhC"/>
+                                                <constraint firstItem="XK7-OY-l4e" firstAttribute="leading" secondItem="Ira-rZ-BAy" secondAttribute="trailing" constant="5" id="jNv-aS-dLI"/>
+                                                <constraint firstItem="Ppg-tl-Mcb" firstAttribute="top" secondItem="2Qn-Qb-Ned" secondAttribute="top" id="lrO-Yh-afn"/>
+                                                <constraint firstItem="jrV-jW-Be7" firstAttribute="leading" secondItem="sGn-iJ-MSn" secondAttribute="trailing" constant="5" id="qEH-x6-Bee"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Y28-vr-PZA"/>
+                                                    <exclude reference="fQv-xa-aoc"/>
+                                                    <exclude reference="hB1-zy-rIY"/>
+                                                </mask>
+                                            </variation>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="o7y-aL-eJg" firstAttribute="leading" secondItem="Bn4-A1-MCy" secondAttribute="trailing" constant="10" id="2Fb-kJ-WNZ"/>
+                                        <constraint firstItem="o7y-aL-eJg" firstAttribute="centerY" secondItem="Bn4-A1-MCy" secondAttribute="centerY" id="5GV-qV-TRK"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="UNn-LT-IW6" secondAttribute="trailing" id="6fz-YP-b6i"/>
+                                        <constraint firstItem="RgO-XW-UcM" firstAttribute="leading" secondItem="gKN-22-9NB" secondAttribute="leadingMargin" id="7Ui-KX-aPu"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="RgO-XW-UcM" secondAttribute="trailing" id="Atr-yg-dKf"/>
+                                        <constraint firstItem="RgO-XW-UcM" firstAttribute="top" secondItem="gKN-22-9NB" secondAttribute="topMargin" id="CUa-HO-klj"/>
+                                        <constraint firstItem="Bn4-A1-MCy" firstAttribute="trailing" secondItem="gKN-22-9NB" secondAttribute="trailingMargin" id="Kqr-bi-5BJ"/>
+                                        <constraint firstItem="Bn4-A1-MCy" firstAttribute="trailing" secondItem="gKN-22-9NB" secondAttribute="trailingMargin" id="ORT-hk-xmO"/>
+                                        <constraint firstItem="Bn4-A1-MCy" firstAttribute="top" secondItem="RgO-XW-UcM" secondAttribute="bottom" id="TWb-oZ-eEI"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="o7y-aL-eJg" secondAttribute="trailing" id="b6w-yg-VFo"/>
+                                        <constraint firstItem="UNn-LT-IW6" firstAttribute="leading" secondItem="gKN-22-9NB" secondAttribute="leadingMargin" constant="20" id="c4P-ed-6Pk"/>
+                                        <constraint firstItem="Bn4-A1-MCy" firstAttribute="leading" secondItem="gKN-22-9NB" secondAttribute="leadingMargin" id="h2j-UQ-ZtO"/>
+                                        <constraint firstItem="UNn-LT-IW6" firstAttribute="top" secondItem="RgO-XW-UcM" secondAttribute="bottom" constant="23" id="uLh-mz-rLe"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="Kqr-bi-5BJ"/>
+                                            <exclude reference="ORT-hk-xmO"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="atualizadoEmLabel" destination="bHm-Me-qBx" id="ZHh-gZ-U1J"/>
+                                    <outlet property="aulasPrevistasLabel" destination="jrV-jW-Be7" id="h4L-Hk-tiX"/>
+                                    <outlet property="circleGraph" destination="QOH-Yf-MNN" id="k4g-JK-dmO"/>
+                                    <outlet property="circleProgressLabel" destination="QLj-z8-LNN" id="m6D-K5-bG4"/>
+                                    <outlet property="circleProgressTotalLabel" destination="1Kb-lh-SPq" id="gd8-Dc-7sJ"/>
+                                    <outlet property="faltasLabel" destination="2Qn-Qb-Ned" id="EvR-vU-KcP"/>
+                                    <outlet property="nomeDaDisciplinaLabel" destination="RgO-XW-UcM" id="vfr-dd-Xig"/>
+                                    <outlet property="permitidasLabel" destination="XK7-OY-l4e" id="ZjZ-V7-qjh"/>
+                                    <outlet property="progressBar" destination="Bn4-A1-MCy" id="LAg-4X-paI"/>
+                                    <outlet property="progressBarLabel" destination="o7y-aL-eJg" id="bnW-2U-faf"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="emptyCell" rowHeight="100" id="q7Z-FU-tlg">
+                                <rect key="frame" x="0.0" y="178" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q7Z-FU-tlg" id="TRu-5n-5fT">
+                                    <frame key="frameInset" width="375" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🤔 nenhuma disciplina encontrada" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ys-v2-B5y">
+                                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
+                                            <color key="textColor" red="0.85882353779999998" green="0.086274512110000007" blue="0.19607843459999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="4Ys-v2-B5y" secondAttribute="trailing" id="8cp-Q8-ZNG"/>
+                                        <constraint firstAttribute="bottom" secondItem="4Ys-v2-B5y" secondAttribute="bottom" id="dJp-Pp-Kkf"/>
+                                        <constraint firstItem="4Ys-v2-B5y" firstAttribute="leading" secondItem="TRu-5n-5fT" secondAttribute="leading" id="mKI-Yy-dcI"/>
+                                        <constraint firstItem="4Ys-v2-B5y" firstAttribute="top" secondItem="TRu-5n-5fT" secondAttribute="top" id="oZ3-uz-Jj7"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="loadingCell" rowHeight="100" id="tn8-81-yN4">
+                                <rect key="frame" x="0.0" y="278" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tn8-81-yN4" id="jsU-l8-fuO">
+                                    <frame key="frameInset" width="375" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="emptyScheduleCell" text="☁️ buscando ..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5T-t0-SjL">
+                                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
+                                            <color key="textColor" red="0.85882353779999998" green="0.086274512110000007" blue="0.19607843459999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="L5T-t0-SjL" secondAttribute="bottom" id="HY2-dV-8vs"/>
+                                        <constraint firstItem="L5T-t0-SjL" firstAttribute="top" secondItem="jsU-l8-fuO" secondAttribute="top" id="gpq-fN-vgw"/>
+                                        <constraint firstItem="L5T-t0-SjL" firstAttribute="leading" secondItem="jsU-l8-fuO" secondAttribute="leading" id="oW3-h1-9GH"/>
+                                        <constraint firstAttribute="trailing" secondItem="L5T-t0-SjL" secondAttribute="trailing" id="wzU-Wp-A1Z"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Faltas" id="TrW-O8-yzX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="doW-zg-4aV">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="refreshAction:" destination="hfQ-fC-RJA" id="b4l-ft-KVz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="PV9-6B-e0L">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle">
+                            <fragment content="Atualizando as Faltas">
+                                <attributes>
+                                    <color key="NSColor" red="0.85882353779999998" green="0.086274512110000007" blue="0.19607843459999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" metaFont="smallSystem"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </refreshControl>
+                    <connections>
+                        <outlet property="reloadButtonItem" destination="doW-zg-4aV" id="Kc1-1l-4Tj"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="72A-Qx-OT6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1813.5" y="-388.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="absence" width="25" height="25"/>
+        <image name="absenceFilled" width="25" height="25"/>
+    </resources>
+    <color key="tintColor" red="0.8862745098" green="0.078431372550000003" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</document>

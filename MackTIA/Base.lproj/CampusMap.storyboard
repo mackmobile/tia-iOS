@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0n3-Ex-UiL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Campus-->
+        <scene sceneID="kUS-ob-Xqj">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="0n3-Ex-UiL" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <tabBarItem key="tabBarItem" title="Campus" image="campus" selectedImage="campusFilled" id="Yqu-lY-FQY"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO">
+                        <color key="tintColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </simulatedTabBarMetrics>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="blackTranslucent" id="d4d-cX-Nh7">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.86274516580000005" green="0.0" blue="0.023529423399999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="0.0"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5D6-iG-vYf" kind="relationship" relationship="rootViewController" id="9WM-uK-scU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sol-f9-SH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="177" y="457"/>
+        </scene>
+        <!--Campus-->
+        <scene sceneID="C96-4q-Dbe">
+            <objects>
+                <viewController id="5D6-iG-vYf" customClass="CampusMapViewController" customModule="TIA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6sC-I4-fCb"/>
+                        <viewControllerLayoutGuide type="bottom" id="rt0-UD-nQx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DrT-by-SIs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Le7-oh-tM3" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Le7-oh-tM3" firstAttribute="leading" secondItem="DrT-by-SIs" secondAttribute="leading" id="1bJ-fH-WFb"/>
+                            <constraint firstItem="rt0-UD-nQx" firstAttribute="top" secondItem="Le7-oh-tM3" secondAttribute="bottom" id="IST-ud-dkP"/>
+                            <constraint firstAttribute="trailing" secondItem="Le7-oh-tM3" secondAttribute="trailing" id="cw2-Tc-Zq0"/>
+                            <constraint firstItem="Le7-oh-tM3" firstAttribute="top" secondItem="6sC-I4-fCb" secondAttribute="bottom" id="veZ-gV-ngA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Campus" id="dBR-WA-TDj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="MDs-On-PTS">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="reloadButton:" destination="5D6-iG-vYf" id="J6k-7y-o0S"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="Le7-oh-tM3" id="WSQ-6a-gL3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dki-t9-Ihh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047" y="335"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="campus" width="25" height="25"/>
+        <image name="campusFilled" width="25" height="25"/>
+    </resources>
+</document>

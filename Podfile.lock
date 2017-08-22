@@ -1,0 +1,29 @@
+PODS:
+  - Alamofire (4.0.0)
+  - Crashlytics (3.8.1):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.8)
+  - GoogleMaps (2.0.1):
+    - GoogleMaps/Maps (= 2.0.1)
+  - GoogleMaps/Base (2.0.1)
+  - GoogleMaps/Maps (2.0.1):
+    - GoogleMaps/Base (= 2.0.1)
+  - HTMLReader (0.9.6)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - Crashlytics
+  - Fabric
+  - GoogleMaps
+  - HTMLReader (~> 0.9)
+
+SPEC CHECKSUMS:
+  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  Crashlytics: 4391d8df0b125345e9f209c5db6e7f40a6a8435d
+  Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
+  GoogleMaps: f09da64fc987c1aa29394567c3cab5a3df83c402
+  HTMLReader: 7e21488ee378afc56ccade8af35840c4e03e434c
+
+PODFILE CHECKSUM: 69af51721d19edebc24c20921bf1c47c01db1388
+
+COCOAPODS: 1.2.1

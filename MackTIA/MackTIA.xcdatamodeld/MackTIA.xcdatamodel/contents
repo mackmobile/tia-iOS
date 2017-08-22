@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15B42" minimumToolsVersion="Automatic">
+    <entity name="Falta" representedClassName="MackTIA.Falta" syncable="YES">
+        <attribute name="atualizacao" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="aulasDadas" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="codigo" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="disciplina" attributeType="String" syncable="YES"/>
+        <attribute name="faltas" optional="YES" attributeType="Integer 32" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="percentual" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="permitidas" optional="YES" attributeType="Integer 32" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="permitidas20" optional="YES" attributeType="Integer 32" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tia" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="turma" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Horario" representedClassName="MackTIA.Horario" syncable="YES">
+        <attribute name="anotacoes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="codigo" attributeType="String" syncable="YES"/>
+        <attribute name="codigoUnico" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="dia" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="disciplina" attributeType="String" syncable="YES"/>
+        <attribute name="escola" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hora" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="local" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="predio" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sala" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tia" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="turma" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Nota" representedClassName="MackTIA.Nota" syncable="YES">
+        <attribute name="a" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="b" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="c" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="codigo" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="d" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="disciplina" attributeType="String" syncable="YES"/>
+        <attribute name="e" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="f" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formula" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="g" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="h" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="i" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="j" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mf" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mi" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="partic" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pf" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sub" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="substituida" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tia" attributeType="String" indexed="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Falta" positionX="-63" positionY="-18" width="128" height="195"/>
+        <element name="Horario" positionX="-63" positionY="135" width="128" height="225"/>
+        <element name="Nota" positionX="-63" positionY="54" width="128" height="345"/>
+    </elements>
+</model>

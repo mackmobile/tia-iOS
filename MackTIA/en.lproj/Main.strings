@@ -1,0 +1,162 @@
+
+/* Class = "UILabel"; text = "100%"; ObjectID = "1Kb-lh-SPq"; */
+"1Kb-lh-SPq.text" = "100%";
+
+/* Class = "UILabel"; text = "9"; ObjectID = "2Qn-Qb-Ned"; */
+"2Qn-Qb-Ned.text" = "9";
+
+/* Class = "UILabel"; text = "Curtir página da Mackenzie"; ObjectID = "2yT-dJ-0Mc"; */
+"2yT-dJ-0Mc.text" = "Curtir página da Mackenzie";
+
+/* Class = "UITableViewController"; title = "Notas"; ObjectID = "31A-s9-rZ7"; */
+"31A-s9-rZ7.title" = "Notas";
+
+/* Class = "UILabel"; text = "10.0"; ObjectID = "3gr-DO-a7v"; */
+"3gr-DO-a7v.text" = "10.0";
+
+/* Class = "UILabel"; text = "Rafael de Souza Mota"; ObjectID = "4o2-0n-YLU"; */
+"4o2-0n-YLU.text" = "Rafael de Souza Mota";
+
+/* Class = "UILabel"; text = "Notas:"; ObjectID = "51k-U2-9dx"; */
+"51k-U2-9dx.text" = "Notas:";
+
+/* Class = "UITableViewSection"; headerTitle = "Equipe"; ObjectID = "7Hp-HJ-dKW"; */
+"7Hp-HJ-dKW.headerTitle" = "Equipe";
+
+/* Class = "UITabBarItem"; title = "Faltas"; ObjectID = "A09-1T-CPw"; */
+"A09-1T-CPw.title" = "Faltas";
+
+/* Class = "UITableViewSection"; footerTitle = "Copyright © 2015 Instituto Presbiteriano Mackenzie"; ObjectID = "EUz-vI-Hze"; */
+"EUz-vI-Hze.footerTitle" = "Copyright © 2015 Instituto Presbiteriano Mackenzie";
+
+/* Class = "UITableViewSection"; headerTitle = "Apoio"; ObjectID = "EUz-vI-Hze"; */
+"EUz-vI-Hze.headerTitle" = "Apoio";
+
+/* Class = "UILabel"; text = "Avaliar na AppStore"; ObjectID = "FML-my-Uur"; */
+"FML-my-Uur.text" = "Avaliar na AppStore";
+
+/* Class = "UINavigationItem"; title = "Mapa"; ObjectID = "GER-Nl-gFq"; */
+"GER-Nl-gFq.title" = "Mapa";
+
+/* Class = "UILabel"; text = "Curtir página da TV Mackenzie"; ObjectID = "GkD-6a-l54"; */
+"GkD-6a-l54.text" = "Curtir página da TV Mackenzie";
+
+/* Class = "UILabel"; text = "Rafael de Souza Mota"; ObjectID = "Iq7-9B-q3J"; */
+"Iq7-9B-q3J.text" = "Rafael de Souza Mota";
+
+/* Class = "UILabel"; text = "Permitidas (25%):"; ObjectID = "Ira-rZ-BAy"; */
+"Ira-rZ-BAy.text" = "Permitidas (25%):";
+
+/* Class = "UILabel"; text = "99.99"; ObjectID = "JEy-Hw-ZzU"; */
+"JEy-Hw-ZzU.text" = "99.99";
+
+/* Class = "UILabel"; text = "Mack Mobile"; ObjectID = "Lh2-go-iKW"; */
+"Lh2-go-iKW.text" = "Mack Mobile";
+
+/* Class = "UILabel"; text = "E"; ObjectID = "MSC-LI-pKl"; */
+"MSC-LI-pKl.text" = "E";
+
+/* Class = "UILabel"; text = "Lucas Salton Cardinali"; ObjectID = "NFl-pj-RMw"; */
+"NFl-pj-RMw.text" = "Lucas Salton Cardinali";
+
+/* Class = "UIBarButtonItem"; title = "Voltar"; ObjectID = "NrZ-Fr-Vys"; */
+"NrZ-Fr-Vys.title" = "Voltar";
+
+/* Class = "UITextField"; placeholder = "SENHA"; ObjectID = "O8O-4n-RhE"; */
+"O8O-4n-RhE.placeholder" = "SENHA";
+
+/* Class = "UILabel"; text = "Aluno da Faculdade de Publicidade e Propaganda\nDesign do aplicativo iOS"; ObjectID = "P7p-Nm-74c"; */
+"P7p-Nm-74c.text" = "Aluno da Faculdade de Publicidade e Propaganda\nDesign do aplicativo iOS";
+
+/* Class = "UILabel"; text = "Faltas:"; ObjectID = "Ppg-tl-Mcb"; */
+"Ppg-tl-Mcb.text" = "Faltas:";
+
+/* Class = "UILabel"; text = "NOME DA DISCIPLINA"; ObjectID = "RgO-XW-UcM"; */
+"RgO-XW-UcM.text" = "NOME DA DISCIPLINA";
+
+/* Class = "UINavigationItem"; title = "Faltas"; ObjectID = "TrW-O8-yzX"; */
+"TrW-O8-yzX.title" = "Faltas";
+
+/* Class = "UILabel"; text = "Professor e Pesquisador da FCI\nIdealizador/Desenvolvedor do aplicativo iOS\nMentor no projeto MackMobile"; ObjectID = "W2X-p2-1PO"; */
+"W2X-p2-1PO.text" = "Professor e Pesquisador da FCI\nIdealizador/Desenvolvedor do aplicativo iOS\nMentor no projeto MackMobile";
+
+/* Class = "UILabel"; text = "20"; ObjectID = "XK7-OY-l4e"; */
+"XK7-OY-l4e.text" = "20";
+
+/* Class = "UITableViewSection"; headerTitle = "Social"; ObjectID = "XUL-lT-5dg"; */
+"XUL-lT-5dg.headerTitle" = "Social";
+
+/* Class = "UILabel"; text = "Aleph Retamal"; ObjectID = "Xo3-a8-VR6"; */
+"Xo3-a8-VR6.text" = "Aleph Retamal";
+
+/* Class = "UILabel"; text = "Curtir página da Radio Mackenzie"; ObjectID = "Zf5-0e-Ueo"; */
+"Zf5-0e-Ueo.text" = "Curtir página da Radio Mackenzie";
+
+/* Class = "UILabel"; text = "SUB"; ObjectID = "b85-Vx-6eR"; */
+"b85-Vx-6eR.text" = "SUB";
+
+/* Class = "UIButton"; normalTitle = "ENVIAR"; ObjectID = "esy-K0-481"; */
+"esy-K0-481.normalTitle" = "ENVIAR";
+
+/* Class = "UILabel"; text = "Aluno da Faculdade de Computação e Informática\nIdealizador do Aplicativo"; ObjectID = "gTx-sh-Yha"; */
+"gTx-sh-Yha.text" = "Aluno da Faculdade de Computação e Informática\nIdealizador do Aplicativo";
+
+/* Class = "UILabel"; text = "Divisão de Tecnologia da Informação"; ObjectID = "gjO-0U-g8p"; */
+"gjO-0U-g8p.text" = "Divisão de Tecnologia da Informação";
+
+/* Class = "UITextField"; placeholder = "TIA"; ObjectID = "iXN-oi-j5N"; */
+"iXN-oi-j5N.placeholder" = "TIA";
+
+/* Class = "UILabel"; text = "Analísta da DTI\nContribuidor/Desenvolvedor de Serviços Web"; ObjectID = "jIj-WQ-fxZ"; */
+"jIj-WQ-fxZ.text" = "Analísta da DTI\nContribuidor/Desenvolvedor de Serviços Web";
+
+/* Class = "UILabel"; text = "120"; ObjectID = "jrV-jW-Be7"; */
+"jrV-jW-Be7.text" = "120";
+
+/* Class = "UILabel"; text = "Faculdade de Computação e Informática"; ObjectID = "kDr-yd-Bik"; */
+"kDr-yd-Bik.text" = "Faculdade de Computação e Informática";
+
+/* Class = "UILabel"; text = "Joaquim Pessôa Filho"; ObjectID = "kkN-z5-x6u"; */
+"kkN-z5-x6u.text" = "Joaquim Pessôa Filho";
+
+/* Class = "UIButton"; normalTitle = "Sair da minha conta"; ObjectID = "lez-Vo-Yff"; */
+"lez-Vo-Yff.normalTitle" = "Sair da minha conta";
+
+/* Class = "UILabel"; text = "99.99"; ObjectID = "oEL-2u-Tx3"; */
+"oEL-2u-Tx3.text" = "99.99";
+
+/* Class = "UILabel"; text = "NOME DA DISCIPLINA"; ObjectID = "okN-7E-bTT"; */
+"okN-7E-bTT.text" = "NOME DA DISCIPLINA";
+
+/* Class = "UITabBarItem"; title = "Mapa"; ObjectID = "pCK-i2-ORz"; */
+"pCK-i2-ORz.title" = "Mapa";
+
+/* Class = "UILabel"; text = "Sugestões ou críticas"; ObjectID = "pRy-m8-sZM"; */
+"pRy-m8-sZM.text" = "Sugestões ou críticas";
+
+/* Class = "UILabel"; text = "Fórmula:"; ObjectID = "qgn-hc-R1t"; */
+"qgn-hc-R1t.text" = "Fórmula:";
+
+/* Class = "UILabel"; text = "Previstas:"; ObjectID = "sGn-iJ-MSn"; */
+"sGn-iJ-MSn.text" = "Previstas:";
+
+/* Class = "UILabel"; text = "A"; ObjectID = "tjF-i9-thb"; */
+"tjF-i9-thb.text" = "A";
+
+/* Class = "UILabel"; text = "Aluno da Faculdade de Engenharia\nDesign/Desenvolvimento do aplicativo iOS"; ObjectID = "uIt-Dc-opl"; */
+"uIt-Dc-opl.text" = "Aluno da Faculdade de Engenharia\nDesign/Desenvolvimento do aplicativo iOS";
+
+/* Class = "UINavigationItem"; title = "Notas"; ObjectID = "uVX-kZ-4Y4"; */
+"uVX-kZ-4Y4.title" = "Notas";
+
+/* Class = "UITableViewSection"; headerTitle = " Opcões"; ObjectID = "vos-Ms-iEK"; */
+"vos-Ms-iEK.headerTitle" = " Opcões";
+
+/* Class = "UINavigationController"; title = "Notas"; ObjectID = "wGq-ag-kh1"; */
+"wGq-ag-kh1.title" = "Notas";
+
+/* Class = "UILabel"; text = "Tuitar"; ObjectID = "xuh-Xj-6tG"; */
+"xuh-Xj-6tG.text" = "Tuitar";
+
+/* Class = "UITabBarItem"; title = "Notas"; ObjectID = "yqE-4E-IJx"; */
+"yqE-4E-IJx.title" = "Notas";

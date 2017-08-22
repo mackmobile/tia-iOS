@@ -1,0 +1,8 @@
+/* 
+  Localizable.strings
+  MackTIA
+
+  Created by joaquim on 08/09/15.
+  Copyright (c) 2015 Mackenzie. All rights reserved.
+*/
+"erroLoginValidate" = "Erro ao informar os dados do aluno";

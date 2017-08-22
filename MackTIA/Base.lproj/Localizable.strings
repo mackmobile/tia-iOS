@@ -1,0 +1,83 @@
+/*
+ Localizable.strings
+ MackTIA
+ 
+ Created by joaquim on 08/09/15.
+ Copyright (c) 2015 Mackenzie. All rights reserved.
+ */
+
+
+// Sistema de Login
+
+"errorLogin.title" = "Acesso Negado";
+"errorLoginValidate.text" = "Informar todos os dados é obrigatório ;)";
+"errorLoginValidade.description" = "Alguns dos parametros do usuário não foram informados";
+
+"errorLoginServer.text" = "Desculpe, ocorreu um erro ao acessar o serviço online do TIA. Por favor verifique se sua internet está funcionando. Se o problema persistir entre em contato com o helpdesk";
+"errorLoginServer.description" = "Erro ao fazer a requisição ao servidor do Mackenzie: ";
+
+"errorLoginAccess.text" = "Alguma informação está incorreta, por favor verifique";
+"errorLoginAccess.description" = "Dados incorretos, acesso negado ao servico: ";
+
+"errorConfigPlist.text" = "Ops! Erro interno no aplicativo. Por algum motivo aparentemente desconhecido o aplicativo não está funcionando. Tente apagar ele do seu dispositivo e instalar novamente. Caso não funcione não deixe de entrar em contato reportando o problema ao helpdesk.";
+"errorConfigPlist.description" = "Erro interno. Nao encontrou parâmetro faltasURL no arquivo de configuracao config.plist";
+
+"atualizacaoNaoInformada" = "Atualização: sem informação";
+"atualizacao.data" = "Atualização: ";
+"update.label.text" = "Atualizado em: ";
+
+
+// Login Interface
+"password" = "SENHA";
+"tia" = "TIA";
+"login_defaultErrorTitle" = "Ops :(";
+"login_defaultErrorMessage" = "Por algum motivo desconhecido não foi possível fazer o login. Tente novamente mais tarde. Caso o problema persista, envie um e-mail para aplicativos@mackenzie.br";
+
+// Error Message
+"error_invalidLoginCredentials_title"   = "Acesso Negado";
+"error_invalidLoginCredentials_message" = "Não foi possível fazer o login, verifique se os dados estão corretos";
+
+"error_noInternetConnection_title"      = "Sem Conexão";
+"error_noInternetConnection_message"    = "Não foi possível realizar a operação, parece que seu dispositivo não está conectado na internet";
+
+"error_domainNotFound_title"            = "Ops :/";
+"error_domainNotFound_message"          = "O seu aplicativo não conseguiu encontrar nossos servidores. Pode ser um problema temporário, ou seu aplicativo pode estar desatualizado. As vezes este problema pode acontecer pelo fato da qualidade de sua conexão estar muito ruim.";
+
+"error_noDataFound_title"   = "Ops :S";
+"error_noDataFound_message" = "Um problema desconhecido aconteceu, ele pode ser temporário. Tente mais tarde. Se o problema persistir, por favor, entre em contato via e-mail aplicativos@mackenzie.br";
+
+// Grade interface
+"grade_InvalidDataTitle" = "Ops :/";
+"grade_InvalidDataMessage" = "Não foi possível carregar as suas notas. O problema pode ser temporário, mas se persistir entre em contato pelo e-mail aplicativos@mackenzie.br. Não esqueça de fornecer seus dados, como TIA, Nome e descrição do erro ;)";
+
+
+// Absence interface
+"absence_InvalidDataTitle" = "Ops :/";
+"absence_InvalidDataMessage" = "Não foi possível carregar as suas faltas. O problema pode ser temporário, mas se persistir entre em contato pelo e-mail aplicativos@mackenzie.br. Não esqueça de fornecer seus dados, como TIA, Nome e descrição do erro ;)";
+
+// Schedule interface
+"schedules_InvalidDataTitle" = "Ops :/";
+"schedules_InvalidDataMessage" = "Não foi possível carregar seus horários. O problema pode ser temporário, mas se persistir entre em contato pelo e-mail aplicativos@mackenzie.br. Não esqueça de fornecer seus dados, como TIA, Nome e descrição do erro ;)";
+
+
+// E-mail Message
+"e-mail_successMessageSentTitle"      = "Obrigado";
+"e-mail_successMessageSentMessage"    = "Seu e-mail foi enviado e ficamos gratos pela sua(s) critica(s) e/ou sugestão(ões) :)";
+"e-mail_errorMessageSentTitle"      = "Ops :/";
+"e-mail_errorMessageSentMessage"    = "Ocorreu algum problema ao tentar enviar o e-mail. Se não estiver conseguindo enviar por aqui, envie um e-mail para aplicativos@mackenzie.br. Obrigado!";
+
+// CampusMap
+"campusmap_errorTooFarAwayTitle"      = "Muito longe";
+"campusmap_errorTooFarAwayMessage"      = "Você está muito longe do Mackenzie.";
+"campusmap_errorBuildNotFoundTitle"     = "Prédio não encontrado";
+"campusmap_errorBuildNotFoundMessage"   = "Prédio %@ não encontrado.";
+
+// Empty Table
+"empty_table_schedule" = "Nenhum horário disponível no momento";
+"empty_table_absence" = "Nenhuma disciplina encontrada no momento";
+"empty_table_grade" = "Nenhuma disciplina encontrada no momento";
+
+// Map
+
+"error_invalidDataFormatTitle" = "Dados com problema";
+"error_invalidDataFormatMessage" = "Problema com a informação vinda do servido";
